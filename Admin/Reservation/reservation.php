@@ -48,7 +48,7 @@
 							</div>
 							<div class="form-group">
 								<span class="form-label">Phone</span>
-								<input class="form-control" type="tel" placeholder="Enter your phone number">
+								<input class="form-control" type="tel" name="phone" pattern="[0-9]{7}" maxlength="7" required placeholder="Format: 1234567">
 							</div>
 
 							<div class="form-group">
@@ -136,8 +136,47 @@
 									</div>
 								</div>
 							</div>
+
+							<div class="row">
+								<div class="col-sm-7">
+									<div class="row">
+										<div class="col-sm-4">
+											<div class="form-group">
+												<span class="form-label">Number of Adults</span>
+												<select class="form-control">
+													<option>1</option>
+													<option>2</option>
+													<option>3</option>
+												</select>
+												<span class="select-arrow"></span>
+											</div>
+										</div>
+										<div class="col-sm-4">
+											<div class="form-group">
+												<span class="form-label">Number of Child</span>
+												<select class="form-control">
+													<option>1</option>
+													<option>2</option>
+													<option>3</option>
+												</select>
+												<span class="select-arrow"></span>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+						<form>
 							<div class="form-btn">
-								<button class="submit-btn">Book Now</button>
+								<button class="submit-btn">Pay Now</button>
 							</div>
 						</form>
 					</div>
@@ -145,6 +184,7 @@
 			</div>
 		</div>
 	</div>
+
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
 </html>
