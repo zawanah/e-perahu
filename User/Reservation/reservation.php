@@ -175,6 +175,14 @@
 												<span class="select-arrow"></span>
 											</div>
 										</div>
+
+										<div class="col-sm-8">
+											<div class="form-group">
+												<span class="form-label">Total Cost</span>
+												<input class="form-control" type="text">
+											</div>
+										</div>
+
 									</div>
 								</div>
 							</div>
@@ -207,6 +215,59 @@
 
 									</div>
 								</div>
+
+								<div class="col-sm-8">
+									<div class="form-group">
+										<span class="form-label">Billing Address</span>
+										<input class="form-control" type="text">
+									</div>
+								</div>
+
+								<div class="col-sm-8">
+									<div class="form-group">
+										<span class="form-label">Card Number</span>
+										<input class="form-control" type="int" pattern="[0-9]{16}" maxlength="16"placeholder="1111 2222 3333 4444">
+									</div>
+								</div>
+
+								<div class="col-sm-4">
+									<div class="form-group">
+										<span class="form-label">CVV</span>
+										<input class="form-control" type="int" pattern="[0-9]{3}" maxlength="3"placeholder="123">
+									</div>
+								</div>
+
+								<div class="col-sm-4">
+									<div class="form-group">
+										<span class="form-label">Expiry Month</span>
+										<select class="form-control">
+											<option>01</option>
+											<option>02</option>
+											<option>03</option>
+											<option>04</option>
+											<option>05</option>
+											<option>06</option>
+											<option>07</option>
+											<option>08</option>
+											<option>09</option>
+											<option>10</option>
+											<option>11</option>
+											<option>12</option>
+										</select>
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+
+								<div class="col-sm-4">
+									<div class="form-group">
+										<span class="form-label">Expiry Year</span>
+										<input class="form-control" type="text" placeholder="0000">
+									</div>
+								</div>
+
+
+
+
 							</div>
 
 
