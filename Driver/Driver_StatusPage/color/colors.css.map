@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACA,CAAC;EACC,KAAK,EAFC,KAAK",
+"sources": ["colors.scss"],
+"names": [],
+"file": "colors.css"
+}
