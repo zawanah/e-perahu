@@ -6,7 +6,10 @@
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <!-- Title -->
     <title>Admin List Of Driver</title>
 
@@ -74,50 +77,58 @@
     </section>
     <!-- Breadcrumb Area End -->
 
+
     <!-- Our Blog Area Start -->
     <div class="our-blog-area section-padding-100">
-        <div class="container">
+          <div class="container">
+<!--table start -->
+            <table class="table table-light table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">E-mail</th>
+                  <th class="text-right">ACTIONS</th>
 
-          <!-- Post Author Area -->
-          <div class="post-author-area d-flex align-items-center my-5">
-              <!-- Avatar -->
-              <div class="author-avatar">
-                  <img src="img/bg-img/53.jpg" alt="">
-              </div>
-              <!-- Author Content -->
-              <div class="author-content">
-                  <h5>Ahmad Adam</h5>
-                  <span>Perahu Toyota</span>
-                  <p>Perahu Toyota kampung pandai basi.</p>
-                  <div align="right" >
-                  <button type="button" class="btn btn-primary">Edit</button>
-                </div>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>01</td>
+                  <td>Zulhelmi</td>
+                  <td>Zulhelmi@gmail.com</td>
 
+                  <td class="text-right">
+                    <button type="button" class="btn btn-outline-primary">Edit</button>
+                    <button type="button" class="btn btn-outline-danger">Delete</button>
+                </tr>
 
-              </div>
+                <tr>
+                  <td>02</td>
+                  <td>Hazmi</td>
+                  <td>Hazmi@gmail.com</td>
+
+                  <td class="text-right">
+                    <button type="button" class="btn btn-outline-primary">Edit</button>
+                    <button type="button" class="btn btn-outline-danger">Delete</button>
+                </tr>
+
+                <tr>
+                  <td>03</td>
+                  <td>Azizul</td>
+                  <td>Azizul@gmail.com</td>
+
+                  <td class="text-right">
+                    <button type="button" class="btn btn-outline-primary">Edit</button>
+                    <button type="button" class="btn btn-outline-danger">Delete</button>
+                </tr>
+
+              </tbody>
+            </table>
           </div>
 
-          <!-- Post Author Area -->
-          <div class="post-author-area d-flex align-items-center my-5">
-              <!-- Avatar -->
-              <div class="author-avatar">
-                  <img src="img/bg-img/53.jpg" alt="">
-              </div>
-              <!-- Author Content -->
-              <div class="author-content">
-                  <h5>Awang Basar</h5>
-                  <span>Perahu Capat</span>
-                  <p>Perahu Capat kampung kianggeh.</p>
 
-              </div>
-          </div>
-
-
-
-
-        </div>
-    </div>
-    <!-- Our Blog Area End -->
+<!--table End-->
 
     <!-- Footer Area Start -->
     <footer class="footer-area bg-img bg-overlay-2 section-padding-100-0">
