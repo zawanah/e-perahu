@@ -33,6 +33,8 @@
 						Login
 					</span>
 
+					<p class="text-danger">You must login to your account to proceed.</p>
+
 					<div class="wrap-input100 validate-input m-b-16">
 						<input class="input100" type="email" name="email" placeholder="Email" required>
 						<span class="focus-input100"></span>
@@ -57,7 +59,7 @@
 					</div>
 
 					<div class="container-login100-form-btn p-t-25">
-						<a href="../indexuser.html" class="login100-form-btn"><!-- <button class="login100-form-btn"> -->
+						<a href="../indexuser.php" class="login100-form-btn"><!-- <button class="login100-form-btn"> -->
 							Login
 						<!-- </button> --></a>
 					</div>
@@ -71,7 +73,7 @@
 							Not a member?
 						</span>
 
-						<a class="txt1 bo1 hov1" href="../Signup/signup.html">
+						<a class="txt1 bo1 hov1" href="../Signup/signup.php">
 							Sign up now
 						</a>
 					</div>

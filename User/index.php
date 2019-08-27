@@ -49,24 +49,24 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul id="nav">
-                                <li class="active"><a href="index.html">Home</a></li>
+                                <li class="active"><a href="index.php">Home</a></li>
                                 <li><a href="#">Information</a>
                                     <ul class="dropdown">
-                                        <li><a href="index.html">- Schedule</a></li>
-                                        <li><a href="about.html">- Ticket Price</a></li>
-                                        <li><a href="speakers.html">- driver</a></li>
-                                        <li><a href="schedule.html">- promotion</a></li>
+                                        <li><a href="index.php">- Schedule</a></li>
+                                        <li><a href="aboutnologin.php">- Ticket Price</a></li>
+                                        <li><a href="speakers.php">- driver</a></li>
+                                        <li><a href="schedule.php">- promotion</a></li>
 
 
                                     </ul>
                                 </li>
-                                <li><a href="http://localhost/e-perahu/User/Reservation/reservation.php">Reservation</a></li>
-                                <li><a href="blog.html">About Us</a></li>
-                                <li><a href="contact.html">Feedback</a></li>
+                                <li><a href="./Login/mustlogin.php">Reservation</a></li>
+                                <li><a href="blog.php">About Us</a></li>
+                                <li><a href="contact.php">Feedback</a></li>
                             </ul>
 
                             <!-- Get Tickets Button -->
-                            <a href="./Login/login.html" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Login <i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="./Login/login.php" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Login <i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                         <!-- Nav End -->
                     </div>

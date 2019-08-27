@@ -115,16 +115,16 @@
                 <!-- Single Ticket Pricing Table -->
                 <div class="col-12 col-lg-4">
                     <div class="single-ticket-pricing-table text-center mb-100 wow fadeInUp" data-wow-delay="300ms">
-                        <h6 class="ticket-plan">Child</h6>
+                        <h6 class="ticket-plan">One-Way Trip</h6>
                         <!-- Ticket Icon -->
                         <div class="ticket-icon">
-                            <img src="img/core-img/p1.png" alt="">
+                            <img src="img/core-img/oneway.png" alt="">
                         </div>
-                        <h2 class="ticket-price"><span>$</span>59</h2>
-                        <a href="#" class="btn confer-btn w-100 mb-30">Book Now <i class="zmdi zmdi-long-arrow-right"></i></a>
+                        <h2 class="ticket-price"><span>BND</span>1</h2>
+                        <a href="./Login/mustlogin.php" class="btn confer-btn w-100 mb-30">Book Now <i class="zmdi zmdi-long-arrow-right"></i></a>
                         <!-- Ticket Pricing Table Details -->
                         <div class="ticket-pricing-table-details">
-                            <p><i class="zmdi zmdi-check"></i> Below 12 Years Old</p>
+                            <p><i class="zmdi zmdi-check"></i> BND 1 per person</p>
                         </div>
                     </div>
                 </div>
@@ -132,16 +132,16 @@
                 <!-- Single Ticket Pricing Table -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-ticket-pricing-table active text-center mb-100 wow fadeInUp" data-wow-delay="300ms">
-                        <h6 class="ticket-plan">Adult</h6>
+                        <h6 class="ticket-plan">Two-Way Trip</h6>
                         <!-- Ticket Icon -->
                         <div class="ticket-icon">
-                            <img src="img/core-img/p2.png" alt="">
+                            <img src="img/core-img/twoway.png" alt="">
                         </div>
-                        <h2 class="ticket-price"><span>$</span>99</h2>
-                        <a href="#" class="btn confer-btn w-100 mb-30">Book Now <i class="zmdi zmdi-long-arrow-right"></i></a>
+                        <h2 class="ticket-price"><span>BND</span>2</h2>
+                        <a href="./Login/mustlogin.php" class="btn confer-btn w-100 mb-30">Book Now <i class="zmdi zmdi-long-arrow-right"></i></a>
                         <!-- Ticket Pricing Table Details -->
                         <div class="ticket-pricing-table-details">
-                            <p><i class="zmdi zmdi-check"></i> Below 60 Years Old</p>
+                            <p><i class="zmdi zmdi-check"></i> BND 2 per person</p>
                         </div>
                     </div>
                 </div>
@@ -149,19 +149,75 @@
                 <!-- Single Ticket Pricing Table -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-ticket-pricing-table text-center mb-100 wow fadeInUp" data-wow-delay="300ms">
-                        <h6 class="ticket-plan">Senior Citizen</h6>
+                        <h6 class="ticket-plan">Kampong Ayer Tour</h6>
                         <!-- Ticket Icon -->
                         <div class="ticket-icon">
-                            <img src="img/core-img/p3.png" alt="">
+                            <img src="img/core-img/village.jpg" alt="">
                         </div>
-                        <h2 class="ticket-price"><span>$</span>199</h2>
-                        <a href="#" class="btn confer-btn w-100 mb-30">Book Now <i class="zmdi zmdi-long-arrow-right"></i></a>
+                        <h2 class="ticket-price"><span>BND</span>7</h2>
+                        <a href="./Login/mustlogin.php" class="btn confer-btn w-100 mb-30">Book Now <i class="zmdi zmdi-long-arrow-right"></i></a>
                         <!-- Ticket Pricing Table Details -->
                         <div class="ticket-pricing-table-details">
-                            <p><i class="zmdi zmdi-check"></i> Above 60 Years Old</p>
+                            <p><i class="zmdi zmdi-check"></i> BND 20 for 3 person</p>
                         </div>
                     </div>
                 </div>
+
+                <!-- Single Ticket Pricing Table -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single-ticket-pricing-table active text-center mb-100 wow fadeInUp" data-wow-delay="300ms">
+                        <h6 class="ticket-plan">Pulau Chermin Tour</h6>
+                        <!-- Ticket Icon -->
+                        <div class="ticket-icon">
+                            <img src="img/core-img/island.jpg" alt="">
+                        </div>
+                        <h2 class="ticket-price"><span>BND</span>14</h2>
+                        <a href="./Login/mustlogin.php" class="btn confer-btn w-100 mb-30">Book Now <i class="zmdi zmdi-long-arrow-right"></i></a>
+                        <!-- Ticket Pricing Table Details -->
+                        <div class="ticket-pricing-table-details">
+                            <p><i class="zmdi zmdi-check"></i> BND 40 for 3 person</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Ticket Pricing Table -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single-ticket-pricing-table active text-center mb-100 wow fadeInUp" data-wow-delay="300ms">
+                        <h6 class="ticket-plan">Istana Nurul Iman Tour</h6>
+                        <!-- Ticket Icon -->
+                        <div class="ticket-icon">
+                            <img src="img/core-img/istana.jpg" alt="">
+                        </div>
+                        <h2 class="ticket-price"><span>BND</span>11</h2>
+                        <a href="./Login/mustlogin.php" class="btn confer-btn w-100 mb-30">Book Now <i class="zmdi zmdi-long-arrow-right"></i></a>
+                        <!-- Ticket Pricing Table Details -->
+                        <div class="ticket-pricing-table-details">
+                            <p><i class="zmdi zmdi-check"></i> Jong Batu Tour included</p>
+                            <p><i class="zmdi zmdi-check"></i> Proboscis Monkey Tour included</p>
+                            <p><i class="zmdi zmdi-check"></i> BND 30 for 3 person</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Ticket Pricing Table -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single-ticket-pricing-table active text-center mb-100 wow fadeInUp" data-wow-delay="300ms">
+                        <h6 class="ticket-plan">Full Tour</h6>
+                        <!-- Ticket Icon -->
+                        <div class="ticket-icon">
+                            <img src="img/core-img/bino.png" alt="">
+                        </div>
+                        <h2 class="ticket-price"><span>BND</span>32</h2>
+                        <a href="./Login/mustlogin.php" class="btn confer-btn w-100 mb-30">Book Now <i class="zmdi zmdi-long-arrow-right"></i></a>
+                        <!-- Ticket Pricing Table Details -->
+                        <div class="ticket-pricing-table-details">
+                            <p><i class="zmdi zmdi-check"></i> Kampong Ayer, Pulau Chermin, Istana Nurul Iman Tour in one go</p>
+                            <p><i class="zmdi zmdi-check"></i> BND 90 for 3 person</p>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </section>

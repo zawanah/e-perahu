@@ -30,19 +30,11 @@
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
 				<form><!-- <form class="login100-form validate-form"> -->
 					<span class="login100-form-title p-b-55">
-						Sign up
+						Login
 					</span>
 
 					<div class="wrap-input100 validate-input m-b-16">
-						<input class="input100" type="username" name="username" placeholder="Username" required>
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<span class="lnr lnr-lock"></span>
-						</span>
-					</div>
-
-					<div class="wrap-input100 validate-input m-b-16">
-						<input class="input100" type="email" name="email" placeholder="Email" required>
+						<input class="input100" type="email" name="email" placeholder="Email">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<span class="lnr lnr-envelope"></span>
@@ -50,26 +42,25 @@
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-16">
-						<input class="input100" type="number" name="phone no" placeholder="Phone No." required>
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<span class="lnr lnr-envelope"></span>
-						</span>
-					</div>
-
-					<div class="wrap-input100 validate-input m-b-16">
-						<input class="input100" type="password" name="pass" placeholder="Password" required>
+						<input class="input100" type="password" name="pass" placeholder="Password">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<span class="lnr lnr-lock"></span>
 						</span>
 					</div>
 
-					
+					<div class="contact100-form-checkbox m-l-4">
+						<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+						<label class="label-checkbox100" for="ckb1">
+							Remember me
+						</label>
+					</div>
+
 					<div class="container-login100-form-btn p-t-25">
-						<a href="../Login/login.html"><button class="login100-form-btn">
-							Sign up
-						</button></a>
+						<!-- <a href="../indexuser.php" class="login100-form-btn"> --><button onclick="login()" class="login100-form-btn"><!-- <button class="login100-form-btn"> -->
+							Login
+						</button>
+						<!-- </button> --><!-- </a> -->
 					</div>
 
 
@@ -78,11 +69,11 @@
 
 					<div class="text-center w-full p-t-115">
 						<span class="txt1">
-							Already a member?
+							Not a member?
 						</span>
 
-						<a class="txt1 bo1 hov1" href="../Login/login.html">
-							Log in now
+						<a class="txt1 bo1 hov1" href="../Signup/signup.php">
+							Sign up now
 						</a>
 					</div>
 				</form>
@@ -92,7 +83,28 @@
 
 
 
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.4.2/firebase-app.js"></script>
 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBjG7u7pdUMVqRIeK9L5gVh455VeJvfSCI",
+    authDomain: "e-perahu-e14c4.firebaseapp.com",
+    databaseURL: "https://e-perahu-e14c4.firebaseio.com",
+    projectId: "e-perahu-e14c4",
+    storageBucket: "e-perahu-e14c4.appspot.com",
+    messagingSenderId: "496332190149",
+    appId: "1:496332190149:web:c4769ef7c621a8d2"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+	<script src="login.js"></script>
 <!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
