@@ -1,3 +1,7 @@
+<?php include('server.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,8 +70,8 @@
                                 <li><a href="contact.html">Feedback</a></li>
                             </ul>
 
-                            <!-- Get Tickets Button -->
-                            <a href="index.html" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <!-- Logout Button -->
+                            <a href="profile.php?logout='1'" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                         <!-- Nav End -->
                     </div>
