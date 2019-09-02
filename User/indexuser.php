@@ -1,3 +1,12 @@
+<?php include('server.php');
+
+    // if user is not logged in, they cannot access this page
+    if (empty($_SESSION['username'])) {
+        header('location: login.php');
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,8 +75,7 @@
                                 <li><a href="contact.php">Feedback</a></li>
                             </ul>
 
-                            <!-- Get Tickets Button -->
-                            <a href="index.php" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="indexuser.php?logout='1'" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                         <!-- Nav End -->
                     </div>

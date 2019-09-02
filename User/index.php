@@ -60,13 +60,13 @@
 
                                     </ul>
                                 </li>
-                                <li><a href="./Login/mustlogin.php">Reservation</a></li>
+                                <li><a href="./User_Reservation/User_Reservation.php">Reservation</a></li>
                                 <li><a href="blog.php">About Us</a></li>
                                 <li><a href="contact.php">Feedback</a></li>
                             </ul>
 
                             <!-- Get Tickets Button -->
-                            <a href="./Login/login.php" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Login <i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="login.php" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Login <i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                         <!-- Nav End -->
                     </div>
