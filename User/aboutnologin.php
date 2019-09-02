@@ -1,3 +1,8 @@
+<?php include('server.php');
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,7 +38,7 @@
                 <nav class="classy-navbar justify-content-between" id="conferNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="indexuser.html"><img src="./img/core-img/logo.png" alt=""></a>
+                    <a class="nav-brand" href="index.php"><img src="./img/core-img/logo.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -49,26 +54,25 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul id="nav">
-                                <li class="active"><a href="index.html">Home</a></li>
+                                <li class="active"><a href="index.php">Home</a></li>
                                 <li><a href="#">Information</a>
                                     <ul class="dropdown">
-                                        <li><a href="profile.html">- My Profile</a></li>
-                                        <li><a href="about.html">- Schedule</a></li>
-                                        <li><a href="speakers.html">- Ticket Price</a></li>
-                                        <li><a href="schedule.html">- Driver</a></li>
-                                        <li><a href="tickets.html">- Promotion</a></li>
+                                        <li><a href="profile.php">- My Profile</a></li>
+                                        <li><a href="about.php">- Schedule</a></li>
+                                        <li><a href="speakers.php">- Ticket Price</a></li>
+                                        <li><a href="tickets.php">- Promotion</a></li>
                                         
                                         
                                         
                                     </ul>
                                 </li>
-                                <li><a href="speakers.html">Reservation</a></li>
-                                <li><a href="blog.html">About Us</a></li>
-                                <li><a href="contact.html">Feedback</a></li>
+                                <li><a href="speakers.php">Reservation</a></li>
+                                <li><a href="blog.php">About Us</a></li>
+                                <li><a href="contact.php">Feedback</a></li>
                             </ul>
 
                             <!-- Get Tickets Button -->
-                            <a href="index.html" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="login.php" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Log in <i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                         <!-- Nav End -->
                     </div>
@@ -121,7 +125,7 @@
                             <img src="img/core-img/oneway.png" alt="">
                         </div>
                         <h2 class="ticket-price"><span>BND</span>1</h2>
-                        <a href="./Login/mustlogin.php" class="btn confer-btn w-100 mb-30">Book Now <i class="zmdi zmdi-long-arrow-right"></i></a>
+                        <a href="login.php" class="btn confer-btn w-100 mb-30">Book Now <i class="zmdi zmdi-long-arrow-right"></i></a>
                         <!-- Ticket Pricing Table Details -->
                         <div class="ticket-pricing-table-details">
                             <p><i class="zmdi zmdi-check"></i> BND 1 per person</p>
@@ -138,7 +142,7 @@
                             <img src="img/core-img/twoway.png" alt="">
                         </div>
                         <h2 class="ticket-price"><span>BND</span>2</h2>
-                        <a href="./Login/mustlogin.php" class="btn confer-btn w-100 mb-30">Book Now <i class="zmdi zmdi-long-arrow-right"></i></a>
+                        <a href="login.php" class="btn confer-btn w-100 mb-30">Book Now <i class="zmdi zmdi-long-arrow-right"></i></a>
                         <!-- Ticket Pricing Table Details -->
                         <div class="ticket-pricing-table-details">
                             <p><i class="zmdi zmdi-check"></i> BND 2 per person</p>
@@ -155,7 +159,7 @@
                             <img src="img/core-img/village.jpg" alt="">
                         </div>
                         <h2 class="ticket-price"><span>BND</span>7</h2>
-                        <a href="./Login/mustlogin.php" class="btn confer-btn w-100 mb-30">Book Now <i class="zmdi zmdi-long-arrow-right"></i></a>
+                        <a href="login.php" class="btn confer-btn w-100 mb-30">Book Now <i class="zmdi zmdi-long-arrow-right"></i></a>
                         <!-- Ticket Pricing Table Details -->
                         <div class="ticket-pricing-table-details">
                             <p><i class="zmdi zmdi-check"></i> BND 20 for 3 person</p>
@@ -172,7 +176,7 @@
                             <img src="img/core-img/island.jpg" alt="">
                         </div>
                         <h2 class="ticket-price"><span>BND</span>14</h2>
-                        <a href="./Login/mustlogin.php" class="btn confer-btn w-100 mb-30">Book Now <i class="zmdi zmdi-long-arrow-right"></i></a>
+                        <a href="login.php" class="btn confer-btn w-100 mb-30">Book Now <i class="zmdi zmdi-long-arrow-right"></i></a>
                         <!-- Ticket Pricing Table Details -->
                         <div class="ticket-pricing-table-details">
                             <p><i class="zmdi zmdi-check"></i> BND 40 for 3 person</p>
@@ -189,7 +193,7 @@
                             <img src="img/core-img/istana.jpg" alt="">
                         </div>
                         <h2 class="ticket-price"><span>BND</span>11</h2>
-                        <a href="./Login/mustlogin.php" class="btn confer-btn w-100 mb-30">Book Now <i class="zmdi zmdi-long-arrow-right"></i></a>
+                        <a href="login.php" class="btn confer-btn w-100 mb-30">Book Now <i class="zmdi zmdi-long-arrow-right"></i></a>
                         <!-- Ticket Pricing Table Details -->
                         <div class="ticket-pricing-table-details">
                             <p><i class="zmdi zmdi-check"></i> Jong Batu Tour included</p>
@@ -208,7 +212,7 @@
                             <img src="img/core-img/bino.png" alt="">
                         </div>
                         <h2 class="ticket-price"><span>BND</span>32</h2>
-                        <a href="./Login/mustlogin.php" class="btn confer-btn w-100 mb-30">Book Now <i class="zmdi zmdi-long-arrow-right"></i></a>
+                        <a href="login.php" class="btn confer-btn w-100 mb-30">Book Now <i class="zmdi zmdi-long-arrow-right"></i></a>
                         <!-- Ticket Pricing Table Details -->
                         <div class="ticket-pricing-table-details">
                             <p><i class="zmdi zmdi-check"></i> Kampong Ayer, Pulau Chermin, Istana Nurul Iman Tour in one go</p>

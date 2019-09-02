@@ -1,3 +1,7 @@
+<?php include('server.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,7 +37,7 @@
                 <nav class="classy-navbar justify-content-between" id="conferNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="./index.html"><img src="./img/core-img/logo.png" alt=""></a>
+                    <a class="nav-brand" href="index.php"><img src="./img/core-img/logo.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -54,13 +58,12 @@
                                     <ul class="dropdown">
                                         <li><a href="index.php">- Schedule</a></li>
                                         <li><a href="aboutnologin.php">- Ticket Price</a></li>
-                                        <li><a href="speakers.php">- driver</a></li>
                                         <li><a href="schedule.php">- promotion</a></li>
 
 
                                     </ul>
                                 </li>
-                                <li><a href="./User_Reservation/User_Reservation.php">Reservation</a></li>
+                                <li><a href="User_Reservation/User_Reservation.php">Reservation</a></li>
                                 <li><a href="blog.php">About Us</a></li>
                                 <li><a href="contact.php">Feedback</a></li>
                             </ul>

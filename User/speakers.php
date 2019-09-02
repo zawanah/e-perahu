@@ -1,3 +1,7 @@
+<?php include('server.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,7 +37,7 @@
                 <nav class="classy-navbar justify-content-between" id="conferNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="./indexuser.html"><img src="./img/core-img/logo.png" alt=""></a>
+                    <a class="nav-brand" href="indexuser.php"><img src="./img/core-img/logo.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -49,25 +53,25 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul id="nav">
-                                <li class="active"><a href="indexuser.html">Home</a></li>
+                                <li class="active"><a href="indexuser.php">Home</a></li>
                                 <li><a href="#">Information</a>
                                     <ul class="dropdown">
-                                        <li><a href="profile.html">- My Profile</a></li>
-                                        <li><a href="index.html">- Schedule</a></li>
-                                        <li><a href="about.html">- Ticket Price</a></li>
-                                        <li><a href="speakers.html">- drivers</a></li>
-                                        <li><a href="schedule.html">- promotion</a></li>
+                                        <li><a href="profile.php">- My Profile</a></li>
+                                        <li><a href="index.php">- Schedule</a></li>
+                                        <li><a href="about.php">- Ticket Price</a></li>
+                                        <li><a href="speakers.php">- drivers</a></li>
+                                        <li><a href="schedule.php">- promotion</a></li>
 
 
                                     </ul>
                                 </li>
-                                <li><a href="speakers.html">Reservation</a></li>
-                                <li><a href="blog.html">About Us</a></li>
-                                <li><a href="contact.html">Feedback</a></li>
+                                <li><a href="User_Reservation/User_Reservation.php">Reservation</a></li>
+                                <li><a href="blog.php">About Us</a></li>
+                                <li><a href="contact.php">Feedback</a></li>
                             </ul>
 
                             <!-- Get Tickets Button -->
-                            <a href="index.html" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="speakers.php?logout='1'" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                         <!-- Nav End -->
                     </div>
@@ -104,7 +108,7 @@
 
                 <!-- Single Speaker Area -->
                 <div class="col-12 col-sm-6 col-lg-4">
-                    <a href="driverinformation.html">
+                    <a href="driverinformation.php">
                     <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" data-wow-delay="300ms">
                         <!-- Thumb -->
                         <div class="speaker-single-thumb">
@@ -122,7 +126,7 @@
 
                 <!-- Single Speaker Area -->
                 <div class="col-12 col-sm-6 col-lg-4">
-                    <a href="driverinformation2.html">
+                    <a href="driverinformation2.php">
                     <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" data-wow-delay="300ms">
                         <!-- Thumb -->
                         <div class="speaker-single-thumb">
@@ -140,7 +144,7 @@
 
                 <!-- Single Speaker Area -->
                 <div class="col-12 col-sm-6 col-lg-4">
-                    <a href="driverinformation3.html">
+                    <a href="driverinformation3.php">
                     <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" data-wow-delay="300ms">
                         <!-- Thumb -->
                         <div class="speaker-single-thumb">
