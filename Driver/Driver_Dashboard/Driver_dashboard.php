@@ -1,4 +1,9 @@
-<?php include('driver_loginServer.php');
+<?php include('../Driver_Login/server.php');
+
+    // if user is not logged in, they cannot access this page
+    if (empty($_SESSION['username'])) {
+        header('location: ../Driver_Login/Driver_Login.php');
+    }
 
 ?>
 
@@ -37,7 +42,7 @@
                 <nav class="classy-navbar justify-content-between" id="conferNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="./index.html"><img src="./img/core-img/logo.png" alt=""></a>
+                    <a class="nav-brand" href="Driver_dashboard.php"><img src="./img/core-img/logo.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -175,13 +180,13 @@
 
 
                     <!-- Single Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="single-footer-widget mb-60">
+             <!--        <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget mb-60"> -->
                             <!-- Widget Title -->
-                            <h5 class="widget-title">Gallery</h5>
+                           <!--  <h5 class="widget-title">Gallery</h5> -->
 
                             <!-- Footer Gallery -->
-                            <div class="footer-gallery">
+                            <!-- <div class="footer-gallery">
                                 <div class="row">
                                     <div class="col-4">
                                         <a href="img/bg-img/21.jpg" class="single-gallery-item"><img src="img/bg-img/21.jpg" alt=""></a>
@@ -207,7 +212,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
 
                     <!-- Footer Menu -->
