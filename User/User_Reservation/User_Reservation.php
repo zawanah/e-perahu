@@ -1,4 +1,4 @@
-<?php include('../server.php'); 
+<?php include('../server.php');
 
 // if user is not logged in, they cannot access this page
     if (empty($_SESSION['username'])) {
@@ -190,7 +190,7 @@
 								</div>
 							</div>
 							<div class="form-btn">
-								<button type="submit" class="submit-btn">Pay Now</button>
+								<button type="submit" class="submit-btn">Pay Now mau tah bah sakit kepala ku udh</button>
 							</div>
 						</form>
 					</div>
