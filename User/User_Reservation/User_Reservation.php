@@ -190,7 +190,7 @@
 								</div>
 							</div>
 							<div class="form-btn">
-								<button type="submit" class="submit-btn">Pay Now mau tah bah sakit kepala ku udh</button>
+								<button type="submit" class="submit-btn">MINARK</button>
 							</div>
 						</form>
 					</div>
