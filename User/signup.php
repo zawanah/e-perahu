@@ -33,11 +33,13 @@
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
 				<form method="post" action="signup.php">
-					<!-- display validation errors here -->
-					<?php include('errors.php'); ?>
+
 					<span class="login100-form-title p-b-55">
 						Sign up
 					</span>
+
+					<!-- display validation errors here -->
+					<?php include('errors.php'); ?>
 
 					<div class="wrap-input100 validate-input m-b-16">
 						<input type="username" name="username" class="input100" placeholder="Username" value="<?php echo $username; ?>">

@@ -1,6 +1,4 @@
-<?php include('server.php');
 
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -68,7 +66,7 @@
                                 <li><a href="contact.php">Feedback</a></li>
                             </ul>
 
-                            <!-- Get Tickets Button -->
+                            <!-- Login Button -->
                             <a href="login.php" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Login <i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                         <!-- Nav End -->

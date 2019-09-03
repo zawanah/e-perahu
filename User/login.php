@@ -1,4 +1,6 @@
-<?php include('server.php'); ?>
+<?php include('server.php'); 
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -79,6 +81,13 @@
 							Sign up now
 						</a>
 					</div>
+					
+						<div class="container-login100-form-btn p-t-25">
+						<a href="index.php">
+							Back to homepage
+						</a>
+					</div>
+					
 				</form>
 			</div>
 		</div>
