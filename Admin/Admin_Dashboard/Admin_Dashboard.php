@@ -1,3 +1,12 @@
+<?php include('server.php');
+
+    // if user is not logged in, they cannot access this page
+    if (empty($_SESSION['username'])) {
+        header('location: Admin_Login.php');
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,8 +57,8 @@
                         </div>
 
 
-                            <!-- Get Tickets Button -->
-                            <a href="../Admin_login/Admin_login.html" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <!-- Logout Button -->
+                            <a href="Admin_Dashboard.php?logout='1'" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                         <!-- Nav End -->
                     </div>
