@@ -138,13 +138,13 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Debit Card</span>
-										<input class="form-control" type="text" name="debitnumber" maxlength="16" placeholder="Card Number">
+										<input class="form-control" type="text" name="debitnumber" autocomplete="off" maxlength="16" placeholder="Card Number">
 									</div>
 								</div>
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label"><br></span>
-										<input class="form-control" type="text" name="debitcvv" maxlength="3" placeholder="CVV">
+										<input class="form-control" type="text" name="debitcvv" autocomplete="off" maxlength="3" placeholder="CVV">
 									</div>
 								</div>
 							</div>
@@ -152,7 +152,7 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Expiration Date</span>
-										<select class="form-control" name="expmonth">
+										<select class="form-control" name="expmonth" autocomplete="off">
 											<option value="01">January</option>
 											<option value="02">February </option>
 											<option value="03">March</option>
@@ -172,7 +172,7 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label"><br></span>
-										<select class="form-control" name="expyear">
+										<select class="form-control" name="expyear" autocomplete="off">
 											<option value="16"> 2016</option>
 											<option value="17"> 2017</option>
 											<option value="18"> 2018</option>
