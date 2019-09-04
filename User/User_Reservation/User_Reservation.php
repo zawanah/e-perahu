@@ -1,9 +1,9 @@
-<?php include('../server.php');
+<?php include('reservationdb.php');
 
 // if user is not logged in, they cannot access this page
-    if (empty($_SESSION['username'])) {
-        header('location: ../login.php');
-    }
+    // if (empty($_SESSION['username'])) {
+    //     header('location: ../login.php');
+    // }
 
 ?>
 
@@ -49,32 +49,32 @@
 							<div class="row">
 								<div class="col-sm-6">
 									<div class="form-group">
-										<span class="form-label">Name</span>
-										<input class="form-control" type="text" placeholder="Enter your name">
+										<span class="form-label" >Name</span>
+										<input class="form-control" type="text" name="name" placeholder="Enter your name">
 									</div>
 								</div>
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Email</span>
-										<input class="form-control" type="email" placeholder="Enter your email">
+										<input class="form-control" type="email" name="email" placeholder="Enter your email">
 									</div>
 								</div>
 							</div>
 							<div class="form-group">
 								<span class="form-label">Phone</span>
-								<input class="form-control" type="tel" maxlength="7" placeholder="Format: 1234567">
+								<input class="form-control" type="tel" name="phone" maxlength="7" placeholder="Format: 1234567">
 							</div>
 							<div class="row">
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Pickup</span>
-										<input class="form-control" type="text" placeholder="Enter Location">
+										<input class="form-control" type="text" name="pickup" placeholder="Enter Location">
 									</div>
 								</div>
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Destination</span>
-										<input class="form-control" type="text" placeholder="Enter Location">
+										<input class="form-control" type="text" name="destination" placeholder="Enter Location">
 									</div>
 								</div>
 							</div>
@@ -82,7 +82,7 @@
 								<div class="col-sm-5">
 									<div class="form-group">
 										<span class="form-label">Pickup Date</span>
-										<input class="form-control" type="date" required>
+										<input class="form-control" type="date" name="pickupdate" required>
 									</div>
 								</div>
 								<div class="col-sm-7">
@@ -90,7 +90,7 @@
 										<div class="col-sm-4">
 											<div class="form-group">
 												<span class="form-label">Hour</span>
-												<select class="form-control">
+												<select class="form-control" name="hour">
 													<option>1</option>
 													<option>2</option>
 													<option>3</option>
@@ -110,7 +110,7 @@
 										<div class="col-sm-4">
 											<div class="form-group">
 												<span class="form-label">Min</span>
-												<select class="form-control">
+												<select class="form-control" name="min">
 													<option>05</option>
 													<option>10</option>
 													<option>15</option>
@@ -129,7 +129,7 @@
 										<div class="col-sm-4">
 											<div class="form-group">
 												<span class="form-label">AM/PM</span>
-												<select class="form-control">
+												<select class="form-control" name="ampm">
 													<option>AM</option>
 													<option>PM</option>
 												</select>
@@ -143,13 +143,13 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Debit Card</span>
-										<input class="form-control" type="text" maxlength="16" placeholder="Card Number">
+										<input class="form-control" type="text" name="debitnumber" maxlength="16" placeholder="Card Number">
 									</div>
 								</div>
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label"><br></span>
-										<input class="form-control" type="text" maxlength="3" placeholder="CVV">
+										<input class="form-control" type="text" name="debitcvv" maxlength="3" placeholder="CVV">
 									</div>
 								</div>
 							</div>
@@ -157,7 +157,7 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Expiration Date</span>
-										<select class="form-control">
+										<select class="form-control" name="expmonth">
 											<option value="01">January</option>
 											<option value="02">February </option>
 											<option value="03">March</option>
@@ -177,7 +177,7 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label"><br></span>
-										<select class="form-control">
+										<select class="form-control" name="expyear">
 											<option value="16"> 2016</option>
 											<option value="17"> 2017</option>
 											<option value="18"> 2018</option>

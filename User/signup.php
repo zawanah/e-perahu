@@ -73,7 +73,7 @@
 						</span>
 					</div>
 
-					
+
 					<div class="container-login100-form-btn p-t-25">
 						<button type="submit" name="register" class="login100-form-btn">Sign up
 						</button>
@@ -81,7 +81,7 @@
 
 
 
-		
+
 
 					<div class="text-center w-full p-t-115">
 						<span class="txt1">
