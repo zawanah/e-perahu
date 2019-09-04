@@ -45,7 +45,7 @@
 						<div class="form-header">
 							<h1>Reservation</h1>
 						</div>
-						<form action="" method="POST" target="_blank">
+						<form method="post" action="User_Reservation.php">
 							<div class="row">
 								<div class="col-sm-6">
 									<div class="form-group">
@@ -190,7 +190,7 @@
 								</div>
 							</div>
 							<div class="form-btn">
-								<button type="submit" class="submit-btn">Pay Now</button>
+								<button type="submit" name="paynow" class="submit-btn">Pay Now</button>
 							</div>
 						</form>
 					</div>
