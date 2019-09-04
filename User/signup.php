@@ -42,7 +42,7 @@
 					<?php include('errors.php'); ?>
 
 					<div class="wrap-input100 validate-input m-b-16">
-						<input type="username" name="username" class="input100" placeholder="Username" value="<?php echo $username; ?>">
+						<input type="username" name="username" class="input100" placeholder="Username" value="<?php echo $username; ?>" autocomplete="off">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<span class="lnr lnr-lock"></span>
@@ -50,7 +50,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-16">
-						<input class="input100" type="email" name="email" value="<?php echo $email; ?>" placeholder="Email">
+						<input class="input100" type="email" name="email" placeholder="Email" value="<?php echo $email; ?>"  autocomplete="off">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<span class="lnr lnr-envelope"></span>

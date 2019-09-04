@@ -40,7 +40,7 @@
 					<!-- display validation errors here -->
 					<?php include('errors.php'); ?>
 					<div class="wrap-input100 validate-input m-b-16">
-						<input class="input100" type="text" name="username" placeholder="Username">
+						<input class="input100" type="text" name="username" placeholder="Username" autocomplete="off">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<span class="lnr lnr-envelope"></span>
