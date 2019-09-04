@@ -62,7 +62,7 @@
 							</div>
 							<div class="form-group">
 								<span class="form-label">Phone</span>
-								<input class="form-control" type="tel" placeholder="Enter your phone number">
+								<input class="form-control" type="tel" maxlength="7" placeholder="Format: 1234567">
 							</div>
 							<div class="row">
 								<div class="col-sm-6">
@@ -143,13 +143,13 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Debit Card</span>
-										<input class="form-control" type="text" placeholder="Number">
+										<input class="form-control" type="text" maxlength="16" placeholder="Card Number">
 									</div>
 								</div>
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label"><br></span>
-										<input class="form-control" type="text" placeholder="CVV">
+										<input class="form-control" type="text" maxlength="3" placeholder="CVV">
 									</div>
 								</div>
 							</div>
