@@ -61,7 +61,7 @@
 
                                     </ul>
                                 </li>
-                                <li><a href="User_Reservation/User_Reservation.php">Reservation</a></li>
+                                <li><a href="login.php">Reservation</a></li>
                                 <li><a href="blog.php">About Us</a></li>
                                 <li><a href="contact.php">Feedback</a></li>
                             </ul>
