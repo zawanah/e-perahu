@@ -36,7 +36,7 @@
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
 			<div class="wrap-login100">
-				
+
 					<span class="login100-form-logo">
 						<img src="../Admin_login/images/icons/admin1.png" title="admin icon" width="100" height="100" alt=""/>
 					</span>
@@ -49,16 +49,15 @@
 
 					<!--display validation errors here-->
 					<?php include('errors.php'); ?>
-					<div class="wrap-input100 validate-input" data-validate = "Please enter your username">
+					<div class="wrap-input100 validate-input" >
 						<input class="input100" type="text" name="username" placeholder="Username">
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate="Please enter your password">
+					<div class="wrap-input100 validate-input" >
 						<input class="input100" type="password" name="password" placeholder="Password">
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
-
 
 					<div class="container-login100-form-btn">
 						<button type="submit" name="login" class="login100-form-btn">

@@ -29,11 +29,11 @@
 		// if there are no errors, save user to database
 		if (count($errors) == 0) {
 			$password = md5($password_1); // encrypt password
-			$sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
+			$sql = "INSERT INTO admin (username, email, password) VALUES ('$username', '$email', '$password')";
 			mysqli_query($db, $sql);
 			$_SESSION['username'] = $username;
 			$_SESSION['success'] = "You are now logged in";
-			header('location: index.php'); // redirect to home page
+			header('location: Admin_Login.php'); // redirect to home page
 		}
 	}
 
@@ -52,7 +52,7 @@
 
 		if (count($errors) == 0) {
 			$password = md5($password); // encrypt password
-			$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+			$query = "SELECT * FROM admin WHERE username='$username' AND password='$password'";
 			$result = mysqli_query($db, $query);
 			if (mysqli_num_rows($result) == 1) {
 				// log user in

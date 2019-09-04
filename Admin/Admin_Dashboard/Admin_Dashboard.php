@@ -1,8 +1,8 @@
-<?php include('server.php');
+<?php include('../Admin_Login/server.php');
 
     // if user is not logged in, they cannot access this page
     if (empty($_SESSION['username'])) {
-        header('location: Admin_Login.php');
+        header('location: ../Admin_Login/Admin_Login.php');
     }
 
 ?>
@@ -95,13 +95,13 @@
                             <img src="img/bg-img/18.jpg" alt="">
                         </div>
                         <div class="single-blog-text text-center">
-                            <a class="blog-title" href="#">Add New Driver</a>
+                            <a class="blog-title" href="../Admin_Add_Driver/Admin_Add_Driver.php">Add New Driver</a>
                             <!-- Post Meta -->
 
                             <p>Adding New Driver</p>
                         </div>
                         <div class="blog-btn">
-                            <a href="#"><i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="../Admin_Add_Driver/Admin_Add_Driver.php"><i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -113,13 +113,13 @@
                             <img src="img/bg-img/18.jpg" alt="">
                         </div>
                         <div class="single-blog-text text-center">
-                            <a class="blog-title" href="#">View Driver</a>
+                            <a class="blog-title" href="../Admin_List_Of_Driver/Admin_List_Of_Driver.php">Edit Driver Profile</a>
                             <!-- Post Meta -->
 
-                            <p>View Profile of the Driver</p>
+                            <p>View Driver Profile</p>
                         </div>
                         <div class="blog-btn">
-                            <a href="#"><i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="../Admin_List_Of_Driver/Admin_List_Of_Driver.php"><i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>

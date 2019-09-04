@@ -1,3 +1,7 @@
+<?php include('adddriverdb.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -79,11 +83,14 @@
                 <div class="col-12 col-lg-6">
                     <div class="contact_from_area mb-100 clearfix">
                     &ensp;
+
+                    	<form method="post" action="Admin_Add_Driver.php">
                         <!-- Contact Heading -->
                         <div class="contact-heading">
                             <h4>Driver Information</h4>
                         </div>
                           &ensp;
+
 
                         <div class="contact_form">
                             <form action="mail.php" method="post">
@@ -92,36 +99,36 @@
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="name" id="Fname" placeholder="First Name" required>
+                                                <input type="text" class="form-control mb-30" name="fname" placeholder="First Name" required>
                                             </div>
                                         </div>
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="name" id="Lname" placeholder="Last Name" required>
+                                                <input type="text" class="form-control mb-30" name="lname"  placeholder="Last Name" required>
                                             </div>
                                         </div>
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="email" class="form-control mb-30" name="email" id="email" placeholder="E-mail" required>
+                                                <input type="email" class="form-control mb-30" name="email"  placeholder="E-mail" required>
                                             </div>
                                         </div>
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="subject" id="subject" placeholder="Phone Number">
+                                                <input class="form-control" type="tel" name="phone_no" maxlength="7" placeholder="Format: 1234567" autocomplete="off">
                                             </div>
                                         </div>
                                         <!-- Form Group -->
                                         <div class="col-12">
                                             <div class="form-group">
-                                              <input type="text" class="form-control mb-30" name="subject" id="subject" placeholder="Boat Reg No.">
+                                              <input class="form-control" type="text" name="reg_no" maxlength="7" placeholder="Format: BAR1234" autocomplete="off">
                                             </div>
                                         </div>
                                         <!-- Button -->
                                         <div class="col-12">
-                                            <button type="submit" class="btn confer-btn">Submit<i class="zmdi zmdi-long-arrow-right"></i></button>
+                                            <button type="submit" name="register" class="btn confer-btn">Submit<i class="zmdi zmdi-long-arrow-right"></i></button>
                                         </div>
                                     </div>
                                 </div>
