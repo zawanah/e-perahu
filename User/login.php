@@ -41,18 +41,14 @@
 					<?php include('errors.php'); ?>
 					<div class="wrap-input100 validate-input m-b-16">
 						<input class="input100" type="text" name="username" placeholder="Username" value="<?php if(isset($_COOKIE['username'])) echo $_COOKIE['username']; ?>" >
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<span class="lnr lnr-envelope"></span>
-						</span>
+						
+						
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-16">
 						<input class="input100" type="password" name="password" placeholder="Password">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<span class="lnr lnr-lock"></span>
-						</span>
+						
+						
 					</div>
 
 					<div class="contact100-form-checkbox m-l-4">

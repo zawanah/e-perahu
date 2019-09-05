@@ -44,33 +44,25 @@
 					<div class="wrap-input100 validate-input m-b-16">
 						<input type="username" name="username" class="input100" placeholder="Username" value="<?php echo $username; ?>" autocomplete="off">
 						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<span class="lnr lnr-lock"></span>
-						</span>
+						
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-16">
 						<input class="input100" type="email" name="email" placeholder="Email" value="<?php echo $email; ?>"  autocomplete="off">
 						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<span class="lnr lnr-envelope"></span>
-						</span>
+						
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-16">
 						<input class="input100" type="password" name="password_1" placeholder="Password">
 						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<span class="lnr lnr-envelope"></span>
-						</span>
+						
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-16">
 						<input class="input100" type="password" name="password_2" placeholder="Confirm password">
 						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<span class="lnr lnr-lock"></span>
-						</span>
+						
 					</div>
 
 

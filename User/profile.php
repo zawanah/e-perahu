@@ -112,11 +112,11 @@
                             </div>
                             <div class="media-body">
                                 <div class="personal_text">
-                                    <h3>Donald McKinney</h3>
+                                    <h3><?php echo $_SESSION['username']; ?></h3>
                                     <ul class="list basic_info">
                                         <li><i class="lnr lnr-calendar-full"></i> 31st December, 1992</a></li>
                                         <li><i class="lnr lnr-phone-handset"></i> 44 (012) 6954 783</a></li>
-                                        <li><i class="lnr lnr-envelope"></i> businessplan@donald</a></li>
+                                        <li><p><?php echo $_SESSION['email']; ?></p></li>
                                         <li><i class="lnr lnr-home"></i> Santa monica bullevard</a></li>
                                         <!-- Button -->
                                         <div class="col-12">

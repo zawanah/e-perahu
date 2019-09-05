@@ -78,6 +78,7 @@ setcookie("username", '',$cookie_time_fromOffset );
 
 				// log user in
 				$_SESSION['username'] = $username;
+				$_SESSION['email'] = $email;
 				$_SESSION['success'] = "You are now logged in";
 
 
