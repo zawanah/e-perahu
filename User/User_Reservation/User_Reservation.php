@@ -19,7 +19,7 @@
 	<!-- Bootstrap -->
 	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
 
-	<!-- Custom stlylesheet -->
+	<!-- Custom stlylesheet for Reservation form -->
 	<link type="text/css" rel="stylesheet" href="css/style.css" />
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -28,6 +28,10 @@
 	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
+
+	<!-- Stylesheet for phone number validation -->
+	<link rel="stylesheet" href="build/css/intlTelInput.css">
+  <link rel="stylesheet" href="build/css/demo.css">
 
 </head>
 
@@ -57,7 +61,7 @@
 							</div>
 							<div class="form-group">
 								<span class="form-label">Phone</span>
-								<input class="form-control" type="tel" name="phone" maxlength="7" placeholder="Format: 1234567">
+								<input id="phone" class="form-control" type="tel" name="phone" placeholder="[+]Code-Number">
 							</div>
 							<div class="row">
 								<div class="col-sm-6">
@@ -193,6 +197,33 @@
 			</div>
 		</div>
 	</div>
+	<script src="build/js/intlTelInput.js"></script>
+	<script>
+		var input = document.querySelector("#phone");
+		window.intlTelInput(input, {
+			// allowDropdown: false,
+			// autoHideDialCode: false,
+			// autoPlaceholder: "off",
+			// dropdownContainer: document.body,
+			// excludeCountries: ["us"],
+			// formatOnDisplay: false,
+			// geoIpLookup: function(callback) {
+			//   $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+			//     var countryCode = (resp && resp.country) ? resp.country : "";
+			//     callback(countryCode);
+			//   });
+			// },
+			// hiddenInput: "full_number",
+			// initialCountry: "auto",
+			// localizedCountries: { 'de': 'Deutschland' },
+			// nationalMode: false,
+			// onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+			// placeholderNumberType: "MOBILE",
+			// preferredCountries: ['cn', 'jp'],
+			// separateDialCode: true,
+			utilsScript: "build/js/utils.js",
+		});
+	</script>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
 </html>
