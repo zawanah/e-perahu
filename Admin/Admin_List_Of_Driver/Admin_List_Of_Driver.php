@@ -83,7 +83,9 @@
           <div class="container">
             &nbsp;
 <!--table start -->
+
             <table class="table table-light table-hover">
+
               <thead>
                 <tr>
                   <th scope="col">ID</th>
@@ -94,6 +96,7 @@
                 </tr>
               </thead>
               <tbody>
+
                 <tr>
                   <td>01</td>
                   <td>Zulhelmi</td>
@@ -124,15 +127,7 @@
                     <button type="button" class="btn btn-outline-danger">Delete</button>
                 </tr>
 
-                <tr>
-                  <td>03</td>
-                  <td>Azizul</td>
-                  <td>Azizul@gmail.com</td>
-
-                  <td class="text-right">
-                    <button type="button" class="btn btn-outline-primary">Edit</button>
-                    <button type="button" class="btn btn-outline-danger">Delete</button>
-                </tr>
+            
 
               </tbody>
             </table>

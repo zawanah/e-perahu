@@ -92,16 +92,16 @@
                     <div class="single-blog-area style-2 wow fadeInUp" data-wow-delay="300ms">
                         <!-- Single blog Thumb -->
                         <div class="single-blog-thumb">
-                            <img src="img/bg-img/18.jpg" alt="">
+                            <img src="img/d_i.png" alt="Driver Icon">
                         </div>
                         <div class="single-blog-text text-center">
-                            <a class="blog-title" href="../Admin_Add_Driver/Admin_Add_Driver.php">Add New Driver</a>
+                            <a class="blog-title" href="../Admin_Add_Driver/Admin_Add_Driver.php">Drivers List</a>
                             <!-- Post Meta -->
 
-                            <p>Adding New Driver</p>
+                            <p>View Drivers List</p>
                         </div>
                         <div class="blog-btn">
-                            <a href="../Admin_Add_Driver/Admin_Add_Driver.php"><i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="../Admin_List_Of_Driver/Admin_List_Of_Driver.php"><i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -110,13 +110,13 @@
                     <div class="single-blog-area style-2 wow fadeInUp" data-wow-delay="300ms">
                         <!-- Single blog Thumb -->
                         <div class="single-blog-thumb">
-                            <img src="img/bg-img/18.jpg" alt="">
+                            <img src="img/user_icon.png" alt="User Icon">
                         </div>
                         <div class="single-blog-text text-center">
-                            <a class="blog-title" href="../Admin_List_Of_Driver/Admin_List_Of_Driver.php">Edit Driver Profile</a>
+                            <a class="blog-title" href="../Admin_List_Of_Driver/Admin_List_Of_Driver.php">Users List</a>
                             <!-- Post Meta -->
 
-                            <p>View Driver Profile</p>
+                            <p>View Users List</p>
                         </div>
                         <div class="blog-btn">
                             <a href="../Admin_List_Of_Driver/Admin_List_Of_Driver.php"><i class="zmdi zmdi-long-arrow-right"></i></a>
@@ -129,13 +129,13 @@
                     <div class="single-blog-area style-2 wow fadeInUp" data-wow-delay="300ms">
                         <!-- Single blog Thumb -->
                         <div class="single-blog-thumb">
-                            <img src="img/bg-img/18.jpg" alt="">
+                            <img src="img/s_p.png" alt="Promotion Icon">
                         </div>
                         <div class="single-blog-text text-center">
-                            <a class="blog-title" href="#">Delete Driver</a>
+                            <a class="blog-title" href="#">Promotion Page</a>
                             <!-- Post Meta -->
 
-                            <p>Delete the driver information</p>
+                            <p>View Promotion </p>
                         </div>
                         <div class="blog-btn">
                             <a href="#"><i class="zmdi zmdi-long-arrow-right"></i></a>
