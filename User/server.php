@@ -2,6 +2,7 @@
 	session_start();
 	$username = "";
 	$email = "";
+	
 	$errors = array();
 
 	$db = mysqli_connect('localhost', 'root', '', 'registration');
@@ -11,6 +12,8 @@
 		$email = mysqli_real_escape_string($db, $_POST['email']);
 		$password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
 		$password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
+
+
 
 		// ensure that form fields are filled properly
 		if (empty($username)) {
@@ -24,6 +27,13 @@
 		}
 		if ($password_1 != $password_2) {
 			array_push($errors, "The two passwords do not match");
+		}
+
+		$userquery = "SELECT * FROM users WHERE username='$username'";
+		$result = mysqli_query($db, $userquery);
+
+		if (mysqli_num_rows($result) == 1) {
+			array_push($errors, "The username has already been taken");
 		}
 
 		// if there are no errors, save user to database
@@ -41,6 +51,7 @@
 	if (isset($_POST['login'])) {
 		$username = mysqli_real_escape_string($db, $_POST['username']);
 		$password = mysqli_real_escape_string($db, $_POST['password']);
+		$email = mysqli_real_escape_string($db, $_POST['email']);
 
 		// ensure that form fields are filled properly
 		if (empty($username)) {
@@ -78,7 +89,6 @@ setcookie("username", '',$cookie_time_fromOffset );
 
 				// log user in
 				$_SESSION['username'] = $username;
-				$_SESSION['email'] = $email;
 				$_SESSION['success'] = "You are now logged in";
 
 

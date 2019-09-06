@@ -37,7 +37,7 @@
                 <nav class="classy-navbar justify-content-between" id="conferNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="./indexuser.html"><img src="./img/core-img/logo.png" alt=""></a>
+                    <a class="nav-brand" href="./indexuser.php"><img src="./img/core-img/logo.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -53,21 +53,21 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul id="nav">
-                                <li class="active"><a href="indexuser.html">Home</a></li>
+                                <li class="active"><a href="indexuser.php">Home</a></li>
                                 <li><a href="#">Information</a>
                                     <ul class="dropdown">
-                                        <li><a href="profile.html">- My Profile</a></li>
-                                        <li><a href="index.html">- Schedule</a></li>
-                                        <li><a href="about.html">- Ticket Price</a></li>
-                                        <li><a href="speakers.html">- driver</a></li>
-                                        <li><a href="schedule.html">- promotion</a></li>
+                                        <li><a href="profile.php">- My Profile</a></li>
+                                        <li><a href="index.php">- Schedule</a></li>
+                                        <li><a href="about.php">- Ticket Price</a></li>
+                                        <li><a href="speakers.php">- driver</a></li>
+                                        <li><a href="schedule.php">- promotion</a></li>
 
 
                                     </ul>
                                 </li>
-                                <li><a href="speakers.html">Reservation</a></li>
-                                <li><a href="blog.html">About Us</a></li>
-                                <li><a href="contact.html">Feedback</a></li>
+                                <li><a href="speakers.php">Reservation</a></li>
+                                <li><a href="blog.php">About Us</a></li>
+                                <li><a href="contact.php">Feedback</a></li>
                             </ul>
 
                             <!-- Logout Button -->
@@ -90,7 +90,7 @@
                         <h2 class="page-title">My Profile</h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">My Profile</li>
                             </ol>
                         </nav>
@@ -116,7 +116,7 @@
                                     <ul class="list basic_info">
                                         <li><i class="lnr lnr-calendar-full"></i> 31st December, 1992</a></li>
                                         <li><i class="lnr lnr-phone-handset"></i> 44 (012) 6954 783</a></li>
-                                        <li><p><?php echo $_SESSION['email']; ?></p></li>
+                                        <li></li>
                                         <li><i class="lnr lnr-home"></i> Santa monica bullevard</a></li>
                                         <!-- Button -->
                                         <div class="col-12">
