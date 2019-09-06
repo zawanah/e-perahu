@@ -26,6 +26,13 @@
 			array_push($errors, "The two passwords do not match");
 		}
 
+		$userquery = "SELECT * FROM users WHERE username='$username'";
+		$result = mysqli_query($db, $userquery);
+
+		if (mysqli_num_rows($result) == 1) {
+			array_push($errors, "The username has already been taken");
+		}
+
 		// if there are no errors, save user to database
 		if (count($errors) == 0) {
 			$password = md5($password_1); // encrypt password
