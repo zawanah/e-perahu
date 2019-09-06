@@ -65,6 +65,15 @@
 						</button>
 					</div>
 
+					<div class="text-center w-full p-t-115">
+						<span class="txt1">
+							Haven't register?
+						</span>
+
+						<a class="txt1 bo1 hov1" href="Admin_Signup.php">
+							Click here
+						</a>
+					</div>
 
 				</form>
 			</div>
