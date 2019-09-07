@@ -95,10 +95,10 @@
                         <!-- Welcome Text -->
                         <div class="col-12">
                             <div class="welcome-text text-right">
-                                <h2 data-animation="fadeInUp" data-delay="300ms">Science <br>Conference</h2>
-                                <h6 data-animation="fadeInUp" data-delay="500ms">Shangri-La Hotel, Bangkok, Bangkok, Thailand</h6>
+                                <h2 data-animation="fadeInUp" data-delay="300ms">E-Perahu <br>Promotion</h2>
+                                <h6 data-animation="fadeInUp" data-delay="500ms">Limited Time!</h6>
                                 <div class="hero-btn-group" data-animation="fadeInUp" data-delay="700ms">
-                                    <a href="#" class="btn confer-btn">More Information <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                    <a href="schedule.php" class="btn confer-btn">More Information <i class="zmdi zmdi-long-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>

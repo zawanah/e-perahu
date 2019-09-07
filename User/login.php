@@ -40,7 +40,7 @@
 					<!-- display validation errors here -->
 					<?php include('errors.php'); ?>
 					<div class="wrap-input100 validate-input m-b-16">
-						<input class="input100" type="text" name="username" placeholder="Username" value="<?php if(isset($_COOKIE['username'])) echo $_COOKIE['username']; ?>" >
+						<input class="input100" type="text" name="username" placeholder="Username" value="<?php if(isset($_COOKIE['username'])) echo $_COOKIE['username']; ?>" autocomplete="off" >
 						<span class="focus-input100"></span>
 						
 					</div>
