@@ -19,7 +19,9 @@
 		if (empty($username)) {
 			array_push($errors, "Username is required");
 		}
-		
+		if (strlen($username) > 8){
+   			array_push($errors, "Username must be less than 8 characters");
+   		}
 		if (empty($email)) {
 			array_push($errors, "Email is required");
 		}
