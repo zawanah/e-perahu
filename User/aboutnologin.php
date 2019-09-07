@@ -59,14 +59,14 @@
                                     <ul class="dropdown">
                                         <li><a href="profile.php">- My Profile</a></li>
                                         <li><a href="about.php">- Schedule</a></li>
-                                        <li><a href="speakers.php">- Ticket Price</a></li>
+                                        <li><a href="aboutnologin.php">- Ticket Price</a></li>
                                         <li><a href="tickets.php">- Promotion</a></li>
                                         
                                         
                                         
                                     </ul>
                                 </li>
-                                <li><a href="speakers.php">Reservation</a></li>
+                                <li><a href="login.php">Reservation</a></li>
                                 <li><a href="blog.php">About Us</a></li>
                                 <li><a href="contact.php">Feedback</a></li>
                             </ul>
