@@ -143,10 +143,10 @@
                 <!-- About Content -->
                 <div class="col-12 col-md-6">
                     <div class="about-content-text mb-80">
-                        <h6 class="wow fadeInUp" data-wow-delay="300ms">About Conference</h6>
-                        <h3 class="wow fadeInUp" data-wow-delay="300ms">Welcome to the Project Management</h3>
-                        <p class="wow fadeInUp" data-wow-delay="300ms">The Project Management is a platform to learn expert techniques for building successful project teams, creating efficient plans and implementing effective tracking measures to ensure your projects come in on deadline and on budget. In one fast-paced, well-designed day, we’ll cover all the essential elements of project management.</p>
-                        <a href="#" class="btn confer-btn mt-50 wow fadeInUp" data-wow-delay="300ms">Interested <i class="zmdi zmdi-long-arrow-right"></i></a>
+                        <h6 class="wow fadeInUp" data-wow-delay="300ms">About E-Perahu</h6>
+                        <h3 class="wow fadeInUp" data-wow-delay="300ms">Welcome to E-Perahu!</h3>
+                        <p class="wow fadeInUp" data-wow-delay="300ms">The E-Perahu is a website based product</p>
+                        <a href="blog.php" class="btn confer-btn mt-50 wow fadeInUp" data-wow-delay="300ms">More information <i class="zmdi zmdi-long-arrow-right"></i></a>
                     </div>
                 </div>
 
