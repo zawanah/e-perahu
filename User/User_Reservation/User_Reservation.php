@@ -61,7 +61,7 @@
 								</div>
 								<div class="form-group">
 									<span class="form-label">Phone</span>
-									<input id="phone" class="form-control" type="tel" name="phone" placeholder="[+]Code-Number">
+									<input id="phone" class="form-control" type="tel" name="phone" placeholder="Number">
 									<script src="build/js/intlTelInput.js"></script>
 									<script>
 									var input = document.querySelector("#phone");

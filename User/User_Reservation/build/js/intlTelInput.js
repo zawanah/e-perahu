@@ -97,8 +97,8 @@
             onlyCountries: [],
             // number type to use for placeholders
             placeholderNumberType: "MOBILE",
-            // the countries at the top of the list. defaults to united states and united kingdom
-            preferredCountries: [ "us" , "gb" ],
+            // the countries at the top of the list. defaults to brunei
+            preferredCountries: [ "bn"],
             // display the country dial code next to the selected flag so it's not part of the typed number
             separateDialCode: false,
             // specify the path to the libphonenumber script to enable validation/formatting
@@ -448,8 +448,8 @@
                             this._setFlag(initialCountry.toLowerCase());
                         } else {
                             if (dialCode && isRegionlessNanp) {
-                                // has intl dial code, is regionless nanp, and no initialCountry, so default to US
-                                this._setFlag("us");
+                                // has intl dial code, is regionless nanp, and no initialCountry, so default to BN
+                                this._setFlag("bn");
                             } else {
                                 // no dial code and no initialCountry, so default to first in list
                                 this.defaultCountry = this.preferredCountries.length ? this.preferredCountries[0].iso2 : this.countries[0].iso2;
