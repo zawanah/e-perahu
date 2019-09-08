@@ -1,3 +1,12 @@
+<?php include('../Admin_Login/server.php');
+
+    // if user is not logged in, they cannot access this page
+    if (empty($_SESSION['username'])) {
+        header('location: ../Admin_Login/Admin_Login.php');
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,7 +61,7 @@
 
 
                             <!-- Get Tickets Button -->
-                            <a href="#" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="Admin_list_Of_Driver.php?logout='1'" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                         <!-- Nav End -->
                     </div>
@@ -83,51 +92,50 @@
           <div class="container">
             &nbsp;
 <!--table start -->
-
             <table class="table table-light table-hover">
-
               <thead>
                 <tr>
                   <th scope="col">ID</th>
-                  <th scope="col">Name</th>
-                  <th scope="col">E-mail</th>
-                  <th class="text-right">ACTIONS</th>
+                  <th scope="col">First Name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Boat Reg No</th>
+                  <th class="text-right">Edit</th>
+                  <th class="text-right">Delete</th>
+
 
                 </tr>
               </thead>
               <tbody>
 
-                <tr>
-                  <td>01</td>
-                  <td>Zulhelmi</td>
-                  <td>Zulhelmi@gmail.com</td>
+                  <?php
+                  $conn = mysqli_connect("localhost", "root", "", "registration");
+                  // Check connection
+                  if ($conn->connect_error) {
+                  die("Connection failed: " . $conn->connect_error);
+                  }
+                  $sql = "SELECT id, fname, email, reg_no FROM driver";
+                  $result = $conn->query($sql);
+                  if ($result->num_rows > 0) {
+                  // output data of each row
+                  while($row = $result->fetch_assoc()) {
 
-                  <td class="text-right">
-                    <button type="button" class="btn btn-outline-primary">Edit</button>
-                    <button type="button" class="btn btn-outline-danger">Delete</button>
-                </tr>
 
-                <tr>
-                  <td>02</td>
-                  <td>Hazmi</td>
-                  <td>Hazmi@gmail.com</td>
+                  echo "<tr>
 
-                  <td class="text-right">
-                    <button type="button" class="btn btn-outline-primary">Edit</button>
-                    <button type="button" class="btn btn-outline-danger">Delete</button>
-                </tr>
+                    <td>". $row["id"]. "</td>
+                   <td>" . $row["fname"] . "</td>
+                   <td>". $row["email"]. "</td>
+                   <td>". $row["reg_no"]. "</td>
 
-                <tr>
-                  <td>03</td>
-                  <td>Azizul</td>
-                  <td>Azizul@gmail.com</td>
 
-                  <td class="text-right">
-                    <button type="button" class="btn btn-outline-primary">Edit</button>
-                    <button type="button" class="btn btn-outline-danger">Delete</button>
-                </tr>
+                   </tr>"  ;
 
-            
+
+                  }
+                  echo "</table>";
+                  } else { echo "0 results"; }
+                  $conn->close();
+                  ?>
 
               </tbody>
             </table>

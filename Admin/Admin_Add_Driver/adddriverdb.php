@@ -25,15 +25,12 @@
 		if (empty($email)) {
 			array_push($errors, "email is required");
 		}
-		// if (empty($debitcvv)) {
-		// 	array_push($errors, "CVV is required");
-		// }
+
 		if (empty($reg_no)) {
 			array_push($errors, "Boat Registered no. is required");
 		}
-		// if (empty($expyear)) {
-		// 	array_push($errors, "Expiry Year is required");
-		// }
+
+
 
 		if (count($errors) == 0) {
 			$sql = "INSERT INTO driver (fname, lname, email, phone_no, reg_no )

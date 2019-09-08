@@ -1,4 +1,5 @@
-<?php include('adddriverdb.php');
+<?php
+include('adddriverdb.php');
 
 ?>
 
@@ -52,7 +53,7 @@
                         </div>
 
                             <!-- Get Tickets Button -->
-                            <a href="#" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">login <i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="Admin_Add_Driver.php?logout='1'" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                         <!-- Nav End -->
                     </div>
@@ -117,13 +118,13 @@
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input class="form-control" type="tel" name="phone_no" maxlength="7" placeholder="Format: 1234567" autocomplete="off">
+                                                <input class="form-control" type="tel" name="phone_no" maxlength="11" placeholder="Phone No: +6731234567" autocomplete="off">
                                             </div>
                                         </div>
                                         <!-- Form Group -->
                                         <div class="col-12">
                                             <div class="form-group">
-                                              <input class="form-control" type="text" name="reg_no" maxlength="7" placeholder="Format: BAR1234" autocomplete="off">
+                                              <input class="form-control" type="text" name="reg_no" maxlength="7" placeholder="Reg No: BAR1234" autocomplete="off">
                                             </div>
                                         </div>
                                         <!-- Button -->

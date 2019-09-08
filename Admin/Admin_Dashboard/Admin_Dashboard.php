@@ -95,13 +95,13 @@
                             <img src="img/d_i.png" alt="Driver Icon">
                         </div>
                         <div class="single-blog-text text-center">
-                            <a class="blog-title" href="../Admin_Add_Driver/Admin_Add_Driver.php">Drivers List</a>
+                            <a class="blog-title" href="../Admin_Driver_Option/Admin_Driver_Option.php">Drivers List</a>
                             <!-- Post Meta -->
 
                             <p>View Drivers List</p>
                         </div>
                         <div class="blog-btn">
-                            <a href="../Admin_List_Of_Driver/Admin_List_Of_Driver.php"><i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="../Admin_Driver_Option/Admin_Driver_Option.php"><i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
