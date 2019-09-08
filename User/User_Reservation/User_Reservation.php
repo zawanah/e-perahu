@@ -32,6 +32,18 @@
 		<!-- for phone number validation -->
 		<link rel="stylesheet" href="build/css/intlTelInput.css">
 
+		<!-- For datepicker -->
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<link rel="stylesheet" href="/resources/demos/style.css">
+
+		<script src="build/js/jquery-1.12.4.js"></script>
+		<script src="build/js/jquery-ui.js"></script>
+		<script>
+		$( function() {
+			$( "#datepicker" ).datepicker({ minDate: 0 });
+		} );
+		</script>
+
 		<!-- for card validation -->
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -42,21 +54,10 @@
 		<script src="build/js/jquery.payform.min.js" charset="utf-8"></script>
 		<script src="build/js/script.js"></script>
 
-		<!-- For datepicker -->
-		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-		<link rel="stylesheet" href="/resources/demos/style.css">
-
-		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-		<script>
-		$( function() {
-			$( "#datepicker" ).datepicker({ minDate: 0 });
-		} );
-		</script>
-
 	</head>
 
 	<body>
+
 		<div id="booking" class="section">
 			<div class="section-center">
 				<div class="container">
@@ -200,7 +201,7 @@
 									<div class="col-sm-6">
 										<div class="form-group">
 											<span class="form-label">Debit Card</span>
-											<input id="cardNumber" class="form-control" type="text" name="debitnumber" autocomplete="off" maxlength="16" placeholder="Card Number">
+											<input id="cardNumber" class="form-control" type="text" name="debitnumber" autocomplete="off" placeholder="Card Number">
 										</div>
 									</div>
 									<br>
@@ -216,7 +217,7 @@
 									<div class="col-sm-6">
 										<div class="form-group">
 											<span class="form-label"><br></span>
-											<input id="cvv" class="form-control" type="text" name="debitcvv" autocomplete="off" maxlength="3" placeholder="CVV">
+											<input id="cvv" class="form-control" type="text" name="debitcvv" autocomplete="off" placeholder="CVV">
 										</div>
 									</div>
 								</div>
