@@ -11,7 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-		<title>Booking Form HTML Template</title>
+		<title>Booking Form</title>
 
 		<!-- Google font -->
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
@@ -32,6 +32,16 @@
 		<!-- Stylesheet for phone number validation -->
 		<link rel="stylesheet" href="build/css/intlTelInput.css">
 		<link rel="stylesheet" href="build/css/demo.css">
+
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<link rel="stylesheet" href="/resources/demos/style.css">
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script>
+		$( function() {
+			$( "#datepicker" ).datepicker({ minDate: 0 });
+		} );
+		</script>
 
 	</head>
 
@@ -94,13 +104,23 @@
 									<div class="col-sm-6">
 										<div class="form-group">
 											<span class="form-label">Pickup</span>
-											<input class="form-control" type="text" name="pickup" placeholder="Enter Location">
+											<select class="form-control" type="text" name="pickup" placeholder="Enter Location">
+												<option>Jetty 1</option>
+												<option>Jetty 2</option>
+												<option>Jetty 3</option>
+											</select>
+											<span class="select-arrow"></span>
 										</div>
 									</div>
 									<div class="col-sm-6">
 										<div class="form-group">
 											<span class="form-label">Destination</span>
-											<input class="form-control" type="text" name="destination" placeholder="Enter Location">
+											<select class="form-control" type="text" name="destination" placeholder="Enter Location">
+												<option>Jetty 1</option>
+												<option>Jetty 2</option>
+												<option>Jetty 3</option>
+											</select>
+											<span class="select-arrow"></span>
 										</div>
 									</div>
 								</div>
@@ -108,7 +128,7 @@
 									<div class="col-sm-5">
 										<div class="form-group">
 											<span class="form-label">Pickup Date</span>
-											<input class="form-control" type="date" name="pickupdate" required>
+											<input id="datepicker" class="form-control" type="text" name="pickupdate" required>
 										</div>
 									</div>
 									<div class="col-sm-7">
