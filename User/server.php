@@ -58,7 +58,6 @@
 	if (isset($_POST['login'])) {
 		$username = mysqli_real_escape_string($db, $_POST['username']);
 		$password = mysqli_real_escape_string($db, $_POST['password']);
-		$email = mysqli_real_escape_string($db, $_POST['email']);
 
 		// ensure that form fields are filled properly
 		if (empty($username)) {
@@ -74,47 +73,47 @@
 			$result = mysqli_query($db, $query);
 			if (mysqli_num_rows($result) == 1) {
 
-				//save this user and pass as cookie if remeber checked start
- if (isset($_REQUEST['remember']))
-   $escapedRemember = mysqli_real_escape_string($db,$_REQUEST['remember']);
+		//save this user and pass as cookie if remeber checked start
+ 		if (isset($_REQUEST['remember']))
+   		$escapedRemember = mysqli_real_escape_string($db,$_REQUEST['remember']);
 
- $cookie_time = 60 * 60 * 24 * 30; // 30 days
-  $cookie_time_Onset=$cookie_time+ time();
-  if (isset($escapedRemember)) {
-    /*
-     * Set Cookie from here for one hour
-     * */
-    setcookie("username", $username, $cookie_time_Onset);  
+ 		$cookie_time = 60 * 60 * 24 * 30; // 30 days
+ 	 	$cookie_time_Onset=$cookie_time+ time();
+  		if (isset($escapedRemember)) {
+    	/*
+     	* Set Cookie from here for one hour
+     	* */
+    	setcookie("username", $username, $cookie_time_Onset);  
 
-  } else {
+  		} else {
 
-      $cookie_time_fromOffset=time() -$cookie_time;
-setcookie("username", '',$cookie_time_fromOffset );  
+     	$cookie_time_fromOffset=time() -$cookie_time;
+		setcookie("username", '',$cookie_time_fromOffset );  
 
-  }
-  //save this user and pass as cookie if remember checked end
+  		}
+  		//save this user and pass as cookie if remember checked end
 
-				// log user in
-				$_SESSION['username'] = $username;
-				$_SESSION['success'] = "You are now logged in";
+		// log user in
+		$_SESSION['username'] = $username;
+		$_SESSION['success'] = "You are now logged in";
 
 
 
-				header('location: indexuser.php'); // redirect to home page
-			}else{
-				array_push($errors, "Wrong username/password combination");
-			}
+		header('location: indexuser.php'); // redirect to home page
+		}else{
+		array_push($errors, "Wrong username/password combination");
 		}
-	}
+		}
+		}
   
 
-	// logout
-	if (isset($_GET['logout'])) {
+		// logout
+		if (isset($_GET['logout'])) {
 		session_destroy();
 		unset($_SESSION['username']);
 		header('location: login.php');
 
 
-	}
+		}
 
 ?>
