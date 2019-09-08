@@ -1,4 +1,6 @@
-<?php include('server.php'); ?>
+<?php include('../Driver_Login/server.php');
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,65 +26,71 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
+
 </head>
 <body>
 
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
-				<form method="post" action="driver_Login.php">
+				<form method="post" action="signup.php">
+
 					<span class="login100-form-title p-b-55">
-						Login
+						Sign up
 					</span>
 
 					<!-- display validation errors here -->
-					<?php include('errors.php'); ?>
+					<?php include('../Driver_Login/errors.php'); ?>
+
 					<div class="wrap-input100 validate-input m-b-16">
-						<input class="input100" type="text" name="username" placeholder="Username">
+						<input type="username" name="username" class="input100" placeholder="Username" value="<?php echo $username; ?>" autocomplete="off">
 						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<span class="lnr lnr-envelope"></span>
-						</span>
+						
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-16">
-						<input class="input100" type="password" name="password" placeholder="Password">
+						<input class="input100" type="email" name="email" placeholder="Email" value="<?php echo $email; ?>"  autocomplete="off">
 						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<span class="lnr lnr-lock"></span>
-						</span>
+						
 					</div>
 
-					<div class="contact100-form-checkbox m-l-4">
-						<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-						<label class="label-checkbox100" for="ckb1">
-							Remember me
-						</label>
+					<div class="wrap-input100 validate-input m-b-16">
+						<input class="input100" type="password" name="password_1" placeholder="Password">
+						<span class="focus-input100"></span>
+						
 					</div>
+
+					<div class="wrap-input100 validate-input m-b-16">
+						<input class="input100" type="password" name="password_2" placeholder="Confirm password">
+						<span class="focus-input100"></span>
+						
+					</div>
+
 
 					<div class="container-login100-form-btn p-t-25">
-						<button type="submit" name="login" class="login100-form-btn">
-							Login
+						<button type="submit" name="register" class="login100-form-btn">Sign up
 						</button>
 					</div>
 
 
 
-		
+
 
 					<div class="text-center w-full p-t-115">
 						<span class="txt1">
-							Not a member?
+							Already a member?
 						</span>
 
-						<a class="txt1 bo1 hov1" href="../Driver_SignUp/signup.php">
-							Sign up now
+						<a class="txt1 bo1 hov1" href="../Driver_Login/Driver_Login.php">
+							Log in now
 						</a>
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
+
+
 
 
 <!--===============================================================================================-->
@@ -93,7 +101,7 @@
 <!--===============================================================================================-->
 	<script src="vendor/select2/select2.min.js"></script>
 <!--===============================================================================================-->
-	<script src="js/main.js"></script>
+	<!-- <script src="js/main.js"></script> -->
 
 </body>
 </html>

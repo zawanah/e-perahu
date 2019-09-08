@@ -1,9 +1,9 @@
 <?php include('../Driver_Login/server.php');
 
-    // if user is not logged in, they cannot access this page
-    if (empty($_SESSION['username'])) {
-        header('location: ../Driver_Login/Driver_Login.php');
-    }
+    // // if user is not logged in, they cannot access this page
+    // if (empty($_SESSION['username'])) {
+    //     header('location: ../Driver_Login/Driver_Login.php');
+    // }
 
 ?>
 
@@ -59,7 +59,7 @@
                         <!-- Nav Start -->
                         <div class="classynav">
     
-                            <!-- Get Tickets Button -->
+                            <!-- Logout Button -->
                             <a href="#" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                         <!-- Nav End -->
@@ -71,7 +71,7 @@
     <!-- Header Area End -->
 
     <!-- Breadcrumb Area Start -->
-    <section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url(../Admin_Dashboard/img/pt1.jpg);">
+    <section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url(img/BoatDriver.jpg);">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
@@ -97,13 +97,13 @@
                             <img src="img/teamwork.png" alt="">
                         </div>
                         <div class="single-blog-text text-center">
-                            <a class="blog-title" href="#">Customer List</a>
+                            <a class="blog-title" href="../Driver_ListOfCustomer/Driver_ListOfCustomer.php">Customer List</a>
                             <!-- Post Meta -->
 
                             <p>List of customer reservation</p>
                         </div>
                         <div class="blog-btn">
-                            <a href="/xampp/htdocs/e-perahu/Driver/Driver_ListOfCustomer/Driver_ListOfCustomer.html"><i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="../Driver_ListOfCustomer/Driver_ListOfCustomer.php"><i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -115,13 +115,13 @@
                             <img src="img/calendar.png" alt="">
                         </div>
                         <div class="single-blog-text text-center">
-                            <a class="blog-title" href="C:/xampp/htdocs/e-perahu/Driver/Driver_StatusPage/Driver_StatusPage.html">Driver Status</a>
+                            <a class="blog-title" href="../Driver_StatusPage/Driver_StatusPage.php">Driver Status</a>
                             <!-- Post Meta -->
 
                             <p>Driver availability for service</p>
                         </div>
                         <div class="blog-btn">
-                            <a href="C:/xampp/htdocs/e-perahu/Driver/Driver_StatusPage/Driver_StatusPage.html"><i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="../Driver_StatusPage/Driver_StatusPage.php"><i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -134,13 +134,13 @@
                             <img src="img/good-review.png" alt="">
                         </div>
                         <div class="single-blog-text text-center">
-                            <a class="blog-title" href="C:/xampp/htdocs/e-perahu/Driver/Driver_Feedback/Driver_Feedback.html">View Feedback</a>
+                            <a class="blog-title" href="../Driver_Feedback/Driver_Feedback.php">View Feedback</a>
                             <!-- Post Meta -->
 
                             <p>Viewing customer feedback</p>
                         </div>
                         <div class="blog-btn">
-                            <a href="C:/xampp/htdocs/e-perahu/Driver/Driver_Feedback/Driver_Feedback.html"><i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="../Driver_Feedback/Driver_Feedback.php"><i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -161,7 +161,7 @@
                     <div class="col-12 col-sm-6 col-lg-3">
                         <div class="single-footer-widget mb-60">
                             <!-- Footer Logo -->
-                            <a href="#" class="footer-logo"><img src="img/core-img/logo.png" alt=""></a>
+                            <a href="Driver_dashboard.php" class="footer-logo"><img src="img/core-img/logo.png" alt=""></a>
 
 
                             <!-- Widget Title -->
