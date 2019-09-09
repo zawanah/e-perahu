@@ -114,7 +114,7 @@
                   if ($conn->connect_error) {
                   die("Connection failed: " . $conn->connect_error);
                   }
-                  $sql = "SELECT id, fname, email, reg_no FROM drivers";
+                  $sql = "SELECT id, fname, email, reg_no FROM driver";
                   $result = $conn->query($sql);
                   if ($result->num_rows > 0) {
                   // output data of each row
@@ -128,7 +128,7 @@
                    <td>". $row["email"]. "</td>
                    <td>". $row["reg_no"]. "</td>
 
-
+                   <td><button type='button' class='btn btn-primary'>Primary</button></td>
                    <td><button type='submit' name='edit'>Edit</button></td>
                    <td><button type='submit' name='delete'>Delete</button></td>
 
