@@ -128,7 +128,7 @@
                    <td>". $row["email"]. "</td>
                    <td>". $row["reg_no"]. "</td>
 
-
+                   <td><button type='button' class='btn btn-primary'>Primary</button></td>
                    <td><button type='submit' name='edit'>Edit</button></td>
                    <td><button type='submit' name='delete'>Delete</button></td>
 
