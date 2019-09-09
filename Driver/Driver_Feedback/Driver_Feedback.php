@@ -33,7 +33,7 @@
                 <nav class="classy-navbar justify-content-between" id="conferNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="./index.html"><img src="./img/core-img/logo.png" alt=""></a>
+                    <a class="nav-brand" href="../Driver_Dashboard/Driver_dashboard.php"><img src="./img/core-img/logo.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -49,34 +49,7 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul id="nav">
-                                <li class="active"><a href="C:/xampp/htdocs/e-perahu/Driver/Driver_Dashboard/Driver_dashboard.html">Back to Dashboard</a></li>
-                                <!-- <li><a href="#">Pages</a>
-                                    <ul class="dropdown">
-                                        <li><a href="index.html">- Home</a></li>
-                                        <li><a href="about.html">- About Us</a></li>
-                                        <li><a href="speakers.html">- Speakears</a></li>
-                                        <li><a href="schedule.html">- Schedule</a></li>
-                                        <li><a href="tickets.html">- Tickets</a></li>
-                                        <li><a href="blog.html">- Blog</a></li>
-                                        <li><a href="single-blog.html">- Single Blog</a></li>
-                                        <li><a href="contact.html">- Contact</a></li>
-                                        <li><a href="#">- Dropdown</a>
-                                            <ul class="dropdown">
-                                                <li><a href="#">- Dropdown Item</a></li>
-                                                <li><a href="#">- Dropdown Item</a></li>
-                                                <li><a href="#">- Dropdown Item</a></li>
-                                                <li><a href="#">- Dropdown Item</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><a href="speakers.html">Speakears</a></li>
-                                <li><a href="blog.html">Blog</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul> -->
-
-                            <!-- Get Tickets Button -->
-                            <!-- <a href="#" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Get Tickets <i class="zmdi zmdi-long-arrow-right"></i></a> -->
+                                <li class="active"><a href="../Driver_Dashboard/Driver_dashboard.php">Back to Dashboard</a></li>
                         </div>
                         <!-- Nav End -->
                     </div>
@@ -95,7 +68,7 @@
                         <h2 class="page-title">Customer Feedback</h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                                <li class="breadcrumb-item"><a href="../Driver_Dashboard/Driver_dashboard.php">Dashboard</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Customer Feedback</li>
                             </ol>
                         </nav>
@@ -118,17 +91,15 @@
                             <img src="img/bg-img/18.jpg" alt="">
                         </div>
                         <div class="single-blog-text text-center">
-                            <a class="blog-title" href="#">Street Food Convention</a>
+                            <a class="blog-title" href="#">Kampong Ayer</a>
                             <!-- Post Meta -->
                             <div class="post-meta">
-                                <a class="post-date" href="#"><i class="zmdi zmdi-alarm-check"></i> January 14, 2019</a>
-                                <a class="post-author" href="#"><i class="zmdi zmdi-account"></i> Laura Green</a>
+                                <a class="post-date" href="#"><i class="zmdi zmdi-alarm-check"></i> January 4, 2019</a>
+                                <a class="post-author" href="#"><i class="zmdi zmdi-account"></i> Matt</a>
                             </div>
-                            <p>Street Food Convention will showcase products like Packed food, beef and lamb, street food.</p>
+                            <p>Good experience.</p>
                         </div>
-                        <div class="blog-btn">
-                            <a href="#"><i class="zmdi zmdi-long-arrow-right"></i></a>
-                        </div>
+  
                     </div>
                 </div>
 
@@ -140,17 +111,15 @@
                             <img src="img/bg-img/19.jpg" alt="">
                         </div>
                         <div class="single-blog-text text-center">
-                            <a class="blog-title" href="#">Tedx Moscow Conference</a>
+                            <a class="blog-title" href="#">Kampong ayer trip</a>
                             <!-- Post Meta -->
                             <div class="post-meta">
                                 <a class="post-date" href="#"><i class="zmdi zmdi-alarm-check"></i>January 14, 2019</a>
                                 <a class="post-author" href="#"><i class="zmdi zmdi-account"></i>Laura Green</a>
                             </div>
-                            <p>Street Food Convention will showcase products like Packed food, beef and lamb, street food.</p>
+                            <p>Driver was nice!</p>
                         </div>
-                        <div class="blog-btn">
-                            <a href="#"><i class="zmdi zmdi-long-arrow-right"></i></a>
-                        </div>
+                        
                     </div>
                 </div>
 
@@ -162,160 +131,34 @@
                             <img src="img/bg-img/20.jpg" alt="">
                         </div>
                         <div class="single-blog-text text-center">
-                            <a class="blog-title" href="#">Los Angeles Institute</a>
+                            <a class="blog-title" href="#">Politeknik Brunei trip to Kampong Ayer</a>
                             <!-- Post Meta -->
                             <div class="post-meta">
-                                <a class="post-date" href="#"><i class="zmdi zmdi-alarm-check"></i>January 14, 2019</a>
-                                <a class="post-author" href="#"><i class="zmdi zmdi-account"></i>Laura Green</a>
+                                <a class="post-date" href="#"><i class="zmdi zmdi-alarm-check"></i>January 28, 2019</a>
+                                <a class="post-author" href="#"><i class="zmdi zmdi-account"></i>Miss Fifah</a>
                             </div>
-                            <p>Street Food Convention will showcase products like Packed food, beef and lamb, street food.</p>
+                            <p>Overall good experience. Will recommend to others.</p>
                         </div>
-                        <div class="blog-btn">
-                            <a href="#"><i class="zmdi zmdi-long-arrow-right"></i></a>
-                        </div>
+                        
                     </div>
                 </div>
                 
-                <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-xl-4">
-                    <div class="single-blog-area style-2 wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Single blog Thumb -->
-                        <div class="single-blog-thumb">
-                            <img src="img/bg-img/18.jpg" alt="">
-                        </div>
-                        <div class="single-blog-text text-center">
-                            <a class="blog-title" href="#">Street Food Convention</a>
-                            <!-- Post Meta -->
-                            <div class="post-meta">
-                                <a class="post-date" href="#"><i class="zmdi zmdi-alarm-check"></i> January 14, 2019</a>
-                                <a class="post-author" href="#"><i class="zmdi zmdi-account"></i> Laura Green</a>
-                            </div>
-                            <p>Street Food Convention will showcase products like Packed food, beef and lamb, street food.</p>
-                        </div>
-                        <div class="blog-btn">
-                            <a href="#"><i class="zmdi zmdi-long-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-xl-4">
-                    <div class="single-blog-area style-2 wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Single blog Thumb -->
-                        <div class="single-blog-thumb">
-                            <img src="img/bg-img/19.jpg" alt="">
-                        </div>
-                        <div class="single-blog-text text-center">
-                            <a class="blog-title" href="#">Tedx Moscow Conference</a>
-                            <!-- Post Meta -->
-                            <div class="post-meta">
-                                <a class="post-date" href="#"><i class="zmdi zmdi-alarm-check"></i>January 14, 2019</a>
-                                <a class="post-author" href="#"><i class="zmdi zmdi-account"></i>Laura Green</a>
-                            </div>
-                            <p>Street Food Convention will showcase products like Packed food, beef and lamb, street food.</p>
-                        </div>
-                        <div class="blog-btn">
-                            <a href="#"><i class="zmdi zmdi-long-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-xl-4">
-                    <div class="single-blog-area style-2 wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Single blog Thumb -->
-                        <div class="single-blog-thumb">
-                            <img src="img/bg-img/20.jpg" alt="">
-                        </div>
-                        <div class="single-blog-text text-center">
-                            <a class="blog-title" href="#">Los Angeles Institute</a>
-                            <!-- Post Meta -->
-                            <div class="post-meta">
-                                <a class="post-date" href="#"><i class="zmdi zmdi-alarm-check"></i>January 14, 2019</a>
-                                <a class="post-author" href="#"><i class="zmdi zmdi-account"></i>Laura Green</a>
-                            </div>
-                            <p>Street Food Convention will showcase products like Packed food, beef and lamb, street food.</p>
-                        </div>
-                        <div class="blog-btn">
-                            <a href="#"><i class="zmdi zmdi-long-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
                 
-                <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-xl-4">
-                    <div class="single-blog-area style-2 wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Single blog Thumb -->
-                        <div class="single-blog-thumb">
-                            <img src="img/bg-img/18.jpg" alt="">
-                        </div>
-                        <div class="single-blog-text text-center">
-                            <a class="blog-title" href="#">Street Food Convention</a>
-                            <!-- Post Meta -->
-                            <div class="post-meta">
-                                <a class="post-date" href="#"><i class="zmdi zmdi-alarm-check"></i> January 14, 2019</a>
-                                <a class="post-author" href="#"><i class="zmdi zmdi-account"></i> Laura Green</a>
-                            </div>
-                            <p>Street Food Convention will showcase products like Packed food, beef and lamb, street food.</p>
-                        </div>
-                        <div class="blog-btn">
-                            <a href="#"><i class="zmdi zmdi-long-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-xl-4">
-                    <div class="single-blog-area style-2 wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Single blog Thumb -->
-                        <div class="single-blog-thumb">
-                            <img src="img/bg-img/19.jpg" alt="">
-                        </div>
-                        <div class="single-blog-text text-center">
-                            <a class="blog-title" href="#">Tedx Moscow Conference</a>
-                            <!-- Post Meta -->
-                            <div class="post-meta">
-                                <a class="post-date" href="#"><i class="zmdi zmdi-alarm-check"></i>January 14, 2019</a>
-                                <a class="post-author" href="#"><i class="zmdi zmdi-account"></i>Laura Green</a>
-                            </div>
-                            <p>Street Food Convention will showcase products like Packed food, beef and lamb, street food.</p>
-                        </div>
-                        <div class="blog-btn">
-                            <a href="#"><i class="zmdi zmdi-long-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
+               
 
-                <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-xl-4">
-                    <div class="single-blog-area style-2 wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Single blog Thumb -->
-                        <div class="single-blog-thumb">
-                            <img src="img/bg-img/20.jpg" alt="">
-                        </div>
-                        <div class="single-blog-text text-center">
-                            <a class="blog-title" href="#">Los Angeles Institute</a>
-                            <!-- Post Meta -->
-                            <div class="post-meta">
-                                <a class="post-date" href="#"><i class="zmdi zmdi-alarm-check"></i>January 14, 2019</a>
-                                <a class="post-author" href="#"><i class="zmdi zmdi-account"></i>Laura Green</a>
-                            </div>
-                            <p>Street Food Convention will showcase products like Packed food, beef and lamb, street food.</p>
-                        </div>
-                        <div class="blog-btn">
-                            <a href="#"><i class="zmdi zmdi-long-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+               
+                
+               
+               
 
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-12">
                     <div class="more-blog-btn text-center">
                         <a class="btn confer-btn" href="#">Load more <i class="zmdi zmdi-refresh"></i></a>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     <!-- Our Blog Area End -->
@@ -330,8 +173,8 @@
                     <div class="col-12 col-sm-6 col-lg-3">
                         <div class="single-footer-widget mb-60">
                             <!-- Footer Logo -->
-                            <a href="#" class="footer-logo"><img src="img/core-img/logo.png" alt=""></a>
-                            <p>To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain.</p>
+                            <a href="../Driver_Dashboard/Driver_dashboard.php" class="footer-logo"><img src="img/core-img/logo.png" alt=""></a>
+                            <!-- <p>To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain.</p> -->
 
                             <!-- Social Info -->
                             <div class="social-info">
@@ -351,10 +194,9 @@
 
                             <!-- Contact Area -->
                             <div class="footer-contact-info">
-                                <p><i class="zmdi zmdi-map"></i> 184 Main Collins Street</p>
                                 <p><i class="zmdi zmdi-phone"></i> (226) 446 9371</p>
-                                <p><i class="zmdi zmdi-email"></i> confer@gmail.com</p>
-                                <p><i class="zmdi zmdi-globe"></i> www.confer.com</p>
+                                <p><i class="zmdi zmdi-email"></i> Brunei@e-persahu.net</p>
+                                <p><i class="zmdi zmdi-globe"></i> www.e-perahu.com</p>
                             </div>
                         </div>
                     </div>
@@ -363,15 +205,15 @@
                     <div class="col-12 col-sm-6 col-lg-3">
                         <div class="single-footer-widget mb-60">
                             <!-- Widget Title -->
-                            <h5 class="widget-title">Workshops</h5>
-
+                            <!-- <h5 class="widget-title">Workshops</h5>
+ -->
                             <!-- Footer Nav -->
-                            <ul class="footer-nav">
+                           <!--  <ul class="footer-nav">
                                 <li><a href="#">OSHA Compliance</a></li>
                                 <li><a href="#">Microsoft Excel Basics</a></li>
                                 <li><a href="#">Forum Speaker Series</a></li>
                                 <li><a href="#">Tedx Moscow Conference</a></li>
-                            </ul>
+                            </ul> -->
                         </div>
                     </div>
 
@@ -379,10 +221,10 @@
                     <div class="col-12 col-sm-6 col-lg-3">
                         <div class="single-footer-widget mb-60">
                             <!-- Widget Title -->
-                            <h5 class="widget-title">Gallery</h5>
+                        <!--     <h5 class="widget-title">Gallery</h5> -->
 
                             <!-- Footer Gallery -->
-                            <div class="footer-gallery">
+                           <!--  <div class="footer-gallery">
                                 <div class="row">
                                     <div class="col-4">
                                         <a href="img/bg-img/21.jpg" class="single-gallery-item"><img src="img/bg-img/21.jpg" alt=""></a>
@@ -403,7 +245,7 @@
                                         <a href="img/bg-img/26.jpg" class="single-gallery-item"><img src="img/bg-img/26.jpg" alt=""></a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>

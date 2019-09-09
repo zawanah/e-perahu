@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V11</title>
+	<title>Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -54,9 +54,9 @@
 					</div>
 
 					<div class="contact100-form-checkbox m-l-4">
-						<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-						<label class="label-checkbox100" for="ckb1">
-							Remember me
+						<input type ="checkbox" id="remember" name="remember" <?php if(isset($_COOKIE['username'])){echo "checked='checked'"; } ?> value="1">
+						<label for="remember">
+							Remember username
 						</label>
 					</div>
 
@@ -69,13 +69,13 @@
 
 
 		
-
+					<!--temporary only-->
 					<div class="text-center w-full p-t-115">
 						<span class="txt1">
-							Not a member?
+							Not a driver?
 						</span>
 
-						<a class="txt1 bo1 hov1" href="signup.php">
+						<a class="txt1 bo1 hov1" href="../Driver_SignUp/signup.php">
 							Sign up now
 						</a>
 					</div>
