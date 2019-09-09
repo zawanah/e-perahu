@@ -42,7 +42,7 @@
                 <nav class="classy-navbar justify-content-between" id="conferNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="./index.php"><img src="./img/core-img/logo.png" alt=""></a>
+                    <a class="nav-brand" href="indexuser.php"><img src="./img/core-img/logo.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -58,7 +58,7 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul id="nav">
-                                <li class="active"><a href="index.php">Home</a></li>
+                                <li class="active"><a href="indexuser.php">Home</a></li>
                                 <li><a href="#">Information</a>
                                     <ul class="dropdown">
                                         <li><a href="profile.php">- My Profile</a></li>

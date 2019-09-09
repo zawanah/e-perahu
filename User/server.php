@@ -17,30 +17,30 @@
 
 		// ensure that form fields are filled properly
 		if (empty($username)) {
-			array_push($errors, "Username is required");
+			array_push($errors, "- Username is required");
 		}
 		if (strlen($username) > 8){
-   			array_push($errors, "Username must be less than 8 characters");
+   			array_push($errors, "- Username must be less than 8 characters");
    		}
 		if (empty($email)) {
-			array_push($errors, "Email is required");
+			array_push($errors, "- Email is required");
 		}
 		if (empty($password_1)) {
-			array_push($errors, "Password is required");
+			array_push($errors, "- Password is required");
 		}
 		if(preg_match("/^.*(?=.{8,})(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).*$/", $_POST["password_1"]) === 0) {
-			array_push($errors, "Password must be at least 8 characters and must contain at least 1 lower case letter, 1 upper case letter and 1 number");
+			array_push($errors, "- Password must be at least 8 characters and must contain at least 1 lower case letter, 1 upper case letter and 1 number");
 		}
 			
 		if ($password_1 != $password_2) {
-			array_push($errors, "The two passwords do not match");
+			array_push($errors, "- The two passwords do not match");
 		}
 
 		$userquery = "SELECT * FROM users WHERE username='$username'";
 		$result = mysqli_query($db, $userquery);
 
 		if (mysqli_num_rows($result) == 1) {
-			array_push($errors, "The username has already been taken");
+			array_push($errors, "- The username has already been taken");
 		}
 
 		// if there are no errors, save user to database

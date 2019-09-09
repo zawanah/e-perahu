@@ -26,7 +26,7 @@
 			array_push($errors, "The two passwords do not match");
 		}
 
-		$userquery = "SELECT * FROM users WHERE username='$username'";
+		$userquery = "SELECT * FROM admin WHERE username='$username'";
 		$result = mysqli_query($db, $userquery);
 
 		if (mysqli_num_rows($result) == 1) {

@@ -54,9 +54,9 @@
 					</div>
 
 					<div class="contact100-form-checkbox m-l-4">
-						<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-						<label class="label-checkbox100" for="ckb1">
-							Remember me
+						<input type ="checkbox" id="remember" name="remember" <?php if(isset($_COOKIE['username'])){echo "checked='checked'"; } ?> value="1">
+						<label for="remember">
+							Remember username
 						</label>
 					</div>
 

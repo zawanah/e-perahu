@@ -65,7 +65,7 @@
 
                                     </ul>
                                 </li>
-                                <li><a href="speakers.php">Reservation</a></li>
+                                <li><a href="User_Reservation/User_Reservation.php">Reservation</a></li>
                                 <li><a href="blog.php">About Us</a></li>
                                 <li><a href="contact.php">Feedback</a></li>
                             </ul>
@@ -112,12 +112,12 @@
                             </div>
                             <div class="media-body">
                                 <div class="personal_text">
-                                    <h3><?php echo $_SESSION['username']; ?></h3>
+                                    <h2>Username: <?php echo $_SESSION['username']; ?></h2>
                                     <ul class="list basic_info">
-                                        <li><i class="lnr lnr-calendar-full"></i> 31st December, 1992</a></li>
+                                        <!-- <li><i class="lnr lnr-calendar-full"></i> 31st December, 1992</a></li>
                                         <li><i class="lnr lnr-phone-handset"></i> 44 (012) 6954 783</a></li>
                                         <li></li>
-                                        <li><i class="lnr lnr-home"></i> Santa monica bullevard</a></li>
+                                        <li><i class="lnr lnr-home"></i> Santa monica bullevard</a></li> -->
                                         <!-- Button -->
                                         <div class="col-12">
                                             <button type="submit" class="btn confer-btn">Edit My Profile <i class="zmdi zmdi-long-arrow-right"></i></button>
@@ -133,20 +133,20 @@
 
 
         <!-- Footer Area Start -->
-    <footer class="footer-area bg-img bg-overlay-2 section-padding-100-0">
+    <!-- <footer class="footer-area bg-img bg-overlay-2 section-padding-100-0"> -->
         <!-- Main Footer Area -->
-        <div class="main-footer-area">
+        <!-- <div class="main-footer-area">
             <div class="container">
-                <div class="row">
+                <div class="row"> -->
                     <!-- Single Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="single-footer-widget mb-60">
+                    <!-- <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget mb-60"> -->
 
                             <!-- Widget Title -->
-                            <h5 class="widget-title">Contact</h5>
+                            <!-- <h5 class="widget-title">Contact</h5> -->
 
                             <!-- Contact Area -->
-                            <div class="footer-contact-info">
+                            <!-- <div class="footer-contact-info">
                                 <p><i class="zmdi zmdi-map"></i> Bandar Seri Begawan</p>
                                 <p><i class="zmdi zmdi-phone"></i> (+673) 2123456</p>
                                 <p><i class="zmdi zmdi-email"></i> -e-perahu@gmail.com</p>
@@ -157,7 +157,7 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> -->
     <!-- Footer Area End -->
 
     <!-- **** All JS Files ***** -->

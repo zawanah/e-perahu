@@ -260,6 +260,12 @@
 								<div class="form-btn">
 									<button type="submit" name="paynow" class="submit-btn">Pay Now</button>
 								</div>
+
+								<div class="container-login100-form-btn p-t-25">
+						<a href="../indexuser.php">
+							Back to homepage
+						</a>
+					</div>
 							</form>
 						</div>
 					</div>
