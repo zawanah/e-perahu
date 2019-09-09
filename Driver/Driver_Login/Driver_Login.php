@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V11</title>
+	<title>Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -69,10 +69,10 @@
 
 
 		
-
+					<!--temporary only-->
 					<div class="text-center w-full p-t-115">
 						<span class="txt1">
-							Not a member?
+							Not a driver?
 						</span>
 
 						<a class="txt1 bo1 hov1" href="../Driver_SignUp/signup.php">
