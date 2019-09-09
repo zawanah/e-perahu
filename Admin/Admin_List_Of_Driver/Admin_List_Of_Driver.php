@@ -11,6 +11,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -126,6 +127,10 @@
                    <td>" . $row["fname"] . "</td>
                    <td>". $row["email"]. "</td>
                    <td>". $row["reg_no"]. "</td>
+
+
+                   <td><button type='submit' name='edit'>Edit</button></td>
+                   <td><button type='submit' name='delete'>Delete</button></td>
 
 
                    </tr>"  ;

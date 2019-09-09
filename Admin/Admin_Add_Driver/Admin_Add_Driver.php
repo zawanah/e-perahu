@@ -94,7 +94,7 @@ include('adddriverdb.php');
 
 
                         <div class="contact_form">
-                            <form action="mail.php" method="post">
+                            <!-- <form action="mail.php" method="post"> -->
                                 <div class="contact_input_area">
                                     <div class="row">
                                         <!-- Form Group -->
