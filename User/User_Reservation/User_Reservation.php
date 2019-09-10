@@ -38,18 +38,14 @@
 
 		<script src="build/js/jquery-1.12.4.js"></script>
 		<script src="build/js/jquery-ui.js"></script>
-		<script>
-		$( function() {
-			$( "#datepicker" ).datepicker({ minDate: 0 });
-		} );
-		</script>
+		<script src="build/js/datepicker.js"></script>
 
 		<!-- for card validation -->
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="build/css/cardstyle.css">
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<!-- <script src="build/js/jquery.min.js"></script> -->
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script src="build/js/jquery.payform.min.js" charset="utf-8"></script>
 		<script src="build/js/script.js"></script>
