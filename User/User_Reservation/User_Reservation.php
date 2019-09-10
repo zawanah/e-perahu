@@ -44,16 +44,6 @@
 		} );
 		</script>
 
-		<!-- for card validation -->
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="build/css/cardstyle.css">
-
-		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<script src="build/js/jquery.payform.min.js" charset="utf-8"></script>
-		<script src="build/js/script.js"></script>
-
 	</head>
 
 	<body>
@@ -204,16 +194,6 @@
 											<input id="cardNumber" class="form-control" type="text" name="debitnumber" autocomplete="off" placeholder="Card Number">
 										</div>
 									</div>
-									<br>
-									<div class="col-sm-6">
-										<div class="form-group" id="credit_cards">
-												<img src="build/img/visa.jpg" id="visa">
-												<img src="build/img/mastercard.jpg" id="mastercard">
-												<img src="build/img/amex.jpg" id="amex">
-										</div>
-									</div>
-								</div>
-								<div class="row">
 									<div class="col-sm-6">
 										<div class="form-group">
 											<span class="form-label"><br></span>
