@@ -42,6 +42,18 @@
 					<?php include('errors.php'); ?>
 
 					<div class="wrap-input100 validate-input m-b-16">
+						<input type="firstname" name="firstname" class="input100" placeholder="First Name" value="<?php echo $firstname; ?>" autocomplete="off">
+						<span class="focus-input100"></span>
+						
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16">
+						<input type="lastname" name="lastname" class="input100" placeholder="Last Name" value="<?php echo $lastname; ?>" autocomplete="off">
+						<span class="focus-input100"></span>
+						
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16">
 						<input type="username" name="username" class="input100" placeholder="Username" value="<?php echo $username; ?>" autocomplete="off">
 						<span class="focus-input100"></span>
 						

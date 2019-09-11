@@ -1,5 +1,7 @@
 <?php
 	session_start();
+	$fname = "";
+	$lname = "";
 	$username = "";
 	$email = "";
 
@@ -8,6 +10,8 @@
 	$db = mysqli_connect('localhost', 'root', '', 'registration');
 
 	if (isset($_POST['register'])) {
+		$firstname = mysqli_real_escape_string($db, $_POST['firstname']);
+		$lastname = mysqli_real_escape_string($db, $_POST['lastname']);
 		$username = mysqli_real_escape_string($db, $_POST['username']);
 		$email = mysqli_real_escape_string($db, $_POST['email']);
 		$password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
@@ -16,6 +20,12 @@
 
 
 		// ensure that form fields are filled properly
+		if (empty($firstname)) {
+			array_push($errors, "- First name is required");
+		}
+		if (empty($lastname)) {
+			array_push($errors, "- Last name is required");
+		}
 		if (empty($username)) {
 			array_push($errors, "- Username is required");
 		}
@@ -46,8 +56,11 @@
 		// if there are no errors, save user to database
 		if (count($errors) == 0) {
 			$password = md5($password_1); // encrypt password
-			$sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
+			$sql = "INSERT INTO users (firstname, lastname, username, email, password) VALUES ('$firstname', '$lastname', '$username', '$email', '$password')";
 			mysqli_query($db, $sql);
+
+			$_SESSION['firstname'] = $firstname;
+			$_SESSION['lastname'] = $lastname;
 			$_SESSION['username'] = $username;
 			$_SESSION['success'] = "You are now logged in";
 			header('location: login.php'); // redirect to home page
