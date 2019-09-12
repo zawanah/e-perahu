@@ -32,12 +32,13 @@
 		<!-- for phone number validation -->
 		<link rel="stylesheet" href="build/css/intlTelInput.css">
 
-		<!-- For datepicker -->
-		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-		<link rel="stylesheet" href="/resources/demos/style.css">
+		<script src="build/js/intlTelInput.js"></script>
 
-		<script src="build/js/jquery-1.12.4.js"></script>
-		<script src="build/js/jquery-ui.js"></script>
+		<!-- For datepicker -->
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">5
+
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script src="build/js/datepicker.js"></script>
 
 		<!-- for card validation -->
@@ -80,30 +81,9 @@
 								<div class="form-group">
 									<span class="form-label">Phone</span>
 									<input id="phone" class="form-control" type="tel" name="phone" placeholder="Number">
-									<script src="build/js/intlTelInput.js"></script>
 									<script>
 									var input = document.querySelector("#phone");
 									window.intlTelInput(input, {
-										// allowDropdown: false,
-										// autoHideDialCode: false,
-										// autoPlaceholder: "off",
-										// dropdownContainer: document.body,
-										// excludeCountries: ["us"],
-										// formatOnDisplay: false,
-										// geoIpLookup: function(callback) {
-										//   $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
-										//     var countryCode = (resp && resp.country) ? resp.country : "";
-										//     callback(countryCode);
-										//   });
-										// },
-										// hiddenInput: "full_number",
-										// initialCountry: "auto",
-										// localizedCountries: { 'de': 'Deutschland' },
-										// nationalMode: false,
-										// onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
-										// placeholderNumberType: "MOBILE",
-										// preferredCountries: ['cn', 'jp'],
-										// separateDialCode: true,
 										utilsScript: "build/js/utils.js",
 									});
 									</script>
@@ -198,14 +178,6 @@
 										<div class="form-group">
 											<span class="form-label">Debit Card</span>
 											<input id="cardNumber" class="form-control" type="text" name="debitnumber" autocomplete="off" placeholder="Card Number">
-										</div>
-									</div>
-									<br>
-									<div class="col-sm-6">
-										<div class="form-group" id="credit_cards">
-												<img src="build/img/visa.jpg" id="visa">
-												<img src="build/img/mastercard.jpg" id="mastercard">
-												<img src="build/img/amex.jpg" id="amex">
 										</div>
 									</div>
 								</div>
