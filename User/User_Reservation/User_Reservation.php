@@ -41,15 +41,8 @@
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script src="build/js/datepicker.js"></script>
 
-		<!-- for card validation -->
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="build/css/cardstyle.css">
-
-		<!-- <script src="build/js/jquery.min.js"></script> -->
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<script src="build/js/jquery.payform.min.js" charset="utf-8"></script>
-		<script src="build/js/script.js"></script>
+		<!-- For card validation -->
+		    <link rel="stylesheet" type="text/css" href="build/css/cardstyle.css">
 
 	</head>
 
@@ -64,7 +57,7 @@
 								<h1>Reservation</h1>
 							</div>
 							<form method="post" action="User_Reservation.php">
-								<div class="row">
+								<!-- <div class="row">
 									<div class="col-sm-6">
 										<div class="form-group">
 											<span class="form-label" >Name</span>
@@ -77,7 +70,7 @@
 											<input class="form-control" type="email" name="email" placeholder="Enter your email">
 										</div>
 									</div>
-								</div>
+								</div> -->
 								<div class="form-group">
 									<span class="form-label">Phone</span>
 									<input id="phone" class="form-control" type="tel" name="phone" placeholder="Number">
@@ -175,17 +168,31 @@
 								</div>
 								<div class="row">
 									<div class="col-sm-6">
-										<div class="form-group">
-											<span class="form-label">Debit Card</span>
-											<input id="cardNumber" class="form-control" type="text" name="debitnumber" autocomplete="off" placeholder="Card Number">
+										<div class="form-group owner">
+											<span class="form-label">Owner Name</span>
+											<input type="text" class="form-control" id="owner" name="ownername" autocomplete="off" required>
 										</div>
+									</div>
+									<br>
+									<div class="col-sm-6">
+										<div class="form-group" id="credit_cards">
+					                        <img src="build/img/visa.jpg" id="visa">
+					                        <img src="build/img/mastercard.jpg" id="mastercard">
+					                        <img src="build/img/amex.jpg" id="amex">
+					                    </div>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-sm-6">
-										<div class="form-group">
-											<span class="form-label"><br></span>
-											<input id="cvv" class="form-control" type="text" name="debitcvv" autocomplete="off" placeholder="CVV">
+										<div class="form-group" id="card-number-field">
+											<span class="form-label">Card Number</span>
+											<input type="text" class="form-control" id="cardNumber" name="debitnumber">
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group CVV">
+											<span class="form-label">Card CVV<br></span>
+											<input type="text" class="form-control" id="cvv" name="debitcvv">
 										</div>
 									</div>
 								</div>
@@ -225,8 +232,8 @@
 										</div>
 									</div>
 								</div>
-								<div class="form-btn">
-									<button type="submit" name="paynow" class="submit-btn">Pay Now</button>
+								<div class="form-btn" id="pay-now">
+									<button type="submit" name="paynow" class="submit-btn" id="confirm-purchase">Pay Now</button>
 								</div>
 
 								<div class="container-login100-form-btn p-t-25">
@@ -240,7 +247,9 @@
 				</div>
 			</div>
 		</div>
-
+			<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+			<script src="build/js/jquery.payform.min.js" charset="utf-8"></script>
+			<script src="build/js/script.js"></script>
 	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
 	</html>

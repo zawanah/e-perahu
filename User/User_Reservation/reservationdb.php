@@ -9,6 +9,7 @@
 	$hour = "";
 	$min = "";
 	$ampm = "";
+	$ownername = "";
 	$debitnumber = "";
 	$debitcvv = "";
 	$expmonth = "";
@@ -27,6 +28,7 @@
 		$hour = mysqli_real_escape_string($db, $_POST['hour']);
 		$min = mysqli_real_escape_string($db, $_POST['min']);
 		$ampm = mysqli_real_escape_string($db, $_POST['ampm']);
+		$ownername = mysqli_real_escape_string($db, $_POST['ownername']);
 		$debitnumber = mysqli_real_escape_string($db, $_POST['debitnumber']);
 		$debitcvv = mysqli_real_escape_string($db, $_POST['debitcvv']);
 		$expmonth = mysqli_real_escape_string($db, $_POST['expmonth']);
@@ -49,8 +51,8 @@
 		}
 
 		if (count($errors) == 0) {
-			$sql = "INSERT INTO reservationtable (name, email, phone, pickup, destination, pickupdate, hour, min, ampm, debitnumber, debitcvv, expmonth, expyear)
-			VALUES ('$name', '$email', '$phone', '$pickup', '$destination', '$pickupdate', '$hour', '$min', '$ampm', '$debitnumber', '$debitcvv', '$expmonth', '$expyear')";
+			$sql = "INSERT INTO reservationtable (name, email, phone, pickup, destination, pickupdate, hour, min, ampm, ownername, debitnumber, debitcvv, expmonth, expyear)
+			VALUES ('$name', '$email', '$phone', '$pickup', '$destination', '$pickupdate', '$hour', '$min', '$ampm', '$ownername', '$debitnumber', '$debitcvv', '$expmonth', '$expyear')";
 			mysqli_query($db, $sql);
 			$_SESSION['success'] = "Payment Successful";
 			header('location: ../indexuser.php'); // redirect to home page
