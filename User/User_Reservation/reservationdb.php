@@ -19,8 +19,8 @@
 	$db = mysqli_connect('localhost', 'root', '', 'reservation');
 
 	if (isset($_POST['paynow'])) {
-		$name = mysqli_real_escape_string($db, $_POST['name']);
-		$email = mysqli_real_escape_string($db, $_POST['email']);
+		// $name = mysqli_real_escape_string($db, $_POST['name']);
+		// $email = mysqli_real_escape_string($db, $_POST['email']);
 		$phone = mysqli_real_escape_string($db, $_POST['phone']);
 		$pickup = mysqli_real_escape_string($db, $_POST['pickup']);
 		$destination = mysqli_real_escape_string($db, $_POST['destination']);
@@ -40,9 +40,21 @@
 		if (empty($debitnumber)) {
 			array_push($errors, "Debit Number is required");
 		}
+		if (strlen($debitnumber) > 19){
+   			array_push($errors, "- Wrong card number");
+   		}
+   		if (strlen($debitnumber) < 19){
+   			array_push($errors, "- Wrong card number");
+   		}
 		if (empty($debitcvv)) {
 			array_push($errors, "CVV is required");
 		}
+		if (strlen($debitcvv) < 3){
+   			array_push($errors, "- Wrong CVV number");
+   		}
+   		if (strlen($debitcvv) > 4){
+   			array_push($errors, "- Wrong CVV number");
+   		}
 		if (empty($expmonth)) {
 			array_push($errors, "Expiry Month is required");
 		}
