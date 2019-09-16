@@ -33,7 +33,7 @@
             $bio = $_POST['bio'];
 
             $target= 'img/' . $_FILES['file']['name'];
-        move_uploaded_file($_FILES['file']['tmp_name'], $target);
+            move_uploaded_file($_FILES['file']['tmp_name'], $target);
             
             $query = dbConnection()->prepare('INSERT INTO profile VALUES(:profile_id, :fullname, :age, :bio, :img);');
 

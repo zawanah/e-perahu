@@ -1,13 +1,20 @@
 <?php
 	session_start();
-	$fname = "";
-	$lname = "";
+	$firstname = "";
+	$lastname = "";
 	$username = "";
 	$email = "";
 
 	$errors = array();
 
 	$db = mysqli_connect('localhost', 'root', '', 'registration');
+
+	$ses_sql=mysqli_query($db, "SELECT * from users");
+
+	$row = mysqli_fetch_assoc($ses_sql);
+	$login_session = $row['username'];
+
+	$user_data = $row;
 
 	if (isset($_POST['register'])) {
 		$firstname = mysqli_real_escape_string($db, $_POST['firstname']);
@@ -62,6 +69,7 @@
 			$_SESSION['firstname'] = $firstname;
 			$_SESSION['lastname'] = $lastname;
 			$_SESSION['username'] = $username;
+			$_SESSION['email'] = $email;
 			$_SESSION['success'] = "You are now logged in";
 			header('location: login.php'); // redirect to home page
 		}
@@ -107,7 +115,10 @@
   		//save this user and pass as cookie if remember checked end
 
 		// log user in
+		$_SESSION['firstname'] = $firstname;
+		$_SESSION['lastname'] = $lastname;
 		$_SESSION['username'] = $username;
+		$_SESSION['email'] = $email;
 		$_SESSION['success'] = "You are now logged in";
 
 

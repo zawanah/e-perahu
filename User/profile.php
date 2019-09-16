@@ -108,12 +108,22 @@
                     <div class="banner_content">
                         <div class="media">
                             <div class="d-flex">
-                                <img src="img/personal.jpg" alt="">
+                                <img src="img/user.png" alt="">
                             </div>
                             <div class="media-body">
+
                                 <div class="personal_text">
-                                    <h2>Username: <?php echo $_SESSION['username']; ?></h2>
-                                    <ul class="list basic_info">
+
+                                    
+
+                                    <h2><?php echo $_SESSION['username']; ?></h2>
+                                    
+                                    <td><?php echo $user_data['firstname']; ?></td>
+                                    <td><?php echo $user_data['lastname']; ?></td>
+                                    <td><?php echo $user_data['email']; ?></td>
+
+                                
+
                                         <!-- <li><i class="lnr lnr-calendar-full"></i> 31st December, 1992</a></li>
                                         <li><i class="lnr lnr-phone-handset"></i> 44 (012) 6954 783</a></li>
                                         <li></li>
