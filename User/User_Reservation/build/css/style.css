@@ -15,8 +15,10 @@
 #booking {
 	font-family: 'Montserrat', sans-serif;
 	background-image: url('../img/background.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 	background-size: cover;
-	background-position: center;
 }
 
 #booking::before {
