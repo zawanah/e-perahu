@@ -78,7 +78,7 @@
 
 							<div class="form-group">
 								<span class="form-label">Phone</span>
-								<input id="phone" class="form-control" type="tel" name="phone" placeholder="Number" required>
+								<input id="phone" class="form-control" type="text" name="phone" placeholder="Number" maxlength="7" pattern="[0-9]{7}" required>
 								<script>
 								var input = document.querySelector("#phone");
 								window.intlTelInput(input, {
@@ -91,8 +91,8 @@
 							<div class="col-sm-6">
 								<div class="form-group">
 									<span class="form-label">Pickup</span>
-									<select class="form-control" id="select1" name="pickup" required>
-											<option>"from"</option>
+									<select class="form-control" id="select1" name="pickup" placeholder="from" required>
+										<option> </option>
 								      <option value="1">Jetty 1</option>
 								      <option value="2">Jetty 2</option>
 								      <option value="3">Jetty 3</option>
@@ -104,8 +104,8 @@
 							<div class="col-sm-6">
 								<div class="form-group">
 									<span class="form-label">Destination</span>
-									<select class="form-control" id="select2" name="destination" required>
-											<option>"to"</option>
+									<select class="form-control" id="select2" name="destination" placeholder="to" required>
+											<option> </option>
 								      <option value="1">Jetty 1</option>
 								      <option value="2">Jetty 2</option>
 								      <option value="3">Jetty 3</option>
