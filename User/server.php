@@ -9,12 +9,12 @@
 
 	$db = mysqli_connect('localhost', 'root', '', 'registration');
 
-	$ses_sql=mysqli_query($db, "SELECT * from users");
+	// $ses_sql=mysqli_query($db, "SELECT * from users");
 
-	$row = mysqli_fetch_assoc($ses_sql);
-	$login_session = $row['username'];
+	// $row = mysqli_fetch_assoc($ses_sql);
+	// $login_session = $row['username'];
 
-	$user_data = $row;
+	// $user_data = $row;
 
 	if (isset($_POST['register'])) {
 		$firstname = mysqli_real_escape_string($db, $_POST['firstname']);
@@ -78,6 +78,9 @@
 	// log user in from login page
 	if (isset($_POST['login'])) {
 		$username = mysqli_real_escape_string($db, $_POST['username']);
+		$firstname = mysqli_real_escape_string($db, $_POST['firstname']);
+		$lastname = mysqli_real_escape_string($db, $_POST['lastname']);
+		$username = mysqli_real_escape_string($db, $_POST['username']);
 		$password = mysqli_real_escape_string($db, $_POST['password']);
 
 		// ensure that form fields are filled properly
@@ -114,11 +117,18 @@
   		}
   		//save this user and pass as cookie if remember checked end
 
+  		$sql = "SELECT firstname, lastname, email FROM users WHERE username = '" . $_SESSION['username'] . "'";
+
+  		$result = mysqli_query($sql);
+  		$row = mysqli_fetch_array($result);
+  		
+  		
+
 		// log user in
-		$_SESSION['firstname'] = $firstname;
-		$_SESSION['lastname'] = $lastname;
+		// $_SESSION['firstname'] = $firstname;
+		// $_SESSION['lastname'] = $lastname;
 		$_SESSION['username'] = $username;
-		$_SESSION['email'] = $email;
+		// $_SESSION['email'] = $email;
 		$_SESSION['success'] = "You are now logged in";
 
 

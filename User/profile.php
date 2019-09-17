@@ -114,13 +114,17 @@
 
                                 <div class="personal_text">
 
-                                    
+                                    <?php
+                                    $sql = "SELECT firstname, lastname, username, email FROM users WHERE username = '" . $_SESSION['username'] . "'";
 
-                                    <h2><?php echo $_SESSION['username']; ?></h2>
+                                    $result = mysqli_query($db, $sql);
+                                    $row = mysqli_fetch_array($result);
+
+                                    echo "Hello, " . $row['firstname'] . " ". $row['lastname'] ." ". $row['email'] ." (" . $row['username'] . ").";
+
+                                      ?>
+
                                     
-                                    <td><?php echo $user_data['firstname']; ?></td>
-                                    <td><?php echo $user_data['lastname']; ?></td>
-                                    <td><?php echo $user_data['email']; ?></td>
 
                                 
 
