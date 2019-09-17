@@ -91,21 +91,22 @@
     <!-- Our Blog Area Start -->
     <div class="our-blog-area section-padding-60">
           <div class="container">
-            &nbsp;
+          &nbsp;
+
 <!--table start -->
             <table class="table table-light table-hover">
               <thead>
                 <tr>
+
                   <th scope="col">ID</th>
                   <th scope="col">First Name</th>
                   <th scope="col">Email</th>
                   <th scope="col">Boat Reg No</th>
-                  <th class="text-right">Edit</th>
-                  <th class="text-right">Delete</th>
-
-
+                  <th scope="col">Edit</th>
+                  <th scope="col">Delete</th>
                 </tr>
               </thead>
+
               <tbody>
 
                   <?php
@@ -128,10 +129,8 @@
                    <td>". $row["email"]. "</td>
                    <td>". $row["reg_no"]. "</td>
 
-                   <td><button type='button' class='btn btn-primary'>Primary</button></td>
-                   <td><button type='submit' name='edit'>Edit</button></td>
-                   <td><button type='submit' name='delete'>Delete</button></td>
-
+                   <td><button type='btn'><i class='fa fa-edit'></i></button></td>
+                   <td><button type='button' class='btn btn-danger'>DELETE</button></td>
 
                    </tr>"  ;
 
