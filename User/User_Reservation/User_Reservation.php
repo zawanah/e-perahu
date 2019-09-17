@@ -143,7 +143,6 @@
 								<div class="form-group" id="credit_cards">
 									<img src="build/img/visa.jpg" id="visa">
 									<img src="build/img/mastercard.jpg" id="mastercard">
-									<img src="build/img/amex.jpg" id="amex">
 								</div>
 							</div>
 						</div>
@@ -158,7 +157,7 @@
 							<div class="col-sm-6">
 								<div class="form-group CVV">
 									<span class="form-label">Card CVV<br></span>
-									<input type="text" class="form-control" id="cvv" name="debitcvv" autocomplete="off">
+									<input type="text" class="form-control" id="cvv" name="debitcvv" maxlength="3" autocomplete="off">
 								</div>
 							</div>
 						</div>
@@ -188,12 +187,12 @@
 								<div class="form-group">
 									<span class="form-label"><br></span>
 									<select class="form-control" name="expyear" autocomplete="off">
-										<option value="16"> 2016</option>
-										<option value="17"> 2017</option>
-										<option value="18"> 2018</option>
 										<option value="19"> 2019</option>
 										<option value="20"> 2020</option>
 										<option value="21"> 2021</option>
+										<option value="22"> 2022</option>
+										<option value="23"> 2023</option>
+										<option value="24"> 2024</option>
 									</select>
 									<span class="select-arrow"></span>
 								</div>
