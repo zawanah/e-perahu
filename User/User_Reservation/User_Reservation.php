@@ -76,16 +76,33 @@
 							<!-- display validation errors here -->
 							<?php include('errors.php'); ?>
 
-							<div class="form-group">
-								<span class="form-label">Phone</span>
-								<input id="phone" class="form-control" type="text" name="phone" placeholder="Number" maxlength="7" pattern="[0-9]{7}" required>
-								<script>
-								var input = document.querySelector("#phone");
-								window.intlTelInput(input, {
-									utilsScript: "build/js/utils.js",
-								});
-							</script>
-						</div>
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="form-group">
+										<span class="form-label">Phone</span>
+										<input id="phone" class="form-control" type="text" name="phone" placeholder="Number" maxlength="7" pattern="[0-9]{7}" required>
+										<script>
+										var input = document.querySelector("#phone");
+										window.intlTelInput(input, {
+											utilsScript: "build/js/utils.js",
+										});
+									</script>
+								</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="form-group">
+										<span class="form-label">Driver</span>
+										<select class="form-control" placeholder="driver" required>
+												<option> </option>
+									      <option value="1">Driver 1</option>
+									      <option value="2">Driver 2</option>
+									      <option value="3">Driver 3</option>
+												<option value="4">Driver 4</option>
+									  </select>
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+							</div>
 
 						<div class="row">
 							<div class="col-sm-6">
