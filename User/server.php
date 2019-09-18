@@ -121,7 +121,7 @@
 
   		$result = mysqli_query($sql);
   		$row = mysqli_fetch_array($result);
-  		
+
   		
 
 		// log user in
@@ -139,7 +139,18 @@
 		}
 		}
 		}
-  
+  		
+  		// editprofile
+  		if (isset($_POST['update'])) {
+            $username = $_POST['username'];
+            $firstname = $_POST['firstname'];
+            $lastname = $_POST['lastname'];
+            $email = $_POST['email'];
+
+            mysqli_query($db, "UPDATE users SET firstname='$firstname', lastname='$lastname', email='$email' WHERE username='" . $_SESSION['username'] . "'");
+             
+            header('location: profile.php');
+            }
 
 		// logout
 		if (isset($_GET['logout'])) {

@@ -2,21 +2,7 @@
 
 ?>
 
-<?php 
-    if (isset($_GET['edit'])) {
-        $id = $_GET['edit'];
-        $update = true;
-        $record = mysqli_query($db, "SELECT * FROM users WHERE id=$id");
 
-        if (count($record) == 1 ) {
-            $n = mysqli_fetch_array($record);
-            $username = $n['username'];
-            $firstname = $n['firstname'];
-            $lastname = $n['lastname'];
-            $email = $n['email'];
-        }
-    }
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -70,8 +56,8 @@
                         </div>
 
 
-                            <!-- Get Tickets Button -->
-                            <a href="#" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <!-- Logout Button -->
+                            <a href="profile.php?logout='1'" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                         <!-- Nav End -->
                     </div>
@@ -102,7 +88,13 @@
             <h3>Profile info</h3>
       &ensp;
 
+            
+
             <form method="POST" class="form-horizontal">
+
+                
+                <input type="hidden" name="id" value="<?php echo $username; ?>">
+
               <div class="form-group">
                 <label class="col-lg-3 control-label">First Name:</label>
                 <div class="col-lg-8">
@@ -123,17 +115,12 @@
                   <input class="form-control" type="text" name="email" value="<?php echo $email; ?>">
                 </div>
               </div>
-              <div class="form-group">
-                <label class="col-lg-3 control-label">Tell something about yourself:</label>
-                <div class="col-lg-8">
-                  <input class="form-control" type="text" name="bio">
-                </div>
-              </div>
+              
               
               &ensp;
               <!--button-->
               <div class="col-12">
-                  <button type="submit" class="btn confer-btn" name="submit">Update Profile<i class="zmdi zmdi-long-arrow-right"></i></button>
+                  <button type="submit" class="btn confer-btn" name="update">Update Profile<i class="zmdi zmdi-long-arrow-right"></i></button>
               </div>
                 <!--End button-->
                 &ensp;
