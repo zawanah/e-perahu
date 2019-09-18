@@ -2,6 +2,8 @@
 
 ?>
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -134,7 +136,7 @@
                                         <li><i class="lnr lnr-home"></i> Santa monica bullevard</a></li> -->
                                         <!-- Button -->
                                         <div class="col-12">
-                                            <button type="submit" class="btn confer-btn">Edit My Profile <i class="zmdi zmdi-long-arrow-right"></i></button>
+                                            <a href="editprofile.php"><button type="submit" class="btn confer-btn">Edit My Profile <i class="zmdi zmdi-long-arrow-right"></i></button></a>
                                         </div>
                                     </ul>
                                 </div>

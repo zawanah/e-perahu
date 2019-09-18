@@ -1,3 +1,23 @@
+<?php include('server.php');
+
+?>
+
+<?php 
+    if (isset($_GET['edit'])) {
+        $id = $_GET['edit'];
+        $update = true;
+        $record = mysqli_query($db, "SELECT * FROM users WHERE id=$id");
+
+        if (count($record) == 1 ) {
+            $n = mysqli_fetch_array($record);
+            $username = $n['username'];
+            $firstname = $n['firstname'];
+            $lastname = $n['lastname'];
+            $email = $n['email'];
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +28,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>e-perahu Admin Edit Driver</title>
+    <title>e-perahu Edit Profile</title>
 
     <!-- Favicon -->
     <link rel="icon" href="./img/core-img/favicon.png">
@@ -25,27 +45,7 @@
     </div>
     <!-- /Preloader -->
 
-    <?php
-        if (isset($_POST['submit'])) {
-
-            $fullname = $_POST['fullname'];
-            $age = $_POST['age'];
-            $bio = $_POST['bio'];
-
-            $target= 'img/' . $_FILES['file']['name'];
-            move_uploaded_file($_FILES['file']['tmp_name'], $target);
-            
-            $query = dbConnection()->prepare('INSERT INTO profile VALUES(:profile_id, :fullname, :age, :bio, :img);');
-
-            $query->bindParam(":profile_id", $profile_id);
-            $query->bindParam(":fullname", $fullname);
-            $query->bindParam(":age", $age);
-            $query->bindParam(":bio", $bio);
-            $query->bindParam(":img", $target);
-        
-            $query->execute();
-        }
-   ?>
+    
 
     <!-- Header Area Start -->
     <header class="header-area">
@@ -87,7 +87,7 @@
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                     <div class="breadcrumb-content">
-                        <h2 class="page-title">Edit Driver Info</h2>
+                        <h2 class="page-title">Edit Profile</h2>
 
                     </div>
                 </div>
@@ -99,20 +99,28 @@
     <!-- Our Blog Area Start -->
     <div class="container bootstrap snippet">
       &ensp;
-            <h3>Personal info</h3>
+            <h3>Profile info</h3>
       &ensp;
 
             <form method="POST" class="form-horizontal">
               <div class="form-group">
-                <label class="col-lg-3 control-label">Full Name:</label>
+                <label class="col-lg-3 control-label">First Name:</label>
                 <div class="col-lg-8">
-                  <input class="form-control" type="text" name="fullname">
+                  <input class="form-control" type="text" name="firstname" value="<?php echo $firstname; ?>">
                 </div>
               </div>
+
               <div class="form-group">
-                <label class="col-lg-3 control-label">Age:</label>
+                <label class="col-lg-3 control-label">Last Name:</label>
                 <div class="col-lg-8">
-                  <input class="form-control" type="text" name="age">
+                  <input class="form-control" type="text" name="lastname" value="<?php echo $lastname; ?>">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-lg-3 control-label">Email:</label>
+                <div class="col-lg-8">
+                  <input class="form-control" type="text" name="email" value="<?php echo $email; ?>">
                 </div>
               </div>
               <div class="form-group">
