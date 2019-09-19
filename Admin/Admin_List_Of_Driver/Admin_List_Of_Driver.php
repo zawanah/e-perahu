@@ -16,10 +16,13 @@
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <!-- Title -->
     <title>Admin List Of Driver</title>
 
@@ -108,7 +111,7 @@
 
 
       <div class="alert alert-light" role="alert">
-        <a href="../Admin_Add_Driver/Admin_Add_Driver.php"><button type="button" class="btn btn-primary">Add Driver</button></a>
+        <a href="../Admin_Add_Driver/Admin_Add_Driver.php"><button type="button" class="btn btn-success">Add Driver</button></a>
 
       </div>
 
@@ -137,8 +140,12 @@
                    <td>". $row["email"]. "</td>
                    <td>". $row["reg_no"]. "</td>
 
-                   <td><button type='button' class='btn btn-danger'>EDIT</button></td>
-                   <td><button type='button' class='btn btn-danger'>DELETE</button></td>
+                  <td><a href='../Admin_Add_Driver/Admin_Edit_Driver.php'><button type='submit' class='btn btn-danger'>EDIT</button></a></td>
+
+
+                   <td><button type='button' class='btn btn-link'>Delete</button></td>
+
+
 
                    </tr>"  ;
 

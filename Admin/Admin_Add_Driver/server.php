@@ -41,12 +41,26 @@
 			$sql2 = "INSERT INTO driver (username, password, fname, lname, email, phone_no, reg_no )
 			VALUES ('$username', '$password','$fname','$lname', '$email', '$phone_no','$reg_no' )";
 			mysqli_query($db, $sql2);
-			$_SESSION['success'] = "Payment Successful";
+			$_SESSION['success'] = "Driver Successfully added!";
 			header('location: ../Admin_List_Of_Driver/Admin_List_Of_Driver.php'); // redirect to home page
 		}
 	}
 
+//edit profile Driver
 
+if (isset($_POST['update'])) {
+			$username = $_POST['username'];
+			$fname = $_POST['fname'];
+			$lname = $_POST['lname'];
+			$email = $_POST['email'];
+			$phone_no = $_POST['phone_no'];
+			$reg_no= $_POST['reg_no'];
+
+			mysqli_query($db, "UPDATE driver SET fname='$fname', lname='$lname', email='$email', phone_no='$phone_no', reg_no='$reg_no' WHERE username='" . $_SESSION['username'] . "'");
+
+header('location: ../Admin_List_Of_Driver/Admin_list_Of_Driver.php');
+
+}
 
 	// logout
 	if (isset($_GET['logout'])) {
