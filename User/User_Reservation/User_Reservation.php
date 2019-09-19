@@ -89,23 +89,25 @@
 									</script>
 								</div>
 								</div>
-							</div>
-
-								<div class="row">
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Package Selected</span>
 										<select class="form-control" placeholder="packageselected" required>
 												<option> </option>
-									      <option>Driver 1</option>
-									      <option>Driver 2</option>
-									      <option>Driver 3</option>
-												<option>Driver 4</option>
+									      <option>One-Way Trip</option>
+									      <option>Two-Way Trip</option>
+									      <option>Kampong Ayer Tour</option>
+												<option>Pulau Chermin Tour</option>
+												<option>Istana Nurul Iman Tour</option>
+												<option>Full Tour</option>
 									  </select>
 										<span class="select-arrow"></span>
 									</div>
 								</div>
 							</div>
+
+
+
 
 						<div class="row">
 							<div class="col-sm-6">
@@ -218,6 +220,29 @@
 								</div>
 							</div>
 						</div>
+
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="form-group">
+								<span class="form-label">Total Cost</span>
+								<select class="form-control" placeholder="totalcost" required>
+										<option> </option>
+										<option>One-Way Trip</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group">
+								<span class="form-label">Number of Ticket</span>
+								<select class="form-control" placeholder="numberofticket" required>
+										<option> </option>
+										<option>One-Way Trip</option>
+								</select>
+								<span class="select-arrow"></span>
+							</div>
+						</div>
+					</div>
+
 
 						<div class="form-btn" id="pay-now">
 							<button type="submit" name="paynow" class="submit-btn" id="confirm-purchase" onclick="">Pay Now</button>
