@@ -89,15 +89,18 @@
 									</script>
 								</div>
 								</div>
+							</div>
+
+								<div class="row">
 								<div class="col-sm-6">
 									<div class="form-group">
-										<span class="form-label">Driver</span>
-										<select class="form-control" placeholder="driver" required>
+										<span class="form-label">Package Selected</span>
+										<select class="form-control" placeholder="packageselected" required>
 												<option> </option>
-									      <option value="1">Driver 1</option>
-									      <option value="2">Driver 2</option>
-									      <option value="3">Driver 3</option>
-												<option value="4">Driver 4</option>
+									      <option>Driver 1</option>
+									      <option>Driver 2</option>
+									      <option>Driver 3</option>
+												<option>Driver 4</option>
 									  </select>
 										<span class="select-arrow"></span>
 									</div>
