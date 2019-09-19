@@ -24,7 +24,7 @@
     <title>Admin List Of Driver</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="./img/core-img/favicon.png">
+    <!-- <link rel="icon" href="./img/core-img/favicon.png"> -->
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -94,20 +94,28 @@
           &nbsp;
 
 <!--table start -->
-            <table class="table table-light table-hover">
-              <thead>
-                <tr>
+            <table class="table">
+            <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Boat Reg No</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
 
-                  <th scope="col">ID</th>
-                  <th scope="col">First Name</th>
-                  <th scope="col">Email</th>
-                  <th scope="col">Boat Reg No</th>
-                  <th scope="col">Edit</th>
-                  <th scope="col">Delete</th>
-                </tr>
-              </thead>
 
-              <tbody>
+      <div class="alert alert-light" role="alert">
+        <a href="../Admin_Add_Driver/Admin_Add_Driver.php"><button type="button" class="btn btn-primary">Add Driver</button></a>
+
+      </div>
+
+
+
+
+
 
                   <?php
                   $conn = mysqli_connect("localhost", "root", "", "registration");
@@ -129,7 +137,7 @@
                    <td>". $row["email"]. "</td>
                    <td>". $row["reg_no"]. "</td>
 
-                   <td><button type='btn'><i class='fa fa-edit'></i></button></td>
+                   <td><button type='button' class='btn btn-danger'>EDIT</button></td>
                    <td><button type='button' class='btn btn-danger'>DELETE</button></td>
 
                    </tr>"  ;

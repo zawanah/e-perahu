@@ -1,5 +1,5 @@
 <?php
-include('adddriverdb.php');
+include('server.php');
 
 ?>
 
@@ -97,6 +97,19 @@ include('adddriverdb.php');
                             <!-- <form action="mail.php" method="post"> -->
                                 <div class="contact_input_area">
                                     <div class="row">
+
+                                      <!-- Form Group -->
+                                      <div class="col-12 col-lg-6">
+                                          <div class="form-group">
+                                              <input type="text" class="form-control mb-30" name="username" placeholder="Username" required>
+                                          </div>
+                                      </div>
+                                      <!-- Form Group -->
+                                      <div class="col-12 col-lg-6">
+                                          <div class="form-group">
+                                              <input type="password" class="form-control mb-30" name="password" placeholder="Password" required>
+                                          </div>
+                                      </div>
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
@@ -129,7 +142,7 @@ include('adddriverdb.php');
                                         </div>
                                         <!-- Button -->
                                         <div class="col-12">
-                                            <button type="submit" name="register" class="btn confer-btn">Submit<i class="zmdi zmdi-long-arrow-right"></i></button>
+                                            <button type="submit" name="register2" class="btn confer-btn">Submit<i class="zmdi zmdi-long-arrow-right"></i></button>
                                         </div>
                                     </div>
                                 </div>

@@ -88,23 +88,7 @@
         <div class="container">
             <div class="row">
                 <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-xl-4">
-                    <div class="single-blog-area style-2 wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Single blog Thumb -->
-                        <div class="single-blog-thumb">
-                            <img src="img/d_i.png" alt="Driver Icon">
-                        </div>
-                        <div class="single-blog-text text-center">
-                            <a class="blog-title" href="../Admin_Add_Driver/Admin_Add_Driver.php">Add Driver</a>
-                            <!-- Post Meta -->
-
-                            <p>Add driver</p>
-                        </div>
-                        <div class="blog-btn">
-                            <a href="../Admin_Add_Driver/Admin_Add_Driver.php"><i class="zmdi zmdi-long-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
+              
 
                 <div class="col-12 col-md-6 col-xl-4">
                     <div class="single-blog-area style-2 wow fadeInUp" data-wow-delay="300ms">

@@ -1,76 +1,52 @@
 <?php
 	session_start();
 	$username = "";
+	$password = "";
 	$email = "";
+	$fname = "";
+	$lname = "";
+	$phone_no = "";
+	$reg_no="";
+
 	$errors = array();
 
 	$db = mysqli_connect('localhost', 'root', '', 'registration');
 
-	if (isset($_POST['register'])) {
-		$username = mysqli_real_escape_string($db, $_POST['username']);
-		$email = mysqli_real_escape_string($db, $_POST['email']);
-		$password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
-		$password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
+//add new driver
 
-		// ensure that form fields are filled properly
-		if (empty($username)) {
-			array_push($errors, "Username is required");
-		}
-		if (empty($email)) {
-			array_push($errors, "Email is required");
-		}
-		if (empty($password_1)) {
-			array_push($errors, "Password is required");
-		}
-		if ($password_1 != $password_2) {
-			array_push($errors, "The two passwords do not match");
-		}
-
-		$userquery = "SELECT * FROM users WHERE username='$username'";
-		$result = mysqli_query($db, $userquery);
-
-		if (mysqli_num_rows($result) == 1) {
-			array_push($errors, "The username has already been taken");
-		}
-
-		// if there are no errors, save user to database
-		if (count($errors) == 0) {
-			$password = md5($password_1); // encrypt password
-			$sql = "INSERT INTO admin (username, email, password) VALUES ('$username', '$email', '$password')";
-			mysqli_query($db, $sql);
-			$_SESSION['username'] = $username;
-			$_SESSION['success'] = "You are now logged in";
-			header('location: Admin_Login.php'); // redirect to home page
-		}
-	}
-
-	// log user in from login page
-	if (isset($_POST['login'])) {
+	if (isset($_POST['register2'])) {
 		$username = mysqli_real_escape_string($db, $_POST['username']);
 		$password = mysqli_real_escape_string($db, $_POST['password']);
+    $fname = mysqli_real_escape_string($db, $_POST['fname']);
+    $lname = mysqli_real_escape_string($db, $_POST['lname']);
+    $email = mysqli_real_escape_string($db, $_POST['email']);
+    $phone_no = mysqli_real_escape_string($db, $_POST['phone_no']);
+    $reg_no= mysqli_real_escape_string($db, $_POST['reg_no']);
 
-		// ensure that form fields are filled properly
-		if (empty($username)) {
-			array_push($errors, "Username is required");
+
+		if (empty($phone_no)) {
+			array_push($errors, "Phone Number is required");
 		}
-		if (empty($password)) {
-			array_push($errors, "Password is required");
+		if (empty($email)) {
+			array_push($errors, "email is required");
 		}
+
+		if (empty($reg_no)) {
+			array_push($errors, "Boat Registered no. is required");
+		}
+
+
 
 		if (count($errors) == 0) {
-			$password = md5($password); // encrypt password
-			$query = "SELECT * FROM admin WHERE username='$username' AND password='$password'";
-			$result = mysqli_query($db, $query);
-			if (mysqli_num_rows($result) == 1) {
-				// log user in
-				$_SESSION['username'] = $username;
-				$_SESSION['success'] = "You are now logged in";
-				header('location: ../Admin_Dashboard/Admin_Dashboard.php'); // redirect to Admin Dashboard page
-			}else{
-				array_push($errors, "Wrong username/password combination");
-			}
+			$sql2 = "INSERT INTO driver (username, password, fname, lname, email, phone_no, reg_no )
+			VALUES ('$username', '$password','$fname','$lname', '$email', '$phone_no','$reg_no' )";
+			mysqli_query($db, $sql2);
+			$_SESSION['success'] = "Payment Successful";
+			header('location: ../Admin_List_Of_Driver/Admin_List_Of_Driver.php'); // redirect to home page
 		}
 	}
+
+
 
 	// logout
 	if (isset($_GET['logout'])) {
