@@ -6,10 +6,9 @@
 <html lang="en">
 
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 	<title>Booking Form</title>
 
@@ -22,17 +21,9 @@
 	<!-- Custom stlylesheet for Reservation form -->
 	<link type="text/css" rel="stylesheet" href="build/css/style.css" />
 
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
-
 	<!-- for phone number validation -->
 	<link rel="stylesheet" href="build/css/intlTelInput.css">
 	<script src="build/js/intlTelInput.js"></script>
-
 
 	<!-- for pickup and destination -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
@@ -59,6 +50,10 @@
 <!-- For card validation -->
 <link rel="stylesheet" type="text/css" href="build/css/cardstyle.css">
 
+<!-- for ticket calculation -->
+<script type="text/javascript" src="build/js/ticketformcalculations.js"></script>
+
+
 </head>
 
 <body>
@@ -71,7 +66,7 @@
 						<div class="form-header">
 							<h1>Reservation</h1>
 						</div>
-						<form method="post" action="User_Reservation.php">
+						<form method="post" action="User_Reservation.php" id="ticketform">
 
 							<!-- display validation errors here -->
 							<?php include('errors.php'); ?>
@@ -92,22 +87,19 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Package Selected</span>
-										<select class="form-control" placeholder="packageselected" required>
-												<option> </option>
-									      <option>One-Way Trip</option>
-									      <option>Two-Way Trip</option>
-									      <option>Kampong Ayer Tour</option>
-												<option>Pulau Chermin Tour</option>
-												<option>Istana Nurul Iman Tour</option>
-												<option>Full Tour</option>
+										<select class="form-control" placeholder="packageselected" name='selectedticket' onclick="calculateTotal()" required>
+											<option value="price0">Choose your ticket</option>
+											<option value="price1">One-Way Trip (BND$1/Person)</option>
+											<option value="price2">Two-Way Trip (BND$2/Person)</option>
+											<option value="price7">Kampong Ayer Tour (BND$7/Person)</option>
+											<option value="price14">Pulau Chermin Tour (BND$14/Person)</option>
+											<option value="price11">Istana Nurul Iman Tour (BND$11/Person)</option>
+											<option value="price32">Full Tour (BND$32/Person)</option>
 									  </select>
 										<span class="select-arrow"></span>
 									</div>
 								</div>
 							</div>
-
-
-
 
 						<div class="row">
 							<div class="col-sm-6">
@@ -225,24 +217,29 @@
 						<div class="col-sm-6">
 							<div class="form-group">
 								<span class="form-label">Total Cost</span>
-								<select class="form-control" placeholder="totalcost" required>
-										<option> </option>
-										<option>One-Way Trip</option>
-								</select>
+								<div class="form-control" id="totalPrice"></div>
 							</div>
 						</div>
 						<div class="col-sm-6">
 							<div class="form-group">
 								<span class="form-label">Number of Ticket</span>
-								<select class="form-control" placeholder="numberofticket" required>
-										<option> </option>
-										<option>One-Way Trip</option>
+								<select class="form-control" placeholder="numberofticket" name='quantity' onchange="calculateTotal()" required>
+									<option value="zero">No. of person</option>
+									<option value="one">1 Person</option>
+									<option value="two">2 Person</option>
+									<option value="three">3 Person</option>
+									<option value="four">4 Person</option>
+									<option value="five">5 Person</option>
+									<option value="six">6 Person</option>
+									<option value="seven">7 Person</option>
+									<option value="eight">8 Person</option>
+									<option value="nine">9 Person</option>
+									<option value="ten">10 Person</option>
 								</select>
 								<span class="select-arrow"></span>
 							</div>
 						</div>
 					</div>
-
 
 						<div class="form-btn" id="pay-now">
 							<button type="submit" name="paynow" class="submit-btn" id="confirm-purchase" onclick="">Pay Now</button>

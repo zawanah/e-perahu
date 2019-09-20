@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC>
+<html>
+<head>
+<!-- <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/> -->
+<script type="text/javascript" src="js/ticketformcalculations.js"></script>
+</head>
+<body onload='hideTotal()'>
+<div>
+
+<form action="" id="ticketform" onsubmit="return false;">
+
+<div>
+
+<legend>Package Info</legend><br>
+
+<label>Ticket Pricing</label><br>
+
+<select name='selectedticket' onclick="calculateTotal()">
+<option value="price0">Choose your ticket</option>
+<option value="price1">One-Way Trip (BND$1/Person)</option>
+<option value="price2">Two-Way Trip (BND$2/Person)</option>
+<option value="price7">Kampong Ayer Tour (BND$7/Person)</option>
+<option value="price14">Pulau Chermin Tour (BND$14/Person)</option>
+<option value="price11">Istana Nurul Iman Tour (BND$11/Person)</option>
+<option value="price32">Full Tour (BND$32/Person)</option>
+</select>
+<br>
+<br>
+
+<!-- <label ><input type="radio"  name="selectedticket" value="price0" onclick="calculateTotal()" />Choose your ticket</label><br/>
+<label ><input type="radio"  name="selectedticket" value="price1" onclick="calculateTotal()" />One-Way Trip (BND$1/Person)</label><br/>
+<label ><input type="radio"  name="selectedticket" value="price2" onclick="calculateTotal()" />Two-Way Trip (BND$2/Person)</label><br/>
+<label ><input type="radio"  name="selectedticket" value="price7" onclick="calculateTotal()" />Kampong Ayer Tour (BND$7/Person)</label><br/>
+<label ><input type="radio"  name="selectedticket" value="price14" onclick="calculateTotal()" />Pulau Chermin Tour (BND$14/Person)</label><br/>
+<label ><input type="radio"  name="selectedticket" value="price11" onclick="calculateTotal()" />Istana Nurul Iman Tour (BND$11/Person)</label><br/>
+<label ><input type="radio"  name="selectedticket" value="price32" onclick="calculateTotal()" />Full Tour (BND$32/Person)</label><br/>
+<br/> -->
+
+<label >Ticket Quantity</label><br>
+
+<select name='quantity' onchange="calculateTotal()">
+<option value="zero">No. of person</option>
+<option value="one">1 Person</option>
+<option value="two">2 Person</option>
+<option value="three">3 Person</option>
+<option value="four">4 Person</option>
+<option value="five">5 Person</option>
+<option value="six">6 Person</option>
+<option value="seven">7 Person</option>
+<option value="eight">8 Person</option>
+<option value="nine">9 Person</option>
+<option value="ten">10 Person</option>
+</select>
+<br/>
+
+<div id="totalPrice"></div>
+
+</div>
+
+</form>
+
+</div>
+
+</body>
+</html>
