@@ -7,6 +7,8 @@
 	$lname = "";
 	$phone_no = "";
 	$reg_no="";
+		$update=true;
+
 
 	$errors = array();
 
@@ -42,25 +44,32 @@
 			VALUES ('$username', '$password','$fname','$lname', '$email', '$phone_no','$reg_no' )";
 			mysqli_query($db, $sql2);
 			$_SESSION['success'] = "Driver Successfully added!";
-			header('location: ../Admin_List_Of_Driver/Admin_List_Of_Driver.php'); // redirect to home page
+			header('location: ../Admin_Add_Driver/Admin_List_Of_Driver.php'); // redirect to home page
 		}
 	}
 
-//edit profile Driver
+//update profile Driver
 
 if (isset($_POST['update'])) {
-			$username = $_POST['username'];
-			$fname = $_POST['fname'];
-			$lname = $_POST['lname'];
-			$email = $_POST['email'];
-			$phone_no = $_POST['phone_no'];
-			$reg_no= $_POST['reg_no'];
+	$id = $_POST['id'];
+	$fname = $_POST['fname'];
+	$lname= $_POST['lname'];
 
-			mysqli_query($db, "UPDATE driver SET fname='$fname', lname='$lname', email='$email', phone_no='$phone_no', reg_no='$reg_no' WHERE username='" . $_SESSION['username'] . "'");
-
-header('location: ../Admin_List_Of_Driver/Admin_list_Of_Driver.php');
-
+	mysqli_query($db, "UPDATE driver SET fname='$fname', lname='$lname' WHERE id=$id");
+	$_SESSION['message'] = "driver updated!";
+	header('location:../Admin_Add_Driver/Admin_List_Of_Driver.php ');
 }
+
+//delete Driver
+if (isset($_GET['del'])) {
+	$id = $_GET['del'];
+	mysqli_query($db, "DELETE FROM driver WHERE id=$id");
+	$_SESSION['message'] = "driver deleted!";
+	header('location: ../Admin_Add_Driver/Admin_List_Of_Driver.php');
+}
+
+
+
 
 	// logout
 	if (isset($_GET['logout'])) {

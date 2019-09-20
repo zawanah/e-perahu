@@ -111,7 +111,7 @@
 
 
       <div class="alert alert-light" role="alert">
-        <a href="../Admin_Add_Driver/Admin_Add_Driver.php"><button type="button" class="btn btn-success">Add Driver</button></a>
+        <a href="../Admin_Add_Driver/Admin_Add_Driver.php"><button type="button" class="btn btn-outline-success btn-lg">Add Driver</button></a>
 
       </div>
 
@@ -140,10 +140,10 @@
                    <td>". $row["email"]. "</td>
                    <td>". $row["reg_no"]. "</td>
 
-                  <td><a href='../Admin_Add_Driver/Admin_Edit_Driver.php'><button type='submit' class='btn btn-danger'>EDIT</button></a></td>
+                  <td><a href='../Admin_Add_Driver/Admin_Edit_Driver.php'><button type='submit' name='edit' class='btn btn-outline-primary btn-lg'>EDIT</button></a></td>
 
 
-                   <td><button type='button' class='btn btn-link'>Delete</button></td>
+                   <td><a href='#'><button type='submit' name='edit' class='btn btn-outline-danger btn-lg'>DELETE</button></a></td>
 
 
 
