@@ -1,6 +1,3 @@
-<?php include('server.php');
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +34,7 @@
                 <nav class="classy-navbar justify-content-between" id="conferNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="indexuser.php"><img src="./img/core-img/logo.png" alt=""></a>
+                    <a class="nav-brand" href="./indexuser.php"><img src="./img/core-img/logo.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -59,7 +56,7 @@
                                         <li><a href="profile.php">- My Profile</a></li>
                                         <li><a href="index.php">- Schedule</a></li>
                                         <li><a href="about.php">- Ticket Price</a></li>
-                                        <li><a href="speakers.php">- drivers</a></li>
+                                        <li><a href="speakers.php">- driver</a></li>
                                         <li><a href="schedule.php">- promotion</a></li>
 
 
@@ -70,8 +67,8 @@
                                 <li><a href="contact.php">Feedback</a></li>
                             </ul>
 
-                            <!-- Get Tickets Button -->
-                            <a href="speakers.php?logout='1'" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <!-- Logout Button -->
+                            <a href="profile.php?logout='1'" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                         <!-- Nav End -->
                     </div>
@@ -87,11 +84,11 @@
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                     <div class="breadcrumb-content">
-                        <h2 class="page-title">Drivers</h2>
+                        <h2 class="page-title">My Profile</h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Drivers</li>
+                                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">My Profile</li>
                             </ol>
                         </nav>
                     </div>
@@ -101,76 +98,66 @@
     </section>
     <!-- Breadcrumb Area End -->
 
-<!--table start -->
-            <table class="table">
-            <thead class="thead-dark">
-                  <tr>
-                    <th scope="col">First Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Boat Reg No</th>
-                  </tr>
-                </thead>
+
+    <section class="home_banner_area" style="background-image: #ffffff">
+        <div class="container box_1620">
+                <div class="banner_inner d-flex align-items-center">
+                    <div class="banner_content">
+                        <div class="media">
+                            <div class="d-flex">
+                                <img src="img/user.png" alt="">
+                            </div>
+                            <div class="media-body">
+
+                                <div class="personal_text">
+
+                                    <?php
+                                    $sql = "SELECT firstname, lastname, username, email FROM driver WHERE username = '" . $_SESSION['username'] . "'";
+
+                                    $result = mysqli_query($db, $sql);
+                                    $row = mysqli_fetch_array($result);
+
+                                    echo "Hello, " . $row['firstname'] . " ". $row['lastname'] ." ". $row['email'] ." (" . $row['username'] . ").";
+
+                                      ?>
+
+                                    
+
+                                
+
+                                        <!-- <li><i class="lnr lnr-calendar-full"></i> 31st December, 1992</a></li>
+                                        <li><i class="lnr lnr-phone-handset"></i> 44 (012) 6954 783</a></li>
+                                        <li></li>
+                                        <li><i class="lnr lnr-home"></i> Santa monica bullevard</a></li> -->
+                                        <!-- Button -->
+                                        <div class="col-12">
+                                            <a href="editprofile.php"><button type="submit" class="btn confer-btn">Edit My Profile <i class="zmdi zmdi-long-arrow-right"></i></button></a>
+                                        </div>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
 
 
-      
-
-
-
-
-
-
-                  <?php
-                  $conn = mysqli_connect("localhost", "root", "", "registration");
-                  // Check connection
-                  if ($conn->connect_error) {
-                  die("Connection failed: " . $conn->connect_error);
-                  }
-                  $sql = "SELECT  fname, email, reg_no FROM driver";
-                  $result = $conn->query($sql);
-                  if ($result->num_rows > 0) {
-                  // output data of each row
-                  while($row = $result->fetch_assoc()) {
-
-
-                  echo "<tr>
-                   <td>" . $row["fname"] . "</td>
-                   <td>". $row["email"]. "</td>
-                   <td>". $row["reg_no"]. "</td>
-
-
-
-                   </tr>"  ;
-
-
-                  }
-                  echo "</table>";
-                  } else { echo "0 results"; }
-                  $conn->close();
-                  ?>
-
-              </tbody>
-            </table>
-          </div>
-          &nbsp;
-
-<!--table End-->
-
-
-    <!-- Footer Area Start -->
-    <footer class="footer-area bg-img bg-overlay-2 section-padding-100-0">
+        <!-- Footer Area Start -->
+    <!-- <footer class="footer-area bg-img bg-overlay-2 section-padding-100-0"> -->
         <!-- Main Footer Area -->
-        <div class="main-footer-area">
+        <!-- <div class="main-footer-area">
             <div class="container">
-                <div class="row">
+                <div class="row"> -->
                     <!-- Single Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="single-footer-widget mb-60">
+                    <!-- <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget mb-60"> -->
 
                             <!-- Widget Title -->
-                            <h5 class="widget-title">Contact</h5>
+                            <!-- <h5 class="widget-title">Contact</h5> -->
 
                             <!-- Contact Area -->
-                            <div class="footer-contact-info">
+                            <!-- <div class="footer-contact-info">
                                 <p><i class="zmdi zmdi-map"></i> Bandar Seri Begawan</p>
                                 <p><i class="zmdi zmdi-phone"></i> (+673) 2123456</p>
                                 <p><i class="zmdi zmdi-email"></i> -e-perahu@gmail.com</p>
@@ -181,7 +168,7 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> -->
     <!-- Footer Area End -->
 
     <!-- **** All JS Files ***** -->

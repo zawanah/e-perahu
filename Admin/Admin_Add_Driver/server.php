@@ -19,11 +19,11 @@
 	if (isset($_POST['register2'])) {
 		$username = mysqli_real_escape_string($db, $_POST['username']);
 		$password = mysqli_real_escape_string($db, $_POST['password']);
-    $fname = mysqli_real_escape_string($db, $_POST['fname']);
-    $lname = mysqli_real_escape_string($db, $_POST['lname']);
-    $email = mysqli_real_escape_string($db, $_POST['email']);
-    $phone_no = mysqli_real_escape_string($db, $_POST['phone_no']);
-    $reg_no= mysqli_real_escape_string($db, $_POST['reg_no']);
+    	$fname = mysqli_real_escape_string($db, $_POST['fname']);
+    	$lname = mysqli_real_escape_string($db, $_POST['lname']);
+    	$email = mysqli_real_escape_string($db, $_POST['email']);
+    	$phone_no = mysqli_real_escape_string($db, $_POST['phone_no']);
+    	$reg_no= mysqli_real_escape_string($db, $_POST['reg_no']);
 
 
 		if (empty($phone_no)) {
@@ -40,6 +40,7 @@
 
 
 		if (count($errors) == 0) {
+			$password = md5($password);
 			$sql2 = "INSERT INTO driver (username, password, fname, lname, email, phone_no, reg_no )
 			VALUES ('$username', '$password','$fname','$lname', '$email', '$phone_no','$reg_no' )";
 			mysqli_query($db, $sql2);

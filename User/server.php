@@ -82,9 +82,6 @@
 	// log user in from login page
 	if (isset($_POST['login'])) {
 		$username = mysqli_real_escape_string($db, $_POST['username']);
-		$firstname = mysqli_real_escape_string($db, $_POST['firstname']);
-		$lastname = mysqli_real_escape_string($db, $_POST['lastname']);
-		$username = mysqli_real_escape_string($db, $_POST['username']);
 		$password = mysqli_real_escape_string($db, $_POST['password']);
 
 		// ensure that form fields are filled properly
