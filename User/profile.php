@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>Confer - Conference Event HTML Template</title>
+    <title>E-Perahu - User Profile</title>
 
     <!-- Favicon -->
     <link rel="icon" href="./img/core-img/favicon.png">
@@ -84,10 +84,10 @@
     <!-- Header Area End -->
 
     <!-- Breadcrumb Area Start -->
-    <section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url(img/backprofile.jpg);">
+    <section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url(img/backprofile.jpg);" >
         <div class="container h-100">
             <div class="row h-100 align-items-center">
-                <div class="col-12">
+                <!-- <div class="col-12"> -->
                     <div class="breadcrumb-content">
                         <h2 class="page-title">My Profile</h2>
                         <nav aria-label="breadcrumb">
@@ -97,7 +97,7 @@
                             </ol>
                         </nav>
                     </div>
-                </div>
+               <!--  </div> -->
             </div>
         </div>
     </section>
@@ -105,14 +105,24 @@
 
 
     <section class="home_banner_area" style="background-image: #ffffff">
-        <div class="container box_1620">
-                <div class="banner_inner d-flex align-items-center">
-                    <div class="banner_content">
-                        <div class="media">
-                            <div class="d-flex">
-                                <img src="img/user.png" alt="">
-                            </div>
-                            <div class="media-body">
+        <!-- <div class="box_1620"> -->
+                <!-- <div class="banner_inner d-flex align-items-center"> -->
+                    <!-- <div class="banner_content"> -->
+                        <!-- <div class="media"> -->
+                            <div class="displayPic" style="text-align: center; font-size: 40px" >
+                                <img src="img/e-perahu-icon.png" alt="" style="width: 400px; height: 400px; margin: auto;"> <br/>
+                                <?php
+                                    $sql = "SELECT firstname, lastname, username, email FROM users WHERE username = '" . $_SESSION['username'] . "'";
+
+                                    $result = mysqli_query($db, $sql);
+                                    $row = mysqli_fetch_array($result);
+
+                                    echo "Hello! " . $row['firstname'] . " ". $row['lastname'] . "";
+
+                                      ?>
+
+                            </div> <br>
+                            <div class="media-body" style="text-align: center;">
 
                                 <div class="personal_text">
 
@@ -122,9 +132,9 @@
                                     $result = mysqli_query($db, $sql);
                                     $row = mysqli_fetch_array($result);
 
-                                    echo "Hello, " . $row['firstname'] . " ". $row['lastname'] ." ". $row['email'] ." (" . $row['username'] . ").";
+                                    echo "Fullname:  " . $row['firstname'] . " ". $row['lastname'] ."<br/>". "Email: ". $row['email'] . "<br/>" . "Username: ". $row['username'] . "";
 
-                                      ?>
+                                      ?> 
 
                                     
 
@@ -136,15 +146,19 @@
                                         <li><i class="lnr lnr-home"></i> Santa monica bullevard</a></li> -->
                                         <!-- Button -->
                                         <div class="col-12">
+                                            <br>
                                             <a href="editprofile.php"><button type="submit" class="btn confer-btn">Edit My Profile <i class="zmdi zmdi-long-arrow-right"></i></button></a>
                                         </div>
-                                    </ul>
+                                    
                                 </div>
+                                
+
+
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                      <!--   </div> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+            <!-- </div> -->
     </section>
 
 
