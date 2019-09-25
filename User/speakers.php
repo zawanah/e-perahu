@@ -1,10 +1,24 @@
 <?php include('../Admin/Admin_Add_Driver/server.php');
-        $query = "SELECT username, fname, lname FROM driver WHERE id= '$id' LIMIT 1";
-        $result = mysqli_query($db, $query);
-        $row = mysqli_fetch_array($result);
-        $username = $row['username'];
-        $fname = $row['fname'];
-        $lname = $row['lname'];
+
+?>
+
+<?php $conn = mysqli_connect("localhost", "root", "", "registration");
+                  // Check connection
+                  if ($conn->connect_error) {
+                  die("Connection failed: " . $conn->connect_error);
+                  }
+                  $sql = "SELECT fname, lname, email, reg_no FROM driver WHERE username= 'minari'";
+                  $result = $conn->query($sql);
+
+?>
+
+<?php $conn2 = mysqli_connect("localhost", "root", "", "registration");
+                  // Check connection
+                  if ($conn2->connect_error) {
+                  die("Connection failed: " . $conn2->connect_error);
+                  }
+                  $sql2 = "SELECT fname, lname, email, reg_no FROM driver WHERE username= 'jackie'";
+                  $result2 = $conn2->query($sql2);
 
 ?>
 
@@ -134,9 +148,20 @@
                                                 </div>
                                                 <!-- Single Schedule Info -->
                                                 <div class="single-schedule-info">
-                                                    <h6><?php echo $username; ?></h6>
-                                                    <p><?php echo $fname; ?></p>
-                                                    <p><?php echo $lname; ?></p>
+                                                    <?php if ($result->num_rows > 0) {
+                                                    // output data of each row
+                                                    while($row = $result->fetch_assoc()) {
+
+                                                    
+                                                    echo "<p> <h6>" . $row["fname"] . "</h6>
+                                                    <p>" . $row["lname"] . "</p>
+                                                    <p>" . $row["email"] . "</p>
+
+                                                    </p>";
+                                                    }
+                                                    } else { echo "0 results"; }
+                                                    $conn->close();
+                                                    ?>
                                                 </div>
                                             </div>
                                             <!-- Single Schedule Info -->
@@ -158,8 +183,20 @@
                                                 </div>
                                                 <!-- Single Schedule Info -->
                                                 <div class="single-schedule-info">
-                                                    <h6>Crop Insurance Conference</h6>
-                                                    <p>by <span>Amanda Hudson</span> / Ceo of Confer</p>
+                                                    <?php if ($result2->num_rows > 0) {
+                                                    // output data of each row
+                                                    while($row2 = $result2->fetch_assoc()) {
+
+                                                    
+                                                    echo "<p> <h6>" . $row2["fname"] . "</h6>
+                                                    <p>" . $row2["lname"] . "</p>
+                                                    <p>" . $row2["email"] . "</p>
+
+                                                    </p>";
+                                                    }
+                                                    } else { echo "0 results"; }
+                                                    $conn2->close();
+                                                    ?>
                                                 </div>
                                             </div>
                                             <!-- Single Schedule Info -->
@@ -195,28 +232,7 @@
                                             <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
                                         </div>
 
-                                        <!-- Single Schedule Area -->
-                                        <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
-                                            <!-- Single Schedule Thumb and Info -->
-                                            <div class="single-schedule-tumb-info d-flex align-items-center">
-                                                <!-- Single Schedule Thumb -->
-                                                <div class="single-schedule-tumb">
-                                                    <img src="img/bg-img/13.jpg" alt="">
-                                                </div>
-                                                <!-- Single Schedule Info -->
-                                                <div class="single-schedule-info">
-                                                    <h6>Street Food Convention</h6>
-                                                    <p>by <span>Jeffrey Morales</span> / Ceo of Confer</p>
-                                                </div>
-                                            </div>
-                                            <!-- Single Schedule Info -->
-                                            <div class="schedule-time-place">
-                                                <p><i class="zmdi zmdi-time"></i> 12-14 Jan 2019</p>
-                                                <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
-                                            </div>
-                                            <!-- Schedule Btn -->
-                                            <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
-                                        </div>
+                                        
                                     </div>
 
                                     <!-- More Schedule Btn -->
