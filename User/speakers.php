@@ -1,4 +1,24 @@
-<?php include('server.php');
+<?php include('../Admin/Admin_Add_Driver/server.php');
+
+?>
+
+<?php $conn = mysqli_connect("localhost", "root", "", "registration");
+                  // Check connection
+                  if ($conn->connect_error) {
+                  die("Connection failed: " . $conn->connect_error);
+                  }
+                  $sql = "SELECT fname, lname, email, reg_no FROM driver WHERE username= 'minari'";
+                  $result = $conn->query($sql);
+
+?>
+
+<?php $conn2 = mysqli_connect("localhost", "root", "", "registration");
+                  // Check connection
+                  if ($conn2->connect_error) {
+                  die("Connection failed: " . $conn2->connect_error);
+                  }
+                  $sql2 = "SELECT fname, lname, email, reg_no FROM driver WHERE username= 'jackie'";
+                  $result2 = $conn2->query($sql2);
 
 ?>
 
@@ -101,57 +121,282 @@
     </section>
     <!-- Breadcrumb Area End -->
 
-<!--table start -->
-            <table class="table">
-            <thead class="thead-dark">
-                  <tr>
-                    <th scope="col">First Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Boat Reg No</th>
-                  </tr>
-                </thead>
+<!-- Our Schedule Area Start -->
+    <section class="our-schedule-area bg-white section-padding-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="schedule-tab">
+                        <!-- Nav Tabs -->
 
+                    </div>
 
-      
+                    <!-- Tab Content -->
+                    <div class="tab-content" id="conferScheduleTabContent">
+                        <div class="tab-pane fade show active" id="step-one" role="tabpanel" aria-labelledby="monday-tab">
+                            <!-- Single Tab Content -->
+                            <div class="single-tab-content">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <!-- Single Schedule Area -->
+                                        <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
+                                            <!-- Single Schedule Thumb and Info -->
+                                            <div class="single-schedule-tumb-info d-flex align-items-center">
+                                                <!-- Single Schedule Thumb -->
+                                                <div class="single-schedule-tumb">
+                                                    <img src="img/bg-img/10.jpg" alt="">
+                                                </div>
+                                                <!-- Single Schedule Info -->
+                                                <div class="single-schedule-info">
+                                                    <?php if ($result->num_rows > 0) {
+                                                    // output data of each row
+                                                    while($row = $result->fetch_assoc()) {
 
+                                                    
+                                                    echo "<p> <h6>" . $row["fname"] . "</h6>
+                                                    <p>" . $row["lname"] . "</p>
+                                                    <p>" . $row["email"] . "</p>
 
+                                                    </p>";
+                                                    }
+                                                    } else { echo "0 results"; }
+                                                    $conn->close();
+                                                    ?>
+                                                </div>
+                                            </div>
+                                            <!-- Single Schedule Info -->
+                                            <div class="schedule-time-place">
+                                                <p><i class="zmdi zmdi-time"></i> 12-14 Jan 2019</p>
+                                                <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
+                                            </div>
+                                            <!-- Schedule Btn -->
+                                            <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                        </div>
 
+                                        <!-- Single Schedule Area -->
+                                        <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
+                                            <!-- Single Schedule Thumb and Info -->
+                                            <div class="single-schedule-tumb-info d-flex align-items-center">
+                                                <!-- Single Schedule Thumb -->
+                                                <div class="single-schedule-tumb">
+                                                    <img src="img/bg-img/11.jpg" alt="">
+                                                </div>
+                                                <!-- Single Schedule Info -->
+                                                <div class="single-schedule-info">
+                                                    <?php if ($result2->num_rows > 0) {
+                                                    // output data of each row
+                                                    while($row2 = $result2->fetch_assoc()) {
 
+                                                    
+                                                    echo "<p> <h6>" . $row2["fname"] . "</h6>
+                                                    <p>" . $row2["lname"] . "</p>
+                                                    <p>" . $row2["email"] . "</p>
 
+                                                    </p>";
+                                                    }
+                                                    } else { echo "0 results"; }
+                                                    $conn2->close();
+                                                    ?>
+                                                </div>
+                                            </div>
+                                            <!-- Single Schedule Info -->
+                                            <div class="schedule-time-place">
+                                                <p><i class="zmdi zmdi-time"></i> 12-14 Jan 2019</p>
+                                                <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
+                                            </div>
+                                            <!-- Schedule Btn -->
+                                            <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                        </div>
 
-                  <?php
-                  $conn = mysqli_connect("localhost", "root", "", "registration");
-                  // Check connection
-                  if ($conn->connect_error) {
-                  die("Connection failed: " . $conn->connect_error);
-                  }
-                  $sql = "SELECT  fname, email, reg_no FROM driver";
-                  $result = $conn->query($sql);
-                  if ($result->num_rows > 0) {
-                  // output data of each row
-                  while($row = $result->fetch_assoc()) {
+                                        <!-- Single Schedule Area -->
+                                        <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
+                                            <!-- Single Schedule Thumb and Info -->
+                                            <div class="single-schedule-tumb-info d-flex align-items-center">
+                                                <!-- Single Schedule Thumb -->
+                                                <div class="single-schedule-tumb">
+                                                    <img src="img/bg-img/12.jpg" alt="">
+                                                </div>
+                                                <!-- Single Schedule Info -->
+                                                <div class="single-schedule-info">
+                                                    <h6><?php echo $username; ?></h6>
+                                                    <p><?php echo $fname; ?></p>
+                                                    <p><?php echo $lname; ?></p>
+                                                </div>
+                                            </div>
+                                            <!-- Single Schedule Info -->
+                                            <div class="schedule-time-place">
+                                                <p><i class="zmdi zmdi-time"></i> 12-14 Jan 2019</p>
+                                                <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
+                                            </div>
+                                            <!-- Schedule Btn -->
+                                            <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                        </div>
 
+                                        
+                                    </div>
 
-                  echo "<tr>
-                   <td>" . $row["fname"] . "</td>
-                   <td>". $row["email"]. "</td>
-                   <td>". $row["reg_no"]. "</td>
+                                    <!-- More Schedule Btn -->
+                                    <div class="col-12">
+                                        <div class="more-schedule-btn text-center mt-50 wow fadeInUp" data-wow-delay="300ms">
+                                            <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
+                        <div class="tab-pane fade" id="step-two" role="tabpanel" aria-labelledby="tuesday-tab">
+                            <!-- Single Tab Content -->
+                            <div class="single-tab-content">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <!-- Single Schedule Area -->
+                                        <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
+                                            <!-- Single Schedule Thumb and Info -->
+                                            <div class="single-schedule-tumb-info d-flex align-items-center">
+                                                <!-- Single Schedule Thumb -->
+                                                <div class="single-schedule-tumb">
+                                                    <img src="img/bg-img/11.jpg" alt="">
+                                                </div>
+                                                <!-- Single Schedule Info -->
+                                                <div class="single-schedule-info">
+                                                    <h6>Crop Insurance Conference</h6>
+                                                    <p>by <span>Amanda Hudson</span> / Ceo of Confer</p>
+                                                </div>
+                                            </div>
+                                            <!-- Single Schedule Info -->
+                                            <div class="schedule-time-place">
+                                                <p><i class="zmdi zmdi-time"></i> 12-14 Jan 2019</p>
+                                                <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
+                                            </div>
+                                            <!-- Schedule Btn -->
+                                            <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                        </div>
 
+                                        <!-- Single Schedule Area -->
+                                        <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
+                                            <!-- Single Schedule Thumb and Info -->
+                                            <div class="single-schedule-tumb-info d-flex align-items-center">
+                                                <!-- Single Schedule Thumb -->
+                                                <div class="single-schedule-tumb">
+                                                    <img src="img/bg-img/12.jpg" alt="">
+                                                </div>
+                                                <!-- Single Schedule Info -->
+                                                <div class="single-schedule-info">
+                                                    <h6>Capdm Executive Conference</h6>
+                                                    <p>by <span>Martha Burke</span> / Ceo of Confer</p>
+                                                </div>
+                                            </div>
+                                            <!-- Single Schedule Info -->
+                                            <div class="schedule-time-place">
+                                                <p><i class="zmdi zmdi-time"></i> 12-14 Jan 2019</p>
+                                                <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
+                                            </div>
+                                            <!-- Schedule Btn -->
+                                            <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                        </div>
 
-                   </tr>"  ;
+                                        <!-- Single Schedule Area -->
+                                        <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
+                                            <!-- Single Schedule Thumb and Info -->
+                                            <div class="single-schedule-tumb-info d-flex align-items-center">
+                                                <!-- Single Schedule Thumb -->
+                                                <div class="single-schedule-tumb">
+                                                    <img src="img/bg-img/13.jpg" alt="">
+                                                </div>
+                                                <!-- Single Schedule Info -->
+                                                <div class="single-schedule-info">
+                                                    <h6>Street Food Convention</h6>
+                                                    <p>by <span>Jeffrey Morales</span> / Ceo of Confer</p>
+                                                </div>
+                                            </div>
+                                            <!-- Single Schedule Info -->
+                                            <div class="schedule-time-place">
+                                                <p><i class="zmdi zmdi-time"></i> 12-14 Jan 2019</p>
+                                                <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
+                                            </div>
+                                            <!-- Schedule Btn -->
+                                            <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                        </div>
+                                    </div>
 
+                                    <!-- More Schedule Btn -->
+                                    <div class="col-12">
+                                        <div class="more-schedule-btn text-center mt-50 wow fadeInUp" data-wow-delay="300ms">
+                                            <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                  }
-                  echo "</table>";
-                  } else { echo "0 results"; }
-                  $conn->close();
-                  ?>
+                        <div class="tab-pane fade" id="step-three" role="tabpanel" aria-labelledby="wednesday-tab">
+                            <!-- Single Tab Content -->
+                            <div class="single-tab-content">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <!-- Single Schedule Area -->
+                                        <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
+                                            <!-- Single Schedule Thumb and Info -->
+                                            <div class="single-schedule-tumb-info d-flex align-items-center">
+                                                <!-- Single Schedule Thumb -->
+                                                <div class="single-schedule-tumb">
+                                                    <img src="img/bg-img/10.jpg" alt="">
+                                                </div>
+                                                <!-- Single Schedule Info -->
+                                                <div class="single-schedule-info">
+                                                    <h6>Dealing with Difficult People</h6>
+                                                    <p>by <span>Gary Armstrong</span> / Ceo of Confer</p>
+                                                </div>
+                                            </div>
+                                            <!-- Single Schedule Info -->
+                                            <div class="schedule-time-place">
+                                                <p><i class="zmdi zmdi-time"></i> 12-14 Jan 2019</p>
+                                                <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
+                                            </div>
+                                            <!-- Schedule Btn -->
+                                            <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                        </div>
 
-              </tbody>
-            </table>
-          </div>
-          &nbsp;
+                                        <!-- Single Schedule Area -->
+                                        <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
+                                            <!-- Single Schedule Thumb and Info -->
+                                            <div class="single-schedule-tumb-info d-flex align-items-center">
+                                                <!-- Single Schedule Thumb -->
+                                                <div class="single-schedule-tumb">
+                                                    <img src="img/bg-img/13.jpg" alt="">
+                                                </div>
+                                                <!-- Single Schedule Info -->
+                                                <div class="single-schedule-info">
+                                                    <h6>Street Food Convention</h6>
+                                                    <p>by <span>Jeffrey Morales</span> / Ceo of Confer</p>
+                                                </div>
+                                            </div>
+                                            <!-- Single Schedule Info -->
+                                            <div class="schedule-time-place">
+                                                <p><i class="zmdi zmdi-time"></i> 12-14 Jan 2019</p>
+                                                <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
+                                            </div>
+                                            <!-- Schedule Btn -->
+                                            <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <!-- More Schedule Btn -->
+                                    <div class="col-12">
+                                        <div class="more-schedule-btn text-center mt-50 wow fadeInUp" data-wow-delay="300ms">
+                                            <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Our Schedule Area End -->
 
 <!--table End-->
 

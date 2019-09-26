@@ -9,13 +9,13 @@ $dbConfig = [
 	'host' => 'localhost',
 	'username' => 'user',
 	'password' => 'secret',
-	'name' => 'paypal'
+	'name' => 'example_database'
 ];
 
 // PayPal settings. Change these to your account details and the relevant URLs
 // for your site.
 $paypalConfig = [
-	'email' => 'sb-s5apz183786@business.example.com',
+	'email' => 'user@example.com',
 	'return_url' => 'http://example.com/payment-successful.html',
 	'cancel_url' => 'http://example.com/payment-cancelled.html',
 	'notify_url' => 'http://example.com/payments.php'
@@ -24,8 +24,8 @@ $paypalConfig = [
 $paypalUrl = $enableSandbox ? 'https://www.sandbox.paypal.com/cgi-bin/webscr' : 'https://www.paypal.com/cgi-bin/webscr';
 
 // Product being purchased.
-$itemName = 'Test Item';
-$itemAmount = 5.00;
+$itemName = 'One-Way Trip';
+$itemAmount = 1.00;
 
 // Include Functions
 require 'functions.php';
@@ -53,7 +53,7 @@ if (!isset($_POST["txn_id"]) && !isset($_POST["txn_type"])) {
 	// and currency so that these aren't overridden by the form data.
 	$data['item_name'] = $itemName;
 	$data['amount'] = $itemAmount;
-	$data['currency_code'] = 'USD';
+	$data['currency_code'] = 'SGD';
 
 	// Add any custom fields for the query string.
 	//$data['custom'] = USERID;

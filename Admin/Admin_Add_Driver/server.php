@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	$id = "";
 	$username = "";
 	$password = "";
 	$email = "";
@@ -7,7 +8,7 @@
 	$lname = "";
 	$phone_no = "";
 	$reg_no="";
-		$update=true;
+	$update=true;
 
 
 	$errors = array();

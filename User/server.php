@@ -62,14 +62,11 @@
 
 		// if there are no errors, save user to database
 		if (count($errors) == 0) {
-			$token = bin2hex(random_bytes(50)); //generate unique token
 			$password = md5($password_1); // encrypt password
 			$sql = "INSERT INTO users (firstname, lastname, username, email, password) VALUES ('$firstname', '$lastname', '$username', '$email', '$password')";
 			mysqli_query($db, $sql);
 
-			// TO DO: send verification email to user
-            // sendVerificationEmail($email, $token);
-
+			
 			$_SESSION['firstname'] = $firstname;
 			$_SESSION['lastname'] = $lastname;
 			$_SESSION['username'] = $username;
