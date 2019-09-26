@@ -7,7 +7,7 @@
                   if ($conn->connect_error) {
                   die("Connection failed: " . $conn->connect_error);
                   }
-                  $sql = "SELECT fname, lname, email, reg_no FROM driver WHERE username= 'minari'";
+                  $sql = "SELECT username, fname, lname, email, reg_no FROM driver WHERE id= '1'";
                   $result = $conn->query($sql);
 
 ?>
@@ -17,8 +17,18 @@
                   if ($conn2->connect_error) {
                   die("Connection failed: " . $conn2->connect_error);
                   }
-                  $sql2 = "SELECT fname, lname, email, reg_no FROM driver WHERE username= 'jackie'";
+                  $sql2 = "SELECT username, fname, lname, email, reg_no FROM driver WHERE id= '2'";
                   $result2 = $conn2->query($sql2);
+
+?>
+
+<?php $conn3 = mysqli_connect("localhost", "root", "", "registration");
+                  // Check connection
+                  if ($conn3->connect_error) {
+                  die("Connection failed: " . $conn3->connect_error);
+                  }
+                  $sql3 = "SELECT username, fname, lname, email, reg_no FROM driver WHERE id= '3'";
+                  $result3 = $conn3->query($sql3);
 
 ?>
 
@@ -142,10 +152,7 @@
                                         <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
                                             <!-- Single Schedule Thumb and Info -->
                                             <div class="single-schedule-tumb-info d-flex align-items-center">
-                                                <!-- Single Schedule Thumb -->
-                                                <div class="single-schedule-tumb">
-                                                    <img src="img/bg-img/10.jpg" alt="">
-                                                </div>
+                                                
                                                 <!-- Single Schedule Info -->
                                                 <div class="single-schedule-info">
                                                     <?php if ($result->num_rows > 0) {
@@ -153,8 +160,8 @@
                                                     while($row = $result->fetch_assoc()) {
 
                                                     
-                                                    echo "<p> <h6>" . $row["fname"] . "</h6>
-                                                    <p>" . $row["lname"] . "</p>
+                                                    echo "<p> <h6>" . $row["username"] . "</h6>
+                                                    <p>" . $row["fname"] ."&nbsp;". $row["lname"] ."</p>
                                                     <p>" . $row["email"] . "</p>
 
                                                     </p>";
@@ -169,18 +176,13 @@
                                                 <p><i class="zmdi zmdi-time"></i> 12-14 Jan 2019</p>
                                                 <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
                                             </div>
-                                            <!-- Schedule Btn -->
-                                            <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
                                         </div>
 
                                         <!-- Single Schedule Area -->
                                         <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
                                             <!-- Single Schedule Thumb and Info -->
                                             <div class="single-schedule-tumb-info d-flex align-items-center">
-                                                <!-- Single Schedule Thumb -->
-                                                <div class="single-schedule-tumb">
-                                                    <img src="img/bg-img/11.jpg" alt="">
-                                                </div>
+                                                
                                                 <!-- Single Schedule Info -->
                                                 <div class="single-schedule-info">
                                                     <?php if ($result2->num_rows > 0) {
@@ -188,8 +190,8 @@
                                                     while($row2 = $result2->fetch_assoc()) {
 
                                                     
-                                                    echo "<p> <h6>" . $row2["fname"] . "</h6>
-                                                    <p>" . $row2["lname"] . "</p>
+                                                    echo "<p> <h6>" . $row2["username"] . "</h6>
+                                                    <p>" . $row2["fname"] . "&nbsp;" . $row2["lname"] . "</p>
                                                     <p>" . $row2["email"] . "</p>
 
                                                     </p>";
@@ -204,23 +206,29 @@
                                                 <p><i class="zmdi zmdi-time"></i> 12-14 Jan 2019</p>
                                                 <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
                                             </div>
-                                            <!-- Schedule Btn -->
-                                            <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
                                         </div>
 
                                         <!-- Single Schedule Area -->
                                         <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
                                             <!-- Single Schedule Thumb and Info -->
                                             <div class="single-schedule-tumb-info d-flex align-items-center">
-                                                <!-- Single Schedule Thumb -->
-                                                <div class="single-schedule-tumb">
-                                                    <img src="img/bg-img/12.jpg" alt="">
-                                                </div>
+                                                
                                                 <!-- Single Schedule Info -->
                                                 <div class="single-schedule-info">
-                                                    <h6><?php echo $username; ?></h6>
-                                                    <p><?php echo $fname; ?></p>
-                                                    <p><?php echo $lname; ?></p>
+                                                    <?php if ($result3->num_rows > 0) {
+                                                    // output data of each row
+                                                    while($row3 = $result3->fetch_assoc()) {
+
+                                                    
+                                                    echo "<p> <h6>" . $row3["username"] . "</h6>
+                                                    <p>" . $row3["fname"] ."&nbsp;". $row3["lname"] . "</p>
+                                                    <p>" . $row3["email"] . "</p>
+
+                                                    </p>";
+                                                    }
+                                                    } else { echo "0 results"; }
+                                                    $conn3->close();
+                                                    ?>
                                                 </div>
                                             </div>
                                             <!-- Single Schedule Info -->
@@ -228,8 +236,6 @@
                                                 <p><i class="zmdi zmdi-time"></i> 12-14 Jan 2019</p>
                                                 <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
                                             </div>
-                                            <!-- Schedule Btn -->
-                                            <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
                                         </div>
 
                                         
