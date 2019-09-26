@@ -42,7 +42,7 @@
                 <nav class="classy-navbar justify-content-between" id="conferNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="indexuser.php"><img src="./img/core-img/logo.png" alt=""></a>
+                    <a class="nav-brand" href="indexuser.php"><img src="img/e-perahu.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -274,20 +274,20 @@
     
 
     <!-- Footer Area Start -->
-    <footer class="footer-area bg-img bg-overlay-2 section-padding-100-0">
+    <!-- <footer class="footer-area bg-img bg-overlay-2 section-padding-100-0"> -->
         <!-- Main Footer Area -->
-        <div class="main-footer-area">
-            <div class="container">
-                <div class="row">
+        <!-- <div class="main-footer-area"> -->
+            <!-- <div class="container">
+                <div class="row"> -->
                     <!-- Single Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="single-footer-widget mb-60">
+                    <!-- <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget mb-60"> -->
 
                             <!-- Widget Title -->
-                            <h5 class="widget-title">Contact</h5>
+                            <!-- <h5 class="widget-title">Contact</h5> -->
 
                             <!-- Contact Area -->
-                            <div class="footer-contact-info">
+                            <!-- <div class="footer-contact-info">
                                 <p><i class="zmdi zmdi-map"></i> Bandar Seri Begawan</p>
                                 <p><i class="zmdi zmdi-phone"></i> (+673) 2123456</p>
                                 <p><i class="zmdi zmdi-email"></i> -e-perahu@gmail.com</p>
@@ -298,7 +298,7 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> -->
     <!-- Footer Area End -->
 
     <!-- **** All JS Files ***** -->

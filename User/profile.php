@@ -83,28 +83,10 @@
     </header>
     <!-- Header Area End -->
 
-    <!-- Breadcrumb Area Start -->
-    <section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url(img/backprofile.jpg);" >
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <!-- <div class="col-12"> -->
-                    <div class="breadcrumb-content">
-                        <h2 class="page-title">My Profile</h2>
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">My Profile</li>
-                            </ol>
-                        </nav>
-                    </div>
-               <!--  </div> -->
-            </div>
-        </div>
-    </section>
-    <!-- Breadcrumb Area End -->
+    
 
 
-    <section class="home_banner_area" style="background-image: #ffffff">
+    <section class="" style=" padding-top: 70px; background-image: #ffffff">
         <!-- <div class="box_1620"> -->
                 <!-- <div class="banner_inner d-flex align-items-center"> -->
                     <!-- <div class="banner_content"> -->
@@ -117,7 +99,7 @@
                                     $result = mysqli_query($db, $sql);
                                     $row = mysqli_fetch_array($result);
 
-                                    echo "Hello! " . $row['firstname'] . " ". $row['lastname'] . "";
+                                    echo "Hello! " . $row['firstname'] . " ";
 
                                       ?>
 
@@ -140,10 +122,7 @@
 
                                 
 
-                                        <!-- <li><i class="lnr lnr-calendar-full"></i> 31st December, 1992</a></li>
-                                        <li><i class="lnr lnr-phone-handset"></i> 44 (012) 6954 783</a></li>
-                                        <li></li>
-                                        <li><i class="lnr lnr-home"></i> Santa monica bullevard</a></li> -->
+                                        
                                         <!-- Button -->
                                         <div class="col-12">
                                             <br>

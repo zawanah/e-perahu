@@ -140,10 +140,8 @@
   		
   		// editprofile
   		if (isset($_POST['update'])) {
-            $username = $_POST['username'];
             $firstname = $_POST['firstname'];
             $lastname = $_POST['lastname'];
-            $email = $_POST['email'];
 
             mysqli_query($db, "UPDATE users SET firstname='$firstname', lastname='$lastname', email='$email' WHERE username='" . $_SESSION['username'] . "'");
              
