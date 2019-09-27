@@ -115,13 +115,13 @@
 
     
 <!-- Our Schedule Area Start -->
-    <section class="bg-img" style="background-image: url(img/bg-img/backticket.jpg);" class="our-schedule-area">
+    <section class="bg-img bg-gradient-overlay" style="background-image: url(img/bg-img/backticket.jpg);" class="our-schedule-area">
         <!-- Heading -->
             <div style="padding-top: 180px;">
                 <div class="col-12">
                     <div class="section-heading-3 text-center wow fadeInUp" data-wow-delay="300ms">
-                        <h2>E-Perahu Drivers</h2>
-                        <h4>Top Rated Drivers</h4>
+                        <h2><font color="white">E-Perahu Drivers</font></h2>
+                        <h4><font color="white">Top Rated Drivers</font></h4>
                     </div>
                 </div>
             </div>
@@ -164,6 +164,8 @@
                                                 <p><i class="zmdi zmdi-time"></i> 12-14 Jan 2019</p>
                                                 <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
                                             </div>
+                                            <!-- Schedule Btn -->
+                                            <a href="#" class="btn confer-btn">Show Profile <i class="zmdi zmdi-long-arrow-right"></i></a>
                                         </div>
 
                                         <!-- Single Schedule Area -->
@@ -194,6 +196,8 @@
                                                 <p><i class="zmdi zmdi-time"></i> 12-14 Jan 2019</p>
                                                 <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
                                             </div>
+                                            <!-- Schedule Btn -->
+                                            <a href="#" class="btn confer-btn">Show Profile <i class="zmdi zmdi-long-arrow-right"></i></a>
                                         </div>
 
                                         <!-- Single Schedule Area -->
@@ -224,6 +228,8 @@
                                                 <p><i class="zmdi zmdi-time"></i> 12-14 Jan 2019</p>
                                                 <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
                                             </div>
+                                            <!-- Schedule Btn -->
+                                            <a href="#" class="btn confer-btn">Show Profile <i class="zmdi zmdi-long-arrow-right"></i></a>
                                         </div>
 
                                         
@@ -247,6 +253,34 @@
         </div>
     </section>
     <!-- Our Driver Area End -->
+
+    <!-- Footer Area Start -->
+    <footer class="footer-area bg-img bg-overlay-2 section-padding-100-0">
+        <!-- Main Footer Area -->
+        <div class="main-footer-area">
+            <div class="container">
+                <div class="row">
+                    <!-- Single Footer Widget Area -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget mb-60">
+
+                            <!-- Widget Title -->
+                            <h5 class="widget-title">Contact</h5>
+
+                            <!-- Contact Area -->
+                            <div class="footer-contact-info">
+                                <p><i class="zmdi zmdi-map"></i> Bandar Seri Begawan</p>
+                                <p><i class="zmdi zmdi-phone"></i> (+673) 2123456</p>
+                                <p><i class="zmdi zmdi-email"></i> -e-perahu@gmail.com</p>
+                                <p><i class="zmdi zmdi-globe"></i> www.e-perahu.net</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Area End -->
 
 <!--table End-->
 

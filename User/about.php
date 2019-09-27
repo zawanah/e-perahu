@@ -82,28 +82,10 @@
     </header>
     <!-- Header Area End -->
 
-    <!-- Breadcrumb Area Start -->
-    <section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url(img/backprofile.jpg);">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <div class="breadcrumb-content">
-                        <h2 class="page-title">Ticket Price</h2>
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="indexuser.php">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Ticket Price</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Breadcrumb Area End -->
+    
 
         <!-- Our Ticket Pricing Table Area Start -->
-    <section class="our-ticket-pricing-table-area bg-img bg-gradient-overlay section-padding-100-0 jarallax" style="background-image: url(img/bg-img/backticket.jpg);">
+    <section class="our-ticket-pricing-table-area bg-img bg-gradient-overlay jarallax" style="padding-top: 150px; background-image: url(img/bg-img/backticket.jpg);">
         <div class="container">
             <div class="row">
                 <!-- Heading -->
@@ -125,7 +107,6 @@
                             <img src="img/core-img/oneway.png" alt="">
                         </div>
                         <h2 class="ticket-price"><span>BND</span>1</h2>
-                        <a href="User_Reservation/User_Reservation.php" class="btn confer-btn w-100 mb-30">Book Now <i class="zmdi zmdi-long-arrow-right"></i></a>
                         <!-- Ticket Pricing Table Details -->
                         <div class="ticket-pricing-table-details">
                             <p><i class="zmdi zmdi-check"></i> BND 1 per person</p>
@@ -142,7 +123,6 @@
                             <img src="img/core-img/twoway.png" alt="">
                         </div>
                         <h2 class="ticket-price"><span>BND</span>2</h2>
-                        <a href="User_Reservation/User_Reservation.php" class="btn confer-btn w-100 mb-30">Book Now <i class="zmdi zmdi-long-arrow-right"></i></a>
                         <!-- Ticket Pricing Table Details -->
                         <div class="ticket-pricing-table-details">
                             <p><i class="zmdi zmdi-check"></i> BND 2 per person</p>
@@ -159,7 +139,6 @@
                             <img src="img/core-img/village.jpg" alt="">
                         </div>
                         <h2 class="ticket-price"><span>BND</span>7</h2>
-                        <a href="User_Reservation/User_Reservation.php" class="btn confer-btn w-100 mb-30">Book Now <i class="zmdi zmdi-long-arrow-right"></i></a>
                         <!-- Ticket Pricing Table Details -->
                         <div class="ticket-pricing-table-details">
                             <p><i class="zmdi zmdi-check"></i> BND 20 for 3 person</p>
@@ -176,7 +155,6 @@
                             <img src="img/core-img/island.jpg" alt="">
                         </div>
                         <h2 class="ticket-price"><span>BND</span>14</h2>
-                        <a href="User_Reservation/User_Reservation.php" class="btn confer-btn w-100 mb-30">Book Now <i class="zmdi zmdi-long-arrow-right"></i></a>
                         <!-- Ticket Pricing Table Details -->
                         <div class="ticket-pricing-table-details">
                             <p><i class="zmdi zmdi-check"></i> BND 40 for 3 person</p>
@@ -193,7 +171,6 @@
                             <img src="img/core-img/istana.jpg" alt="">
                         </div>
                         <h2 class="ticket-price"><span>BND</span>11</h2>
-                        <a href="User_Reservation/User_Reservation.php" class="btn confer-btn w-100 mb-30">Book Now <i class="zmdi zmdi-long-arrow-right"></i></a>
                         <!-- Ticket Pricing Table Details -->
                         <div class="ticket-pricing-table-details">
                             <p><i class="zmdi zmdi-check"></i> Jong Batu Tour included</p>
@@ -212,12 +189,17 @@
                             <img src="img/core-img/bino.png" alt="">
                         </div>
                         <h2 class="ticket-price"><span>BND</span>32</h2>
-                        <a href="User_Reservation/User_Reservation.php" class="btn confer-btn w-100 mb-30">Book Now <i class="zmdi zmdi-long-arrow-right"></i></a>
                         <!-- Ticket Pricing Table Details -->
                         <div class="ticket-pricing-table-details">
                             <p><i class="zmdi zmdi-check"></i> Kampong Ayer, Pulau Chermin, Istana Nurul Iman Tour in one go</p>
                             <p><i class="zmdi zmdi-check"></i> BND 90 for 3 person</p>
                         </div>
+                    </div>
+                </div>
+                <!-- Booking Btn -->
+                <div class="col-12">
+                    <div style="padding-bottom: 50px;" class=" text-center mt-50 wow fadeInUp" data-wow-delay="300ms">
+                        <a href="User_Reservation/User_Reservation.php" class="confer-btn">Book Now <i class="zmdi zmdi-long-arrow-right"></i></a>
                     </div>
                 </div>
 
