@@ -92,17 +92,21 @@
     </section>
     <!-- Breadcrumb Area End -->
 
+
+
+
+
     <!-- Our Blog Area Start -->
     <div class="container bootstrap snippet">
       &ensp;
             <h3>Personal info</h3>
       &ensp;
 
-            <form method="POST" action="server.php" class="form-horizontal" role="form">
+            <form method="POST" action="Admin_Edit_Driver.php" class="form-horizontal" role="form">
               <div class="form-group">
                 <label class="col-lg-3 control-label">First name:</label>
                 <div class="col-lg-8">
-                  <input class="form-control" type="text" name="fname" value='<?php echo $fname; ?>'>
+                  <input class="form-control" type="text" name="fname" value="<?php echo $fname; ?>">
                 </div>
               </div>
               <div class="form-group">
@@ -117,6 +121,20 @@
                   <input class="form-control" type="text" name="email" value="<?php echo $email; ?>">
                 </div>
               </div>
+							<div class="form-group">
+                <label class="col-lg-3 control-label">Phone No:</label>
+                <div class="col-lg-8">
+                  <input class="form-control" type="text" name="phone_no" value="<?php echo $phone_no; ?>">
+                </div>
+              </div>
+							<div class="form-group">
+								<label class="col-lg-3 control-label">Boat Reg No:</label>
+								<div class="col-lg-8">
+									<input class="form-control" type="text" name="reg_no" value="<?php echo $reg_no; ?>">
+								</div>
+							</div>
+
+
 
               &ensp;
               <!--button-->
