@@ -50,16 +50,8 @@
 		}
 	}
 
-//list of users
-if (count($errors) == 0) {
-	$password = md5($password);
-	$sql2 = "INSERT INTO user (firstname, lastname, username, email )
-	VALUES ('$firstname', '$lastname','$username', '$email')";
-	mysqli_query($db, $sql2);
-	$_SESSION['success'] = "user Successfully added!";
-	header('location: ../Admin_Add_Driver/Admin_list_of_users.php'); // redirect to home page
-}
-}
+
+
 
 
 
