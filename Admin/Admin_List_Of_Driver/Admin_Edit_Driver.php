@@ -1,7 +1,3 @@
-<?php include('server.php');
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -84,30 +80,35 @@
             <h3>Personal info</h3>
       &ensp;
 
-            <form method="POST" action="server.php" class="form-horizontal" role="form">
+            <form class="form-horizontal" role="form">
               <div class="form-group">
                 <label class="col-lg-3 control-label">First name:</label>
                 <div class="col-lg-8">
-                  <input class="form-control" type="text" name="fname" value="<?php echo $fname; ?>">
+                  <input class="form-control" type="text" value="dey-dey">
                 </div>
               </div>
               <div class="form-group">
                 <label class="col-lg-3 control-label">Last name:</label>
                 <div class="col-lg-8">
-                  <input class="form-control" type="text" name="lname" value="<?php echo $lname; ?>">
+                  <input class="form-control" type="text" value="bootdey">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-3 control-label">Company:</label>
+                <div class="col-lg-8">
+                  <input class="form-control" type="text" value="sendiri">
                 </div>
               </div>
               <div class="form-group">
                 <label class="col-lg-3 control-label">Email:</label>
                 <div class="col-lg-8">
-                  <input class="form-control" type="text" name="email" value="<?php echo $email; ?>">
+                  <input class="form-control" type="text" value="janesemail@gmail.com">
                 </div>
               </div>
-
               &ensp;
               <!--button-->
               <div class="col-12">
-                  <button type="submit" class="btn confer-btn" name="update">Update Profile<i class="zmdi zmdi-long-arrow-right"></i></button>
+                  <button type="submit" class="btn confer-btn">Update Profile<i class="zmdi zmdi-long-arrow-right"></i></button>
               </div>
                 <!--End button-->
                 &ensp;
