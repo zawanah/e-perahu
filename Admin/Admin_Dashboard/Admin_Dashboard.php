@@ -101,7 +101,7 @@
                             <p>View Drivers List</p>
                         </div>
                         <div class="blog-btn">
-                            <a href="../Admin_Driver_Option/Admin_Driver_Option.php"><i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="../Admin_add_driver/Admin_List_Of_Driver.php"><i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>

@@ -108,13 +108,6 @@
                   <input class="form-control" type="text" name="lastname" value="<?php echo $lastname; ?>">
                 </div>
               </div>
-
-              <div class="form-group">
-                <label class="col-lg-3 control-label">Email:</label>
-                <div class="col-lg-8">
-                  <input class="form-control" type="text" name="email" value="<?php echo $email; ?>">
-                </div>
-              </div>
               
               
               &ensp;

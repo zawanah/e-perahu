@@ -313,7 +313,8 @@ button:focus {
     bottom: -100px;
     background: #fff;
     padding: 30px;
-    box-shadow: 0px 20px 80px 0px rgba(153, 153, 153, 0.3); }
+    box-shadow: 0px 20px 80px 0px rgba(153, 153, 153, 0.3);
+    text-align: center; }
   .home_banner_area .banner_inner {
     position: relative;
     width: 100%;
@@ -322,13 +323,16 @@ button:focus {
     .home_banner_area .banner_inner .banner_content {
       color: #222222;
       vertical-align: middle;
-      align-self: center;
-      text-align: left; }
-      .home_banner_area .banner_inner .banner_content .media .d-flex {
-        padding-right: 125px; }
+      text-align: center;
+      display: inline-block; }
+      .home_banner_area .banner_inner .banner_content .media {
+        text-align: center; display: inline-block; }
       .home_banner_area .banner_inner .banner_content .media .media-body {
         vertical-align: middle;
         align-self: center; }
+    .home_banner_area .box_1620 .displayPic {
+      text-align: center;
+    }
 
 
 

@@ -2,6 +2,20 @@
 ?>
 
 
+<?php
+	if (isset($_GET['edit'])) {
+		$id = $_GET['edit'];
+		$update = true;
+		$record = mysqli_query($db, "SELECT * FROM driver WHERE id=$id");
+
+		if (count($record) == 1 ) {
+			$n = mysqli_fetch_array($record);
+			$fname = $n['fname'];
+
+		}
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -88,7 +102,7 @@
               <div class="form-group">
                 <label class="col-lg-3 control-label">First name:</label>
                 <div class="col-lg-8">
-                  <input class="form-control" type="text" name="fname" value="<?php echo $fname; ?>">
+                  <input class="form-control" type="text" name="fname" value='<?php echo $fname; ?>'>
                 </div>
               </div>
               <div class="form-group">
@@ -107,7 +121,12 @@
               &ensp;
               <!--button-->
               <div class="col-12">
+                <?php if ($update == true): ?>
                   <button type="submit" class="btn confer-btn" name="update">Update Profile<i class="zmdi zmdi-long-arrow-right"></i></button>
+                <?php else: ?>
+                  <button class="btn" type="submit" name="save" >Save</button>
+                 <?php endif ?>
+
               </div>
                 <!--End button-->
                 &ensp;

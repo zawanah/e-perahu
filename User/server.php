@@ -9,13 +9,6 @@
 
 	$db = mysqli_connect('localhost', 'root', '', 'registration');
 
-	// $ses_sql=mysqli_query($db, "SELECT * from users");
-
-	// $row = mysqli_fetch_assoc($ses_sql);
-	// $login_session = $row['username'];
-
-	// $user_data = $row;
-
 	if (isset($_POST['register'])) {
 		$firstname = mysqli_real_escape_string($db, $_POST['firstname']);
 		$lastname = mysqli_real_escape_string($db, $_POST['lastname']);
@@ -60,12 +53,20 @@
 			array_push($errors, "- The username has already been taken");
 		}
 
+		// Check if email already exists
+    	$emailsql = "SELECT * FROM users WHERE email='$email'";
+    	$emailresult = mysqli_query($db, $emailsql);
+    	if (mysqli_num_rows($emailresult) == 1) {
+    		array_push($errors, "- The email is already exists");
+    	}
+
 		// if there are no errors, save user to database
 		if (count($errors) == 0) {
 			$password = md5($password_1); // encrypt password
 			$sql = "INSERT INTO users (firstname, lastname, username, email, password) VALUES ('$firstname', '$lastname', '$username', '$email', '$password')";
 			mysqli_query($db, $sql);
 
+			
 			$_SESSION['firstname'] = $firstname;
 			$_SESSION['lastname'] = $lastname;
 			$_SESSION['username'] = $username;
@@ -77,9 +78,6 @@
 
 	// log user in from login page
 	if (isset($_POST['login'])) {
-		$username = mysqli_real_escape_string($db, $_POST['username']);
-		$firstname = mysqli_real_escape_string($db, $_POST['firstname']);
-		$lastname = mysqli_real_escape_string($db, $_POST['lastname']);
 		$username = mysqli_real_escape_string($db, $_POST['username']);
 		$password = mysqli_real_escape_string($db, $_POST['password']);
 
@@ -97,7 +95,7 @@
 			$result = mysqli_query($db, $query);
 			if (mysqli_num_rows($result) == 1) {
 
-		//save this user and pass as cookie if remeber checked start
+		//remember username checkbox
  		if (isset($_REQUEST['remember']))
    		$escapedRemember = mysqli_real_escape_string($db,$_REQUEST['remember']);
 
@@ -142,10 +140,8 @@
   		
   		// editprofile
   		if (isset($_POST['update'])) {
-            $username = $_POST['username'];
             $firstname = $_POST['firstname'];
             $lastname = $_POST['lastname'];
-            $email = $_POST['email'];
 
             mysqli_query($db, "UPDATE users SET firstname='$firstname', lastname='$lastname', email='$email' WHERE username='" . $_SESSION['username'] . "'");
              
