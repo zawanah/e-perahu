@@ -165,7 +165,7 @@
                                                 <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
                                             </div>
                                             <!-- Schedule Btn -->
-                                            <a href="#" class="btn confer-btn">Show Profile <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                            <a href="driverinformation.php" class="btn confer-btn">Show Profile <i class="zmdi zmdi-long-arrow-right"></i></a>
                                         </div>
 
                                         <!-- Single Schedule Area -->
