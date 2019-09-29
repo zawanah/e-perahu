@@ -257,6 +257,7 @@
 		</div>
 	</div>
 </div>
+<!-- For card validation -->
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="build/js/jquery.payform.min.js" charset="utf-8"></script>
 <script src="build/js/script.js"></script>

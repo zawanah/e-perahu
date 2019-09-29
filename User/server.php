@@ -41,7 +41,7 @@
 		if(preg_match("/^.*(?=.{8,})(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).*$/", $_POST["password_1"]) === 0) {
 			array_push($errors, "- Password must be at least 8 characters and must contain at least 1 lower case letter, 1 upper case letter and 1 number");
 		}
-			
+
 		if ($password_1 != $password_2) {
 			array_push($errors, "- The two passwords do not match");
 		}
@@ -66,7 +66,7 @@
 			$sql = "INSERT INTO users (firstname, lastname, username, email, password) VALUES ('$firstname', '$lastname', '$username', '$email', '$password')";
 			mysqli_query($db, $sql);
 
-			
+
 			$_SESSION['firstname'] = $firstname;
 			$_SESSION['lastname'] = $lastname;
 			$_SESSION['username'] = $username;
@@ -105,12 +105,12 @@
     	/*
      	* Set Cookie from here for one hour
      	* */
-    	setcookie("username", $username, $cookie_time_Onset);  
+    	setcookie("username", $username, $cookie_time_Onset);
 
   		} else {
 
      	$cookie_time_fromOffset=time() -$cookie_time;
-		setcookie("username", '',$cookie_time_fromOffset );  
+		setcookie("username", '',$cookie_time_fromOffset );
 
   		}
   		//save this user and pass as cookie if remember checked end
@@ -120,7 +120,7 @@
   		$result = mysqli_query($sql);
   		$row = mysqli_fetch_array($result);
 
-  		
+
 
 		// log user in
 		// $_SESSION['firstname'] = $firstname;
@@ -137,14 +137,14 @@
 		}
 		}
 		}
-  		
+
   		// editprofile
   		if (isset($_POST['update'])) {
             $firstname = $_POST['firstname'];
             $lastname = $_POST['lastname'];
 
             mysqli_query($db, "UPDATE users SET firstname='$firstname', lastname='$lastname', email='$email' WHERE username='" . $_SESSION['username'] . "'");
-             
+
             header('location: profile.php');
             }
 

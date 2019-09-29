@@ -8,7 +8,7 @@
     <!-- Include Bootstrap CSS -->
     <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link href="../node_modules/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
-    
+
 </head>
 <body>
 <?php
@@ -26,11 +26,11 @@ if($product_list_array) {
         }
         $result_html .= '------------------------------------------<br />';
     }
-} else {	
+} else {
 	$result_html .= "<strong>Cart is Empty</strong>";
 }
-?>    
-    
+?>
+
     <br />
     <section class="container">
         <div class="row">
@@ -51,6 +51,6 @@ if($product_list_array) {
                 </div>
             </div>
         </div>
-    </section>    
+    </section>
 </body>
 </html>
