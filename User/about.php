@@ -199,7 +199,8 @@
                 <!-- Booking Btn -->
                 <div class="col-12">
                     <div style="padding-bottom: 50px;" class=" text-center mt-50 wow fadeInUp" data-wow-delay="300ms">
-                        <a href="User_Reservation/User_Reservation.php" class="confer-btn">Book Now <i class="zmdi zmdi-long-arrow-right"></i></a>
+                        <a href="User_Reservation/User_Reservation.php" class="confer-btn">Book Now using debit card <i class="zmdi zmdi-long-arrow-right"></i></a>
+                        <a href="User_Reservation/User_Reservation.php" class="confer-btn">Book Now using paypal <i class="zmdi zmdi-long-arrow-right"></i></a>
                     </div>
                 </div>
 
