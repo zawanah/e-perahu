@@ -197,7 +197,7 @@
                                                 <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
                                             </div>
                                             <!-- Schedule Btn -->
-                                            <a href="#" class="btn confer-btn">Show Profile <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                            <a href="driverinformation2.php" class="btn confer-btn">Show Profile <i class="zmdi zmdi-long-arrow-right"></i></a>
                                         </div>
 
                                         <!-- Single Schedule Area -->
@@ -229,7 +229,7 @@
                                                 <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
                                             </div>
                                             <!-- Schedule Btn -->
-                                            <a href="#" class="btn confer-btn">Show Profile <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                            <a href="driverinformation3.php" class="btn confer-btn">Show Profile <i class="zmdi zmdi-long-arrow-right"></i></a>
                                         </div>
 
                                         

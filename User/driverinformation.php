@@ -97,7 +97,7 @@
 
     <!-- header section -->
 <section style="background-color: white;">
-    <div class="" style="padding-top: 180px; padding-bottom: 50px;">
+    <div class="wow fadeInUp" style="padding-top: 180px; padding-bottom: 50px;">
         <div class="">
             <div class="col-md-12 col-sm-12">
                 <h1 class="" style="text-align: center; color: black ;">Hi, I am <?php if ($result->num_rows > 0) {
@@ -115,14 +115,14 @@
 <section class="container">
     <div class="row">
         <div class="col-md-6 col-sm-12">
-            <div class="about bg-gradient-overlay">
+            <div class="about bg-gradient-overlay wow fadeInUp">
                 <h3 class="white">Easy Profile</h3>
                 <h2>Bootstrap v3.3.5</h2>
                 <p class="white">This easy HTML profile is brought to you by templatemo website. There are 4 color themes, <a href="index-green.html">Green</a>, <a href="index.html">Blue</a>, <a href="index-gray.html">Gray</a>, and <a href="index-orange.html">Orange</a>. Sed vitae dui in neque elementum tempor eu id risus. Phasellus sed facilisis lacus, et venenatis augue.</p>
             </div>
         </div>
         <div class="col-md-6 col-sm-12">
-            <div class="skills bg-gradient-overlay" style="background-color: #ffffff; border-radius: 15px;">
+            <div class="skills bg-gradient-overlay wow fadeInUp" style="background-color: #ffffff; border-radius: 15px;">
                 <h2 style="color: #ffffff;">Skills</h2>
                 <strong style="color: #ffffff;">PHP MySQL</strong>
                 <span style="color: #ffffff;" class="pull-right">70%</span>
@@ -151,7 +151,7 @@
 <section class="container">
     <div class="row">
         <div class="col-md-8 col-sm-12">
-            <div class="education bg-gradient-overlay" style="border-radius: 15px;">
+            <div class="education bg-gradient-overlay wow fadeInUp" style="border-radius: 15px;">
                 <h2 class="white">Education</h2>
                     <div class="education-content">
                         <h4 class="">New Web Design</h4>
@@ -164,7 +164,7 @@
             </div>
         </div>
         <div class="col-md-4 col-sm-12">
-            <div class="languages bg-gradient-overlay" style="border-radius: 15px;">
+            <div class="languages bg-gradient-overlay wow fadeInUp" style="border-radius: 15px;">
                 <h2>Languages</h2>
                     <ul style="color: white;">
                         <li>Myanmar / Thai</li>
@@ -181,7 +181,7 @@
 <section class="container" style="padding-bottom: 50px;">
     <div class="row">
         <div class="col-md-4 col-sm-12">
-            <div class="contact bg-gradient-overlay" style="border-radius: 15px;">
+            <div class="contact bg-gradient-overlay wow fadeInUp" style="border-radius: 15px;">
                 <h2>Contact</h2>
                     <p class="white"><i class="fa fa-map-marker"></i> 123 Rama IX Road, Bangkok</p>
                     <p class="white"><i class="fa fa-phone"></i> 010-020-0890</p>
@@ -190,7 +190,7 @@
             </div>
         </div>
         <div class="col-md-8 col-sm-12">
-            <div class="experience bg-gradient-overlay" style="border-radius: 15px;">
+            <div class="experience bg-gradient-overlay wow fadeInUp" style="border-radius: 15px;">
                 <h2 class="white">Experiences</h2>
                     <div class="experience-content">
                         <h4>Website Development</h4>
@@ -205,33 +205,7 @@
 </section>
 
 
-        <!-- Footer Area Start -->
-    <footer class="footer-area bg-img bg-overlay-2 section-padding-100-0">
-        <!-- Main Footer Area -->
-        <div class="main-footer-area">
-            <div class="container">
-                <div class="row">
-                    <!-- Single Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="single-footer-widget mb-60">
-
-                            <!-- Widget Title -->
-                            <h5 class="widget-title">Contact</h5>
-
-                            <!-- Contact Area -->
-                            <div class="footer-contact-info">
-                                <p><i class="zmdi zmdi-map"></i> Bandar Seri Begawan</p>
-                                <p><i class="zmdi zmdi-phone"></i> (+673) 2123456</p>
-                                <p><i class="zmdi zmdi-email"></i> -e-perahu@gmail.com</p>
-                                <p><i class="zmdi zmdi-globe"></i> www.e-perahu.net</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Footer Area End -->
+        
 
     <!-- **** All JS Files ***** -->
     <!-- jQuery 2.2.4 -->

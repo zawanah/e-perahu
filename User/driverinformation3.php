@@ -1,3 +1,18 @@
+<?php include('../Admin/Admin_Add_Driver/server.php');
+
+?>
+
+<?php $conn = mysqli_connect("localhost", "root", "", "registration");
+                  // Check connection
+                  if ($conn->connect_error) {
+                  die("Connection failed: " . $conn->connect_error);
+                  }
+                  $sql = "SELECT username, fname, lname, email, reg_no FROM driver WHERE id= '3'";
+                  $result = $conn->query($sql);
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>Confer - Conference Event HTML Template</title>
+    <title>E-Perahu - User Profile</title>
 
     <!-- Favicon -->
     <link rel="icon" href="./img/core-img/favicon.png">
@@ -33,7 +48,7 @@
                 <nav class="classy-navbar justify-content-between" id="conferNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="./indexuser.html"><img src="./img/core-img/logo.png" alt=""></a>
+                    <a class="nav-brand" href="./indexuser.php"><img src="./img/core-img/logo.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -49,25 +64,25 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul id="nav">
-                                <li class="active"><a href="indexuser.html">Home</a></li>
+                                <li class="active"><a href="indexuser.php">Home</a></li>
                                 <li><a href="#">Information</a>
                                     <ul class="dropdown">
-                                        <li><a href="profile.html">- My Profile</a></li>
-                                        <li><a href="index.html">- Schedule</a></li>
-                                        <li><a href="about.html">- Ticket Price</a></li>
-                                        <li><a href="speakers.html">- drivers</a></li>
-                                        <li><a href="schedule.html">- promotion</a></li>
+                                        <li><a href="profile.php">- My Profile</a></li>
+                                        <li><a href="index.php">- Schedule</a></li>
+                                        <li><a href="about.php">- Ticket Price</a></li>
+                                        <li><a href="speakers.php">- driver</a></li>
+                                        <li><a href="schedule.php">- promotion</a></li>
 
 
                                     </ul>
                                 </li>
-                                <li><a href="speakers.html">Reservation</a></li>
-                                <li><a href="blog.html">About Us</a></li>
-                                <li><a href="contact.html">Feedback</a></li>
+                                <li><a href="User_Reservation/User_Reservation.php">Reservation</a></li>
+                                <li><a href="blog.php">About Us</a></li>
+                                <li><a href="contact.php">Feedback</a></li>
                             </ul>
 
-                            <!-- Get Tickets Button -->
-                            <a href="index.html" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <!-- Logout Button -->
+                            <a href="profile.php?logout='1'" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                         <!-- Nav End -->
                     </div>
@@ -77,170 +92,120 @@
     </header>
     <!-- Header Area End -->
 
-    <!-- Breadcrumb Area Start -->
-    <section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url(img/bg-img/27.jpg);">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <div class="breadcrumb-content">
-                        <h2 class="page-title">Profile 3</h2>
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                <li class="breadcrumb-item"><a href="index.html">Drivers</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Profile 3</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
+    
+
+
+    <!-- header section -->
+<section style="background-color: white;">
+    <div class="wow fadeInUp" style="padding-top: 180px; padding-bottom: 50px;">
+        <div class="">
+            <div class="col-md-12 col-sm-12">
+                <h1 class="" style="text-align: center; color: black ;">Hi, I am <?php if ($result->num_rows > 0) {
+                                                                                            while($row = $result->fetch_assoc()) { 
+                                                                                                echo $row["fname"];
+                                                                                            }
+                                                                                        } else { echo "0 results"; }
+                                                                                        $conn->close(); 
+                                                                                    ?> </h1>
             </div>
         </div>
-    </section>
-    <!-- Breadcrumb Area End -->
+    </div>
 
-
-    <section class="home_banner_area">
-        <div class="container box_1620">
-                <div class="banner_inner d-flex align-items-center">
-                    <div class="banner_content">
-                        <div class="media">
-                            <div class="d-flex">
-                                <img src="img/personal.jpg" alt="">
-                            </div>
-                            <div class="media-body">
-                                <div class="personal_text">
-                                    <h3>Donald McKinney</h3>
-                                    <ul class="list basic_info">
-                                        <li><i class="lnr lnr-calendar-full"></i> 31st December, 1992</a></li>
-                                        <li><i class="lnr lnr-phone-handset"></i> 44 (012) 6954 783</a></li>
-                                        <li><i class="lnr lnr-envelope"></i> businessplan@donald</a></li>
-                                        <li><i class="lnr lnr-home"></i> Santa monica bullevard</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </section>
-
-
-        <!-- Footer Area Start -->
-    <footer class="footer-area bg-img bg-overlay-2 section-padding-100-0">
-        <!-- Main Footer Area -->
-        <div class="main-footer-area">
-            <div class="container">
-                <div class="row">
-                    <!-- Single Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="single-footer-widget mb-60 wow fadeInUp" data-wow-delay="300ms">
-                            <!-- Footer Logo -->
-                            <a href="#" class="footer-logo"><img src="img/core-img/logo.png" alt=""></a>
-                            <p>To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain.</p>
-
-                            <!-- Social Info -->
-                            <div class="social-info">
-                                <a href="#"><i class="zmdi zmdi-facebook"></i></a>
-                                <a href="#"><i class="zmdi zmdi-instagram"></i></a>
-                                <a href="#"><i class="zmdi zmdi-twitter"></i></a>
-                                <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="single-footer-widget mb-60 wow fadeInUp" data-wow-delay="300ms">
-                            <!-- Widget Title -->
-                            <h5 class="widget-title">Contact</h5>
-
-                            <!-- Contact Area -->
-                            <div class="footer-contact-info">
-                                <p><i class="zmdi zmdi-map"></i> 184 Main Collins Street</p>
-                                <p><i class="zmdi zmdi-phone"></i> (226) 446 9371</p>
-                                <p><i class="zmdi zmdi-email"></i> confer@gmail.com</p>
-                                <p><i class="zmdi zmdi-globe"></i> www.confer.com</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="single-footer-widget mb-60 wow fadeInUp" data-wow-delay="300ms">
-                            <!-- Widget Title -->
-                            <h5 class="widget-title">Workshops</h5>
-
-                            <!-- Footer Nav -->
-                            <ul class="footer-nav">
-                                <li><a href="#">OSHA Compliance</a></li>
-                                <li><a href="#">Microsoft Excel Basics</a></li>
-                                <li><a href="#">Forum Speaker Series</a></li>
-                                <li><a href="#">Tedx Moscow Conference</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Single Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="single-footer-widget mb-60 wow fadeInUp" data-wow-delay="300ms">
-                            <!-- Widget Title -->
-                            <h5 class="widget-title">Gallery</h5>
-
-                            <!-- Footer Gallery -->
-                            <div class="footer-gallery">
-                                <div class="row">
-                                    <div class="col-4">
-                                        <a href="img/bg-img/21.jpg" class="single-gallery-item"><img src="img/bg-img/21.jpg" alt=""></a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="img/bg-img/22.jpg" class="single-gallery-item"><img src="img/bg-img/22.jpg" alt=""></a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="img/bg-img/23.jpg" class="single-gallery-item"><img src="img/bg-img/23.jpg" alt=""></a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="img/bg-img/24.jpg" class="single-gallery-item"><img src="img/bg-img/24.jpg" alt=""></a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="img/bg-img/25.jpg" class="single-gallery-item"><img src="img/bg-img/25.jpg" alt=""></a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="img/bg-img/26.jpg" class="single-gallery-item"><img src="img/bg-img/26.jpg" alt=""></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<!-- about and skills section -->
+<section class="container">
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <div class="about bg-gradient-overlay wow fadeInUp">
+                <h3 class="white">Easy Profile</h3>
+                <h2>Bootstrap v3.3.5</h2>
+                <p class="white">This easy HTML profile is brought to you by templatemo website. There are 4 color themes, <a href="index-green.html">Green</a>, <a href="index.html">Blue</a>, <a href="index-gray.html">Gray</a>, and <a href="index-orange.html">Orange</a>. Sed vitae dui in neque elementum tempor eu id risus. Phasellus sed facilisis lacus, et venenatis augue.</p>
             </div>
         </div>
-
-        <!-- Copywrite Area -->
-        <div class="container">
-            <div class="copywrite-content">
-                <div class="row">
-                    <!-- Copywrite Text -->
-                    <div class="col-12 col-md-6">
-                        <div class="copywrite-text">
-                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="skills bg-gradient-overlay wow fadeInUp" style="background-color: #ffffff; border-radius: 15px;">
+                <h2 style="color: #ffffff;">Skills</h2>
+                <strong style="color: #ffffff;">PHP MySQL</strong>
+                <span style="color: #ffffff;" class="pull-right">70%</span>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-primary" role="progressbar" 
+                        aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
                     </div>
-                    <!-- Footer Menu -->
-                    <div class="col-12 col-md-6">
-                        <div class="footer-menu">
-                            <ul class="nav">
-                                <li><a href="#"><i class="zmdi zmdi-circle"></i> Terms of Service</a></li>
-                                <li><a href="#"><i class="zmdi zmdi-circle"></i> Privacy Policy</a></li>
-                            </ul>
-                        </div>
+                <strong style="color: #ffffff;">UI/UX Design</strong>
+                <span style="color: #ffffff;" class="pull-right">85%</span>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-primary" role="progressbar" 
+                        aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
                     </div>
-                </div>
+                <strong style="color: #ffffff;">Bootstrap</strong>
+                <span style="color: #ffffff;" class="pull-right">95%</span>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-primary" role="progressbar" 
+                        aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;"></div>
+                    </div>
             </div>
         </div>
-    </footer>
-    <!-- Footer Area End -->
+    </div>
+</section>
+
+<!-- education and languages -->
+<section class="container">
+    <div class="row">
+        <div class="col-md-8 col-sm-12">
+            <div class="education bg-gradient-overlay wow fadeInUp" style="border-radius: 15px;">
+                <h2 class="white">Education</h2>
+                    <div class="education-content">
+                        <h4 class="">New Web Design</h4>
+                            <div class="education-school">
+                                <h5>School of Media</h5><span></span>
+                                <h5>2030 January - 2034 December</h5>
+                            </div>
+                        <p class="education-description white">In lacinia leo sed quam feugiat, ac efficitur dui tristique. Ut venenatis, odio quis cursus egestas, nulla sem volutpat diam, ac dapibus nisl ipsum ut ipsum. Nunc tincidunt libero non magna placerat elementum.</p>
+                    </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <div class="languages bg-gradient-overlay wow fadeInUp" style="border-radius: 15px;">
+                <h2>Languages</h2>
+                    <ul style="color: white;">
+                        <li>Myanmar / Thai</li>
+                        <li>English / Spanish</li>
+                        <li>Chinese / Japanese</li>
+                        <li>Arabic / Hebrew</li>
+                    </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- contact and experience -->
+<section class="container" style="padding-bottom: 50px;">
+    <div class="row">
+        <div class="col-md-4 col-sm-12">
+            <div class="contact bg-gradient-overlay wow fadeInUp" style="border-radius: 15px;">
+                <h2>Contact</h2>
+                    <p class="white"><i class="fa fa-map-marker"></i> 123 Rama IX Road, Bangkok</p>
+                    <p class="white"><i class="fa fa-phone"></i> 010-020-0890</p>
+                    <p class="white"><i class="fa fa-envelope"></i> easy@company.com</p>
+                    <p class="white"><i class="fa fa-globe"></i> www.company.com</p>
+            </div>
+        </div>
+        <div class="col-md-8 col-sm-12">
+            <div class="experience bg-gradient-overlay wow fadeInUp" style="border-radius: 15px;">
+                <h2 class="white">Experiences</h2>
+                    <div class="experience-content">
+                        <h4>Website Development</h4>
+                        <h5>New Media Company</h5><span></span>
+                        <h5>2035 January - 2036 April</h5>
+                        <p class="education-description white">Cras porta tincidunt sem, in sollicitudin lorem efficitur ut. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+</section>
+
+
+        
 
     <!-- **** All JS Files ***** -->
     <!-- jQuery 2.2.4 -->

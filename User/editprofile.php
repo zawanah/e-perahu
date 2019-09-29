@@ -68,7 +68,7 @@
     <!-- Header Area End -->
 
     <!-- Breadcrumb Area Start -->
-    <section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url(img/bg-img/37.jpg);">
+    <section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url(img/backprofile.jpg);">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
@@ -92,20 +92,33 @@
 
             <form method="POST" class="form-horizontal">
 
-                
+             <?php
+                                    $sql = "SELECT firstname, lastname, username, email FROM users WHERE username = '" . $_SESSION['username'] . "'";
+
+                                    $result = mysqli_query($db, $sql);
+                                    $row = mysqli_fetch_array($result); ?>
+
                 <input type="hidden" name="id" value="<?php echo $username; ?>">
+
 
               <div class="form-group">
                 <label class="col-lg-3 control-label">First Name:</label>
                 <div class="col-lg-8">
-                  <input class="form-control" type="text" name="firstname" value="<?php echo $firstname; ?>">
+                  <input class="form-control" type="text" name="firstname" value="<?php echo $row['firstname']; ?>">
                 </div>
               </div>
 
               <div class="form-group">
                 <label class="col-lg-3 control-label">Last Name:</label>
                 <div class="col-lg-8">
-                  <input class="form-control" type="text" name="lastname" value="<?php echo $lastname; ?>">
+                  <input class="form-control" type="text" name="lastname" value="<?php echo $row['lastname']; ?>">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-lg-3 control-label">Email:</label>
+                <div class="col-lg-8">
+                  <input class="form-control" type="text" name="email" value="<?php echo $row['email']; ?>">
                 </div>
               </div>
               
@@ -113,7 +126,8 @@
               &ensp;
               <!--button-->
               <div class="col-12">
-                  <button type="submit" class="btn confer-btn" name="update">Update Profile<i class="zmdi zmdi-long-arrow-right"></i></button>
+                  <button type="submit" class="btn confer-btn" name="update">Update Profile</button>
+                  <input type="button" class="confer-btn" value="Cancel" onclick="history.back();" />
               </div>
                 <!--End button-->
                 &ensp;

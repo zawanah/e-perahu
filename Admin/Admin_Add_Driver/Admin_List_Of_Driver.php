@@ -100,8 +100,9 @@
             <table class="table">
             <thead class="thead-dark">
                   <tr>
-                    <th scope="col">ID</th>
+                    <th scope="col">Username</th>
                     <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
                     <th scope="col">Email</th>
                     <th scope="col">Boat Reg No</th>
                     <th scope="col">Edit</th>
@@ -126,7 +127,7 @@
                   if ($conn->connect_error) {
                   die("Connection failed: " . $conn->connect_error);
                   }
-                  $sql = "SELECT id, fname, email, reg_no FROM driver";
+                  $sql = "SELECT username, fname, lname, email, reg_no FROM driver";
                   $result = $conn->query($sql);
                   if ($result->num_rows > 0) {
                   // output data of each row
@@ -135,8 +136,9 @@
 
                   echo "<tr>
 
-                    <td>". $row["id"]. "</td>
+                    <td>". $row["username"]. "</td>
                    <td>" . $row["fname"] . "</td>
+                   <td>" . $row["lname"] . "</td>
                    <td>". $row["email"]. "</td>
                    <td>". $row["reg_no"]. "</td>
 

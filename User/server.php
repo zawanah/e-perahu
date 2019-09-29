@@ -142,10 +142,12 @@
   		if (isset($_POST['update'])) {
             $firstname = $_POST['firstname'];
             $lastname = $_POST['lastname'];
+            $email = $_POST['email'];
 
             mysqli_query($db, "UPDATE users SET firstname='$firstname', lastname='$lastname', email='$email' WHERE username='" . $_SESSION['username'] . "'");
-
-            header('location: profile.php');
+            header( "refresh:6; url=login.php" );
+            echo "<p style='text-align: center;' class='text-danger'>Please Re log in to apply settings.  You will be redirected to login page in any seconds.</p>";
+            // header('location: login.php');
             }
 
 		// logout
