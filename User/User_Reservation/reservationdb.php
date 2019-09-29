@@ -48,9 +48,6 @@
 		if (strlen($debitcvv) < 3){
    			array_push($errors, "- Wrong CVV number");
    		}
-   		if (strlen($debitcvv) > 4){
-   			array_push($errors, "- Wrong CVV number");
-   		}
 		if (empty($expmonth)) {
 			array_push($errors, "Expiry Month is required");
 		}
