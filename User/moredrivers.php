@@ -101,6 +101,7 @@
                     <th scope="col">First Name</th>
                     <th scope="col">Email</th>
                     <th scope="col">Boat Reg No</th>
+                    <th scope="col"></th>
                   </tr>
                 </thead>
 

@@ -1,9 +1,9 @@
 <?php include('../Admin_Login/server.php');
 
     // if user is not logged in, they cannot access this page
-    if (empty($_SESSION['username'])) {
-        header('location: ../Admin_Login/Admin_Login.php');
-    }
+    // if (empty($_SESSION['username'])) {
+    //     header('location: ../Admin_Login/Admin_Login.php');
+    // }
 
 ?>
 
@@ -140,20 +140,21 @@
 
                   echo "<tr>
 
-                    <td>". $row["username"]. "</td>
-                   <td>" . $row["fname"] . "</td>
-                   <td>" . $row["lname"] . "</td>
-                   <td>". $row["email"]. "</td>
-                   <td>". $row["reg_no"]. "</td>
+                  <td>". $row["username"]. "</td>
+                  <td>" . $row["fname"] . "</td>
+                  <td>" . $row["lname"] . "</td>
+                  <td>". $row["email"]. "</td>
+                  <td>". $row["reg_no"]. "</td>
 
                   <td><a href='Admin_Edit_Driver.php?edit= " . $row["id"] . " '><button type='submit' name='edit' class='btn btn-outline-danger btn-lg'>EDIT</button></a></td>
 
+                  
+                   <td><a href='server.php?del= " . $row["id"] . " '><button type='submit' name='del' class='btn btn-outline-danger btn-lg'>DELETE</button></a></td>
+                  </form>
 
-                   <td><a href='Admin_List_Of_Driver.php?delete= " . $row["id"] . " '><button type='submit' name='del' class='btn btn-outline-danger btn-lg'>DELETE</button></a></td>
 
-
-
-                   </tr>"  ;
+                   </tr>
+                   "  ;
 
 
                   }

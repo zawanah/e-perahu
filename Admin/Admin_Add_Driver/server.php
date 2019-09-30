@@ -85,10 +85,11 @@ if (isset($_POST['update'])) {
 	unset($_SESSION['id']); 
 	header('location: Admin_List_Of_Driver.php');
 }
+
 //delete Driver
 if (isset($_GET['del'])) {
 	$id = $_GET['del'];
-	mysqli_query($db, "DELETE FROM driver WHERE id='$id'");
+	mysqli_query($db, "DELETE FROM driver WHERE id='$id'"); 
 	header('location: Admin_List_Of_Driver.php');
 }
 

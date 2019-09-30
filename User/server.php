@@ -67,10 +67,7 @@
 			mysqli_query($db, $sql);
 
 
-			$_SESSION['firstname'] = $firstname;
-			$_SESSION['lastname'] = $lastname;
 			$_SESSION['username'] = $username;
-			$_SESSION['email'] = $email;
 			$_SESSION['success'] = "You are now logged in";
 			header('location: login.php'); // redirect to home page
 		}
