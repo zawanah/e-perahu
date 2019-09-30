@@ -100,12 +100,14 @@
             <table class="table">
             <thead class="thead-dark">
                   <tr>
-                    <th scope="col">ID</th>
+
                     <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
                     <th scope="col">Email</th>
                     <th scope="col">Boat Reg No</th>
-                    <th scope="col">Edit</th>
-                    <th scope="col">Delete</th>
+                    <th scope="col">      </th>
+
+
                   </tr>
                 </thead>
 
@@ -129,9 +131,6 @@
                    <td>" . $row["lastname"] . "</td>
                    <td>". $row["username"]. "</td>
                    <td>". $row["email"]. "</td>
-
-                  <td><a href='../Admin_Add_Driver/Admin_Edit_Driver.php'><button type='submit' name='edit' class='btn btn-outline-primary btn-lg'>EDIT</button></a></td>
-
 
                    <td><a href='#'><button type='submit' name='edit' class='btn btn-outline-danger btn-lg'>DELETE</button></a></td>
 

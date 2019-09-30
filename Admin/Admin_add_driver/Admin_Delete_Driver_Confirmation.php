@@ -74,7 +74,7 @@
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                     <div class="breadcrumb-content">
-                        <h2 class="page-title">Admin Driver Option</h2>
+                        <h2 class="page-title">Admin Delete Driver</h2>
 
                     </div>
                 </div>
@@ -84,35 +84,27 @@
     <!-- Breadcrumb Area End -->
 
     <!-- Our Blog Area Start -->
-    <div class="our-blog-area section-padding-100">
+    <div  class="our-blog-area section-padding-100">
         <div class="container">
-            <div class="row">
+            <div  class="row-md-2 row-md-offset-5">
+
                 <!-- Single Blog Area -->
 
-
-                <div class="col-12 col-md-6 col-xl-4">
-                    <div class="single-blog-area style-2 wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Single blog Thumb -->
-                        <div class="single-blog-thumb">
-                            <img src="img/user_icon.png" alt="User Icon">
-                        </div>
-                        <div class="single-blog-text text-center">
-                            <a class="blog-title" href="../Admin_add_driver/Admin_List_Of_Driver.php">View Driver List</a>
-                            <!-- Post Meta -->
-
-                            <p>View Driver List</p>
-                        </div>
-                        <div class="blog-btn">
-                            <a href="../Admin_add_driver/Admin_List_Of_Driver.php"><i class="zmdi zmdi-long-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-        </div>
+  <div  class="card text-center">
+    <div class="card-header bg-danger mb-3">
+        <p class="card-text text-white">Delete Driver Account</p>
     </div>
+      <div class="card-body">
+    <p class="card-text">Are you sure you want to delete this?</p>
+    <a href="#" class="btn btn-outline-success" role="button" aria-pressed="true">Yes</a>
+    <a href="#" class="btn btn-outline-danger" role="button" aria-pressed="true">No</a>
+  </div>
+
+
+  </div>
+    </div>
+      </div>
+      &nbsp;
     <!-- Our Blog Area End -->
 
     <!-- Footer Area Start -->
