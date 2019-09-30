@@ -1,19 +1,5 @@
 <?php include('server.php');
-?>
 
-
-<?php
-	if (isset($_GET['edit'])) {
-		$id = $_GET['edit'];
-		$update = true;
-		$record = mysqli_query($db, "SELECT * FROM driver WHERE id=$id");
-
-		if (count($record) == 1 ) {
-			$n = mysqli_fetch_array($record);
-			$fname = $n['fname'];
-
-		}
-	}
 ?>
 
 <!DOCTYPE html>
@@ -66,7 +52,7 @@
                         </div>
 
 
-                            <!-- Get Tickets Button -->
+                            <!-- Log Out Button -->
                             <a href="#" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                         <!-- Nav End -->
@@ -102,49 +88,55 @@
             <h3>Personal info</h3>
       &ensp;
 
-            <form method="POST" action="Admin_Edit_Driver.php" class="form-horizontal" role="form">
+            <form method="POST" class="form-horizontal">
+
+                <?php 
+
+                    $sql = "SELECT fname, lname, username, email, phone_no, reg_no FROM driver WHERE id = '" . $_SESSION['id'] . "'";
+
+                                    $result = mysqli_query($db, $sql);
+                                    $row = mysqli_fetch_array($result);
+                ?>
+
+                <input type="hidden" name="id" value="<?php echo $id; ?>">
+
               <div class="form-group">
                 <label class="col-lg-3 control-label">First name:</label>
                 <div class="col-lg-8">
-                  <input class="form-control" type="text" name="fname" value="<?php echo $fname; ?>">
+                  <input class="form-control" type="text" name="fname" value="<?php echo $row['fname']; ?>">
                 </div>
               </div>
               <div class="form-group">
                 <label class="col-lg-3 control-label">Last name:</label>
                 <div class="col-lg-8">
-                  <input class="form-control" type="text" name="lname" value="<?php echo $lname; ?>">
+                  <input class="form-control" type="text" name="lname" value="<?php echo $row['lname']; ?>">
                 </div>
               </div>
               <div class="form-group">
                 <label class="col-lg-3 control-label">Email:</label>
                 <div class="col-lg-8">
-                  <input class="form-control" type="text" name="email" value="<?php echo $email; ?>">
+                  <input class="form-control" type="text" name="email" value="<?php echo $row['email']; ?>">
                 </div>
               </div>
-							<div class="form-group">
+				<div class="form-group">
                 <label class="col-lg-3 control-label">Phone No:</label>
                 <div class="col-lg-8">
-                  <input class="form-control" type="text" name="phone_no" value="<?php echo $phone_no; ?>">
+                  <input class="form-control" type="text" name="phone_no" value="<?php echo $row['phone_no']; ?>">
                 </div>
               </div>
-							<div class="form-group">
-								<label class="col-lg-3 control-label">Boat Reg No:</label>
-								<div class="col-lg-8">
-									<input class="form-control" type="text" name="reg_no" value="<?php echo $reg_no; ?>">
-								</div>
-							</div>
+				<div class="form-group">
+					<label class="col-lg-3 control-label">Boat Reg No:</label>
+						<div class="col-lg-8">
+							<input class="form-control" type="text" name="reg_no" value="<?php echo $row['reg_no']; ?>">
+						</div>
+				</div>
 
 
 
               &ensp;
               <!--button-->
               <div class="col-12">
-                <?php if ($update == true): ?>
                   <button type="submit" class="btn confer-btn" name="update">Update Profile<i class="zmdi zmdi-long-arrow-right"></i></button>
-                <?php else: ?>
-                  <button class="btn" type="submit" name="save" >Save</button>
-                 <?php endif ?>
-
               </div>
                 <!--End button-->
                 &ensp;

@@ -108,7 +108,7 @@
               &ensp;
               <!--button-->
               <div class="col-12">
-                  <button type="submit" class="btn confer-btn">Update Profile<i class="zmdi zmdi-long-arrow-right"></i></button>
+                  <button type="submit" class="btn confer-btn" name="update">Update Profile<i class="zmdi zmdi-long-arrow-right"></i></button>
               </div>
                 <!--End button-->
                 &ensp;

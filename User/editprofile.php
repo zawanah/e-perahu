@@ -92,11 +92,12 @@
 
             <form method="POST" class="form-horizontal">
 
-             <?php
+                <?php
                                     $sql = "SELECT firstname, lastname, username, email FROM users WHERE username = '" . $_SESSION['username'] . "'";
 
                                     $result = mysqli_query($db, $sql);
-                                    $row = mysqli_fetch_array($result); ?>
+                                    $row = mysqli_fetch_array($result); 
+                ?>
 
                 <input type="hidden" name="id" value="<?php echo $username; ?>">
 

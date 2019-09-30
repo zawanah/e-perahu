@@ -7,8 +7,7 @@
 	$fname = "";
 	$lname = "";
 	$phone_no = "";
-	$reg_no="";
-	$update=true;
+	$reg_no= "";
 
 
 	$errors = array();
@@ -50,7 +49,24 @@
 		}
 	}
 
+	// edit button
 
+	if (isset($_GET['edit'])) {
+                            $id = $_GET['edit'];
+                            $update = true;
+                            $record = mysqli_query($db, "SELECT * FROM driver WHERE id='$id'");
+
+                            // if (count($record) == 1 ) {
+                            //   $n = mysqli_fetch_array($record);
+                            //   $fname = $n['fname'];
+                            //   $lname = $n['lname'];
+                            //   $email = $n['email'];
+                            //   $phone_no = $n['phone_no'];
+                            //   $reg_no = $n['reg_no'];
+
+                              $_SESSION['id'] = $id;
+                            // }
+                          }
 
 
 
@@ -58,21 +74,22 @@
 //update profile Driver
 
 if (isset($_POST['update'])) {
-	$id = $_POST['id'];
 	$fname = $_POST['fname'];
-	$lname= $_POST['lname'];
+	$lname = $_POST['lname'];
+	$email = $_POST['email'];
+	$phone_no = $_POST['phone_no'];
+	$reg_no = $_POST['reg_no'];
 
-	mysqli_query($db, "UPDATE driver SET fname='$fname', lname='$lname' WHERE id=$id");
-	$_SESSION['message'] = "driver updated!";
-	header('location:../Admin_Add_Driver/Admin_List_Of_Driver.php ');
+	mysqli_query($db, "UPDATE driver SET fname='$fname', lname='$lname', email='$email', phone_no='$phone_no', reg_no='$reg_no' WHERE id='$id'");
+	session_destroy();
+	unset($_SESSION['id']); 
+	header('location: Admin_List_Of_Driver.php');
 }
-
 //delete Driver
 if (isset($_GET['del'])) {
 	$id = $_GET['del'];
-	mysqli_query($db, "DELETE FROM driver WHERE id=$id");
-	$_SESSION['message'] = "driver deleted!";
-	header('location: ../Admin_Add_Driver/Admin_List_Of_Driver.php');
+	mysqli_query($db, "DELETE FROM driver WHERE id='$id'");
+	header('location: Admin_List_Of_Driver.php');
 }
 
 

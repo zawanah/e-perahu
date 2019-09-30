@@ -7,6 +7,10 @@
 
 ?>
 
+<?php 
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -127,7 +131,7 @@
                   if ($conn->connect_error) {
                   die("Connection failed: " . $conn->connect_error);
                   }
-                  $sql = "SELECT username, fname, lname, email, reg_no FROM driver";
+                  $sql = "SELECT id, username, fname, lname, email, reg_no FROM driver";
                   $result = $conn->query($sql);
                   if ($result->num_rows > 0) {
                   // output data of each row
@@ -142,10 +146,10 @@
                    <td>". $row["email"]. "</td>
                    <td>". $row["reg_no"]. "</td>
 
-                  <td><a href='../Admin_Add_Driver/Admin_Edit_Driver.php'><button type='submit' name='edit' class='btn btn-outline-primary btn-lg'>EDIT</button></a></td>
+                  <td><a href='Admin_Edit_Driver.php?edit= " . $row["id"] . " '><button type='submit' name='edit' class='btn btn-outline-danger btn-lg'>EDIT</button></a></td>
 
 
-                   <td><a href='#'><button type='submit' name='edit' class='btn btn-outline-danger btn-lg'>DELETE</button></a></td>
+                   <td><a href='Admin_List_Of_Driver.php?delete= " . $row["id"] . " '><button type='submit' name='del' class='btn btn-outline-danger btn-lg'>DELETE</button></a></td>
 
 
 
