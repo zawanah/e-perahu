@@ -58,16 +58,16 @@
                                 <li><a href="#">Information</a>
                                     <ul class="dropdown">
                                         <li><a href="profile.php">- My Profile</a></li>
-                                        <li><a href="about.php">- Schedule</a></li>
-                                        <li><a href="about.php">- Ticket Price</a></li>
+                                        <li><a href="">- Schedule</a></li>
+                                        <li><a href="ticketprice.php">- Ticket Price</a></li>
                                         <li><a href="speakers.php">- Driver</a></li>
                                         <li><a href="tickets.php">- Promotion</a></li>
-                                        
-                                        
-                                        
+
+
+
                                     </ul>
                                 </li>
-                                <li><a href="User_Reservation/User_Reservation.php">Reservation</a></li>
+                                <li><a href="">Ticket History</a></li>
                                 <li><a href="blog.php">About Us</a></li>
                                 <li><a href="contact.php">Feedback</a></li>
                             </ul>
@@ -82,7 +82,7 @@
     </header>
     <!-- Header Area End -->
 
-    
+
 
         <!-- Our Ticket Pricing Table Area Start -->
     <section class="our-ticket-pricing-table-area bg-img bg-gradient-overlay jarallax" style="padding-top: 150px; background-image: url(img/bg-img/backticket.jpg);">
@@ -199,8 +199,8 @@
                 <!-- Booking Btn -->
                 <div class="col-12">
                     <div style="padding-bottom: 50px;" class=" text-center mt-50 wow fadeInUp" data-wow-delay="300ms">
-                        <a href="User_Reservation/User_Reservation.php" class="confer-btn">Book Now using debit card <i class="zmdi zmdi-long-arrow-right"></i></a>
-                        <a href="User_Reservation/User_Reservation.php" class="confer-btn">Book Now using paypal <i class="zmdi zmdi-long-arrow-right"></i></a>
+                        <a href="User_Reservation/DC_Reservation.php" class="confer-btn">Book Now using debit card <i class="zmdi zmdi-long-arrow-right"></i></a>
+                        <a href="User_Reservation/PP_Reservation.php" class="confer-btn">Book Now using paypal <i class="zmdi zmdi-long-arrow-right"></i></a>
                     </div>
                 </div>
 

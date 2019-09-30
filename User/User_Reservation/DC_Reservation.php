@@ -1,4 +1,4 @@
-<?php include('reservationdb.php');
+<?php include('DC_Reservation_DB.php');
 
 ?>
 
@@ -10,7 +10,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Booking Form</title>
+	<title>Debit Card Reservation</title>
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
@@ -21,11 +21,11 @@
 	<!-- Custom stlylesheet for Reservation form -->
 	<link type="text/css" rel="stylesheet" href="build/css/style.css" />
 
-	<!-- for phone number validation -->
+	<!-- For phone number validation -->
 	<link rel="stylesheet" href="build/css/intlTelInput.css">
 	<script src="build/js/intlTelInput.js"></script>
 
-	<!-- for pickup and destination -->
+	<!-- For pickup and destination -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 	<script>
 	$(document).ready(function(){
@@ -50,7 +50,7 @@
 <!-- For card validation -->
 <link rel="stylesheet" type="text/css" href="build/css/cardstyle.css">
 
-<!-- for ticket calculation -->
+<!-- For ticket calculation -->
 <script type="text/javascript" src="build/js/ticketformcalculations.js"></script>
 
 
@@ -63,19 +63,22 @@
 			<div class="container">
 				<div class="row">
 					<div class="booking-form">
+
 						<div class="form-header">
 							<h1>Reservation</h1>
 						</div>
-						<form method="post" action="User_Reservation.php" id="ticketform">
+
+						<form method="post" action="DC_Reservation.php" id="ticketform">
 
 							<!-- display validation errors here -->
-							<?php include('errors.php'); ?>
+							<?php include('DC_Errors.php'); ?>
 
 							<div class="row">
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Phone</span>
-										<input id="phone" class="form-control" type="text" name="phone" placeholder="Number" maxlength="7" pattern="[0-9]{7}" required>
+										<!-- maxlength="7" pattern="[0-9]{7}" -->
+										<input id="phone" class="form-control" type="text" name="phone" placeholder="Number" required>
 										<script>
 										var input = document.querySelector("#phone");
 										window.intlTelInput(input, {
@@ -134,7 +137,7 @@
 							<div class="col-sm-6">
 								<div class="form-group">
 									<span class="form-label">Pickup Date</span>
-									<input id="datepicker" class="form-control" type="text" name="pickupdate" placeholder="MM/DD/YYYY" autocomplete="off" required>
+									<input class="datepicker form-control" type="text" name="pickupdate" placeholder="MM/DD/YYYY" autocomplete="off" required>
 								</div>
 							</div>
 							<div class="col-sm-6">
@@ -252,15 +255,17 @@
 						</div>
 
 					</form>
+
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
 <!-- For card validation -->
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="build/js/jquery.payform.min.js" charset="utf-8"></script>
-<script src="build/js/script.js"></script>
+<script src="build/js/cardscript.js"></script>
 
 </body>
 

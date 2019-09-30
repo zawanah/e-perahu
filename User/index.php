@@ -55,7 +55,7 @@
                                 <li><a href="#">Information</a>
                                     <ul class="dropdown">
                                         <li><a href="index.php">- Schedule</a></li>
-                                        <li><a href="aboutnologin.php">- Ticket Price</a></li>
+                                        <li><a href="nlticketprice.php">- Ticket Price</a></li>
                                         <li><a href="schedule.php">- promotion</a></li>
 
 
