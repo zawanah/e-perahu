@@ -65,4 +65,17 @@
 		}
 	}
 
+	$query="INSERT INTO reservationtable SET `type`='debit'";
+
+	$res=mysqli_query($db, $query);
+
+	$last_id=mysqli_insert_id($db);
+
+	if($last_id){
+		$user_id="DC_".$last_id;
+		$query1="UPDATE reservationtable SET `user_id`='".$user_id."' where
+					`id`='".$last_id."'";
+		$res1=mysqli_query($db,$query1);
+	}
+
 ?>
