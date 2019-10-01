@@ -1,4 +1,4 @@
-<?php include('../Admin/Admin_Login/server.php');
+<?php include('../Admin/Admin_Add_Driver/server.php');
 
 ?>
 
@@ -95,12 +95,13 @@
           &nbsp;
 
 <!--table start -->
-            <table class="table">
+            <table class="table col-12">
             <thead class="thead-dark">
                   <tr>
                     <th scope="col">First Name</th>
                     <th scope="col">Email</th>
                     <th scope="col">Boat Reg No</th>
+                    <th scope="col">Ratings</th>
                     <th scope="col"></th>
                   </tr>
                 </thead>
@@ -111,7 +112,7 @@
                   if ($conn->connect_error) {
                   die("Connection failed: " . $conn->connect_error);
                   }
-                  $sql = "SELECT fname, email, reg_no FROM driver";
+                  $sql = "SELECT id, fname, email, reg_no FROM driver";
                   $result = $conn->query($sql);
                   if ($result->num_rows > 0) {
                   // output data of each row
@@ -123,7 +124,9 @@
                    <td>". $row["email"]. "</td>
                    <td>". $row["reg_no"]. "</td>
 
-                   <td><a href='#'><button type='submit' name='edit' class='btn btn-outline-primary btn-lg'>Show Profile</button></a></td>
+                   <td>BINTANG BINTANG</td>
+
+                   <td><a href='driverprofile.php?show= " . $row["id"] . " '><button type='submit' name='show' class='confer-btn'>Show Profile</button></a></td>
 
                    </tr>"  ;
 

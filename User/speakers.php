@@ -100,7 +100,7 @@
                                 <li><a href="contact.php">Feedback</a></li>
                             </ul>
 
-                            <!-- Get Tickets Button -->
+                            <!-- logout button -->
                             <a href="speakers.php?logout='1'" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                         <!-- Nav End -->
