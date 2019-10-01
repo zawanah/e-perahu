@@ -53,19 +53,19 @@
                                 
                             </ul>
 
-                            <!-- Get Tickets Button -->
+                           
                             
                         </div>
                         <!-- Nav End -->
                     </div>
-                </nav>
+                </nav>  
             </div>
         </div>
     </header>
     <!-- Header Area End -->
 
     <!-- Breadcrumb Area Start -->
-    <section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url(img/bg-img/37.jpg);">
+    <section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url(img/backprofile.jpg);">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
@@ -83,6 +83,31 @@
         </div>
     </section>
     <!-- Breadcrumb Area End -->
+
+   <!-- About Us And Countdown Area Start -->
+    <section class="about-us-countdown-area section-padding-100-0" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- About Content -->
+                <div class="col-12 col-md-6">
+                    <div class="about-content-text mb-80">
+                        <h3 class="wow fadeInUp" data-wow-delay="300ms">Grab or book a boat faster!</h3>
+                        <p class="wow fadeInUp" data-wow-delay="300ms">E-Perahu helps you find nearby available boats or reserve them in advance. It is a responsive website where users can access it via PC and even mobile devices without any lag.   </p>
+                        <a href="blog.php" class="btn confer-btn mt-50 wow fadeInUp" data-wow-delay="300ms">More information <i class="zmdi zmdi-long-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- About Thumb -->
+                <div class="col-12 col-md-6">
+                    <div class="about-thumb mb-80 wow fadeInUp" data-wow-delay="300ms">
+                        <img src="" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      </section>
+    <!-- About Us And Countdown Area End -->
 
     
     <!-- Footer Area Start -->
