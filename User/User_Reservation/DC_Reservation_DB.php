@@ -1,14 +1,4 @@
 <?php
-$android = strpos($_SERVER['HTTP_USER_AGENT'],"Android");
-$bberry = strpos($_SERVER['HTTP_USER_AGENT'],"BlackBerry");
-$iphone = strpos($_SERVER['HTTP_USER_AGENT'],"iPhone");
-$ipod = strpos($_SERVER['HTTP_USER_AGENT'],"iPod");
-$webos = strpos($_SERVER['HTTP_USER_AGENT'],"webOS");
-
-if ($android || $bberry || $iphone || $ipod || $webos== true)
-{
-header('Location: http://www.yoursite.com/mobile');
-}
 
 	session_start();
 	$name = "";
@@ -24,8 +14,6 @@ header('Location: http://www.yoursite.com/mobile');
 	$expmonth = "";
 	$expyear = "";
 	$errors = array();
-
-
 
 	$db = mysqli_connect('localhost', 'root', '', 'reservation');
 
@@ -76,5 +64,20 @@ header('Location: http://www.yoursite.com/mobile');
 			header('location: ../indexuser.php'); // redirect to home page
 		}
 	}
+
+	// $conn=mysqli_connect('localhost' , 'root' , '' , 'reservation');
+	//
+	// $query="insert into reservationtable SET `type`='debit'";
+	//
+	// $res=mysqli_query($conn, $query);
+	//
+	// $last_id=mysqli_insert_id($conn);
+	//
+	// if($last_id){
+	// 	$user_id="DC_".$last_id;
+	// 	$query1="update reservationtable SET `user_id`='".$user_id."' where
+	// 				`id`='".$last_id."'";
+	// 	$res1=mysqli_query($conn,$query1);
+	// }
 
 ?>

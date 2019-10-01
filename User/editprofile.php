@@ -41,7 +41,7 @@
                 <nav class="classy-navbar justify-content-between" id="conferNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="./index.html"><img src="./img/core-img/logo.png" alt=""></a>
+                    <a class="nav-brand" href="indexuser.php"><img src="img/e-perahu.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -144,14 +144,14 @@
     <!-- Footer Area Start -->
     <footer class="footer-area bg-img bg-overlay-2 section-padding-100-0">
         <!-- Main Footer Area -->
-        <div class="main-footer-area">
+        <div class="main-footer-area" >
             <div class="container">
-                <div class="row">
+                <div class="row" style="display: inline-block;" >
 
 
                     <!-- Single Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="single-footer-widget mb-60">
+                    <!-- <div class="col-12 col-sm-6 col-lg-3" > -->
+                        <div class="single-footer-widget mb-60" style="text-align: center;" >
                             <!-- Widget Title -->
                             <h5 class="widget-title">Contact</h5>
 
@@ -163,17 +163,9 @@
                                 <p><i class="zmdi zmdi-globe"></i> www.e-perahu.com</p>
                             </div>
                         </div>
-                    </div>
+                    <!-- </div> -->
 
-                    <!-- Footer Menu -->
-                    <div class="col-12 col-md-6">
-                        <div class="footer-menu">
-                            <ul class="nav">
-                                <li><a href="#"><i class="zmdi zmdi-circle"></i> Terms of Service</a></li>
-                                <li><a href="#"><i class="zmdi zmdi-circle"></i> Privacy Policy</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
