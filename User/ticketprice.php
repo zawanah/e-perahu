@@ -210,28 +210,31 @@
     </section>
     <!-- Our Ticket Pricing Table Area End -->
 
-        <!-- Footer Area Start -->
+     <!-- Footer Area Start -->
     <footer class="footer-area bg-img bg-overlay-2 section-padding-100-0">
         <!-- Main Footer Area -->
-        <div class="main-footer-area">
+        <div class="main-footer-area" >
             <div class="container">
-                <div class="row">
-                    <!-- Single Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="single-footer-widget mb-60">
+                <div class="row" style="display: inline-block;" >
 
+
+                    <!-- Single Footer Widget Area -->
+                    <!-- <div class="col-12 col-sm-6 col-lg-3" > -->
+                        <div class="single-footer-widget mb-60" style="text-align: center;" >
                             <!-- Widget Title -->
                             <h5 class="widget-title">Contact</h5>
 
                             <!-- Contact Area -->
                             <div class="footer-contact-info">
                                 <p><i class="zmdi zmdi-map"></i> Bandar Seri Begawan</p>
-                                <p><i class="zmdi zmdi-phone"></i> (+673) 2123456</p>
-                                <p><i class="zmdi zmdi-email"></i> -e-perahu@gmail.com</p>
-                                <p><i class="zmdi zmdi-globe"></i> www.e-perahu.net</p>
+                                <p><i class="zmdi zmdi-phone"></i> (+673) 1234567</p>
+                                <p><i class="zmdi zmdi-email"></i> e-perahu@gmail.com</p>
+                                <p><i class="zmdi zmdi-globe"></i> www.e-perahu.com</p>
                             </div>
                         </div>
-                    </div>
+                    <!-- </div> -->
+
+                    
                 </div>
             </div>
         </div>

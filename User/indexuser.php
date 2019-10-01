@@ -153,7 +153,7 @@
                 <!-- About Thumb -->
                 <div class="col-12 col-md-6">
                     <div class="about-thumb mb-80 wow fadeInUp" data-wow-delay="300ms">
-                        <img src="img/bg-img/2.png" alt="">
+                        <img src="" alt="">
                     </div>
                 </div>
             </div>
