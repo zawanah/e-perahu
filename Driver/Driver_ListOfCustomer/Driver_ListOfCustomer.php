@@ -88,7 +88,8 @@
                 <tr>
 
                   
-                  <th scope="col">Name</th>
+                  <th scope="col">Firstname</th>
+                  <th scope="col">Lastname</th>
                   <th scope="col">Email</th>
                   <th scope="col">Phone No.</th>
                   <th scope="col">Pickup</th>
@@ -106,7 +107,7 @@
                   if ($conn->connect_error) {
                   die("Connection failed: " . $conn->connect_error);
                   }
-                  $sql = "SELECT name, email, phone, pickup, destination, pickupdate, operationtime FROM reservationtable";
+                  $sql = "SELECT id, firstname, lastname, email, phone, pickup, destination, pickupdate, operationtime FROM reservationtable";
                   $result = $conn->query($sql);
                   if ($result ->num_rows > 0) {
                   // output data of each row
@@ -116,7 +117,8 @@
                   echo "<tr>
 
                     
-                   <td>" . $row["name"] . "</td>
+                   <td>" . $row["firstname"] . "</td>
+                   <td>" . $row["lastname"] . "</td>
                    <td>". $row["email"]. "</td>
                    <td>". $row["phone"]. "</td>
                    <td>". $row["pickup"]. "</td>
@@ -124,7 +126,7 @@
                    <td>". $row["pickupdate"]. "</td>
                    <td>". $row["operationtime"]. "</td>
                    
-
+                   <td><a href='confirmation.php?show= " . $row["id"] . " '><button type='submit' name='show' class='btn btn-primary'>Take</button></a></td>
                    
 
                    </tr>"  ;
