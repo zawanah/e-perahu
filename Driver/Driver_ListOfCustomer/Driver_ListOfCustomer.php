@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -108,7 +106,7 @@
                   if ($conn->connect_error) {
                   die("Connection failed: " . $conn->connect_error);
                   }
-                  $sql = "SELECT name, email, phone, pickup, destination, pickupdate, hour, min, ampm FROM reservationtable";
+                  $sql = "SELECT name, email, phone, pickup, destination, pickupdate, operationtime FROM reservationtable";
                   $result = $conn->query($sql);
                   if ($result ->num_rows > 0) {
                   // output data of each row
@@ -124,9 +122,8 @@
                    <td>". $row["pickup"]. "</td>
                    <td>". $row["destination"]. "</td>
                    <td>". $row["pickupdate"]. "</td>
-                   <td>". $row["hour"]. "</td>
-                   <td>". $row["min"]. "</td>
-                   <td>". $row["ampm"]. "</td>
+                   <td>". $row["operationtime"]. "</td>
+                   
 
                    
 

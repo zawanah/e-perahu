@@ -1,4 +1,6 @@
-<?php include('server.php'); ?>
+<?php include('server.php'); 
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +32,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
-				<form method="post" action="driver_Login.php">
+				<form method="post" action="Driver_Login.php">
 					<span class="login100-form-title p-b-55">
 						Login
 					</span>
@@ -38,19 +40,15 @@
 					<!-- display validation errors here -->
 					<?php include('errors.php'); ?>
 					<div class="wrap-input100 validate-input m-b-16">
-						<input class="input100" type="text" name="username" placeholder="Username">
+						<input class="input100" type="text" name="username" placeholder="Username" value="<?php if(isset($_COOKIE['username'])) echo $_COOKIE['username']; ?>" autocomplete="off" >
 						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<span class="lnr lnr-envelope"></span>
-						</span>
+						
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-16">
 						<input class="input100" type="password" name="password" placeholder="Password">
 						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<span class="lnr lnr-lock"></span>
-						</span>
+						
 					</div>
 
 					<div class="contact100-form-checkbox m-l-4">
@@ -64,20 +62,6 @@
 						<button type="submit" name="login" class="login100-form-btn">
 							Login
 						</button>
-					</div>
-
-
-
-		
-					<!--temporary only-->
-					<div class="text-center w-full p-t-115">
-						<span class="txt1">
-							Not a driver?
-						</span>
-
-						<a class="txt1 bo1 hov1" href="../Driver_SignUp/signup.php">
-							Sign up now
-						</a>
 					</div>
 				</form>
 			</div>

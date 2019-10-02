@@ -4,10 +4,22 @@
 	$lastname = "";
 	$username = "";
 	$email = "";
+	$name = "";
+	$phone = "";
+	$pickup = "";
+	$destination = "";
+	$pickupdate = "";
+	$operationtime="";
+	$ownername = "";
+	$debitnumber = "";
+	$debitcvv = "";
+	$expmonth = "";
+	$expyear = "";
 
 	$errors = array();
 
 	$db = mysqli_connect('localhost', 'root', '', 'registration');
+	
 
 	if (isset($_POST['register'])) {
 		$firstname = mysqli_real_escape_string($db, $_POST['firstname']);
@@ -114,16 +126,13 @@
 
   		$sql = "SELECT firstname, lastname, email FROM users WHERE username = '" . $_SESSION['username'] . "'";
 
-  		$result = mysqli_query($sql);
+  		$result = mysqli_query($db, $sql);
   		$row = mysqli_fetch_array($result);
 
 
 
 		// log user in
-		// $_SESSION['firstname'] = $firstname;
-		// $_SESSION['lastname'] = $lastname;
 		$_SESSION['username'] = $username;
-		// $_SESSION['email'] = $email;
 		$_SESSION['success'] = "You are now logged in";
 
 
@@ -156,4 +165,56 @@
 
 		}
 
+
+	// reservation
+
+		$db2 = mysqli_connect('localhost', 'root', '', 'reservation');
+			if (isset($_POST['paynow'])) {
+				$firstname = mysqli_real_escape_string($db2, $_POST['firstname']);
+				$lastname = mysqli_real_escape_string($db2, $_POST['lastname']);
+				$email = mysqli_real_escape_string($db2, $_POST['email']);
+				$phone = mysqli_real_escape_string($db2, $_POST['phone']);
+				$pickup = mysqli_real_escape_string($db2, $_POST['pickup']);
+				$destination = mysqli_real_escape_string($db2, $_POST['destination']);
+				$pickupdate = mysqli_real_escape_string($db2, $_POST['pickupdate']);
+				$operationtime = mysqli_real_escape_string($db2, $_POST['operationtime']);
+				$ownername = mysqli_real_escape_string($db2, $_POST['ownername']);
+				$debitnumber = mysqli_real_escape_string($db2, $_POST['debitnumber']);
+				$debitcvv = mysqli_real_escape_string($db2, $_POST['debitcvv']);
+				$expmonth = mysqli_real_escape_string($db2, $_POST['expmonth']);
+				$expyear = mysqli_real_escape_string($db2, $_POST['expyear']);
+
+		if (empty($phone)) {
+			array_push($errors, "Phone Number is required");
+		}
+		if (empty($debitnumber)) {
+			array_push($errors, "Debit Number is required");
+		}
+		if (strlen($debitnumber) > 19){
+   			array_push($errors, "- Wrong card number");
+   		}
+   		if (strlen($debitnumber) < 19){
+   			array_push($errors, "- Wrong card number");
+   		}
+		if (empty($debitcvv)) {
+			array_push($errors, "CVV is required");
+		}
+		if (strlen($debitcvv) < 3){
+   			array_push($errors, "- Wrong CVV number");
+   		}
+		if (empty($expmonth)) {
+			array_push($errors, "Expiry Month is required");
+		}
+		if (empty($expyear)) {
+			array_push($errors, "Expiry Year is required");
+		}
+
+		if (count($errors) == 0) {
+			$sql = "INSERT INTO reservationtable (firstname, lastname, email, phone, pickup, destination, pickupdate, operationtime, ownername, debitnumber, debitcvv, expmonth, expyear)
+			VALUES ('$firstname', '$lastname', '$email', '$phone', '$pickup', '$destination', '$pickupdate', '$operationtime', '$ownername', '$debitnumber', '$debitcvv', '$expmonth', '$expyear')";
+			mysqli_query($db2, $sql);
+			$_SESSION['success'] = "Payment Successful";
+			header('location: ../indexuser.php'); // redirect to home page
+		}
+	}
 ?>
