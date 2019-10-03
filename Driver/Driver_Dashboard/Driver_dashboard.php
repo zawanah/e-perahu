@@ -20,7 +20,7 @@
     <title>Driver Dashboard</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="./img/core-img/favicon.png">
+    <link rel="icon" href="img/e-perahu.png">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -42,7 +42,7 @@
                 <nav class="classy-navbar justify-content-between" id="conferNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="Driver_dashboard.php"><img src="./img/core-img/logo.png" alt=""></a>
+                    <a class="nav-brand" href="Driver_dashboard.php"><img src="img/e-perahu.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -58,7 +58,13 @@
 
                         <!-- Nav Start -->
                         <div class="classynav">
-    
+                            <div class="toggleBox">
+                                <div class="toggle">
+                                    <input type="checkbox">
+                                    <label for="" class="onbtn">On</label>
+                                    <label for="" class="ofbtn">Off</label>
+                                </div>
+                            </div>
                             <!-- Logout Button -->
                             <a href="Driver_dashboard.php?logout='1'" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
@@ -70,23 +76,8 @@
     </header>
     <!-- Header Area End -->
 
-    <!-- Breadcrumb Area Start -->
-    <section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url(img/BoatDriver.jpg);">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <div class="breadcrumb-content">
-                        <h2 class="page-title">Driver Dashboard</h2>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Breadcrumb Area End -->
-
     <!-- Our Blog Area Start -->
-    <div class="our-blog-area section-padding-100">
+    <div style="padding-top:180px;" class="our-blog-area section-padding-100">
         <div class="container">
             <div class="row">
                 <!-- Single Blog Area -->

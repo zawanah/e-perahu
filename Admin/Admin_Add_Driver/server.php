@@ -15,7 +15,6 @@
 	$db = mysqli_connect('localhost', 'root', '', 'registration');
 
 //add new driver
-
 	if (isset($_POST['register2'])) {
 		$username = mysqli_real_escape_string($db, $_POST['username']);
 		$password = mysqli_real_escape_string($db, $_POST['password']);
@@ -50,50 +49,48 @@
 	}
 
 	// edit button
+	if (isset($_GET['edit'])) {
+    	$id = $_GET['edit'];
+    	$update = true;
+    	$record = mysqli_query($db, "SELECT * FROM driver WHERE id='$id'");
 
-if (isset($_GET['edit'])) {
-    $id = $_GET['edit'];
-    $update = true;
-    $record = mysqli_query($db, "SELECT * FROM driver WHERE id='$id'");
-
-    $_SESSION['id'] = $id;
+    	$_SESSION['id'] = $id;
                             
     }
 
 
 
 
-//update profile Driver
+	//update profile Driver
+	if (isset($_POST['update'])) {
+		$fname = $_POST['fname'];
+		$lname = $_POST['lname'];
+		$email = $_POST['email'];
+		$phone_no = $_POST['phone_no'];
+		$reg_no = $_POST['reg_no'];
 
-if (isset($_POST['update'])) {
-	$fname = $_POST['fname'];
-	$lname = $_POST['lname'];
-	$email = $_POST['email'];
-	$phone_no = $_POST['phone_no'];
-	$reg_no = $_POST['reg_no'];
+		mysqli_query($db, "UPDATE driver SET fname='$fname', lname='$lname', email='$email', phone_no='$phone_no', reg_no='$reg_no' WHERE id='$id'");
+		session_destroy();
+		unset($_SESSION['id']); 
+		header('location: Admin_List_Of_Driver.php');
+	}
 
-	mysqli_query($db, "UPDATE driver SET fname='$fname', lname='$lname', email='$email', phone_no='$phone_no', reg_no='$reg_no' WHERE id='$id'");
-	session_destroy();
-	unset($_SESSION['id']); 
-	header('location: Admin_List_Of_Driver.php');
-}
+	//delete Driver
+	if (isset($_GET['del'])) {
+		$id = $_GET['del'];
+		mysqli_query($db, "DELETE FROM driver WHERE id='$id'"); 
+		header('location: Admin_List_Of_Driver.php');
+	}
 
-//delete Driver
-if (isset($_GET['del'])) {
-	$id = $_GET['del'];
-	mysqli_query($db, "DELETE FROM driver WHERE id='$id'"); 
-	header('location: Admin_List_Of_Driver.php');
-}
+	// show profile button
+	if (isset($_GET['show'])) {
+	    $id = $_GET['show'];
+	    $update = true;
+	    $record = mysqli_query($db, "SELECT * FROM driver WHERE id='$id'");
 
-// show profile button
-if (isset($_GET['show'])) {
-    $id = $_GET['show'];
-    $update = true;
-    $record = mysqli_query($db, "SELECT * FROM driver WHERE id='$id'");
-
-    $_SESSION['id'] = $id;
-                            
-    }
+	    $_SESSION['id'] = $id;
+	                            
+	    }
 
 
 	// logout

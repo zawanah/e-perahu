@@ -217,4 +217,70 @@
 			header('location: ../indexuser.php'); // redirect to home page
 		}
 	}
+
+		if (isset($_POST['paynow'])) {
+				$firstname = mysqli_real_escape_string($db2, $_POST['firstname']);
+				$lastname = mysqli_real_escape_string($db2, $_POST['lastname']);
+				$email = mysqli_real_escape_string($db2, $_POST['email']);
+				$phone = mysqli_real_escape_string($db2, $_POST['phone']);
+				$pickup = mysqli_real_escape_string($db2, $_POST['pickup']);
+				$destination = mysqli_real_escape_string($db2, $_POST['destination']);
+				$pickupdate = mysqli_real_escape_string($db2, $_POST['pickupdate']);
+				$operationtime = mysqli_real_escape_string($db2, $_POST['operationtime']);
+				$ownername = mysqli_real_escape_string($db2, $_POST['ownername']);
+				$debitnumber = mysqli_real_escape_string($db2, $_POST['debitnumber']);
+				$debitcvv = mysqli_real_escape_string($db2, $_POST['debitcvv']);
+				$expmonth = mysqli_real_escape_string($db2, $_POST['expmonth']);
+				$expyear = mysqli_real_escape_string($db2, $_POST['expyear']);
+
+		if (empty($phone)) {
+			array_push($errors, "Phone Number is required");
+		}
+		if (empty($debitnumber)) {
+			array_push($errors, "Debit Number is required");
+		}
+		if (strlen($debitnumber) > 19){
+   			array_push($errors, "- Wrong card number");
+   		}
+   		if (strlen($debitnumber) < 19){
+   			array_push($errors, "- Wrong card number");
+   		}
+		if (empty($debitcvv)) {
+			array_push($errors, "CVV is required");
+		}
+		if (strlen($debitcvv) < 3){
+   			array_push($errors, "- Wrong CVV number");
+   		}
+		if (empty($expmonth)) {
+			array_push($errors, "Expiry Month is required");
+		}
+		if (empty($expyear)) {
+			array_push($errors, "Expiry Year is required");
+		}
+
+		if (count($errors) == 0) {
+			$sql = "INSERT INTO reservationdriver (firstname, lastname, email, phone, pickup, destination, pickupdate, operationtime)
+			VALUES ('$firstname', '$lastname', '$email', '$phone', '$pickup', '$destination', '$pickupdate', '$operationtime')";
+			mysqli_query($db2, $sql);
+			$_SESSION['success'] = "Payment Successful";
+			header('location: ../indexuser.php'); // redirect to home page
+		}
+	}
+	// pick customer button
+                if (isset($_GET['pick'])) {
+                    $id = $_GET['pick'];
+                    $update = true;
+                    $record = mysqli_query($db2, "SELECT * FROM reservationdriver WHERE id='$id'");
+
+                    $_SESSION['id'] = $id;
+                                
+                }
+
+	// take customer
+		if (isset($_GET['del'])) {
+			$id = $_GET['del'];
+
+			mysqli_query($db, "DELETE FROM reservationdriver WHERE id='$id'"); 
+			header('location: Admin_List_Of_Driver.php');
+		}
 ?>

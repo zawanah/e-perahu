@@ -17,10 +17,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>Confer - Conference Event HTML Template</title>
+    <title>E-Perahu Homepage</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="./img/core-img/favicon.png">
+    <link rel="icon" href="img/e-perahu.png">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -147,13 +147,6 @@
                         <h3 class="wow fadeInUp" data-wow-delay="300ms">Welcome to E-Perahu!</h3>
                         <p class="wow fadeInUp" data-wow-delay="300ms">The E-Perahu is a website based product</p>
                         <a href="blog.php" class="btn confer-btn mt-50 wow fadeInUp" data-wow-delay="300ms">More information <i class="zmdi zmdi-long-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- About Thumb -->
-                <div class="col-12 col-md-6">
-                    <div class="about-thumb mb-80 wow fadeInUp" data-wow-delay="300ms">
-                        <img src="" alt="">
                     </div>
                 </div>
             </div>

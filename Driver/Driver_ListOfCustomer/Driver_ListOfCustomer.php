@@ -1,3 +1,17 @@
+<?php include('../../User/server.php');
+
+                // pick customer button
+                if (isset($_GET['pick'])) {
+                    $id = $_GET['pick'];
+                    $update = true;
+                    $record = mysqli_query($db2, "SELECT * FROM driver WHERE id='$id'");
+
+                    $_SESSION['id'] = $id;
+                                
+                }
+
+ ?>
+
 <?php $conn = mysqli_connect("localhost", "root", "", "reservation");
                   // Check connection
                   if ($conn->connect_error) {
@@ -5,6 +19,8 @@
                   }
                   $sql = "SELECT id, firstname, lastname, email, phone, pickup, destination, pickupdate, operationtime FROM reservationtable";
                   $result = $conn->query($sql);
+
+                
 
 ?>
 
@@ -112,7 +128,7 @@
                                                 <p>From Jetty: " . $row["pickup"] ."</p>
                                                 <p>To Jetty: " . $row["destination"] ."</p>
                                             </div>
-                                            <a href='driverprofile.php?show= " . $row["id"] . " '><button type='submit' name='show' class='confer-btn'>Pick <i class='zmdi zmdi-long-arrow-right'></i></button></a>
+                                            <a href='../Driver_Confirmation/pickcustomer.php?pick= " . $row["id"] . " '><button type='submit' name='pick' class='confer-btn'>Pick <i class='zmdi zmdi-long-arrow-right'></i></button></a>
                                         </div>" ;
                                                     } echo "</div>";
                                                     } else { echo "0 results"; }
