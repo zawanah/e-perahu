@@ -91,7 +91,7 @@
 										<input type="hidden" name="firstname" value="<?php echo $row['firstname']; ?>">
 										<input type="hidden" name="lastname" value="<?php echo $row['lastname']; ?>">
 										<input type="hidden" name="email" value="<?php echo $row['email']; ?>">
-										<input type="hidden" name="type" value="Debit Card">
+										<input type="hidden" name="types" value="Debit Card">
 										<span class="form-label">Phone</span>
 										<!-- maxlength="7" pattern="[0-9]{7}" -->
 										<input id="phone" class="form-control" type="text" name="phone" placeholder="Number" required>

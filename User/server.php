@@ -15,6 +15,7 @@
 	$debitcvv = "";
 	$expmonth = "";
 	$expyear = "";
+	$types = "";
 
 	$errors = array();
 
@@ -183,6 +184,7 @@
 				$debitcvv = mysqli_real_escape_string($db2, $_POST['debitcvv']);
 				$expmonth = mysqli_real_escape_string($db2, $_POST['expmonth']);
 				$expyear = mysqli_real_escape_string($db2, $_POST['expyear']);
+				$types = mysqli_real_escape_string($db2, $_POST['types']);
 
 		if (empty($phone)) {
 			array_push($errors, "Phone Number is required");
@@ -210,8 +212,8 @@
 		}
 
 		if (count($errors) == 0) {
-			$sql = "INSERT INTO reservationtable (firstname, lastname, email, phone, pickup, destination, pickupdate, operationtime, ownername, debitnumber, debitcvv, expmonth, expyear)
-			VALUES ('$firstname', '$lastname', '$email', '$phone', '$pickup', '$destination', '$pickupdate', '$operationtime', '$ownername', '$debitnumber', '$debitcvv', '$expmonth', '$expyear')";
+			$sql = "INSERT INTO reservationtable (firstname, lastname, email, phone, pickup, destination, pickupdate, operationtime, ownername, debitnumber, debitcvv, expmonth, expyear, types)
+			VALUES ('$firstname', '$lastname', '$email', '$phone', '$pickup', '$destination', '$pickupdate', '$operationtime', '$ownername', '$debitnumber', '$debitcvv', '$expmonth', '$expyear', '$types')";
 			mysqli_query($db2, $sql);
 			$_SESSION['success'] = "Payment Successful";
 			header('location: ../indexuser.php'); // redirect to home page
