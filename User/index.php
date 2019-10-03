@@ -62,7 +62,7 @@
                                     </ul>
                                 </li>
                                 <li><a href="login.php">Reservation</a></li>
-                                <li><a href="blog.php">About Us</a></li>
+                                <li><a href="aboutus.php">About Us</a></li>
                                 <li><a href="contact.php">Feedback</a></li>
                             </ul>
 
@@ -151,26 +151,6 @@
             </div>
         </div>
 
-        <!-- Counter Up Area -->
-        <!-- <div class="countdown-up-area">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-12 col-md-3"> -->
-                        <!-- Countdown Text -->
-                        <!-- <div class="countdown-content-text mb-100 wow fadeInUp" data-wow-delay="300ms">
-                            <h6>Conference Date</h6>
-                            <h4>Count Every Second Until the Event</h4>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-9">
-                        <div class="countdown-timer mb-100 wow fadeInUp" data-wow-delay="300ms">
-                            <div id="clock"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
     </section>
     <!-- About Us And Countdown Area End -->
 

@@ -49,7 +49,7 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul id="nav">
-                                <li class="active"><a href="index.html">Back to home</a></li>
+                                <li class="active"><a href="indexuser.php">Back to home</a></li>
                                 
                             </ul>
 
@@ -93,7 +93,6 @@
                     <div class="about-content-text mb-80">
                         <h3 class="wow fadeInUp" data-wow-delay="300ms">Grab or book a boat faster!</h3>
                         <p class="wow fadeInUp" data-wow-delay="300ms">E-Perahu helps you find nearby available boats or reserve them in advance. It is a responsive website where users can access it via PC and even mobile devices without any lag.   </p>
-                        <a href="blog.php" class="btn confer-btn mt-50 wow fadeInUp" data-wow-delay="300ms">More information <i class="zmdi zmdi-long-arrow-right"></i></a>
                     </div>
                 </div>
 
