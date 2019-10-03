@@ -51,22 +51,14 @@
 
 	// edit button
 
-	if (isset($_GET['edit'])) {
-                            $id = $_GET['edit'];
-                            $update = true;
-                            $record = mysqli_query($db, "SELECT * FROM driver WHERE id='$id'");
+if (isset($_GET['edit'])) {
+    $id = $_GET['edit'];
+    $update = true;
+    $record = mysqli_query($db, "SELECT * FROM driver WHERE id='$id'");
 
-                            // if (count($record) == 1 ) {
-                            //   $n = mysqli_fetch_array($record);
-                            //   $fname = $n['fname'];
-                            //   $lname = $n['lname'];
-                            //   $email = $n['email'];
-                            //   $phone_no = $n['phone_no'];
-                            //   $reg_no = $n['reg_no'];
-
-                              $_SESSION['id'] = $id;
-                            // }
-                          }
+    $_SESSION['id'] = $id;
+                            
+    }
 
 
 
@@ -93,7 +85,15 @@ if (isset($_GET['del'])) {
 	header('location: Admin_List_Of_Driver.php');
 }
 
+// show profile button
+if (isset($_GET['show'])) {
+    $id = $_GET['show'];
+    $update = true;
+    $record = mysqli_query($db, "SELECT * FROM driver WHERE id='$id'");
 
+    $_SESSION['id'] = $id;
+                            
+    }
 
 
 	// logout

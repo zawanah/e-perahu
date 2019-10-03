@@ -1,4 +1,12 @@
+<?php $conn = mysqli_connect("localhost", "root", "", "reservation");
+                  // Check connection
+                  if ($conn->connect_error) {
+                  die("Connection failed: " . $conn->connect_error);
+                  }
+                  $sql = "SELECT id, firstname, lastname, email, phone, pickup, destination, pickupdate, operationtime FROM reservationtable";
+                  $result = $conn->query($sql);
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -61,91 +69,67 @@
     </header>
     <!-- Header Area End -->
 
-    <!-- Breadcrumb Area Start -->
-    <section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url(img/bg-img/17.jpg);">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
+    <!-- Our Schedule Area Start -->
+    <section class="bg-img bg-gradient-overlay" style="background-image: url(img/bg-img/backticket.jpg);" class="our-schedule-area">
+        <!-- Heading -->
+            <div style="padding-top: 150px;">
                 <div class="col-12">
-                    <div class="breadcrumb-content">
-                        <h2 class="page-title">Customer List</h2>
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">List of Customer</li>
-                            </ol>
-                        </nav>
+                    <div class="section-heading-3 text-center wow fadeInUp" data-wow-delay="300ms">
+                        <h4><font color="white">List of Customers</font></h4>
+                    </div>
+                </div>
+            </div>
+        <div class="container" style="padding-bottom: 80px;">
+            <div class="row">
+                <div class="col-12">
+
+                    <!-- Tab Content -->
+                    <div class="tab-content" id="conferScheduleTabContent">
+                        <div class="tab-pane fade show active" id="step-one" role="tabpanel" aria-labelledby="monday-tab">
+                            <!-- Single Tab Content -->
+                            <?php 
+                                if ($result->num_rows > 0) {
+                                // output data of each row
+                                while($row = $result->fetch_assoc()) {
+                            echo "<div class='single-tab-content'>
+                                    <div class='row'>
+                                        <div class='col-12'>
+                                            <div style='background-color: #ffffff;' class='single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp' data-wow-delay='300ms'>
+                                                    
+
+                                                <div class='single-schedule-tumb-info d-flex align-items-center'>
+                                                    <div class='single-schedule-info'>
+
+                                                    
+                                                        <p> <h6>Full Name: " . $row["firstname"] ."&nbsp;". $row["lastname"] . "</h6>
+                                                        <p>Email: " . $row["email"] ."</p>
+                                                        <p>Phone No: " . $row["phone"] . "</p>
+                                                        </p>
+                                                    </div>
+                                            </div>
+                                            <div class='schedule-time-place'>
+                                                <p>Time: " . $row["operationtime"] ."&nbsp;". $row["pickupdate"] . "</p>
+                                                <p>From Jetty: " . $row["pickup"] ."</p>
+                                                <p>To Jetty: " . $row["destination"] ."</p>
+                                            </div>
+                                            <a href='driverprofile.php?show= " . $row["id"] . " '><button type='submit' name='show' class='confer-btn'>Pick <i class='zmdi zmdi-long-arrow-right'></i></button></a>
+                                        </div>" ;
+                                                    } echo "</div>";
+                                                    } else { echo "0 results"; }
+                                                    $conn->close();
+                                        ?>
+                                </div>
+                            </div>
+                        </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Breadcrumb Area End -->
-
-    <div class="container">
-          &nbsp;
-
-<!--table start -->
-            <table class="table table-light table-hover">
-              <thead>
-                <tr>
-
-                  
-                  <th scope="col">Name</th>
-                  <th scope="col">Email</th>
-                  <th scope="col">Phone No.</th>
-                  <th scope="col">Pickup</th>
-                  <th scope="col">Destination</th>
-                  <th scope="col">Pickup Date</th>
-                  <th scope="col">Time</th>
-                </tr>
-              </thead>
-
-              <tbody>
-
-                  <?php
-                  $conn = mysqli_connect("localhost", "root", "", "reservation");
-                  // Check connection
-                  if ($conn->connect_error) {
-                  die("Connection failed: " . $conn->connect_error);
-                  }
-                  $sql = "SELECT name, email, phone, pickup, destination, pickupdate, hour, min, ampm FROM reservationtable";
-                  $result = $conn->query($sql);
-                  if ($result ->num_rows > 0) {
-                  // output data of each row
-                  while($row = $result ->fetch_assoc()) {
-
-
-                  echo "<tr>
-
-                    
-                   <td>" . $row["name"] . "</td>
-                   <td>". $row["email"]. "</td>
-                   <td>". $row["phone"]. "</td>
-                   <td>". $row["pickup"]. "</td>
-                   <td>". $row["destination"]. "</td>
-                   <td>". $row["pickupdate"]. "</td>
-                   <td>". $row["hour"]. "</td>
-                   <td>". $row["min"]. "</td>
-                   <td>". $row["ampm"]. "</td>
-
-                   
-
-                   </tr>"  ;
-
-
-                  
-
-
-                  } echo "</table>";
-                  } else { echo "0 results"; }
-                  $conn->close();
-
-                  
-                  ?>
-              </tbody>
-            </table>
-          </div>
-          &nbsp;
+    <!-- Our Driver Area End -->
 
     <!-- Footer Area Start -->
     <footer class="footer-area bg-img bg-overlay-2 section-padding-100-0">

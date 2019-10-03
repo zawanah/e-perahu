@@ -1,6 +1,12 @@
-<?php include('DC_Reservation_DB.php');
+<?php include('../server.php');
+
+	if (empty($_SESSION['username'])) {
+        header('location: login.php');
+    }
 
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -70,12 +76,22 @@
 
 						<form method="post" action="DC_Reservation.php" id="ticketform">
 
+							<?php $sql = "SELECT firstname, lastname, email FROM users WHERE username = '" . $_SESSION['username'] . "'";
+
+  										$result = mysqli_query($db, $sql);
+  										$row = mysqli_fetch_array($result);
+  							?>
+
 							<!-- display validation errors here -->
-							<?php include('DC_Errors.php'); ?>
+							<?php include('../errors.php'); ?>
 
 							<div class="row">
 								<div class="col-sm-6">
 									<div class="form-group">
+										<input type="hidden" name="firstname" value="<?php echo $row['firstname']; ?>">
+										<input type="hidden" name="lastname" value="<?php echo $row['lastname']; ?>">
+										<input type="hidden" name="email" value="<?php echo $row['email']; ?>">
+										<input type="hidden" name="type" value="Debit Card">
 										<span class="form-label">Phone</span>
 										<!-- maxlength="7" pattern="[0-9]{7}" -->
 										<input id="phone" class="form-control" type="text" name="phone" placeholder="Number" required>

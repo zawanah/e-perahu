@@ -59,7 +59,7 @@
 	if (isset($_GET['logout'])) {
 		session_destroy();
 		unset($_SESSION['username']);
-		header('location: ../Driver_Login/Driver_Login.php');
+		header('location: Driver_Login.php');
 
 
 	}

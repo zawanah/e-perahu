@@ -7,28 +7,8 @@
                   if ($conn->connect_error) {
                   die("Connection failed: " . $conn->connect_error);
                   }
-                  $sql = "SELECT username, fname, lname, email, reg_no FROM driver WHERE id= '1'";
+                  $sql = "SELECT id, username, fname, lname, email, reg_no FROM driver";
                   $result = $conn->query($sql);
-
-?>
-
-<?php $conn2 = mysqli_connect("localhost", "root", "", "registration");
-                  // Check connection
-                  if ($conn2->connect_error) {
-                  die("Connection failed: " . $conn2->connect_error);
-                  }
-                  $sql2 = "SELECT username, fname, lname, email, reg_no FROM driver WHERE id= '2'";
-                  $result2 = $conn2->query($sql2);
-
-?>
-
-<?php $conn3 = mysqli_connect("localhost", "root", "", "registration");
-                  // Check connection
-                  if ($conn3->connect_error) {
-                  die("Connection failed: " . $conn3->connect_error);
-                  }
-                  $sql3 = "SELECT username, fname, lname, email, reg_no FROM driver WHERE id= '3'";
-                  $result3 = $conn3->query($sql3);
 
 ?>
 
@@ -88,19 +68,19 @@
                                     <ul class="dropdown">
                                         <li><a href="profile.php">- My Profile</a></li>
                                         <li><a href="index.php">- Schedule</a></li>
-                                        <li><a href="about.php">- Ticket Price</a></li>
+                                        <li><a href="ticketprice.php">- Ticket Price</a></li>
                                         <li><a href="speakers.php">- drivers</a></li>
                                         <li><a href="schedule.php">- promotion</a></li>
 
 
                                     </ul>
                                 </li>
-                                <li><a href="User_Reservation/User_Reservation.php">Reservation</a></li>
+                                <li><a href="#">Ticket History</a></li>
                                 <li><a href="blog.php">About Us</a></li>
                                 <li><a href="contact.php">Feedback</a></li>
                             </ul>
 
-                            <!-- Get Tickets Button -->
+                            <!-- logout button -->
                             <a href="speakers.php?logout='1'" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                         <!-- Nav End -->
@@ -117,15 +97,14 @@
 <!-- Our Schedule Area Start -->
     <section class="bg-img bg-gradient-overlay" style="background-image: url(img/bg-img/backticket.jpg);" class="our-schedule-area">
         <!-- Heading -->
-            <div style="padding-top: 180px;">
+            <div style="padding-top: 150px;">
                 <div class="col-12">
                     <div class="section-heading-3 text-center wow fadeInUp" data-wow-delay="300ms">
-                        <h2><font color="white">E-Perahu Drivers</font></h2>
-                        <h4><font color="white">Top Rated Drivers</font></h4>
+                        <h4><font color="white">E-Perahu Drivers</font></h4>
                     </div>
                 </div>
             </div>
-        <div class="container">
+        <div class="container" style="padding-bottom: 80px;">
             <div class="row">
                 <div class="col-12">
 
@@ -133,114 +112,37 @@
                     <div class="tab-content" id="conferScheduleTabContent">
                         <div class="tab-pane fade show active" id="step-one" role="tabpanel" aria-labelledby="monday-tab">
                             <!-- Single Tab Content -->
-                            <div class="single-tab-content">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <!-- Single Schedule Area -->
-                                        <div style="background-color: #ffffff; " class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
-                                            <!-- Single Schedule Thumb and Info -->
-                                            <div class="single-schedule-tumb-info d-flex align-items-center">
-                                                
-                                                <!-- Single Schedule Info -->
-                                                <div class="single-schedule-info">
-                                                    <?php if ($result->num_rows > 0) {
-                                                    // output data of each row
-                                                    while($row = $result->fetch_assoc()) {
+                            <?php 
+                                if ($result->num_rows > 0) {
+                                // output data of each row
+                                while($row = $result->fetch_assoc()) {
+                            echo "<div class='single-tab-content'>
+                                    <div class='row'>
+                                        <div class='col-12'>
+                                            <div style='background-color: #ffffff;' class='single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp' data-wow-delay='300ms'>
+                                                    
+
+                                                <div class='single-schedule-tumb-info d-flex align-items-center'>
+                                                    <div class='single-schedule-info'>
 
                                                     
-                                                    echo "<p> <h6>" . $row["username"] . "</h6>
-                                                    <p>" . $row["fname"] ."&nbsp;". $row["lname"] ."</p>
-                                                    <p>" . $row["email"] . "</p>
-
-                                                    </p>";
-                                                    }
+                                                        <p> <h6>" . $row["username"] . "</h6>
+                                                        <p>" . $row["fname"] ."&nbsp;". $row["lname"] ."</p>
+                                                        <p>" . $row["email"] . "</p>
+                                                        </p>
+                                                    
+                                                    </div>
+                                            </div>
+                                            <div class='schedule-time-place'>
+                                                <p><i class='zmdi zmdi-time'></i> 12-14 Jan 2019</p>
+                                                <p><i class='zmdi zmdi-map'></i> Mountain Resort, Phoenix, USA</p>
+                                            </div>
+                                            <a href='driverprofile.php?show= " . $row["id"] . " '><button type='submit' name='show' class='confer-btn'>Show Profile <i class='zmdi zmdi-long-arrow-right'></i></button></a>
+                                        </div>" ;
+                                                    } echo "</div>";
                                                     } else { echo "0 results"; }
                                                     $conn->close();
-                                                    ?>
-                                                </div>
-                                            </div>
-                                            <!-- Single Schedule Info -->
-                                            <div class="schedule-time-place">
-                                                <p><i class="zmdi zmdi-time"></i> 12-14 Jan 2019</p>
-                                                <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
-                                            </div>
-                                            <!-- Schedule Btn -->
-                                            <a href="driverinformation.php" class="btn confer-btn">Show Profile <i class="zmdi zmdi-long-arrow-right"></i></a>
-                                        </div>
-
-                                        <!-- Single Schedule Area -->
-                                        <div style="background-color: #ffffff; " class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
-                                            <!-- Single Schedule Thumb and Info -->
-                                            <div class="single-schedule-tumb-info d-flex align-items-center">
-                                                
-                                                <!-- Single Schedule Info -->
-                                                <div class="single-schedule-info">
-                                                    <?php if ($result2->num_rows > 0) {
-                                                    // output data of each row
-                                                    while($row2 = $result2->fetch_assoc()) {
-
-                                                    
-                                                    echo "<p> <h6>" . $row2["username"] . "</h6>
-                                                    <p>" . $row2["fname"] . "&nbsp;" . $row2["lname"] . "</p>
-                                                    <p>" . $row2["email"] . "</p>
-
-                                                    </p>";
-                                                    }
-                                                    } else { echo "0 results"; }
-                                                    $conn2->close();
-                                                    ?>
-                                                </div>
-                                            </div>
-                                            <!-- Single Schedule Info -->
-                                            <div class="schedule-time-place">
-                                                <p><i class="zmdi zmdi-time"></i> 12-14 Jan 2019</p>
-                                                <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
-                                            </div>
-                                            <!-- Schedule Btn -->
-                                            <a href="driverinformation2.php" class="btn confer-btn">Show Profile <i class="zmdi zmdi-long-arrow-right"></i></a>
-                                        </div>
-
-                                        <!-- Single Schedule Area -->
-                                        <div style="background-color: #ffffff; " class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
-                                            <!-- Single Schedule Thumb and Info -->
-                                            <div class="single-schedule-tumb-info d-flex align-items-center">
-                                                
-                                                <!-- Single Schedule Info -->
-                                                <div class="single-schedule-info">
-                                                    <?php if ($result3->num_rows > 0) {
-                                                    // output data of each row
-                                                    while($row3 = $result3->fetch_assoc()) {
-
-                                                    
-                                                    echo "<p> <h6>" . $row3["username"] . "</h6>
-                                                    <p>" . $row3["fname"] ."&nbsp;". $row3["lname"] . "</p>
-                                                    <p>" . $row3["email"] . "</p>
-
-                                                    </p>";
-                                                    }
-                                                    } else { echo "0 results"; }
-                                                    $conn3->close();
-                                                    ?>
-                                                </div>
-                                            </div>
-                                            <!-- Single Schedule Info -->
-                                            <div class="schedule-time-place">
-                                                <p><i class="zmdi zmdi-time"></i> 12-14 Jan 2019</p>
-                                                <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
-                                            </div>
-                                            <!-- Schedule Btn -->
-                                            <a href="driverinformation3.php" class="btn confer-btn">Show Profile <i class="zmdi zmdi-long-arrow-right"></i></a>
-                                        </div>
-
-                                        
-                                    </div>
-
-                                    <!-- More Schedule Btn -->
-                                    <div class="col-12">
-                                        <div style="padding-bottom: 50px;" class="more-schedule-btn text-center mt-50 wow fadeInUp" data-wow-delay="300ms">
-                                            <a href="moredrivers.php" class="btn confer-btn">View More Drivers <i class="zmdi zmdi-long-arrow-right"></i></a>
-                                        </div>
-                                    </div>
+                                        ?>
                                 </div>
                             </div>
                         </div>
