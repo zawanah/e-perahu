@@ -72,7 +72,7 @@
                                 </li>
                                 <li><a href="">Ticket History</a></li>
                                 <li><a href="aboutus.php">About Us</a></li>
-                                <li><a href="contact.php">Feedback</a></li>
+                                <li><a href="feedback.php">Feedback</a></li>
                             </ul>
 
                             <a href="indexuser.php?logout='1'" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
@@ -175,14 +175,14 @@
 
 
 
-<<<<<<< HEAD
+
      <!-- Footer Area Start -->
     <footer class="footer-area bg-img bg-overlay-2 section-padding-100-0">
         <!-- Main Footer Area -->
         <div class="main-footer-area" >
             <div class="container">
                 <div class="row" style="display: inline-block;" >
-=======
+
     <!-- Footer Area Start -->
     <footer class="footer-area bg-img bg-overlay-2 section-padding-100-0">
         <!-- Main Footer Area -->
@@ -192,7 +192,6 @@
                     <!-- Single Footer Widget Area -->
                     <div class="col-12 col-sm-6 col-lg-12">
                         <div class="single-footer-widget mb-60">
->>>>>>> 46ab0a899dd74e0c8399f551d49d18f56e7ec0f0
 
 
                     <!-- Single Footer Widget Area -->
