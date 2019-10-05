@@ -20,7 +20,7 @@
 	$errors = array();
 
 	$db = mysqli_connect('localhost', 'root', '', 'registration');
-	
+
 
 	if (isset($_POST['register'])) {
 		$firstname = mysqli_real_escape_string($db, $_POST['firstname']);
@@ -275,14 +275,14 @@
                     $record = mysqli_query($db2, "SELECT * FROM reservationdriver WHERE id='$id'");
 
                     $_SESSION['id'] = $id;
-                                
+
                 }
 
 	// take customer
 		if (isset($_GET['del'])) {
 			$id = $_GET['del'];
 
-			mysqli_query($db, "DELETE FROM reservationdriver WHERE id='$id'"); 
+			mysqli_query($db, "DELETE FROM reservationdriver WHERE id='$id'");
 			header('location: Admin_List_Of_Driver.php');
 		}
 ?>

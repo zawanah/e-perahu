@@ -70,10 +70,6 @@
 				<div class="row">
 					<div class="booking-form">
 
-						<div class="form-header">
-							<h1>Reservation</h1>
-						</div>
-
 						<form method="post" action="DC_Reservation.php" id="ticketform">
 
 							<?php $sql = "SELECT firstname, lastname, email FROM users WHERE username = '" . $_SESSION['username'] . "'";
