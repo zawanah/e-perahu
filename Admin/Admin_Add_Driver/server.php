@@ -8,6 +8,7 @@
 	$lname = "";
 	$phone_no = "";
 	$reg_no= "";
+	$availability= "";
 
 
 	$errors = array();
@@ -23,6 +24,7 @@
     	$email = mysqli_real_escape_string($db, $_POST['email']);
     	$phone_no = mysqli_real_escape_string($db, $_POST['phone_no']);
     	$reg_no= mysqli_real_escape_string($db, $_POST['reg_no']);
+    	$availability= mysqli_real_escape_string($db, $_POST['availability']);
 
 
 		if (empty($phone_no)) {
@@ -37,11 +39,11 @@
 		}
 
 
-//display list of driver
+		//display list of driver
 		if (count($errors) == 0) {
 			$password = md5($password);
-			$sql2 = "INSERT INTO driver (username, password, fname, lname, email, phone_no, reg_no )
-			VALUES ('$username', '$password','$fname','$lname', '$email', '$phone_no','$reg_no' )";
+			$sql2 = "INSERT INTO driver (username, password, fname, lname, email, phone_no, reg_no, availability )
+			VALUES ('$username', '$password','$fname','$lname', '$email', '$phone_no','$reg_no', '$availability' )";
 			mysqli_query($db, $sql2);
 			$_SESSION['success'] = "Driver Successfully added!";
 			header('location: ../Admin_Add_Driver/Admin_List_Of_Driver.php'); // redirect to home page
@@ -91,6 +93,14 @@
 	    $_SESSION['id'] = $id;
 	                            
 	    }
+
+	//status button
+	if (isset($_POST['availability'])) {
+		$availability = $_POST['availability'];
+
+		mysqli_query($db, "UPDATE driver SET availability='$availability' WHERE username=" . $_SESSION['username'] . "'"); 
+		header('location: ../../Driver_Dashboard/Driver_dashboard.php');
+	}
 
 
 	// logout

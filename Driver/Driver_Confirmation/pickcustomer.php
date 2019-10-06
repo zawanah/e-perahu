@@ -83,7 +83,7 @@
 
             <!-- Button -->
             <div class="col-12"><br>
-                <a href="editprofile.php"><button type="submit" class="btn btn-primary">Proceed </button></a>
+                <a href="../Driver_ListOfCustomer/Driver_ListOfCustomer.php?del=<?php $_SESSION['id'] = $id; ?>"><button type="submit" name="del" class="btn btn-primary">Proceed </button></a>
                 &nbsp; &nbsp; &nbsp;
                 <a href="editprofile.php"><button type="submit" class="btn btn-danger">Cancel </button></a>
             </div>

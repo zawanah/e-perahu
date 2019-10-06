@@ -269,20 +269,19 @@
 		}
 	}
 	// pick customer button
-                if (isset($_GET['pick'])) {
-                    $id = $_GET['pick'];
-                    $update = true;
-                    $record = mysqli_query($db2, "SELECT * FROM reservationdriver WHERE id='$id'");
+        if (isset($_GET['pick'])) {
+          	$id = $_GET['pick'];
+            $update = true;
+            $record = mysqli_query($db2, "SELECT * FROM reservationdriver WHERE id='$id'");
 
-                    $_SESSION['id'] = $id;
+                $_SESSION['id'] = $id;
                                 
                 }
 
-	// take customer
+	//confirm pick
 		if (isset($_GET['del'])) {
 			$id = $_GET['del'];
-
-			mysqli_query($db, "DELETE FROM reservationdriver WHERE id='$id'"); 
-			header('location: Admin_List_Of_Driver.php');
+			mysqli_query($db2, "DELETE FROM reservationdriver WHERE id= '$_SESSION[id] '"); 
+			header('location: ../Driver_ListOfCustomer/Driver_ListOfCustomer.php');
 		}
 ?>

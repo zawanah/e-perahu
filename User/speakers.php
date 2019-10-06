@@ -7,7 +7,7 @@
                   if ($conn->connect_error) {
                   die("Connection failed: " . $conn->connect_error);
                   }
-                  $sql = "SELECT id, username, fname, lname, email, reg_no FROM driver";
+                  $sql = "SELECT id, username, fname, lname, email, reg_no, availability FROM driver";
                   $result = $conn->query($sql);
 
 ?>
@@ -22,10 +22,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>Confer - Conference Event HTML Template</title>
+    <title>E-Perahu Drivers</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="./img/core-img/favicon.png">
+    <link rel="icon" href="img/e-perahu.png">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -134,8 +134,7 @@
                                                     </div>
                                             </div>
                                             <div class='schedule-time-place'>
-                                                <p><i class='zmdi zmdi-time'></i> 12-14 Jan 2019</p>
-                                                <p><i class='zmdi zmdi-map'></i> Mountain Resort, Phoenix, USA</p>
+                                                <p>" . $row["availability"] . "</p>
                                             </div>
                                             <a href='driverprofile.php?show= " . $row["id"] . " '><button type='submit' name='show' class='confer-btn'>Show Profile <i class='zmdi zmdi-long-arrow-right'></i></button></a>
                                         </div>" ;

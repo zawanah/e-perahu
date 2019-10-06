@@ -1,9 +1,0 @@
-{
-	"version": 3,
-	"file": "demo.min.css",
-	"sources": [
-		"demo.scss"
-	],
-	"names": [],
-	"mappings": "AAAA,AAAA,IAAI,AAAA,CACF,gBAAgB,CAAE,IAAI,CAOvB,AARD,AAEE,IAFE,CAEF,EAAE,AAAA,CACA,UAAU,CAAE,IAAI,CAIjB,AAPH,AAII,IAJA,CAEF,EAAE,CAEA,EAAE,AAAA,CACA,KAAK,CAAE,IAAI,CACZ,AAIL,AAAA,MAAM,AAAA,CACJ,gBAAgB,CAFT,GAAG,CAGX"
-}

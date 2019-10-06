@@ -6,6 +6,10 @@
 <html lang="en">
 <head>
 	<title>User Login</title>
+
+	<!-- Favicon -->
+    <link rel="icon" href="img/e-perahu.png">
+
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -63,12 +67,7 @@
 							Login
 						</button>
 					</div>
-
-
-
-		
-
-					<div class="text-center w-full p-t-115">
+					<div style="text-align:center; padding-top: 15px;">
 						<span class="txt1">
 							Not a member?
 						</span>

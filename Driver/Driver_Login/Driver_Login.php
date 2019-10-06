@@ -6,6 +6,9 @@
 <html lang="en">
 <head>
 	<title>Driver Login</title>
+	<!-- Favicon -->
+    <link rel="icon" href="img/e-perahu.png">
+
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -34,7 +37,7 @@
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
 				<form method="post" action="Driver_Login.php">
 					<span class="login100-form-title p-b-55">
-						Login
+						Driver Login
 					</span>
 
 					<!-- display validation errors here -->

@@ -2,6 +2,7 @@
 	session_start();
 	$username = "";
 	$email = "";
+	$availability = "";
 	$errors = array();
 
 	$db = mysqli_connect('localhost', 'root', '', 'registration' );
@@ -25,7 +26,7 @@
 			$result = mysqli_query($db, $query);
 			if (mysqli_num_rows($result) == 1) {
 
-				//save this user and pass as cookie if remeber checked start
+		//save this user and pass as cookie if remeber checked start
  		if (isset($_REQUEST['remember']))
    		$escapedRemember = mysqli_real_escape_string($db,$_REQUEST['remember']);
 
@@ -45,21 +46,29 @@
   		}
   		//save this user and pass as cookie if remember checked end
 
-				// log user in
-				$_SESSION['username'] = $username;
-				$_SESSION['success'] = "You are now logged in";
-				header('location: ../Driver_Dashboard/Driver_dashboard.php'); // redirect to home page
-			}else{
-				array_push($errors, "Wrong username/password combination");
-			}
+		// log user in
+		$_SESSION['username'] = $username;
+		$_SESSION['success'] = "You are now logged in";
+		header('location: ../Driver_Dashboard/Driver_dashboard.php'); // redirect to home page
+		}else{
+		array_push($errors, "Wrong username/password combination");
 		}
+	}
+}
+
+//status button
+	if (isset($_POST['availability'])) {
+		$availability = $_POST['availability'];
+
+		mysqli_query($db, "UPDATE driver SET availability='$availability' WHERE username='" . $_SESSION['username'] . "'"); 
+		header('location: Driver_dashboard.php');
 	}
 
 	// logout
 	if (isset($_GET['logout'])) {
 		session_destroy();
 		unset($_SESSION['username']);
-		header('location: Driver_Login.php');
+		header('location: ../Driver_Login/Driver_Login.php');
 
 
 	}

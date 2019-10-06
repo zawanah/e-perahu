@@ -92,6 +92,7 @@ include('server.php');
                         </div>
                           &ensp;
 
+                        <input type="hidden" name="availability" value="Offline">
 
                         <div class="contact_form">
                             <!-- <form action="mail.php" method="post"> -->

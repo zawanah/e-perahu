@@ -6,6 +6,12 @@
     // }
 
 ?>
+<?php
+    $sql = "SELECT availability FROM driver WHERE username = '" . $_SESSION['username'] . "'";
+
+    $result = mysqli_query($db, $sql);
+    $row = mysqli_fetch_array($result); 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -50,7 +56,7 @@
                     </div>
 
                     <!-- Menu -->
-                    <div class="classy-menu">
+                    <div class="classy-menu" style="background-color: rgba(0, 0, 0, 0.8);">
                         <!-- Menu Close Button -->
                         <div class="classycloseIcon">
                             <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
@@ -58,15 +64,20 @@
 
                         <!-- Nav Start -->
                         <div class="classynav">
-                            <div class="toggleBox">
-                                <div class="toggle">
-                                    <input type="checkbox">
-                                    <label for="" class="onbtn">On</label>
-                                    <label for="" class="ofbtn">Off</label>
+                            <!-- Rounded switch -->
+                            <form method="post">
+                                <div class="checkbox" style="text-align: center; color: white;">
+                                <input type="checkbox" data-toggle="toggle" name="availability" value="Online" onclick="this.form.submit();"/>
+                                <label>Online</label>
+                                <input type="checkbox" data-toggle="toggle" name="availability" value="Offline" onclick="this.form.submit();"/>
+                                <label>Offline</label>
                                 </div>
-                            </div>
+                            </form>
                             <!-- Logout Button -->
+                            </br>
+                            <div style="text-align: center;">
                             <a href="Driver_dashboard.php?logout='1'" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
+                            </div>
                         </div>
                         <!-- Nav End -->
                     </div>
@@ -77,8 +88,9 @@
     <!-- Header Area End -->
 
     <!-- Our Blog Area Start -->
-    <div style="padding-top:180px;" class="our-blog-area section-padding-100">
-        <div class="container">
+    <div style="padding-top:150px;" class="our-blog-area section-padding-100">
+        <h4 style="text-align: center;" class="text-warning">You are now <?php echo $row['availability']; ?></h4>
+        <div style="padding-top: 30px;" class="container">
             <div class="row">
                 <!-- Single Blog Area -->
                 <div class="col-12 col-md-6 col-xl-4">
@@ -95,24 +107,6 @@
                         </div>
                         <div class="blog-btn">
                             <a href="../Driver_ListOfCustomer/Driver_ListOfCustomer.php"><i class="zmdi zmdi-long-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-md-6 col-xl-4">
-                    <div class="single-blog-area style-2 wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Single blog Thumb -->
-                        <div class="single-blog-thumb">
-                            <img src="img/calendar.png" alt="">
-                        </div>
-                        <div class="single-blog-text text-center">
-                            <a class="blog-title" href="../Driver_StatusPage/Driver_StatusPage.php">Driver Status</a>
-                            <!-- Post Meta -->
-
-                            <p>Driver availability for service</p>
-                        </div>
-                        <div class="blog-btn">
-                            <a href="../Driver_StatusPage/Driver_StatusPage.php"><i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>

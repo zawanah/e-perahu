@@ -1,14 +1,6 @@
 <?php include('../../User/server.php');
 
-                // pick customer button
-                if (isset($_GET['pick'])) {
-                    $id = $_GET['pick'];
-                    $update = true;
-                    $record = mysqli_query($db2, "SELECT * FROM driver WHERE id='$id'");
-
-                    $_SESSION['id'] = $id;
-                                
-                }
+                
 
  ?>
 
@@ -17,7 +9,7 @@
                   if ($conn->connect_error) {
                   die("Connection failed: " . $conn->connect_error);
                   }
-                  $sql = "SELECT id, firstname, lastname, email, phone, pickup, destination, pickupdate, operationtime FROM reservationtable";
+                  $sql = "SELECT id, firstname, lastname, email, phone, pickup, destination, pickupdate, operationtime FROM reservationdriver";
                   $result = $conn->query($sql);
 
                 
@@ -37,7 +29,7 @@
     <title>Customer List</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="./img/core-img/favicon.png">
+    <link rel="icon" href="img/e-perahu.png">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -59,7 +51,7 @@
                 <nav class="classy-navbar justify-content-between" id="conferNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="../Driver_Dashboard/Driver_dashboard.php"><img src="./img/core-img/logo.png" alt=""></a>
+                    <a class="nav-brand" href="../Driver_Dashboard/Driver_dashboard.php"><img src="img/e-perahu.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -74,9 +66,9 @@
                         </div>
                         <!-- Nav Start -->
                         <div class="classynav">
-                            <ul id="nav">
-                                <li><a href="../Driver_Dashboard/Driver_dashboard.php">DASHBOARD</a></li>
-                            </ul>
+                            <!-- Dashboard Button -->
+                            </br>
+                            <a href="../Driver_Dashboard/Driver_dashboard.php" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Dashboard <i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </nav>
@@ -156,9 +148,6 @@
                     <!-- Single Footer Widget Area -->
                     <div class="col-12 col-sm-6 col-lg-3">
                         <div class="single-footer-widget mb-60">
-                            <!-- Footer Logo -->
-                            <a href="#" class="footer-logo"><img src="img/core-img/logo.png" alt=""></a>
-
 
                             <!-- Widget Title -->
                             <h5 class="widget-title">Contact</h5>
