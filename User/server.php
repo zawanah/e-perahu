@@ -20,7 +20,7 @@
 	$errors = array();
 
 	$db = mysqli_connect('localhost', 'root', '', 'registration');
-	
+
 
 	if (isset($_POST['register'])) {
 		$firstname = mysqli_real_escape_string($db, $_POST['firstname']);
