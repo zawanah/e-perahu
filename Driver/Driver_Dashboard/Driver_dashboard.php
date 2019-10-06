@@ -56,7 +56,7 @@
                     </div>
 
                     <!-- Menu -->
-                    <div class="classy-menu" style="background-color: rgba(0, 0, 0, 0.8);">
+                    <div class="classy-menu" style="">
                         <!-- Menu Close Button -->
                         <div class="classycloseIcon">
                             <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
@@ -66,12 +66,24 @@
                         <div class="classynav">
                             <!-- Rounded switch -->
                             <form method="post">
-                                <div class="checkbox" style="text-align: center; color: white;">
-                                <input type="checkbox" data-toggle="toggle" name="availability" value="Online" onclick="this.form.submit();"/>
-                                <label>Online</label>
-                                <input type="checkbox" data-toggle="toggle" name="availability" value="Offline" onclick="this.form.submit();"/>
-                                <label>Offline</label>
+                                <div style="text-align: center;">
+                                    <label class="switch">
+                                        <input type="checkbox" name="availability" value="Online" onclick="this.form.submit();"/>
+                                        <label>Online</label>
+                                        <span class="slider round"></span>
+                                        <input type="checkbox" name="availability" value="Offline" onclick="this.form.submit();"/>
+                                        <label>Offline</label>
+                                        <span class="slider round"></span>
+                                    </label>
                                 </div>
+                                <!-- <label class="switch">
+                                <input type="checkbox" name="availability" value="Online" onclick="this.form.submit();"/>
+                                <span class="slider round"></span>
+                                <label class="switch">Online</label>
+                                <input type="checkbox" name="availability" value="Offline" onclick="this.form.submit();"/>
+                                <span class="slider round"></span>
+                                <label class="switch">Offline</label>
+                                </label> -->
                             </form>
                             <!-- Logout Button -->
                             </br>

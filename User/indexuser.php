@@ -64,7 +64,7 @@
                                         <li><a href="profile.php">- My Profile</a></li>
                                         <li><a href="">- Schedule</a></li>
                                         <li><a href="ticketprice.php">- Ticket Price</a></li>
-                                        <li><a href="speakers.php">- driver</a></li>
+                                        <li><a href="drivers.php">- driver</a></li>
                                         <li><a href="schedule.php">- promotion</a></li>
 
 
@@ -106,22 +106,17 @@
             </div>
 
             <!-- Single Slide -->
-            <div class="single-welcome-slide bg-img bg-overlay jarallax" style="background-image: url(img/bg-img/45.jpg);">
+            <div class="single-welcome-slide bg-img bg-overlay jarallax" style="background-image: url(img/reservation.jpg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <!-- Welcome Text -->
                         <div class="col-12">
                             <div class="welcome-text-two text-center">
-                                <h5 data-animation="fadeInUp" data-delay="100ms">The event consistently</h5>
-                                <h2 data-animation="fadeInUp" data-delay="300ms">OSHA Compliance</h2>
-                                <!-- Event Meta -->
-                                <div class="event-meta" data-animation="fadeInUp" data-delay="500ms">
-                                    <a class="event-date" href="#"><i class="zmdi zmdi-account"></i> January 14, 2019</a>
-                                    <a class="event-author" href="#"><i class="zmdi zmdi-alarm-check"></i> Laura Green</a>
-                                </div>
+                                <h5 data-animation="fadeInUp" data-delay="100ms">E-Perahu</h5>
+                                <h2 data-animation="fadeInUp" data-delay="300ms">Easy reservation</h2>
                                 <div class="hero-btn-group" data-animation="fadeInUp" data-delay="700ms">
-                                    <a href="#" class="btn confer-btn m-2">View more <i class="zmdi zmdi-long-arrow-right"></i></a>
-                                    <a href="#" class="btn confer-btn m-2">Get Tickets <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                    <a href="#" class="btn confer-btn m-2">Reserve now! <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                    <a href="#" class="btn confer-btn m-2">Ticket price <i class="zmdi zmdi-long-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -136,7 +131,7 @@
     <!-- Welcome Area End -->
 
     <!-- About Us And Countdown Area Start -->
-    <section class="about-us-countdown-area section-padding-100-0" id="about">
+    <section style="text-align: center;" class="about-us-countdown-area section-padding-100-0" id="about">
         <div class="container">
             <div class="row align-items-center">
                 <!-- About Content -->
@@ -150,35 +145,8 @@
                 </div>
             </div>
         </div>
-
-        <!-- Counter Up Area -->
-        <!-- <div class="countdown-up-area">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-12 col-md-3"> -->
-                        <!-- Countdown Text -->
-                        <!-- <div class="countdown-content-text mb-100 wow fadeInUp" data-wow-delay="300ms">
-                            <h6>Conference Date</h6>
-                            <h4>Count Every Second Until the Event</h4>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-9">
-                        <div class="countdown-timer mb-100 wow fadeInUp" data-wow-delay="300ms">
-                            <div id="clock"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
     </section>
     <!-- About Us And Countdown Area End -->
-
-    
-
-
-
-
 
     <!-- Footer Area Start -->
     <footer class="footer-area bg-img bg-overlay-2 section-padding-100-0">

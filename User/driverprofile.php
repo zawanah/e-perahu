@@ -38,7 +38,7 @@
                 <nav class="classy-navbar justify-content-between" id="conferNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="./indexuser.php"><img src="./img/core-img/logo.png" alt=""></a>
+                    <a class="nav-brand" href="indexuser.php"><img src="img/e-perahu.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -58,21 +58,19 @@
                                 <li><a href="#">Information</a>
                                     <ul class="dropdown">
                                         <li><a href="profile.php">- My Profile</a></li>
-                                        <li><a href="index.php">- Schedule</a></li>
-                                        <li><a href="about.php">- Ticket Price</a></li>
-                                        <li><a href="speakers.php">- driver</a></li>
+                                        <li><a href="">- Schedule</a></li>
+                                        <li><a href="ticketprice.php">- Ticket Price</a></li>
+                                        <li><a href="drivers.php">- driver</a></li>
                                         <li><a href="schedule.php">- promotion</a></li>
 
 
                                     </ul>
                                 </li>
-                                <li><a href="User_Reservation/User_Reservation.php">Reservation</a></li>
-                                <li><a href="blog.php">About Us</a></li>
-                                <li><a href="contact.php">Feedback</a></li>
+                                <li><a href="">Ticket History</a></li>
+                                <li><a href="aboutus.php">About Us</a></li>
                             </ul>
 
-                            <!-- Logout Button -->
-                            <a href="profile.php?logout='1'" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="indexuser.php?logout='1'" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                         <!-- Nav End -->
                     </div>
@@ -86,10 +84,10 @@
 
 
     <!-- header section -->
-<section style="background-color: white;">
+<section style="background-color: white; background-image: url(img/backprofile.jpg);" class="bg-img">
     <?php 
 
-        $sql = "SELECT fname, lname, username, email, phone_no, reg_no FROM driver WHERE id = '" . $_SESSION['id'] . "'";
+        $sql = "SELECT fname, lname, username, email, phone_no, reg_no, availability FROM driver WHERE id = '" . $_SESSION['id'] . "'";
 
         $result = mysqli_query($db, $sql);
         $row = mysqli_fetch_array($result);
@@ -97,7 +95,7 @@
     <div class="wow fadeInUp" style="padding-top: 180px; padding-bottom: 50px;">
         <div class="">
             <div class="col-md-12 col-sm-12">
-                <h1 class="" style="text-align: center; color: black ;">Hi, I am <?php echo $row['fname']; ?> </h1>
+                <h1 class="" style="text-align: center; color: black ;">Driver Profile</h1>
             </div>
         </div>
     </div>
@@ -107,12 +105,14 @@
     <div class="row">
         <div class="col-md-6 col-sm-12">
             <div class="about bg-gradient-overlay wow fadeInUp">
-                <h3 class="white">Easy Profile</h3>
-                <h2>Bootstrap v3.3.5</h2>
-                <p class="white">This easy HTML profile is brought to you by templatemo website. There are 4 color themes, <a href="index-green.html">Green</a>, <a href="index.html">Blue</a>, <a href="index-gray.html">Gray</a>, and <a href="index-orange.html">Orange</a>. Sed vitae dui in neque elementum tempor eu id risus. Phasellus sed facilisis lacus, et venenatis augue.</p>
+                <h2>Fullname</h2>
+                <!-- <h2></h2> -->
+                </br>
+                </br>
+                <h4 style="text-align: center;" class="white"><?php echo $row['fname']; ?>&nbsp;<?php echo $row['lname']; ?></h4>
             </div>
         </div>
-        <div class="col-md-6 col-sm-12">
+        <!-- <div class="col-md-6 col-sm-12">
             <div class="skills bg-gradient-overlay wow fadeInUp" style="background-color: #ffffff; border-radius: 15px;">
                 <h2 style="color: #ffffff;">Skills</h2>
                 <strong style="color: #ffffff;">PHP MySQL</strong>
@@ -134,6 +134,15 @@
                         aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;"></div>
                     </div>
             </div>
+        </div> -->
+        <div  class="col-md-6 col-sm-12">
+            <div class="about bg-gradient-overlay wow fadeInUp">
+                <h2>Boat Registration No.</h2>
+                <!-- <h2></h2> -->
+                </br>
+                </br>
+                <h4 style="text-align: center;" class="white"><?php echo $row['reg_no']; ?></h4>
+            </div>
         </div>
     </div>
 </section>
@@ -143,25 +152,21 @@
     <div class="row">
         <div class="col-md-8 col-sm-12">
             <div class="education bg-gradient-overlay wow fadeInUp" style="border-radius: 15px;">
-                <h2 class="white">Education</h2>
+                <h2 class="white">Experience</h2>
                     <div class="education-content">
-                        <h4 class="">New Web Design</h4>
                             <div class="education-school">
-                                <h5>School of Media</h5><span></span>
-                                <h5>2030 January - 2034 December</h5>
+                                <h5>2001 - Present</h5>
                             </div>
                         <p class="education-description white">In lacinia leo sed quam feugiat, ac efficitur dui tristique. Ut venenatis, odio quis cursus egestas, nulla sem volutpat diam, ac dapibus nisl ipsum ut ipsum. Nunc tincidunt libero non magna placerat elementum.</p>
                     </div>
             </div>
         </div>
-        <div class="col-md-4 col-sm-12">
+        <div  class="col-md-4 col-sm-12">
             <div class="languages bg-gradient-overlay wow fadeInUp" style="border-radius: 15px;">
-                <h2>Languages</h2>
+                <h2>Status</h2>
+                </br>
                     <ul style="color: white;">
-                        <li>Myanmar / Thai</li>
-                        <li>English / Spanish</li>
-                        <li>Chinese / Japanese</li>
-                        <li>Arabic / Hebrew</li>
+                        <h4 style="color: #fff; text-align: center;"><?php echo $row['availability']; ?> now</h4>
                     </ul>
             </div>
         </div>
@@ -174,21 +179,10 @@
         <div class="col-md-4 col-sm-12">
             <div class="contact bg-gradient-overlay wow fadeInUp" style="border-radius: 15px;">
                 <h2>Contact</h2>
-                    <p class="white"><i class="fa fa-map-marker"></i> 123 Rama IX Road, Bangkok</p>
-                    <p class="white"><i class="fa fa-phone"></i> 010-020-0890</p>
-                    <p class="white"><i class="fa fa-envelope"></i> easy@company.com</p>
-                    <p class="white"><i class="fa fa-globe"></i> www.company.com</p>
-            </div>
-        </div>
-        <div class="col-md-8 col-sm-12">
-            <div class="experience bg-gradient-overlay wow fadeInUp" style="border-radius: 15px;">
-                <h2 class="white">Experiences</h2>
-                    <div class="experience-content">
-                        <h4>Website Development</h4>
-                        <h5>New Media Company</h5><span></span>
-                        <h5>2035 January - 2036 April</h5>
-                        <p class="education-description white">Cras porta tincidunt sem, in sollicitudin lorem efficitur ut. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
-                    </div>
+                    <p class="white"><i class="fa fa-map-marker"></i> Bandar Seri Begawan, Brunei Darussalam</p>
+                    <p class="white"><i class="fa fa-phone"></i> +673<?php echo $row['phone_no']; ?></p>
+                    <p class="white"><i class="fa fa-envelope"></i> <?php echo $row['email']; ?></p>
+                    <p class="white"><i class="fa fa-globe"></i> www.e-perahu.com</p>
             </div>
         </div>
     </div>
