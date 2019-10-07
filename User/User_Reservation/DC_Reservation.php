@@ -1,8 +1,8 @@
-<?php include('../server.php');
+<?php include('DC_Reservation_DB.php');
 
-	if (empty($_SESSION['username'])) {
-        header('location: login.php');
-    }
+	// if (empty($_SESSION['username'])) {
+  //       header('location: login.php');
+  //   }
 
 ?>
 
@@ -103,13 +103,13 @@
 									<div class="form-group">
 										<span class="form-label">Package Selected</span>
 										<select class="form-control" placeholder="packageselected" name='selectedticket' onclick="calculateTotal()" required>
-											<option value="price0">Choose your ticket</option>
-											<option value="price1">One-Way Trip (BND$1)</option>
-											<option value="price2">Two-Way Trip (BND$2)</option>
-											<option value="price7">Kampong Ayer Tour (BND$7)</option>
-											<option value="price14">Pulau Chermin Tour (BND$14)</option>
-											<option value="price11">Istana Nurul Iman Tour (BND$11)</option>
-											<option value="price32">Full Tour (BND$32)</option>
+											<option value="None">Choose your ticket</option>
+											<option value="One Way">One-Way Trip (BND$1)</option>
+											<option value="Two Way">Two-Way Trip (BND$2)</option>
+											<option value="Kampong Ayer">Kampong Ayer Tour (BND$7)</option>
+											<option value="Pulau Chermin">Pulau Chermin Tour (BND$14)</option>
+											<option value="Nurul Iman">Istana Nurul Iman Tour (BND$11)</option>
+											<option value="Full">Full Tour (BND$32)</option>
 									  </select>
 										<span class="select-arrow"></span>
 									</div>

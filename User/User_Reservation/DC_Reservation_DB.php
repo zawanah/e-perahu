@@ -1,9 +1,12 @@
 <?php
 
 	session_start();
-	$name = "";
+	$firstname = "";
+	$lastname = "";
+	$username = "";
 	$email = "";
 	$phone = "";
+	$selectedticket = "";
 	$pickup = "";
 	$destination = "";
 	$pickupdate = "";
@@ -18,9 +21,12 @@
 	$db = mysqli_connect('localhost', 'root', '', 'reservation');
 
 	if (isset($_POST['paynow'])) {
-		// $name = mysqli_real_escape_string($db, $_POST['name']);
-		// $email = mysqli_real_escape_string($db, $_POST['email']);
+		$firstname = mysqli_real_escape_string($db, $_POST['firstname']);
+		$lastname = mysqli_real_escape_string($db, $_POST['lastname']);
+		$username = mysqli_real_escape_string($db, $_POST['username']);
+		$email = mysqli_real_escape_string($db, $_POST['email']);
 		$phone = mysqli_real_escape_string($db, $_POST['phone']);
+		$selectedticket = mysqli_real_escape_string($db, $_POST['selectedticket']);
 		$pickup = mysqli_real_escape_string($db, $_POST['pickup']);
 		$destination = mysqli_real_escape_string($db, $_POST['destination']);
 		$pickupdate = mysqli_real_escape_string($db, $_POST['pickupdate']);
@@ -57,8 +63,8 @@
 		}
 
 		if (count($errors) == 0) {
-			$sql = "INSERT INTO reservationtable (name, email, phone, pickup, destination, pickupdate, operationtime, ownername, debitnumber, debitcvv, expmonth, expyear)
-			VALUES ('$name', '$email', '$phone', '$pickup', '$destination', '$pickupdate', '$operationtime', '$ownername', '$debitnumber', '$debitcvv', '$expmonth', '$expyear')";
+			$sql = "INSERT INTO reservationtable (firstname, lastname, username, email, phone, selectedticket, pickup, destination, pickupdate, operationtime, ownername, debitnumber, debitcvv, expmonth, expyear)
+			VALUES ('$firstname', '$lastname', '$username', '$email', '$phone', '$selectedticket', '$pickup', '$destination', '$pickupdate', '$operationtime', '$ownername', '$debitnumber', '$debitcvv', '$expmonth', '$expyear')";
 			mysqli_query($db, $sql);
 			$_SESSION['success'] = "Payment Successful";
 			header('location: ../indexuser.php'); // redirect to home page

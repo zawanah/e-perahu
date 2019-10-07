@@ -6,13 +6,13 @@ You are free to use the code in Commercial or non-commercial projects
 */
 
  var ticket_prices = new Array();
- ticket_prices["price0"]=0;
- ticket_prices["price1"]=1;
- ticket_prices["price2"]=2;
- ticket_prices["price7"]=7;
- ticket_prices["price14"]=14;
- ticket_prices["price11"]=11;
- ticket_prices["price32"]=32;
+ ticket_prices["None"]=0;
+ ticket_prices["One Way"]=1;
+ ticket_prices["Two Way"]=2;
+ ticket_prices["Kampong Ayer"]=7;
+ ticket_prices["Pulau Chermin"]=14;
+ ticket_prices["Nurul Iman"]=11;
+ ticket_prices["Full"]=32;
 
  //Set up an associative array
  //The keys represent the quantity type
