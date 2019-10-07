@@ -372,7 +372,7 @@
         <!-- Paypal Sandbox Submit URL: https://www.sandbox.paypal.com/cgi-bin/webscr -->
 
         <!-- Paypal Cart submit form -->
-        <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="POST">
+        <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="POST" onclick="">
 
           <!-- SmartCart element -->
           <div id="smartcart"></div>
@@ -380,6 +380,7 @@
           <!-- Paypal required info, update based on details -->
           <input name="business" value="sb-bghh6253519@business.example.com" type="hidden">
           <input name="currency_code" value="SGD" type="hidden">
+
           <input name="return" value="https://e-perahu.000webhostapp.com/index.php" type="hidden">
           <input name="cancel_return" value="https://e-perahu.000webhostapp.com/aboutnologin.php" type="hidden">
 

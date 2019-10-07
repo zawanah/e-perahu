@@ -7,7 +7,7 @@
                   if ($conn->connect_error) {
                   die("Connection failed: " . $conn->connect_error);
                   }
-                  $sql = "SELECT pickup, destination, pickupdate, operationtime FROM reservationtable";
+                  $sql = "SELECT id, selectedticket, pickup, destination, pickupdate, operationtime  FROM reservationtable WHERE username = '" . $_SESSION['username'] . "'";
                   $result = $conn->query($sql);
 
 ?>
@@ -22,7 +22,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>E-Perahu Drivers</title>
+    <title>Ticket History</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/e-perahu.png">
@@ -69,7 +69,7 @@
                                         <li><a href="profile.php">- My Profile</a></li>
                                         <li><a href="index.php">- Schedule</a></li>
                                         <li><a href="ticketprice.php">- Ticket Price</a></li>
-                                        <li><a href="speakers.php">- drivers</a></li>
+                                        <li><a href="drivers.php">- drivers</a></li>
                                         <li><a href="schedule.php">- promotion</a></li>
 
 
@@ -77,7 +77,6 @@
                                 </li>
                                 <li><a href="tickethistory.php">Ticket History</a></li>
                                 <li><a href="blog.php">About Us</a></li>
-                                <li><a href="contact.php">Feedback</a></li>
                             </ul>
 
                             <!-- logout button -->
@@ -126,17 +125,18 @@
                                                     <div class='single-schedule-info'>
 
                                                     
-                                                        <p> <h6>" . $row["username"] . "</h6>
-                                                        <p>" . $row["fname"] ."&nbsp;". $row["lname"] ."</p>
-                                                        <p>" . $row["email"] . "</p>
+                                                        <p> <h6>" . $row["selectedticket"] . "</h6>
+                                                        <p></p>
+                                                        <p>Token ID: " . $row["id"] . "</p>
                                                         </p>
                                                     
                                                     </div>
                                             </div>
                                             <div class='schedule-time-place'>
-                                                <p>" . $row["availability"] . "</p>
+                                                <p>Date & Time: " . $row["pickupdate"] ."&nbsp;". $row["operationtime"] . "</p>
+                                                <p>From Jetty: " . $row["pickup"] ."</p>
+                                                <p>To Jetty: " . $row["destination"] ."</p>
                                             </div>
-                                            <a href='driverprofile.php?show= " . $row["id"] . " '><button type='submit' name='show' class='confer-btn'>Show Profile <i class='zmdi zmdi-long-arrow-right'></i></button></a>
                                         </div>" ;
                                                     } echo "</div>";
                                                     } else { echo "0 results"; }
@@ -162,7 +162,7 @@
             <div class="container">
                 <div class="row">
                     <!-- Single Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="col-12 col-sm-6 col-lg-12">
                         <div class="single-footer-widget mb-60">
 
                             <!-- Widget Title -->

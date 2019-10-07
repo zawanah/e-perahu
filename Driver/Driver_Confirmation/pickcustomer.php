@@ -65,7 +65,7 @@
 
 <section class="" style=" padding-top: 150px; padding-bottom: 30px; background-image: #ffffff">
     <?php
-            $sql = "SELECT firstname, lastname, email, phone, pickup, destination, pickupdate, operationtime FROM reservationdriver WHERE id = '" . $_SESSION['id'] . "'";
+            $sql = "SELECT id, firstname, lastname, email, phone, selectedticket, pickup, destination, pickupdate, operationtime FROM reservationdriver WHERE id = '" . $_SESSION['id'] . "'";
 
             $result = mysqli_query($db2, $sql);
             $row = mysqli_fetch_array($result);
@@ -78,7 +78,7 @@
         <div class="personal_text">
             <?php
 
-                    echo "Fullname:  " . $row['firstname'] . " ". $row['lastname'] ."<br/><br/>". "Email: ". $row['email'] . "<br/><br/>" . "Phone No: ". $row['phone'] . "<br/><br/>" . "From: Jetty " . $row['pickup'] . "<br/><br/> To: Jetty " . $row['destination'] ."<br/><br/> Date & Time: " . $row['operationtime'] . " " . $row['pickupdate'] . "";
+                    echo "Token ID:  " . $row['id'] . "<br/><br/> Selected Package:  " . $row['selectedticket'] . "<br/><br/> Fullname:  " . $row['firstname'] . " ". $row['lastname'] ."<br/><br/>". "Email: ". $row['email'] . "<br/><br/>" . "Phone No: ". $row['phone'] . "<br/><br/>" . "From: Jetty " . $row['pickup'] . "<br/><br/> To: Jetty " . $row['destination'] ."<br/><br/> Date & Time: " . $row['operationtime'] . " " . $row['pickupdate'] . "";
             ?> 
 
             <!-- Button -->

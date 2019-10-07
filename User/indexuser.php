@@ -70,7 +70,7 @@
 
                                     </ul>
                                 </li>
-                                <li><a href="">Ticket History</a></li>
+                                <li><a href="tickethistory.php">Ticket History</a></li>
                                 <li><a href="aboutus.php">About Us</a></li>
                             </ul>
 
@@ -135,7 +135,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <!-- About Content -->
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-12">
                     <div class="about-content-text mb-80">
                         <h6 class="wow fadeInUp" data-wow-delay="300ms">About E-Perahu</h6>
                         <h3 class="wow fadeInUp" data-wow-delay="300ms">Welcome to E-Perahu!</h3>

@@ -9,7 +9,7 @@
                   if ($conn->connect_error) {
                   die("Connection failed: " . $conn->connect_error);
                   }
-                  $sql = "SELECT id, firstname, lastname, email, phone, pickup, destination, pickupdate, operationtime FROM reservationdriver";
+                  $sql = "SELECT id, firstname, lastname, email, phone, selectedticket, pickup, destination, pickupdate, operationtime FROM reservationdriver";
                   $result = $conn->query($sql);
 
                 
@@ -109,9 +109,10 @@
                                                     <div class='single-schedule-info'>
 
                                                     
-                                                        <p> <h6>Full Name: " . $row["firstname"] ."&nbsp;". $row["lastname"] . "</h6>
-                                                        <p>Email: " . $row["email"] ."</p>
+                                                        <p> <h6>" . $row["selectedticket"] . "</h6>
+                                                        <p>Full Name: " . $row["firstname"] ."&nbsp;". $row["lastname"] . "</p>
                                                         <p>Phone No: " . $row["phone"] . "</p>
+                                                        <p>Email: " . $row["email"] . "</p>
                                                         </p>
                                                     </div>
                                             </div>
@@ -146,7 +147,7 @@
             <div class="container">
                 <div class="row">
                     <!-- Single Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="col-12 col-sm-6 col-lg-12">
                         <div class="single-footer-widget mb-60">
 
                             <!-- Widget Title -->
@@ -159,31 +160,6 @@
                                 <p><i class="zmdi zmdi-email"></i> -e-perahu@gmail.com</p>
                                 <p><i class="zmdi zmdi-globe"></i> www.e-perahu.net</p>
                             </div>
-                        </div>
-                    </div>
-
-
-
-                    <!-- Single Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="single-footer-widget mb-60">
-  
-
-                          
-                       </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-                    <!-- Footer Menu -->
-                    <div class="col-12 col-md-6">
-                        <div class="footer-menu">
-                            <ul class="nav">
-                                <li><a href="#"><i class="zmdi zmdi-circle"></i> Terms of Service</a></li>
-                                <li><a href="#"><i class="zmdi zmdi-circle"></i> Privacy Policy</a></li>
-                            </ul>
                         </div>
                     </div>
                 </div>

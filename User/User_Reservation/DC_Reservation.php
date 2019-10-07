@@ -1,4 +1,4 @@
-<?php include('DC_Reservation_DB.php');
+<?php include('../server.php');
 
 	// if (empty($_SESSION['username'])) {
   //       header('location: login.php');
@@ -72,7 +72,7 @@
 
 						<form method="post" action="DC_Reservation.php" id="ticketform">
 
-							<?php $sql = "SELECT firstname, lastname, email FROM users WHERE username = '" . $_SESSION['username'] . "'";
+							<?php $sql = "SELECT firstname, lastname, username, email FROM users WHERE username = '" . $_SESSION['username'] . "'";
 
   										$result = mysqli_query($db, $sql);
   										$row = mysqli_fetch_array($result);
@@ -86,6 +86,7 @@
 									<div class="form-group">
 										<input type="hidden" name="firstname" value="<?php echo $row['firstname']; ?>">
 										<input type="hidden" name="lastname" value="<?php echo $row['lastname']; ?>">
+										<input type="hidden" name="username" value="<?php echo $row['username']; ?>">
 										<input type="hidden" name="email" value="<?php echo $row['email']; ?>">
 										<input type="hidden" name="types" value="Debit Card">
 										<span class="form-label">Phone</span>
