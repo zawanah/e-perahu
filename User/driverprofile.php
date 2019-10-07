@@ -105,11 +105,11 @@
     <div class="row">
         <div class="col-md-6 col-sm-12">
             <div class="about bg-gradient-overlay wow fadeInUp">
-                <h2>Fullname</h2>
+                <h2 class="white">Fullname</h2>
                 <!-- <h2></h2> -->
                 </br>
                 </br>
-                <h4 style="text-align: center;" class="white"><?php echo $row['fname']; ?>&nbsp;<?php echo $row['lname']; ?></h4>
+                <h4 style="text-align: center;"><?php echo $row['fname']; ?>&nbsp;<?php echo $row['lname']; ?></h4>
             </div>
         </div>
         <!-- <div class="col-md-6 col-sm-12">
@@ -137,11 +137,11 @@
         </div> -->
         <div  class="col-md-6 col-sm-12">
             <div class="about bg-gradient-overlay wow fadeInUp">
-                <h2>Boat Registration No.</h2>
+                <h2 class="white">Boat Registration No.</h2>
                 <!-- <h2></h2> -->
                 </br>
                 </br>
-                <h4 style="text-align: center;" class="white"><?php echo $row['reg_no']; ?></h4>
+                <h4 style="text-align: center;"><?php echo $row['reg_no']; ?></h4>
             </div>
         </div>
     </div>
@@ -153,20 +153,21 @@
         <div class="col-md-8 col-sm-12">
             <div class="education bg-gradient-overlay wow fadeInUp" style="border-radius: 15px;">
                 <h2 class="white">Experience</h2>
+                <br>
+                <br>
                     <div class="education-content">
                             <div class="education-school">
                                 <h5>2001 - Present</h5>
                             </div>
-                        <p class="education-description white">In lacinia leo sed quam feugiat, ac efficitur dui tristique. Ut venenatis, odio quis cursus egestas, nulla sem volutpat diam, ac dapibus nisl ipsum ut ipsum. Nunc tincidunt libero non magna placerat elementum.</p>
                     </div>
             </div>
         </div>
         <div  class="col-md-4 col-sm-12">
             <div class="languages bg-gradient-overlay wow fadeInUp" style="border-radius: 15px;">
-                <h2>Status</h2>
+                <h2 class="white">Status</h2>
                 </br>
-                    <ul style="color: white;">
-                        <h4 style="color: #fff; text-align: center;"><?php echo $row['availability']; ?> now</h4>
+                    <ul>
+                        <h4 style="text-align: center;"><?php echo $row['availability']; ?> now</h4>
                     </ul>
             </div>
         </div>
@@ -178,11 +179,11 @@
     <div class="row">
         <div class="col-md-4 col-sm-12">
             <div class="contact bg-gradient-overlay wow fadeInUp" style="border-radius: 15px;">
-                <h2>Contact</h2>
-                    <p class="white"><i class="fa fa-map-marker"></i> Bandar Seri Begawan, Brunei Darussalam</p>
-                    <p class="white"><i class="fa fa-phone"></i> +673<?php echo $row['phone_no']; ?></p>
-                    <p class="white"><i class="fa fa-envelope"></i> <?php echo $row['email']; ?></p>
-                    <p class="white"><i class="fa fa-globe"></i> www.e-perahu.com</p>
+                <h2 class="white">Contact</h2>
+                    <p style="color: #000;"><i class="fa fa-map-marker"></i> Bandar Seri Begawan, Brunei Darussalam</p>
+                    <p style="color: #000;"><i class="fa fa-phone"></i> +673<?php echo $row['phone_no']; ?></p>
+                    <p style="color: #000;"><i class="fa fa-envelope"></i> <?php echo $row['email']; ?></p>
+                    <p style="color: #000;"><i class="fa fa-globe"></i> www.e-perahu.com</p>
             </div>
         </div>
     </div>

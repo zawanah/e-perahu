@@ -1,12 +1,11 @@
 <?php
 	session_start();
+	$username = "";
 	$firstname = "";
 	$lastname = "";
-	$username = "";
 	$email = "";
 	$name = "";
 	$phone = "";
-	$selectedticket = "";
 	$pickup = "";
 	$destination = "";
 	$pickupdate = "";
@@ -176,7 +175,6 @@
 				$lastname = mysqli_real_escape_string($db2, $_POST['lastname']);
 				$email = mysqli_real_escape_string($db2, $_POST['email']);
 				$phone = mysqli_real_escape_string($db2, $_POST['phone']);
-				$selectedticket = mysqli_real_escape_string($db2, $_POST['selectedticket']);
 				$pickup = mysqli_real_escape_string($db2, $_POST['pickup']);
 				$destination = mysqli_real_escape_string($db2, $_POST['destination']);
 				$pickupdate = mysqli_real_escape_string($db2, $_POST['pickupdate']);
@@ -214,8 +212,8 @@
 		}
 
 		if (count($errors) == 0) {
-			$sql = "INSERT INTO reservationtable (firstname, lastname, email, phone, selectedticket, pickup, destination, pickupdate, operationtime, ownername, debitnumber, debitcvv, expmonth, expyear, types)
-			VALUES ('$firstname', '$lastname', '$email', '$phone', '$selectedticket', '$pickup', '$destination', '$pickupdate', '$operationtime', '$ownername', '$debitnumber', '$debitcvv', '$expmonth', '$expyear', '$types')";
+			$sql = "INSERT INTO reservationtable (firstname, lastname, email, phone, pickup, destination, pickupdate, operationtime, ownername, debitnumber, debitcvv, expmonth, expyear, types)
+			VALUES ('$firstname', '$lastname', '$email', '$phone', '$pickup', '$destination', '$pickupdate', '$operationtime', '$ownername', '$debitnumber', '$debitcvv', '$expmonth', '$expyear', '$types')";
 			mysqli_query($db2, $sql);
 			$_SESSION['success'] = "Payment Successful";
 			header('location: ../indexuser.php'); // redirect to home page
@@ -227,7 +225,6 @@
 				$lastname = mysqli_real_escape_string($db2, $_POST['lastname']);
 				$email = mysqli_real_escape_string($db2, $_POST['email']);
 				$phone = mysqli_real_escape_string($db2, $_POST['phone']);
-				$selectedticket = mysqli_real_escape_string($db2, $_POST['selectedticket']);
 				$pickup = mysqli_real_escape_string($db2, $_POST['pickup']);
 				$destination = mysqli_real_escape_string($db2, $_POST['destination']);
 				$pickupdate = mysqli_real_escape_string($db2, $_POST['pickupdate']);
@@ -264,8 +261,8 @@
 		}
 
 		if (count($errors) == 0) {
-			$sql = "INSERT INTO reservationdriver (firstname, lastname, email, phone, selectedticket, pickup, destination, pickupdate, operationtime)
-			VALUES ('$firstname', '$lastname', '$email', '$phone', '$selectedticket', '$pickup', '$destination', '$pickupdate', '$operationtime')";
+			$sql = "INSERT INTO reservationdriver (firstname, lastname, email, phone, pickup, destination, pickupdate, operationtime)
+			VALUES ('$firstname', '$lastname', '$email', '$phone', '$pickup', '$destination', '$pickupdate', '$operationtime')";
 			mysqli_query($db2, $sql);
 			$_SESSION['success'] = "Payment Successful";
 			header('location: ../indexuser.php'); // redirect to home page
