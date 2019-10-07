@@ -34,7 +34,7 @@
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
 				<form method="post" action="signup.php">
 
-					<span class="login100-form-title p-b-55">
+					<span style="padding-bottom: 20px;" class="login100-form-title">
 						Sign up
 					</span>
 
@@ -42,39 +42,45 @@
 					<?php include('errors.php'); ?>
 
 					<div class="wrap-input100 validate-input m-b-16">
-						<input type="firstname" name="firstname" class="input100" placeholder="First Name" pattern="[A-Za-z]{1,15}" value="<?php echo $firstname; ?>" autocomplete="off">
+						<input style="text-align: center;" type="firstname" name="firstname" class="input100" placeholder="First Name" pattern="[A-Za-z]{1,15}" value="<?php echo $firstname; ?>" autocomplete="off">
 						<span class="focus-input100"></span>
 						
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-16">
-						<input type="lastname" name="lastname" class="input100" placeholder="Last Name" pattern="[A-Za-z]{1,15}" value="<?php echo $lastname; ?>" autocomplete="off">
+						<input style="text-align: center;" type="lastname" name="lastname" class="input100" placeholder="Last Name" pattern="[A-Za-z]{1,15}" value="<?php echo $lastname; ?>" autocomplete="off">
 						<span class="focus-input100"></span>
 						
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-16">
-						<input type="username" name="username" class="input100" placeholder="Username" value="<?php echo $username; ?>" autocomplete="off">
+						<input style="text-align: center;" type="username" name="username" class="input100" placeholder="Username" value="<?php echo $username; ?>" autocomplete="off">
 						<span class="focus-input100"></span>
 						
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-16">
-						<input class="input100" type="email" name="email" placeholder="Email" value="<?php echo $email; ?>"  autocomplete="off">
+						<input style="text-align: center;" class="input100" type="email" name="email" placeholder="Email" value="<?php echo $email; ?>"  autocomplete="off">
 						<span class="focus-input100"></span>
 						
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-16">
-						<input class="input100" type="password" name="password_1" placeholder="Password">
+						<input style="text-align: center;" placeholder="Date of Birth" class="input100" name="dob" type="text" onfocus="(this.type='date')"  id="date" value="<?php echo $dob; ?>"  autocomplete="off">
 						<span class="focus-input100"></span>
 						
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-16">
-						<input class="input100" type="password" name="password_2" placeholder="Confirm password">
+						<input style="text-align: center;" class="input100" type="password" name="password_1" placeholder="Password">
 						<span class="focus-input100"></span>
 						
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16">
+						<input style="text-align: center;" class="input100" type="password" name="password_2" placeholder="Confirm password">
+						<span class="focus-input100"></span>
+						<input type="hidden" name="description" value="Nothing to see here">
 					</div>
 
 
@@ -83,11 +89,7 @@
 						</button>
 					</div>
 
-
-
-
-
-					<div class="text-center w-full p-t-115">
+					<div style="text-align:center; padding-top: 15px;">
 						<span class="txt1">
 							Already a member?
 						</span>

@@ -37,7 +37,7 @@
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
 				<form method="post" action="login.php">
-					<span class="login100-form-title p-b-55">
+					<span style="padding-bottom: 20px;" class="login100-form-title">
 						Login
 					</span>
 

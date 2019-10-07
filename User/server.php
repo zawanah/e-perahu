@@ -4,6 +4,8 @@
 	$firstname = "";
 	$lastname = "";
 	$email = "";
+	$description = "";
+	$dob = "";
 	$name = "";
 	$phone = "";
 	$selectedticket = "";
@@ -28,6 +30,8 @@
 		$lastname = mysqli_real_escape_string($db, $_POST['lastname']);
 		$username = mysqli_real_escape_string($db, $_POST['username']);
 		$email = mysqli_real_escape_string($db, $_POST['email']);
+		$dob = mysqli_real_escape_string($db, $_POST['dob']);
+		$description = mysqli_real_escape_string($db, $_POST['description']);
 		$password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
 		$password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
 
@@ -48,6 +52,9 @@
    		}
 		if (empty($email)) {
 			array_push($errors, "- Email is required");
+		}
+		if (empty($dob)) {
+			array_push($errors, "- Date of birth is required");
 		}
 		if (empty($password_1)) {
 			array_push($errors, "- Password is required");
@@ -77,7 +84,7 @@
 		// if there are no errors, save user to database
 		if (count($errors) == 0) {
 			$password = md5($password_1); // encrypt password
-			$sql = "INSERT INTO users (firstname, lastname, username, email, password) VALUES ('$firstname', '$lastname', '$username', '$email', '$password')";
+			$sql = "INSERT INTO users (firstname, lastname, username, email, dob, password, description) VALUES ('$firstname', '$lastname', '$username', '$email', '$dob', '$password', '$description')";
 			mysqli_query($db, $sql);
 
 
@@ -94,10 +101,10 @@
 
 		// ensure that form fields are filled properly
 		if (empty($username)) {
-			array_push($errors, "Username is required");
+			array_push($errors, "- Username is required");
 		}
 		if (empty($password)) {
-			array_push($errors, "Password is required");
+			array_push($errors, "- Password is required");
 		}
 
 		if (count($errors) == 0) {
@@ -126,7 +133,7 @@
   		}
   		//save this user and pass as cookie if remember checked end
 
-  		$sql = "SELECT firstname, lastname, email FROM users WHERE username = '" . $_SESSION['username'] . "'";
+  		$sql = "SELECT firstname, lastname, email, description FROM users WHERE username = '" . $_SESSION['username'] . "'";
 
   		$result = mysqli_query($db, $sql);
   		$row = mysqli_fetch_array($result);
@@ -151,8 +158,9 @@
             $firstname = $_POST['firstname'];
             $lastname = $_POST['lastname'];
             $email = $_POST['email'];
+            $description = $_POST['description'];
 
-            mysqli_query($db, "UPDATE users SET firstname='$firstname', lastname='$lastname', email='$email' WHERE username='" . $_SESSION['username'] . "'");
+            mysqli_query($db, "UPDATE users SET firstname='$firstname', lastname='$lastname', email='$email', description='$description' WHERE username='" . $_SESSION['username'] . "'");
             header( "refresh:6; url=login.php" );
             echo "<p style='text-align: center;' class='text-danger'>Please Re log in to apply settings.  You will be redirected to login page in any seconds.</p>";
             // header('location: login.php');

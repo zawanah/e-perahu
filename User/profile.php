@@ -17,7 +17,7 @@
     <title>E-Perahu - User Profile</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="./img/core-img/favicon.png">
+    <link rel="icon" href="img/e-perahu.png">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -85,76 +85,125 @@
     
 
 
-    <section class="" style=" padding-top: 70px; background-image: #ffffff">
-        <!-- <div class="box_1620"> -->
-                <!-- <div class="banner_inner d-flex align-items-center"> -->
-                    <!-- <div class="banner_content"> -->
-                        <!-- <div class="media"> -->
-                            <div class="displayPic" style="text-align: center; font-size: 40px" >
-                                <img src="img/e-perahu-icon.png" alt="" style="width: 400px; height: 400px; margin: auto;"> <br/>
-                                <?php
-                                    $sql = "SELECT firstname, lastname, username, email FROM users WHERE username = '" . $_SESSION['username'] . "'";
+    <!-- header section -->
+<section style="background-color: white; background-image: url(img/backprofile.jpg);" class="bg-img">
+    <?php 
 
-                                    $result = mysqli_query($db, $sql);
-                                    $row = mysqli_fetch_array($result);
+        $sql = "SELECT firstname, lastname, username, email, description FROM users WHERE username = '" . $_SESSION['username'] . "'";
 
-                                    echo "Hello! " . $row['firstname'] . " ";
+        $result = mysqli_query($db, $sql);
+        $row = mysqli_fetch_array($result);
+    ?>
+    <div class="wow fadeInUp" style="padding-top: 180px; padding-bottom: 50px;">
+        <div class="">
+            <div class="col-md-12 col-sm-12">
+                <h1 class="" style="text-align: center; color: black ;">Your Profile</h1>
+            </div>
+        </div>
+    </div>
 
-                                      ?>
+<!-- about and skills section -->
+<section class="container">
+    <div style="padding-bottom: 20px;" class="col-12 wow fadeInUp">
+        <br>
+        <a href="editprofile.php"><button type="submit" class="btn confer-btn">Edit My Profile <i class="zmdi zmdi-long-arrow-right"></i></button></a>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <div class="about bg-gradient-overlay wow fadeInUp">
+                <h2 class="white">Your username</h2>
+                <!-- <h2></h2> -->
+                </br>
+                </br>
+                <h4 style="text-align: center;"><?php echo $row['username']; ?></h4>
+            </div>
+        </div>
+        <!-- <div class="col-md-6 col-sm-12">
+            <div class="skills bg-gradient-overlay wow fadeInUp" style="background-color: #ffffff; border-radius: 15px;">
+                <h2 style="color: #ffffff;">Skills</h2>
+                <strong style="color: #ffffff;">PHP MySQL</strong>
+                <span style="color: #ffffff;" class="pull-right">70%</span>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-primary" role="progressbar" 
+                        aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
+                    </div>
+                <strong style="color: #ffffff;">UI/UX Design</strong>
+                <span style="color: #ffffff;" class="pull-right">85%</span>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-primary" role="progressbar" 
+                        aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
+                    </div>
+                <strong style="color: #ffffff;">Bootstrap</strong>
+                <span style="color: #ffffff;" class="pull-right">95%</span>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-primary" role="progressbar" 
+                        aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;"></div>
+                    </div>
+            </div>
+        </div> -->
+        <div  class="col-md-6 col-sm-12">
+            <div class="about bg-gradient-overlay wow fadeInUp">
+                <h2 class="white">Fullname</h2>
+                <!-- <h2></h2> -->
+                </br>
+                </br>
+                <h4 style="text-align: center;"><?php echo $row['firstname']; ?>&nbsp;<?php echo $row['lastname']; ?></h4>
+            </div>
+        </div>
+    </div>
+</section>
 
-                            </div> <br>
-                            <div class="media-body" style="text-align: center;">
-
-                                <div class="personal_text">
-
-                                    <?php
-                                    $sql = "SELECT firstname, lastname, username, email FROM users WHERE username = '" . $_SESSION['username'] . "'";
-
-                                    $result = mysqli_query($db, $sql);
-                                    $row = mysqli_fetch_array($result);
-
-                                    echo "Fullname:  " . $row['firstname'] . " ". $row['lastname'] ."<br/>". "Email: ". $row['email'] . "<br/>" . "Username: ". $row['username'] . "";
-
-                                      ?> 
-
-                                    
-
-                                
-
-                                        
-                                        <!-- Button -->
-                                        <div class="col-12">
-                                            <br>
-                                            <a href="editprofile.php"><button type="submit" class="btn confer-btn">Edit My Profile <i class="zmdi zmdi-long-arrow-right"></i></button></a>
-                                        </div>
-                                    
-                                </div>
-                                
-
-
+<!-- education and languages -->
+<section class="container">
+    <div class="row">
+        <div class="col-md-8 col-sm-12">
+            <div class="education bg-gradient-overlay wow fadeInUp" style="border-radius: 15px;">
+                <h2 class="white">Your Description</h2>
+                <br>
+                <br>
+                    <div class="education-content">
+                            <div class="education-school">
+                                <h5><?php echo $row['description']; ?></h5>
                             </div>
-                      <!--   </div> -->
-                    <!-- </div> -->
-                <!-- </div> -->
-            <!-- </div> -->
-    </section>
+                    </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <div class="contact bg-gradient-overlay wow fadeInUp" style="border-radius: 15px;">
+                <h2 class="white">Contact</h2>
+                    <!-- <p style="color: #000;"><i class="fa fa-map-marker"></i> Bandar Seri Begawan, Brunei Darussalam</p> -->
+                    <!-- <p style="color: #000;"><i class="fa fa-phone"></i></p> -->
+                    <p style="color: #000;"><i class="fa fa-envelope"></i> <?php echo $row['email']; ?></p>
+                    <!-- <p style="color: #000;"><i class="fa fa-globe"></i></p> -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- contact and experience -->
+<section class="container" style="padding-bottom: 50px;">
+    <div class="row">
+        
+    </div>
+</section>
+</section>
 
 
         <!-- Footer Area Start -->
-    <!-- <footer class="footer-area bg-img bg-overlay-2 section-padding-100-0"> -->
+    <footer class="footer-area bg-img bg-overlay-2 section-padding-100-0">
         <!-- Main Footer Area -->
-        <!-- <div class="main-footer-area">
+        <div class="main-footer-area">
             <div class="container">
-                <div class="row"> -->
+                <div class="row">
                     <!-- Single Footer Widget Area -->
-                    <!-- <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="single-footer-widget mb-60"> -->
+                    <div class="col-12 col-sm-6 col-lg-12">
+                        <div class="single-footer-widget mb-60">
 
                             <!-- Widget Title -->
-                            <!-- <h5 class="widget-title">Contact</h5> -->
+                            <h5 class="widget-title">Contact</h5>
 
                             <!-- Contact Area -->
-                            <!-- <div class="footer-contact-info">
+                            <div class="footer-contact-info">
                                 <p><i class="zmdi zmdi-map"></i> Bandar Seri Begawan</p>
                                 <p><i class="zmdi zmdi-phone"></i> (+673) 2123456</p>
                                 <p><i class="zmdi zmdi-email"></i> -e-perahu@gmail.com</p>
@@ -165,7 +214,7 @@
                 </div>
             </div>
         </div>
-    </footer> -->
+    </footer>
     <!-- Footer Area End -->
 
     <!-- **** All JS Files ***** -->

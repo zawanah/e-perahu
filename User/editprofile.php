@@ -93,7 +93,7 @@
             <form method="POST" class="form-horizontal">
 
                 <?php
-                                    $sql = "SELECT firstname, lastname, username, email FROM users WHERE username = '" . $_SESSION['username'] . "'";
+                                    $sql = "SELECT firstname, lastname, username, email, description FROM users WHERE username = '" . $_SESSION['username'] . "'";
 
                                     $result = mysqli_query($db, $sql);
                                     $row = mysqli_fetch_array($result); 
@@ -120,6 +120,13 @@
                 <label class="col-lg-3 control-label">Email:</label>
                 <div class="col-lg-8">
                   <input class="form-control" type="text" name="email" value="<?php echo $row['email']; ?>">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-lg-3 control-label">Description:</label>
+                <div class="col-lg-8">
+                  <input class="form-control" type="text" name="description" value="<?php echo $row['description']; ?>">
                 </div>
               </div>
               
