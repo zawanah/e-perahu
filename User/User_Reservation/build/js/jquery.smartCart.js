@@ -48,7 +48,7 @@
             locales: 'en-US', // A string with a BCP 47 language tag, or an array of such strings
             currencyOptions: {
                 style: 'currency',
-                currency: 'USD',
+                currency: 'SGD',
                 currencyDisplay: 'symbol'
             } // extra settings for the currency formatter. Refer: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString
         },
@@ -99,7 +99,7 @@
         },
 
         // PRIVATE FUNCTIONS
-        /* 
+        /*
          * Set basic elements for the cart
          */
         _setElements: function () {
@@ -111,8 +111,8 @@
             this.cart_element.append('<div class="panel-heading sc-cart-heading">' + this.options.lang.cartTitle + ' <span class="sc-cart-count badge">0</span></div>');
             this.cart_element.append('<div class="list-group sc-cart-item-list"></div>');
         },
-        /* 
-         * Set the toolbar for the cart 
+        /*
+         * Set the toolbar for the cart
          */
         _setToolbar: function () {
             if (this.options.toolbarSettings.showToolbar !== true) {
@@ -162,7 +162,7 @@
             toolbar.append(toolbarButtonPanel);
             this.cart_element.append(toolbar);
         },
-        /* 
+        /*
          * Set events for the cart
          */
         _setEvents: function () {
@@ -213,7 +213,7 @@
                 });
             });
         },
-        /* 
+        /*
          * Get the parameters of a product by seaching elements with name attribute/data.
          * Product details will be return as an object
          */
@@ -231,7 +231,7 @@
             });
             return p;
         },
-        /* 
+        /*
          * Add the product object to the cart
          */
         _addToCart: function (p) {
@@ -275,7 +275,7 @@
             this._addUpdateCartItem(p);
             return p;
         },
-        /* 
+        /*
          * Remove the product object from the cart
          */
         _removeFromCart: function (unique_key) {
@@ -293,7 +293,7 @@
                 }
             });
         },
-        /* 
+        /*
          * Clear all products from the cart
          */
         _clearCart: function () {
@@ -302,7 +302,7 @@
             this._triggerEvent("cartCleared");
             this._hasCartChange();
         },
-        /* 
+        /*
          * Update the quantity of an item in the cart
          */
         _updateCartQuantity: function (unique_key, qty) {
@@ -320,7 +320,7 @@
                 }
             });
         },
-        /* 
+        /*
          * Update the UI of the cart list
          */
         _addUpdateCartItem: function (p) {
@@ -338,7 +338,7 @@
                 elmMain.append(this._formatTemplate(this.options.cartItemTemplate, p));
 
                 var itemSummary = '<div class="sc-cart-item-summary"><span class="sc-cart-item-price">' + this._getMoneyFormatted(p[this.options.paramSettings.productPrice]) + '</span>';
-                itemSummary += ' × <input type="number" min="1" max="1000" class="sc-cart-item-qty" value="' + this._getValueOrEmpty(p[this.options.paramSettings.productQuantity]) + '" />';
+                itemSummary += ' × <input type="number" min="1" max="10" class="sc-cart-item-qty" value="' + this._getValueOrEmpty(p[this.options.paramSettings.productQuantity]) + '" />';
                 itemSummary += ' = <span class="sc-cart-item-amount">' + this._getMoneyFormatted(productAmount) + '</span></div>';
 
                 elmMain.append(itemSummary);
@@ -355,8 +355,8 @@
 
             this._hasCartChange();
         },
-        /* 
-         * Handles the changes in the cart 
+        /*
+         * Handles the changes in the cart
          */
         _hasCartChange: function () {
             $('.sc-cart-count', this.cart_element).text(this.cart.length);
@@ -374,10 +374,10 @@
                 $('.sc-cart-checkout, .sc-cart-clear').removeClass('disabled');
             }
 
-            // Update cart value to the  cart hidden element 
+            // Update cart value to the  cart hidden element
             $('#' + this.options.resultName, this.cart_element).val(JSON.stringify(this.cart));
         },
-        /* 
+        /*
          * Calculates the cart subtotal
          */
         _getCartSubtotal: function () {
@@ -390,7 +390,7 @@
             });
             return this._getMoneyFormatted(subtotal);
         },
-        /* 
+        /*
          * Cart submit functionalities
          */
         _submitCart: function () {
@@ -449,7 +449,7 @@
         },
 
         // HELPER FUNCTIONS
-        /* 
+        /*
          * Get the content of an HTML element irrespective of its type
          */
         _getContent: function (elm) {
@@ -464,7 +464,7 @@
             }
             return '';
         },
-        /* 
+        /*
          * Compare equality of two product objects
          */
         _isObjectsEqual: function (o1, o2) {
@@ -484,20 +484,20 @@
             }
             return true;
         },
-        /* 
+        /*
          * Format money
          */
         _getMoneyFormatted: function (n) {
             n = n - 0;
             return Number(n.toFixed(2)).toLocaleString(this.options.currencySettings.locales, this.options.currencySettings.currencyOptions);
         },
-        /* 
-         * Get the value of an element and empty value if the element not exists 
+        /*
+         * Get the value of an element and empty value if the element not exists
          */
         _getValueOrEmpty: function (v) {
             return v && typeof v !== typeof undefined ? v : '';
         },
-        /* 
+        /*
          * Validate Number
          */
         _getValidateNumber: function (n) {
@@ -507,7 +507,7 @@
             }
             return false;
         },
-        /* 
+        /*
          * Small templating function
          */
         _formatTemplate: function (t, o) {
@@ -523,7 +523,7 @@
             }
             return fs;
         },
-        /* 
+        /*
          * Event raiser
          */
         _triggerEvent: function (name, params) {
@@ -535,14 +535,14 @@
             }
             return e.result;
         },
-        /* 
+        /*
          * Get unique key
          */
         _getUniqueKey: function () {
             var d = new Date();
             return d.getTime();
         },
-        /* 
+        /*
          * Log message to console
          */
         _logMessage: function (msg) {
@@ -552,7 +552,7 @@
             // Log message
             console.log(msg);
         },
-        /* 
+        /*
          * Log error to console and terminate execution
          */
         _logError: function (msg) {
@@ -564,13 +564,13 @@
         },
 
         // PUBLIC FUNCTIONS
-        /* 
+        /*
          * Public function to sumbit the cart
          */
         submit: function () {
             this._submitCart();
         },
-        /* 
+        /*
          * Public function to clear the cart
          */
         clear: function () {

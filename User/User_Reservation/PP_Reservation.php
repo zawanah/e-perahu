@@ -1,3 +1,11 @@
+<?php include('../server.php');
+
+	// if (empty($_SESSION['username'])) {
+  //       header('location: login.php');
+  //   }
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -381,11 +389,13 @@
           <input name="business" value="sb-bghh6253519@business.example.com" type="hidden">
           <input name="currency_code" value="SGD" type="hidden">
 
-          <input name="return" value="https://e-perahu.000webhostapp.com/index.php" type="hidden">
-          <input name="cancel_return" value="https://e-perahu.000webhostapp.com/aboutnologin.php" type="hidden">
+          <input name="return" value="http://localhost/e-perahu/User/indexuser.php" type="hidden">
+          <input name="cancel_return" value="http://localhost/e-perahu/User/ticketprice.php" type="hidden">
 
           <input name="cmd" value="_cart" type="hidden">
           <input name="upload" value="1" type="hidden">
+          <button type="button" name="button">test</button>
+
         </form>
       </aside>
     </div>
