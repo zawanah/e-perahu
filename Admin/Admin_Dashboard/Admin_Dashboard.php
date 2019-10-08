@@ -20,7 +20,7 @@
     <title>Admin Dashboard</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="./img/core-img/favicon.png">
+    <link rel="icon" href="./img/eperahu_icon.png">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -42,7 +42,7 @@
                 <nav class="classy-navbar justify-content-between" id="conferNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="./index.html"><img src="./img/core-img/logo.png" alt=""></a>
+                    <a class="nav-brand" href="./index.html"><img src="./img/eperahu_icon.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -95,7 +95,7 @@
                             <img src="img/d_i.png" alt="Driver Icon">
                         </div>
                         <div class="single-blog-text text-center">
-                            <a class="blog-title" href="../Admin_Driver_Option/Admin_Driver_Option.php">Drivers List</a>
+                            <a class="blog-title" href="../Admin_add_driver/Admin_List_Of_Driver.php">Drivers List</a>
                             <!-- Post Meta -->
 
                             <p>View Drivers List</p>
@@ -132,13 +132,13 @@
                             <img src="img/s_p.png" alt="Promotion Icon">
                         </div>
                         <div class="single-blog-text text-center">
-                            <a class="blog-title" href="#">Promotion Page</a>
+                            <a class="blog-title" href="promo.php">Promotion Page</a>
                             <!-- Post Meta -->
 
                             <p>View Promotion </p>
                         </div>
                         <div class="blog-btn">
-                            <a href="#"><i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="promo.php"><i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>

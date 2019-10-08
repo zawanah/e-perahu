@@ -57,7 +57,7 @@
     	$record = mysqli_query($db, "SELECT * FROM driver WHERE id='$id'");
 
     	$_SESSION['id'] = $id;
-                            
+
     }
 
 
@@ -73,14 +73,14 @@
 
 		mysqli_query($db, "UPDATE driver SET fname='$fname', lname='$lname', email='$email', phone_no='$phone_no', reg_no='$reg_no' WHERE id='$id'");
 		session_destroy();
-		unset($_SESSION['id']); 
+		unset($_SESSION['id']);
 		header('location: Admin_List_Of_Driver.php');
 	}
 
 	//delete Driver
 	if (isset($_GET['del'])) {
 		$id = $_GET['del'];
-		mysqli_query($db, "DELETE FROM driver WHERE id='$id'"); 
+		mysqli_query($db, "DELETE FROM driver WHERE id='$id'");
 		header('location: Admin_List_Of_Driver.php');
 	}
 
@@ -91,14 +91,14 @@
 	    $record = mysqli_query($db, "SELECT * FROM driver WHERE id='$id'");
 
 	    $_SESSION['id'] = $id;
-	                            
+
 	    }
 
 	//status button
 	if (isset($_POST['availability'])) {
 		$availability = $_POST['availability'];
 
-		mysqli_query($db, "UPDATE driver SET availability='$availability' WHERE username=" . $_SESSION['username'] . "'"); 
+		mysqli_query($db, "UPDATE driver SET availability='$availability' WHERE username=" . $_SESSION['username'] . "'");
 		header('location: ../../Driver_Dashboard/Driver_dashboard.php');
 	}
 
