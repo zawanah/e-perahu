@@ -1,4 +1,4 @@
-<?php include('../server.php');
+<?php include('DC_Reservation_DB.php');
 
 	// if (empty($_SESSION['username'])) {
   //       header('location: login.php');
@@ -53,18 +53,16 @@
           <div class="panel-heading">
             Packages
           </div>
+
           <div class="panel-body">
             <div class="row">
 
-              <form action=" PP_Reservation.php" method="POST">
               <div class="col-md-4 col-sm-6">
                 <div class="sc-product-item thumbnail">
                   <img data-name="product_image" src="build/img/1.png" alt="...">
                   <div class="caption">
                     <h4 data-name="product_name">One-Way Trip (BND$1)</h4>
-
                     <hr class="line">
-
                     <div>
 
                       <div class="form-group">
@@ -101,7 +99,7 @@
                         <input class="form-control input-sm" type="time" name="operationtime" min="06:00" max="21:00" required>
                       </div>
 
-                      value="One Way"
+
                       <input name="product_price" value="1.00" type="hidden" />
                       <input name="product_id" value="Package1" type="hidden" />
                       <button class="sc-add-to-cart btn btn-success btn-sm pull-right">Add to cart</button>
@@ -385,8 +383,6 @@
         <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="POST" onclick="">
 
           <!-- SmartCart element -->
-          <button type="button" name="button">Click Here To Confirm Your Reservation Before Payment</button>
-
           <div id="smartcart"></div>
 
           <!-- Paypal required info, update based on details -->
@@ -400,8 +396,8 @@
           <input name="cmd" value="_cart" type="hidden">
           <input name="upload" value="1" type="hidden">
 
-        </form>
       </form>
+
       </aside>
     </div>
   </section>
@@ -415,7 +411,6 @@
     $('#smartcart').smartCart({
       submitSettings: {
         submitType: 'paypal' // form, paypal, ajax
-
       },
       toolbarSettings: {
         checkoutButtonStyle: 'paypal' // default, paypal, image

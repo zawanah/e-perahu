@@ -1,15 +1,3 @@
-/*!
- * jQuery Smart Cart v3.0.1
- * The smart interactive jQuery Shopping Cart plugin with PayPal payment support
- * http://www.techlaboratory.net/smartcart
- *
- * Created by Dipu Raj
- * http://dipuraj.me
- *
- * Licensed under the terms of the MIT License
- * https://github.com/techlab/SmartCart/blob/master/LICENSE
- */
-
 ;(function ($, window, document, undefined) {
     "use strict";
     // Default options
@@ -338,7 +326,7 @@
                 elmMain.append(this._formatTemplate(this.options.cartItemTemplate, p));
 
                 var itemSummary = '<div class="sc-cart-item-summary"><span class="sc-cart-item-price">' + this._getMoneyFormatted(p[this.options.paramSettings.productPrice]) + '</span>';
-                itemSummary += ' × <input type="number" min="1" max="10" class="sc-cart-item-qty" value="' + this._getValueOrEmpty(p[this.options.paramSettings.productQuantity]) + '" />';
+                itemSummary += ' × <input type="number" onKeyDown="return false" min="1" max="10" class="sc-cart-item-qty" value="' + this._getValueOrEmpty(p[this.options.paramSettings.productQuantity]) + '" />';
                 itemSummary += ' = <span class="sc-cart-item-amount">' + this._getMoneyFormatted(productAmount) + '</span></div>';
 
                 elmMain.append(itemSummary);
