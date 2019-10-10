@@ -52,9 +52,8 @@
                                 <li class="active"><a href="index.php">Home</a></li>
                                 <li><a href="#">Information</a>
                                     <ul class="dropdown">
-                                        <li><a href="index.php">- Schedule</a></li>
                                         <li><a href="nlticketprice.php">- Ticket Price</a></li>
-                                        <li><a href="schedule.php">- promotion</a></li>
+                                        <li><a href="#">- promotion</a></li>
 
 
                                     </ul>
@@ -95,22 +94,17 @@
             </div>
 
             <!-- Single Slide -->
-            <div class="single-welcome-slide bg-img bg-overlay jarallax" style="background-image: url(img/bg-img/45.jpg);">
+            <div class="single-welcome-slide bg-img bg-overlay jarallax" style="background-image: url(img/reservation.jpg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <!-- Welcome Text -->
                         <div class="col-12">
                             <div class="welcome-text-two text-center">
-                                <h5 data-animation="fadeInUp" data-delay="100ms">The event consistently</h5>
-                                <h2 data-animation="fadeInUp" data-delay="300ms">OSHA Compliance</h2>
-                                <!-- Event Meta -->
-                                <div class="event-meta" data-animation="fadeInUp" data-delay="500ms">
-                                    <a class="event-date" href="#"><i class="zmdi zmdi-account"></i> January 14, 2019</a>
-                                    <a class="event-author" href="#"><i class="zmdi zmdi-alarm-check"></i> Laura Green</a>
-                                </div>
+                                <h5 data-animation="fadeInUp" data-delay="100ms">E-Perahu</h5>
+                                <h2 data-animation="fadeInUp" data-delay="300ms">Easy reservation</h2>
                                 <div class="hero-btn-group" data-animation="fadeInUp" data-delay="700ms">
-                                    <a href="#" class="btn confer-btn m-2">View more <i class="zmdi zmdi-long-arrow-right"></i></a>
-                                    <a href="#" class="btn confer-btn m-2">Get Tickets <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                    <a href="#" class="btn confer-btn m-2">Reserve now! </a>
+                                    <a href="#" class="btn confer-btn m-2">Ticket price </a>
                                 </div>
                             </div>
                         </div>
@@ -125,28 +119,20 @@
     <!-- Welcome Area End -->
 
     <!-- About Us And Countdown Area Start -->
-    <section class="about-us-countdown-area section-padding-100-0" id="about">
+    <section style="text-align: center;" class="about-us-countdown-area section-padding-100-0" id="about">
         <div class="container">
             <div class="row align-items-center">
                 <!-- About Content -->
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-12">
                     <div class="about-content-text mb-80">
                         <h6 class="wow fadeInUp" data-wow-delay="300ms">About E-Perahu</h6>
                         <h3 class="wow fadeInUp" data-wow-delay="300ms">Welcome to E-Perahu!</h3>
                         <p class="wow fadeInUp" data-wow-delay="300ms">The E-Perahu is a website based product</p>
-                        <a href="#" class="btn confer-btn mt-50 wow fadeInUp" data-wow-delay="300ms">More information <i class="zmdi zmdi-long-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- About Thumb -->
-                <div class="col-12 col-md-6">
-                    <div class="about-thumb mb-80 wow fadeInUp" data-wow-delay="300ms">
-                        <img src="" alt="">
+                        <a href="blog.php" class="btn confer-btn mt-50 wow fadeInUp" data-wow-delay="300ms">More information <i class="zmdi zmdi-long-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </div>
-
     </section>
     <!-- About Us And Countdown Area End -->
 
@@ -157,7 +143,7 @@
             <div class="container">
                 <div class="row">
                     <!-- Single Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="col-12 col-sm-6 col-lg-12">
                         <div class="single-footer-widget mb-60">
 
                             <!-- Widget Title -->

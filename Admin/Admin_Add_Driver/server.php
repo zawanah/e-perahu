@@ -102,6 +102,33 @@
 		header('location: ../../Driver_Dashboard/Driver_dashboard.php');
 	}
 
+	// rate and feedback
+    	$firstname = "";
+        $lastname = "";
+        $username = "";
+        $rate = "";
+        $feedback = "";
+
+        $errors = array();
+
+        $db = mysqli_connect('localhost', 'root', '', 'registration');
+
+        if (isset($_POST['submit'])) {
+        $firstname = mysqli_real_escape_string($db, $_POST['firstname']);
+        $lastname = mysqli_real_escape_string($db, $_POST['lastname']);
+        $username = mysqli_real_escape_string($db, $_POST['username']);
+        $rate = mysqli_real_escape_string($db, $_POST['rate']);
+        $feedback = mysqli_real_escape_string($db, $_POST['feedback']);
+
+        if (count($errors) == 0) {
+            $sql = "INSERT INTO orders (firstname, lastname, username, rate, feedback) VALUES ('$firstname', '$lastname', '$username', '$rate', '$feedback') WHERE id = '" . $_SESSION['id'] . "'";
+            mysqli_query($db, $sql);
+
+            $_SESSION['success'] = "You are now logged in";
+            header('Refresh:0'); // redirect to home page
+        }
+    }
+
 
 	// logout
 	if (isset($_GET['logout'])) {

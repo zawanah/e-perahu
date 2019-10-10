@@ -62,7 +62,6 @@
                                         <li><a href="index.php">- Schedule</a></li>
                                         <li><a href="ticketprice.php">- Ticket Price</a></li>
                                         <li><a href="drivers.php">- driver</a></li>
-                                        <li><a href="schedule.php">- promotion</a></li>
 
 
                                     </ul>
@@ -86,7 +85,7 @@
 
 
     <!-- header section -->
-<section style="background-color: white; background-image: url(img/backprofile.jpg);" class="bg-img">
+<section style="background-color: white; background-image: url(img/backprofile.jpg);" class="bg-img bg-gradient-overlay">
     <?php 
 
         $sql = "SELECT firstname, lastname, username, email, description FROM users WHERE username = '" . $_SESSION['username'] . "'";
@@ -97,7 +96,7 @@
     <div class="wow fadeInUp" style="padding-top: 180px; padding-bottom: 50px;">
         <div class="">
             <div class="col-md-12 col-sm-12">
-                <h1 class="" style="text-align: center; color: black ;">Your Profile</h1>
+                <h1 class="white" style="text-align: center;">Your Profile</h1>
             </div>
         </div>
     </div>
@@ -110,8 +109,8 @@
     </div>
     <div class="row">
         <div class="col-md-6 col-sm-12">
-            <div class="about bg-gradient-overlay wow fadeInUp">
-                <h2 class="white">Your username</h2>
+            <div style="background-color: #fff; border-radius: 25px;" class="about wow fadeInUp">
+                <h2 class="">Your username</h2>
                 <!-- <h2></h2> -->
                 </br>
                 </br>
@@ -142,8 +141,8 @@
             </div>
         </div> -->
         <div  class="col-md-6 col-sm-12">
-            <div class="about bg-gradient-overlay wow fadeInUp">
-                <h2 class="white">Fullname</h2>
+            <div style="background-color: #fff; border-radius: 25px;" class="about wow fadeInUp">
+                <h2 class="">Fullname</h2>
                 <!-- <h2></h2> -->
                 </br>
                 </br>
@@ -157,8 +156,8 @@
 <section class="container">
     <div class="row">
         <div class="col-md-8 col-sm-12">
-            <div class="education bg-gradient-overlay wow fadeInUp" style="border-radius: 15px;">
-                <h2 class="white">Your Description</h2>
+            <div class="education wow fadeInUp" style="background-color: #fff; border-radius: 25px;">
+                <h2 class="">Your Description</h2>
                 <br>
                 <br>
                     <div class="education-content">
@@ -169,8 +168,8 @@
             </div>
         </div>
         <div class="col-md-4 col-sm-12">
-            <div class="contact bg-gradient-overlay wow fadeInUp" style="border-radius: 15px;">
-                <h2 class="white">Contact</h2>
+            <div class="contact wow fadeInUp" style="background-color: #fff; border-radius: 25px;">
+                <h2 class="">Contact</h2>
                     <!-- <p style="color: #000;"><i class="fa fa-map-marker"></i> Bandar Seri Begawan, Brunei Darussalam</p> -->
                     <!-- <p style="color: #000;"><i class="fa fa-phone"></i></p> -->
                     <p style="color: #000;"><i class="fa fa-envelope"></i> <?php echo $row['email']; ?></p>

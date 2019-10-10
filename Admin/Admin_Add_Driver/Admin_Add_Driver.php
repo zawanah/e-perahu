@@ -38,7 +38,7 @@ include('server.php');
                 <nav class="classy-navbar justify-content-between" id="conferNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="./index.html"><img src="./img/core-img/logo.png" alt=""></a>
+                    <a class="nav-brand" href="./index.html"><img src="img/e-perahu.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -63,31 +63,16 @@ include('server.php');
     </header>
     <!-- Header Area End -->
 
-    <!-- Breadcrumb Area Start -->
-    <section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url(img/bg-img/37.jpg);">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <div class="breadcrumb-content">
-                        <h2 class="page-title">Add Driver</h2>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Breadcrumb Area End -->
-
 
 
                 <!-- Contact Form -->
-                <div class="col-12 col-lg-6">
+                <div style="padding-top: 150px;" class="col-12 col-lg-12">
                     <div class="contact_from_area mb-100 clearfix">
                     &ensp;
 
                     	<form method="post" action="Admin_Add_Driver.php">
                         <!-- Contact Heading -->
-                        <div class="contact-heading">
+                        <div style="text-align: center;" class="contact-heading">
                             <h4>Driver Information</h4>
                         </div>
                           &ensp;
@@ -142,7 +127,7 @@ include('server.php');
                                             </div>
                                         </div>
                                         <!-- Button -->
-                                        <div class="col-12">
+                                        <div class="col-6">
                                             <button type="submit" name="register2" class="btn confer-btn">Submit<i class="zmdi zmdi-long-arrow-right"></i></button>
                                         </div>
                                     </div>
@@ -164,31 +149,20 @@ include('server.php');
         <div class="main-footer-area">
             <div class="container">
                 <div class="row">
-
-
                     <!-- Single Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="col-12 col-sm-6 col-lg-12">
                         <div class="single-footer-widget mb-60">
+
                             <!-- Widget Title -->
                             <h5 class="widget-title">Contact</h5>
 
                             <!-- Contact Area -->
                             <div class="footer-contact-info">
                                 <p><i class="zmdi zmdi-map"></i> Bandar Seri Begawan</p>
-                                <p><i class="zmdi zmdi-phone"></i> (+673) 1234567</p>
-                                <p><i class="zmdi zmdi-email"></i> e-perahu@gmail.com</p>
-                                <p><i class="zmdi zmdi-globe"></i> www.e-perahu.com</p>
+                                <p><i class="zmdi zmdi-phone"></i> (+673) 2123456</p>
+                                <p><i class="zmdi zmdi-email"></i> -e-perahu@gmail.com</p>
+                                <p><i class="zmdi zmdi-globe"></i> www.e-perahu.net</p>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- Footer Menu -->
-                    <div class="col-12 col-md-6">
-                        <div class="footer-menu">
-                            <ul class="nav">
-                                <li><a href="#"><i class="zmdi zmdi-circle"></i> Terms of Service</a></li>
-                                <li><a href="#"><i class="zmdi zmdi-circle"></i> Privacy Policy</a></li>
-                            </ul>
                         </div>
                     </div>
                 </div>

@@ -64,6 +64,16 @@
 		header('location: Driver_dashboard.php');
 	}
 
+	// feedback button
+	if (isset($_GET['getfeedback'])) {
+	    $id = $_GET['getfeedback'];
+	    $update = true;
+	    $record = mysqli_query($db, "SELECT * FROM driver WHERE id='$id'");
+
+	    $_SESSION['id'] = $id;
+
+	    }
+
 	// logout
 	if (isset($_GET['logout'])) {
 		session_destroy();

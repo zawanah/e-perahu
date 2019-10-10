@@ -85,14 +85,13 @@
             <div class="col-12"><br>
                 <a href="../Driver_ListOfCustomer/Driver_ListOfCustomer.php?del=<?php $_SESSION['id'] = $id; ?>"><button type="submit" name="del" class="btn btn-primary">Proceed </button></a>
                 &nbsp; &nbsp; &nbsp;
-                <a href="editprofile.php"><button type="submit" class="btn btn-danger">Cancel </button></a>
+                <button type="submit" class="btn btn-danger" onclick="history.back();">Cancel </button>
             </div>
         </div>
     </div>
 </section>                        
 
     
-
     <!-- **** All JS Files ***** -->
     <!-- jQuery 2.2.4 -->
     <script src="js/jquery.min.js"></script>

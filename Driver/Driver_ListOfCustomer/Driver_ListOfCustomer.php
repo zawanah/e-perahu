@@ -78,12 +78,12 @@
     <!-- Header Area End -->
 
     <!-- Our Schedule Area Start -->
-    <section class="bg-img bg-gradient-overlay" style="background-image: url(img/bg-img/backticket.jpg);" class="our-schedule-area">
+    <section class="bg-img bg-gradient-overlay" style="" class="our-schedule-area">
         <!-- Heading -->
             <div style="padding-top: 150px;">
                 <div class="col-12">
                     <div class="section-heading-3 text-center wow fadeInUp" data-wow-delay="300ms">
-                        <h4><font color="white">List of Customers</font></h4>
+                        <h4><font color="white">Customers Feedback</font></h4>
                     </div>
                 </div>
             </div>

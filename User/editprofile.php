@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>e-perahu Edit Profile</title>
+    <title>E-perahu Edit Profile</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/e-perahu.png">
@@ -57,7 +57,7 @@
 
 
                             <!-- Logout Button -->
-                            <a href="profile.php?logout='1'" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="editprofile.php?logout='1'" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                         <!-- Nav End -->
                     </div>
@@ -67,23 +67,8 @@
     </header>
     <!-- Header Area End -->
 
-    <!-- Breadcrumb Area Start -->
-    <section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url(img/backprofile.jpg);">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <div class="breadcrumb-content">
-                        <h2 class="page-title">Edit Profile</h2>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Breadcrumb Area End -->
-
-    <!-- Our Blog Area Start -->
-    <div class="container bootstrap snippet">
+    <!-- Edit Profile Area Start -->
+    <div style="padding-top: 150px;" class="container bootstrap snippet">
       &ensp;
             <h3>Profile info</h3>
       &ensp;

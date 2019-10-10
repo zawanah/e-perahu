@@ -1,4 +1,4 @@
-<?php include('../Admin/Admin_Add_Driver/server.php');
+<?php include('server.php');
 
 ?>
 
@@ -13,10 +13,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>E-Perahu - User Profile</title>
+    <title>E-Perahu - Driver Profile</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="./img/core-img/favicon.png">
+    <link rel="icon" href="img/e-perahu.png">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -87,7 +87,7 @@
 <section style="background-color: white; background-image: url(img/backprofile.jpg);" class="bg-img">
     <?php 
 
-        $sql = "SELECT fname, lname, username, email, phone_no, reg_no, availability FROM driver WHERE id = '" . $_SESSION['id'] . "'";
+        $sql = "SELECT id, fname, lname, username, email, phone_no, reg_no, availability FROM driver WHERE id = '" . $_SESSION['id'] . "'";
 
         $result = mysqli_query($db, $sql);
         $row = mysqli_fetch_array($result);
@@ -112,33 +112,9 @@
                 <h4 style="text-align: center;"><?php echo $row['fname']; ?>&nbsp;<?php echo $row['lname']; ?></h4>
             </div>
         </div>
-        <!-- <div class="col-md-6 col-sm-12">
-            <div class="skills bg-gradient-overlay wow fadeInUp" style="background-color: #ffffff; border-radius: 15px;">
-                <h2 style="color: #ffffff;">Skills</h2>
-                <strong style="color: #ffffff;">PHP MySQL</strong>
-                <span style="color: #ffffff;" class="pull-right">70%</span>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-primary" role="progressbar" 
-                        aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
-                    </div>
-                <strong style="color: #ffffff;">UI/UX Design</strong>
-                <span style="color: #ffffff;" class="pull-right">85%</span>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-primary" role="progressbar" 
-                        aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
-                    </div>
-                <strong style="color: #ffffff;">Bootstrap</strong>
-                <span style="color: #ffffff;" class="pull-right">95%</span>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-primary" role="progressbar" 
-                        aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;"></div>
-                    </div>
-            </div>
-        </div> -->
         <div  class="col-md-6 col-sm-12">
             <div class="about bg-gradient-overlay wow fadeInUp">
                 <h2 class="white">Boat Registration No.</h2>
-                <!-- <h2></h2> -->
                 </br>
                 </br>
                 <h4 style="text-align: center;"><?php echo $row['reg_no']; ?></h4>
@@ -188,7 +164,146 @@
         </div>
     </div>
 </section>
-</section>
+
+<!-- Our Ratings and Feedbacks Area Start -->
+    <section class="bg-img bg-gradient-overlay" style="" class="our-schedule-area">
+        <!-- Heading -->
+            <div style="padding-top: 30px;">
+                <div class="col-12">
+                    <div class="section-heading-3 text-center wow fadeInUp" data-wow-delay="300ms">
+                        <h4><font color="white">Ratings and Feedback</font></h4>
+                    </div>
+                </div>
+            </div>
+        <div class="container" style="padding-bottom: 80px;">
+            <div class="row">
+                <div class="col-12">
+
+                    <!-- Tab Content -->
+                    <div class="tab-content" id="conferScheduleTabContent">
+                        <div class="tab-pane fade show active" id="step-one" role="tabpanel" aria-labelledby="monday-tab">
+                            <!-- Single Tab Content -->
+                            <?php 
+                            $conn = mysqli_connect("localhost", "root", "", "registration");
+                            // Check connection
+                            if ($conn->connect_error) {
+                            die("Connection failed: " . $conn->connect_error);
+                            }
+                            $sql = "SELECT username, firstname, lastname, rate, feedback, PersonID FROM orders where PersonID = " . $_SESSION['id'] . "";
+                            $result = $conn->query($sql);
+                                if ($result->num_rows > 0) {
+                                // output data of each row
+                                while($row1 = $result->fetch_assoc()) {
+                            echo "<div class='single-tab-content'>
+                                    <div class='row'>
+                                        <div class='col-12'>
+                                            <div style='background-color: #ffffff;' class='single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp' data-wow-delay='300ms'>
+                                                    
+
+                                                <div class='single-schedule-tumb-info d-flex align-items-center'>
+                                                    <div class='single-schedule-info'>
+
+                                                    
+                                                        <p> <h6>" . $row1["username"] . "</h6>
+                                                        <p>" . $row1["firstname"] ."&nbsp;". $row1["lastname"] ."</p>
+                                                        </p>
+                                                    
+                                                    </div>
+                                            </div>
+                                            <div class='schedule-time-place'>
+                                                <h6 style='text-align:center;'>" . $row1["rate"] . "/5 </h6>
+                                                <br>
+                                                <p style='text-align:center;'>" . $row1["feedback"] . " </p>
+                                            </div>
+                                        </div>" ;
+                                                    } echo "</div>";
+                                                    } else { echo "0 results"; }
+                                                    $conn->close();
+                                        ?>
+                                </div>
+                            </div>
+                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Our Driver Area End -->
+
+<!-- Contact Us Area Start -->
+    <section style="padding-top: 40px;" class="contact--us-area wow fadeInUp bg-white">
+        <div class="container">
+            <div class="row">
+
+                <!-- Contact Form -->
+                <div class="col-12">
+                    <div class="contact_from_area mb-100 clearfix">
+                        <!-- Contact Heading -->
+                        <div style="padding-bottom: 20px;" class="contact-heading">
+                            <h2 style="text-align: center;">Leave your feedback for this driver</h2>
+                        </div>
+                        <div class="contact_form">
+                            <form method="post">
+                                <?php
+                                    $db = mysqli_connect('localhost', 'root', '', 'registration');
+                                    $sql = "SELECT username, firstname, lastname FROM users WHERE username = '" . $_SESSION['username'] . "'";
+
+                                    $result = mysqli_query($db, $sql);
+                                    $row2 = mysqli_fetch_array($result); 
+                                ?>
+                                <div class="contact_input_area">
+                                    <div class="row">
+                                        <!-- Form Group -->
+                                                <input type="hidden" class="form-control mb-30" name="personid" value="<?php echo $row['id']; ?>">
+
+                                                <input type="hidden" class="form-control mb-30" name="firstname" id="name" placeholder="First Name" value="<?php echo $row2['firstname']; ?>">
+                                            
+                                        <!-- Form Group -->
+                                        
+                                                <input type="hidden" class="form-control mb-30" name="lastname" id="name-2" placeholder="Last Name" value="<?php echo $row2['lastname']; ?>">
+                                            
+                                        <!-- Form Group -->
+                                        
+                                            
+                                                <input type="hidden" class="form-control mb-30" name="username" id="email" placeholder="Your E-mail" value="<?php echo $row2['username']; ?>">
+                                            
+                                        <!-- Form Group -->
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <p>Your Rating:</p>
+                                        <select name="rate" class="form-control mb-30">
+                                          <option value="1">1</option>
+                                          <option value="2">2</option>
+                                          <option value="3">3</option>
+                                          <option value="4">4</option>
+                                          <option value="5">5</option>
+                                        </select>
+                                            </div>
+                                        </div>
+                                        <!-- Form Group -->
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <p>Your Feedback:</p>
+                                                <textarea name="feedback" class="form-control mb-30" cols="30" rows="6" placeholder="" required></textarea>
+                                            </div>
+                                        </div>
+                                        <!-- Button -->
+                                        <div class="col-12">
+                                            <button type="submit" name="submit2" class="btn confer-btn">Submit <i class="zmdi zmdi-long-arrow-right"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Us Area End -->
 
 
         

@@ -1,4 +1,4 @@
-<?php include('../Driver_Login/server.php');
+<?php include('../../User/server.php');
 
     // // if user is not logged in, they cannot access this page
     // if (empty($_SESSION['username'])) {
@@ -7,7 +7,7 @@
 
 ?>
 <?php
-    $sql = "SELECT availability FROM driver WHERE username = '" . $_SESSION['username'] . "'";
+    $sql = "SELECT id, availability FROM driver WHERE username = '" . $_SESSION['username'] . "'";
 
     $result = mysqli_query($db, $sql);
     $row = mysqli_fetch_array($result); 
@@ -30,6 +30,8 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
+
+    <script href="js/togglebutton.js"></script>
 
 </head>
 
@@ -67,28 +69,15 @@
                             <!-- Rounded switch -->
                             <form method="post">
                                 <div style="text-align: center;">
-                                    <label class="switch">
-                                        <input type="checkbox" name="availability" value="Online" onclick="this.form.submit();"/>
-                                        <label>Online</label>
-                                        <span class="slider round"></span>
-                                        <input type="checkbox" name="availability" value="Offline" onclick="this.form.submit();"/>
-                                        <label>Offline</label>
-                                        <span class="slider round"></span>
-                                    </label>
+                                <button class="btn btn-success" name="availability" value="Online" onclick="this.form.submit();"/>Go Online</button>&nbsp;&nbsp;
+                                <button class="btn btn-danger" name="availability" value="Offline" onclick="this.form.submit();"/>Go Offline</button>
                                 </div>
-                                <!-- <label class="switch">
-                                <input type="checkbox" name="availability" value="Online" onclick="this.form.submit();"/>
-                                <span class="slider round"></span>
-                                <label class="switch">Online</label>
-                                <input type="checkbox" name="availability" value="Offline" onclick="this.form.submit();"/>
-                                <span class="slider round"></span>
-                                <label class="switch">Offline</label>
-                                </label> -->
+                                </label>
                             </form>
                             <!-- Logout Button -->
                             </br>
                             <div style="text-align: center;">
-                            <a href="Driver_dashboard.php?logout='1'" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="Driver_dashboard.php?logoutdriver='1'" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
                             </div>
                         </div>
                         <!-- Nav End -->
@@ -137,7 +126,7 @@
                             <p>Viewing customer feedback</p>
                         </div>
                         <div class="blog-btn">
-                            <a href="../Driver_Feedback/Driver_Feedback.php"><i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="../Driver_Feedback/Driver_Feedback.php?getfeedback=<?php echo $row['id']; ?>"><i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -155,11 +144,8 @@
             <div class="container">
                 <div class="row">
                     <!-- Single Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="col-12 col-sm-6 col-lg-12">
                         <div class="single-footer-widget mb-60">
-                            <!-- Footer Logo -->
-                            <a href="Driver_dashboard.php" class="footer-logo"><img src="img/core-img/logo.png" alt=""></a>
-
 
                             <!-- Widget Title -->
                             <h5 class="widget-title">Contact</h5>
@@ -173,6 +159,11 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Area End -->
 
     <!-- **** All JS Files ***** -->
     <!-- jQuery 2.2.4 -->

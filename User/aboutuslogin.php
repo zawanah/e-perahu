@@ -1,30 +1,4 @@
-<?php session_start();
-        $firstname = "";
-        $lastname = "";
-        $email = "";
-        $phonenumber = "";
-        $message = "";
-
-        $errors = array();
-
-        $db = mysqli_connect('localhost', 'root', '', 'registration');
-
-        if (isset($_POST['submit'])) {
-        $firstname = mysqli_real_escape_string($db, $_POST['firstname']);
-        $lastname = mysqli_real_escape_string($db, $_POST['lastname']);
-        $email = mysqli_real_escape_string($db, $_POST['email']);
-        $phonenumber = mysqli_real_escape_string($db, $_POST['phonenumber']);
-        $message = mysqli_real_escape_string($db, $_POST['message']);
-
-        if (count($errors) == 0) {
-            $password = md5($password_1); // encrypt password
-            $sql = "INSERT INTO contact (firstname, lastname, email, phonenumber, message) VALUES ('$firstname', '$lastname', '$email', '$phonenumber', '$message')";
-            mysqli_query($db, $sql);
-
-            $_SESSION['success'] = "You are now logged in";
-            header('location: aboutus.php'); // redirect to home page
-        }
-    }
+<?php include('server.php');
 
 ?>
 
@@ -63,7 +37,7 @@
                 <nav class="classy-navbar justify-content-between" id="conferNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="index.php"><img src="img/e-perahu.png" alt=""></a>
+                    <a class="nav-brand" href="./indexuser.php"><img src="img/e-perahu.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -79,20 +53,23 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul id="nav">
-                                <li class="active"><a href="index.php">Home</a></li>
+                                <li class="active"><a href="indexuser.php">Home</a></li>
                                 <li><a href="#">Information</a>
                                     <ul class="dropdown">
-                                        <li><a href="nlticketprice.php">- Ticket Price</a></li>
-                                        <li><a href="#">- promotion</a></li>
+                                        <li><a href="profile.php">- My Profile</a></li>
+                                        <li><a href="ticketprice.php">- Ticket Price</a></li>
+                                        <li><a href="drivers.php">- driver</a></li>
+                                        <li><a href="promotion.php">- Promotion</a></li>
 
 
                                     </ul>
                                 </li>
-                                <li><a href="aboutus.php">About Us</a></li>
+                                <li><a href="tickethistory.php">Ticket History</a></li>
+                                <li><a href="aboutuslogin.php">About Us</a></li>
                             </ul>
 
-                            <!-- Login Button -->
-                            <a href="login.php" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Login <i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <!-- Logout Button -->
+                            <a href="profile.php?logout='1'" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                         <!-- Nav End -->
                     </div>
@@ -146,30 +123,36 @@
                         </div>
                         <div class="contact_form">
                             <form method="post">
+                                <?php
+                                    $sql = "SELECT firstname, lastname, email FROM users WHERE username = '" . $_SESSION['username'] . "'";
+
+                                    $result = mysqli_query($db, $sql);
+                                    $row = mysqli_fetch_array($result); 
+                                ?>
                                 <div class="contact_input_area">
                                     <div class="row">
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="firstname" id="name" placeholder="First Name" required>
+                                                <input type="text" class="form-control mb-30" name="firstname" id="name" placeholder="First Name" value="<?php echo $row['firstname']; ?>">
                                             </div>
                                         </div>
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="lastname" id="name-2" placeholder="Last Name" required>
+                                                <input type="text" class="form-control mb-30" name="lastname" id="name-2" placeholder="Last Name" value="<?php echo $row['lastname']; ?>">
                                             </div>
                                         </div>
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="email" class="form-control mb-30" name="email" id="email" placeholder="Your E-mail" required>
+                                                <input type="email" class="form-control mb-30" name="email" id="email" placeholder="Your E-mail" value="<?php echo $row['email']; ?>">
                                             </div>
                                         </div>
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="phonenumber" id="subject" placeholder="Your Phone Number">
+                                                <input type="text" class="form-control mb-30" name="phonenumber" placeholder="Your Phone Number">
                                             </div>
                                         </div>
                                         <!-- Form Group -->

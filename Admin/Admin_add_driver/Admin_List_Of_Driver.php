@@ -146,7 +146,7 @@
                   <td>". $row["email"]. "</td>
                   <td>". $row["reg_no"]. "</td>
 
-                  <td><a href='Admin_Edit_Driver.php?edit= " . $row["id"] . " '><button type='submit' name='edit' class='btn btn-outline-danger btn-lg'>EDIT</button></a></td>
+                  <td><a href='Admin_Edit_Driver.php?edit= " . $row["id"] . " '><button type='submit' name='edit' class='btn btn-outline-primary btn-lg'>EDIT</button></a></td>
 
                   
                    <td><a href='server.php?del= " . $row["id"] . " '><button type='submit' name='del' class='btn btn-outline-danger btn-lg'>DELETE</button></a></td>

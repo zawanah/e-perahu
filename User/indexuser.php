@@ -62,16 +62,15 @@
                                 <li><a href="#">Information</a>
                                     <ul class="dropdown">
                                         <li><a href="profile.php">- My Profile</a></li>
-                                        <li><a href="">- Schedule</a></li>
                                         <li><a href="ticketprice.php">- Ticket Price</a></li>
                                         <li><a href="drivers.php">- driver</a></li>
-                                        <li><a href="schedule.php">- promotion</a></li>
+                                        <li><a href="#">- promotion</a></li>
 
 
                                     </ul>
                                 </li>
                                 <li><a href="tickethistory.php">Ticket History</a></li>
-                                <li><a href="aboutus.php">About Us</a></li>
+                                <li><a href="aboutuslogin.php">About Us</a></li>
                             </ul>
 
                             <a href="indexuser.php?logout='1'" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>

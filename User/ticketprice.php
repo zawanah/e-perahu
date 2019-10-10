@@ -13,10 +13,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>Confer - Conference Event HTML Template</title>
+    <title>E-Perahu - Ticket Price</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="./img/core-img/favicon.png">
+    <link rel="icon" href="img/e-perahu.png">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -58,21 +58,19 @@
                                 <li><a href="#">Information</a>
                                     <ul class="dropdown">
                                         <li><a href="profile.php">- My Profile</a></li>
-                                        <li><a href="">- Schedule</a></li>
                                         <li><a href="ticketprice.php">- Ticket Price</a></li>
-                                        <li><a href="speakers.php">- Driver</a></li>
-                                        <li><a href="tickets.php">- Promotion</a></li>
+                                        <li><a href="drivers.php">- Driver</a></li>
+                                        <li><a href="#">- Promotion</a></li>
 
 
 
                                     </ul>
                                 </li>
-                                <li><a href="">Ticket History</a></li>
-                                <li><a href="blog.php">About Us</a></li>
-                                <li><a href="contact.php">Feedback</a></li>
+                                <li><a href="tickethistory.php">Ticket History</a></li>
+                                <li><a href="aboutus.php">About Us</a></li>
                             </ul>
                             <!-- logout button -->
-                            <a href="about.php?logout='1'" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="ticketprice.php?logout='1'" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                         <!-- Nav End -->
                     </div>
