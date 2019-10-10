@@ -13,23 +13,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="icon" type="image/png" href="images/icons/e-perahu-icon.png"/>
-
-	<!-- <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css"> -->
-
-	<!-- <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"> -->
-
-	<!-- <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css"> -->
-
-	<!-- <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css"> -->
-
-	<!-- <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css"> -->
+	<link rel="icon" type="image/png" href="build/img/icon.png"/>
 
 	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
 
-	<!-- <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css"> -->
-
-	<!-- <link rel="stylesheet" type="text/css" href="css/util.css"> -->
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
 	<!-- For phone number validation -->
@@ -148,19 +135,19 @@
 					<span class="focus-input100"></span>
 				</div>
 
-				<div class="wrap-input100 validate-input" data-validate="Name is required">
+				<div class="wrap-input100 validate-input">
 					<span class="label-input100">Pickup Date</span>
 					<input class="datepicker input100" type="text" name="pickupdate" placeholder="MM/DD/YYYY" autocomplete="off" required>
 					<span class="focus-input100"></span>
 				</div>
 
-				<div class="wrap-input100 validate-input" data-validate="Name is required">
+				<div class="wrap-input100 validate-input">
 					<span class="label-input100">Operation Time (6AM-9PM)</span>
 					<input class="input100" type="time" name="operationtime" min="06:00" max="21:00" required>
 					<span class="focus-input100"></span>
 				</div>
 
-				<div class="wrap-input100 validate-input" data-validate="Name is required">
+				<div class="wrap-input100 validate-input">
 					<span class="label-input100">Owner Name</span>
 					<input class="input100" type="text" id="owner" name="ownername" autocomplete="off" required>
 					<span class="focus-input100"></span>
@@ -171,22 +158,22 @@
 					<img src="build/img/mastercard.jpg" id="mastercard">
 				</div>
 
-				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+				<div class="wrap-input100 validate-input">
 					<span class="label-input100">Card Number</span>
-					<input class="input100" type="text" id="cardNumber" name="debitnumber" autocomplete="off">
+					<input class="input100" type="text" id="cardNumber" name="debitnumber" autocomplete="off" required>
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input">
 					<span class="label-input100">Card CVV</span>
-					<input class="input100" type="text" id="cvv" name="debitcvv" maxlength="3" autocomplete="off">
+					<input class="input100" type="text" id="cvv" name="debitcvv" maxlength="3" autocomplete="off" required>
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 input100-select">
 					<span class="label-input100">Expiration Month</span>
 					<div>
-						<select class="selection-2" name="expmonth" autocomplete="off">
+						<select class="selection-2" name="expmonth" autocomplete="off" required>
 							<option value="01">January</option>
 							<option value="02">February </option>
 							<option value="03">March</option>
@@ -207,7 +194,7 @@
 				<div class="wrap-input100 input100-select">
 					<span class="label-input100">Expiration Year</span>
 					<div>
-						<select class="selection-2" name="expyear" autocomplete="off">
+						<select class="selection-2" name="expyear" autocomplete="off" required>
 							<option value="19"> 2019</option>
 							<option value="20"> 2020</option>
 							<option value="21"> 2021</option>
@@ -239,7 +226,7 @@
 					<span class="focus-input100"></span>
 				</div>
 
-				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+				<div class="wrap-input100 validate-input">
 					<span class="label-input100">Total Cost</span>
 					<div class="wrap-input100 validate-input" id="totalPrice">
 				</div>
@@ -266,19 +253,12 @@
 		</div>
 	</div>
 
-
-
 	<div id="dropDownSelect1"></div>
 
 	<!-- For card validation -->
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="build/js/jquery.payform.min.js" charset="utf-8"></script>
 	<script src="build/js/cardscript.js"></script>
-
-	<!-- <script src="vendor/jquery/jquery-3.2.1.min.js"></script> -->
-	<!-- <script src="vendor/animsition/js/animsition.min.js"></script> -->
-	<!-- <script src="vendor/bootstrap/js/popper.js"></script> -->
-	<!-- <script src="vendor/bootstrap/js/bootstrap.min.js"></script> -->
 
 	<script src="vendor/select2/select2.min.js"></script>
 	<script>
@@ -288,20 +268,9 @@
 		});
 	</script>
 
-	<!-- <script src="vendor/daterangepicker/moment.min.js"></script> -->
-	<!-- <script src="vendor/daterangepicker/daterangepicker.js"></script> -->
-	<!-- <script src="vendor/countdowntime/countdowntime.js"></script> -->
 	<script src="js/main.js"></script>
 
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-23581568-13');
-</script>
+</script> -->
 
 </body>
 </html>
