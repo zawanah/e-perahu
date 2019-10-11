@@ -32,6 +32,7 @@
 	$availability= "";
 
 	$errors = array();
+	$success = array();
 
 	$db = mysqli_connect('localhost', 'root', '', 'registration');
 
@@ -44,8 +45,6 @@
 		$description = mysqli_real_escape_string($db, $_POST['description']);
 		$password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
 		$password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
-
-
 
 		// ensure that form fields are filled properly
 		if (empty($firstname)) {
@@ -74,6 +73,7 @@
 			array_push($errors, "- The two passwords do not match");
 		}
 
+		// Check if username already exists
 		$userquery = "SELECT * FROM users WHERE username='$username'";
 		$result = mysqli_query($db, $userquery);
 
@@ -91,13 +91,8 @@
 		// if there are no errors, save user to database
 		if (count($errors) == 0) {
 			$password = md5($password_1); // encrypt password
-			$sql = "INSERT INTO users (firstname, lastname, username, email, password, description) VALUES ('$firstname', '$lastname', '$username', '$email', '$password', '$description')";
-			mysqli_query($db, $sql);
-
-
-			$_SESSION['username'] = $username;
-			$_SESSION['success'] = "You are now logged in";
-			header('location: login.php'); // redirect to home page
+			$sql = mysqli_query($db, "INSERT INTO users (firstname, lastname, username, email, password, description) VALUES ('$firstname', '$lastname', '$username', '$email', '$password', '$description')");
+			array_push($success, "Your account has created successfully!");
 		}
 	}
 
@@ -140,9 +135,9 @@
   		}
   		//save this user and pass as cookie if remember checked end
 
-  		$sql = "SELECT firstname, lastname, email, description FROM users WHERE username = '" . $_SESSION['username'] . "'";
+  		$sql2 = "SELECT firstname, lastname, email, description FROM users WHERE username = '" . $_SESSION['username'] . "'";
 
-  		$result = mysqli_query($db, $sql);
+  		$result = mysqli_query($db, $sql2);
   		$row = mysqli_fetch_array($result);
 
 
@@ -186,8 +181,8 @@
 			array_push($errors, "Phone Number is required");
 		}
         	if (count($errors) == 0) {
-            $sql = "INSERT INTO orders (firstname, lastname, username, rate, feedback, personid) VALUES ('$firstname', '$lastname', '$username', '$rate', '$feedback', '$personid')" ;
-            mysqli_query($db, $sql);
+            $sql3 = "INSERT INTO orders (firstname, lastname, username, rate, feedback, personid) VALUES ('$firstname', '$lastname', '$username', '$rate', '$feedback', '$personid')" ;
+            mysqli_query($db, $sql3);
 
             $_SESSION['successful'] = "Sent";
             header('Refresh:0'); // refresh page
@@ -250,9 +245,9 @@
 		}
 
 		if (count($errors) == 0) {
-			$sql = "INSERT INTO reservationtable (firstname, lastname, username, email, phone, selectedticket, pickup, destination, pickupdate, operationtime, ownername, debitnumber, debitcvv, expmonth, expyear, types)
+			$sql4 = "INSERT INTO reservationtable (firstname, lastname, username, email, phone, selectedticket, pickup, destination, pickupdate, operationtime, ownername, debitnumber, debitcvv, expmonth, expyear, types)
 			VALUES ('$firstname', '$lastname', '$username', '$email', '$phone', '$selectedticket', '$pickup', '$destination', '$pickupdate', '$operationtime', '$ownername', '$debitnumber', '$debitcvv', '$expmonth', '$expyear', '$types')";
-			mysqli_query($db2, $sql);
+			mysqli_query($db2, $sql4);
 			$_SESSION['success'] = "Payment Successful";
 			header('location: ../indexuser.php'); // redirect to home page
 		}
@@ -301,9 +296,9 @@
 		}
 
 		if (count($errors) == 0) {
-			$sql = "INSERT INTO reservationdriver (firstname, lastname, username, email, phone, selectedticket, pickup, destination, pickupdate, operationtime)
+			$sql4 = "INSERT INTO reservationdriver (firstname, lastname, username, email, phone, selectedticket, pickup, destination, pickupdate, operationtime)
 			VALUES ('$firstname', '$lastname', '$username', '$email', '$phone', '$selectedticket', '$pickup', '$destination', '$pickupdate', '$operationtime')";
-			mysqli_query($db2, $sql);
+			mysqli_query($db2, $sql4);
 			$_SESSION['success'] = "Payment Successful";
 			header('location: ../indexuser.php'); // redirect to home page
 		}

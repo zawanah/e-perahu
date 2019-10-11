@@ -1,7 +1,4 @@
-<?php include('server.php'); 
-
-?>
-
+<?php include('server.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +29,6 @@
 <!--===============================================================================================-->
 </head>
 <body>
-
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
