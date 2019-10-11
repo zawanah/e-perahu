@@ -92,95 +92,21 @@
     <div class="wow fadeInUp" style="padding-top: 180px; padding-bottom: 50px;">
         <div class="">
             <div class="col-md-12 col-sm-12">
-                <h1 class="white" style="text-align: center;">Your Profile</h1>
+                <h1 class="white" style="text-align: center;">Payment Successful,</h1>
+                <br>
+                <h1 class="white" style="text-align: center;">Ticket saved at 'Ticket History'</h1>
             </div>
         </div>
     </div>
 
-<!-- about and skills section -->
 <section class="container">
     <div style="padding-bottom: 20px;" class="col-12 wow fadeInUp">
-        <br>
-        <a href="editprofile.php"><button type="submit" class="btn confer-btn">Edit My Profile <i class="zmdi zmdi-long-arrow-right"></i></button></a>
     </div>
     <div class="row">
-        <div class="col-md-6 col-sm-12">
-            <div style="background-color: #fff; border-radius: 25px;" class="about wow fadeInUp">
-                <h2 class="">Your username</h2>
-                <!-- <h2></h2> -->
-                </br>
-                </br>
-                <h4 style="text-align: center;"><?php echo $row['username']; ?></h4>
-            </div>
-        </div>
-        <!-- <div class="col-md-6 col-sm-12">
-            <div class="skills bg-gradient-overlay wow fadeInUp" style="background-color: #ffffff; border-radius: 15px;">
-                <h2 style="color: #ffffff;">Skills</h2>
-                <strong style="color: #ffffff;">PHP MySQL</strong>
-                <span style="color: #ffffff;" class="pull-right">70%</span>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-primary" role="progressbar"
-                        aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
-                    </div>
-                <strong style="color: #ffffff;">UI/UX Design</strong>
-                <span style="color: #ffffff;" class="pull-right">85%</span>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-primary" role="progressbar"
-                        aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
-                    </div>
-                <strong style="color: #ffffff;">Bootstrap</strong>
-                <span style="color: #ffffff;" class="pull-right">95%</span>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-primary" role="progressbar"
-                        aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;"></div>
-                    </div>
-            </div>
-        </div> -->
-        <div  class="col-md-6 col-sm-12">
-            <div style="background-color: #fff; border-radius: 25px;" class="about wow fadeInUp">
-                <h2 class="">Fullname</h2>
-                <!-- <h2></h2> -->
-                </br>
-                </br>
-                <h4 style="text-align: center;"><?php echo $row['firstname']; ?>&nbsp;<?php echo $row['lastname']; ?></h4>
-            </div>
+        <div class="col-2">
+          <br><br><br><br><br>
         </div>
     </div>
-</section>
-
-<!-- education and languages -->
-<section class="container">
-    <div class="row">
-        <div class="col-md-8 col-sm-12">
-            <div class="education wow fadeInUp" style="background-color: #fff; border-radius: 25px;">
-                <h2 class="">Your Description</h2>
-                <br>
-                <br>
-                    <div class="education-content">
-                            <div class="education-school">
-                                <h5><?php echo $row['description']; ?></h5>
-                            </div>
-                    </div>
-            </div>
-        </div>
-        <div class="col-md-4 col-sm-12">
-            <div class="contact wow fadeInUp" style="background-color: #fff; border-radius: 25px;">
-                <h2 class="">Contact</h2>
-                    <!-- <p style="color: #000;"><i class="fa fa-map-marker"></i> Bandar Seri Begawan, Brunei Darussalam</p> -->
-                    <!-- <p style="color: #000;"><i class="fa fa-phone"></i></p> -->
-                    <p style="color: #000;"><i class="fa fa-envelope"></i> <?php echo $row['email']; ?></p>
-                    <!-- <p style="color: #000;"><i class="fa fa-globe"></i></p> -->
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- contact and experience -->
-<section class="container" style="padding-bottom: 50px;">
-    <div class="row">
-
-    </div>
-</section>
 </section>
 
 
