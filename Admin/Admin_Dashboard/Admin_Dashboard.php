@@ -132,13 +132,13 @@
                             <img src="img/s_p.png" alt="Promotion Icon">
                         </div>
                         <div class="single-blog-text text-center">
-                            <a class="blog-title" href="promo.php">Promotion Page</a>
+                            <a class="blog-title" href="promolist.php">Promotion Page</a>
                             <!-- Post Meta -->
 
                             <p>View Promotion </p>
                         </div>
                         <div class="blog-btn">
-                            <a href="promo.php"><i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="promolist.php"><i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>

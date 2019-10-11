@@ -72,6 +72,12 @@
 		}
 	}
 
+	if (isset($_GET['delete'])) {
+		$promoid = $_GET['delete'];
+		mysqli_query($db, "DELETE FROM promotion WHERE promoid ='$promoid'");
+		header("promolist.php");
+	}
+
 	// logout
 	if (isset($_GET['logout'])) {
 		session_destroy();
