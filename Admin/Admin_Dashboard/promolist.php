@@ -19,10 +19,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <!-- Title -->
-    <title>Admin List Of Driver</title>
+    <title>Admin List Of Promotions</title>
 
     <!-- Favicon -->
-    <!-- <link rel="icon" href="./img/core-img/favicon.png"> -->
+    <link rel="icon" href="img/e-perahu.png">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -76,7 +76,7 @@
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                     <div class="breadcrumb-content">
-                        <h2 class="page-title">List of Drivers</h2>
+                        <h2 class="page-title">List of Promotions</h2>
 
                     </div>
                 </div>
@@ -100,7 +100,7 @@
                     <th scope="col">Location</th>
                     <th scope="col">Start Date</th>
                     <th scope="col">Action</th>
-                    <th scope="col">view more</th>
+                    <th scope="col"></th>
                   </tr>
                 </thead>
 
@@ -142,7 +142,7 @@
 
 
                          <td><a href='promolist.php?delete= " . $row["promoid"] . " '><button type='submit' name='delete' class='btn btn-outline-danger btn-lg'>DELETE</button></a></td>
-                           <td><a href='promolist.php?delete= " . $row["promoid"] . " '><button type='submit' name='delete' class='btn btn-outline-secondary btn-lg'>VIEW MORE</button></a></td>
+                           <td><a href='showpromo.php?showpromo= " . $row["promoid"] . " '><button type='submit' name='delete' class='btn btn-outline-secondary btn-lg'>VIEW MORE</button></a></td>
                         </form>
 
 
@@ -172,7 +172,7 @@
 
 
                 <!-- Single Footer Widget Area -->
-                <div class="col-12 col-sm-6 col-lg-3">
+                <div class="col-12">
                     <div class="single-footer-widget mb-60">
                         <!-- Widget Title -->
                         <h5 class="widget-title">Contact</h5>

@@ -1,12 +1,4 @@
 <?php
-	session_start();
-	$promoid = "";
-	$promotitle = "";
-	$promotext = "";
-	$promoimage = "";
-	$promolocation = "";
-	$promostart = "";
-
 
 	$errors = array();
 
@@ -14,10 +6,9 @@
 
 //add new promotion
 	if (isset($_POST['submit'])) {
-		$promoid = mysqli_real_escape_string($db, $_POST['promoid']);
 		$promotitle= mysqli_real_escape_string($db, $_POST['promotitle']);
     	$promotext = mysqli_real_escape_string($db, $_POST['promotext']);
-    	$promoimage = mysqli_real_escape_string($db, $_POST['promoimage']);
+    	$promoimage = addslashes(file_get_contents($_FILES["promoimage"]["tmp_name"]));
     	$promolocation = mysqli_real_escape_string($db, $_POST['promolocation']);
     	$promostart = mysqli_real_escape_string($db, $_POST['promostart']);
 
@@ -33,40 +24,19 @@
 		if (empty($promolocation)) {
 			array_push($errors, "location is required");
 		}
-    if (empty($promostart)) {
-      array_push($errors, "Start date is required");
-    }
+        if (empty($promostart)) {
+            array_push($errors, "Start date is required");
+        }
 
 		//display list of driver
 		if (count($errors) == 0) {
-			$sql2 = "INSERT INTO promotion (promotitle, promotext, promolocation, promoimage,promostart )
-			VALUES ('$promotitle', '$promotext', '$promolocation', '$promoimage', '$promostart' )";
+			$sql2 = "INSERT INTO promotion (promotitle, promotext, promoimage, promolocation, promostart)
+			VALUES ('$promotitle', '$promotext', '$promoimage', '$promolocation', '$promostart')";
 			mysqli_query($db, $sql2);
-			$_SESSION['success'] = "Driver Successfully added!";
+            }
+
 			header('location: promolist.php'); // redirect to home page
 		}
-	}
-
-//upload image
-if (isset($_POST['upload'])) {
-	// Get image name
-	$promoimage = $_FILES['promoimage']['promotitle'];
-	// Get text
-	$promotext = mysqli_real_escape_string($db, $_POST['promotext']);
-
-	// image file directory
-	$target = "images/".basename($promoimage);
-
-	$sql = "INSERT INTO promotion (promoimage, promotext) VALUES ('$promoimage', '$promotext')";
-	// execute query
-	mysqli_query($db, $sql);
-
-	if (move_uploaded_file($_FILES['promoimage']['tmp_name'], $target)) {
-		$msg = "Image uploaded successfully";
-	}else{
-		$msg = "Failed to upload image";
-	}
-}
 
 
   ?>
@@ -82,10 +52,10 @@ if (isset($_POST['upload'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>E-perahu -Add promotion</title>
+    <title>E-Perahu - Add promotion</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="./img/core-img/favicon.png">
+    <link rel="icon" href="img/e-perahu.png">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -150,11 +120,11 @@ if (isset($_POST['upload'])) {
 
 
                 <!-- Contact Form -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12">
                     <div class="contact_from_area mb-100 clearfix">
                     &ensp;
 
-                    	<form method="post">
+                    	<form method="post" action="Addpromotion.php" enctype="multipart/form-data">
                         <!-- Contact Heading -->
                         <div class="contact-heading">
                             <h4>Promotion Information</h4>
@@ -188,7 +158,7 @@ if (isset($_POST['upload'])) {
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="promostart"  placeholder="Start Date" required>
+                                                <input type="date" class="form-control mb-30" name="promostart"  placeholder="Start Date" required>
                                             </div>
                                         </div>
 

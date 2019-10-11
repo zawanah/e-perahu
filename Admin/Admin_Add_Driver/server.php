@@ -60,9 +60,6 @@
 
     }
 
-
-
-
 	//update profile Driver
 	if (isset($_POST['update'])) {
 		$fname = $_POST['fname'];

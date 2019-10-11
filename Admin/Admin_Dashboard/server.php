@@ -72,6 +72,16 @@
 		}
 	}
 
+	// show promotion button
+	if (isset($_GET['showpromo'])) {
+	    $id = $_GET['showpromo'];
+	    $update = true;
+	    $record = mysqli_query($db, "SELECT * FROM promotion WHERE promoid ='$id'");
+
+	    $_SESSION['id'] = $id;
+
+	    }
+
 	if (isset($_GET['delete'])) {
 		$promoid = $_GET['delete'];
 		mysqli_query($db, "DELETE FROM promotion WHERE promoid ='$promoid'");
@@ -82,7 +92,7 @@
 	if (isset($_GET['logout'])) {
 		session_destroy();
 		unset($_SESSION['username']);
-		header('location: index.php');
+		header('location: ../Admin_Login/Admin_Login.php');
 
 
 	}

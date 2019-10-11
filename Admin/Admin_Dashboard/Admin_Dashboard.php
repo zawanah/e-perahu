@@ -156,7 +156,7 @@
             <div class="container">
                 <div class="row">
                     <!-- Single Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="col-12 col-sm-6 col-lg-12">
                         <div class="single-footer-widget mb-60">
 
                             <!-- Widget Title -->
