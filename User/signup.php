@@ -66,12 +66,6 @@
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-16">
-						<input placeholder="Date of Birth" class="input100" name="dob" type="text" onfocus="(this.type='date')"  id="date" value="<?php echo $dob; ?>"  autocomplete="off">
-						<span class="focus-input100"></span>
-						
-					</div>
-
-					<div class="wrap-input100 validate-input m-b-16">
 						<input class="input100" type="password" name="password_1" placeholder="Password">
 						<span class="focus-input100"></span>
 						

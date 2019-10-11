@@ -2,7 +2,6 @@
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -189,7 +188,7 @@
                             if ($conn->connect_error) {
                             die("Connection failed: " . $conn->connect_error);
                             }
-                            $sql = "SELECT username, firstname, lastname, rate, feedback, PersonID FROM orders where PersonID = " . $_SESSION['id'] . "";
+                            $sql = "SELECT firstname, lastname, username, rate, feedback, personid FROM orders where personid = " . $_SESSION['id'] . "";
                             $result = $conn->query($sql);
                                 if ($result->num_rows > 0) {
                                 // output data of each row
@@ -231,7 +230,7 @@
             </div>
         </div>
     </section>
-    <!-- Our Driver Area End -->
+    <!-- Our Ratings and Feedback Area End -->
 
 <!-- Contact Us Area Start -->
     <section style="padding-top: 40px;" class="contact--us-area wow fadeInUp bg-white">
@@ -248,7 +247,6 @@
                         <div class="contact_form">
                             <form method="post">
                                 <?php
-                                    $db = mysqli_connect('localhost', 'root', '', 'registration');
                                     $sql = "SELECT username, firstname, lastname FROM users WHERE username = '" . $_SESSION['username'] . "'";
 
                                     $result = mysqli_query($db, $sql);
@@ -268,7 +266,7 @@
                                         <!-- Form Group -->
                                         
                                             
-                                                <input type="hidden" class="form-control mb-30" name="username" id="email" placeholder="Your E-mail" value="<?php echo $row2['username']; ?>">
+                                                <input type="hidden" class="form-control mb-30" name="username" id="email" placeholder="username" value="<?php echo $row2['username']; ?>">
                                             
                                         <!-- Form Group -->
                                         <div class="col-6">
@@ -292,7 +290,7 @@
                                         </div>
                                         <!-- Button -->
                                         <div class="col-12">
-                                            <button type="submit" name="submit2" class="btn confer-btn">Submit <i class="zmdi zmdi-long-arrow-right"></i></button>
+                                            <button type="submit" name="rateandfeedback" class="btn confer-btn">Submit <i class="zmdi zmdi-long-arrow-right"></i></button>
                                         </div>
                                     </div>
                                 </div>

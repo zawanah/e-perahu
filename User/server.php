@@ -1,12 +1,17 @@
 <?php
+
+// USER SECTION
+// Sign up
 	session_start();
 	$id = "";
 	$username = "";
 	$firstname = "";
 	$lastname = "";
 	$email = "";
+	$rate = "";
+	$feedback = "";
+	$personid = "";
 	$description = "";
-	$dob = "";
 	$name = "";
 	$phone = "";
 	$selectedticket = "";
@@ -36,7 +41,6 @@
 		$lastname = mysqli_real_escape_string($db, $_POST['lastname']);
 		$username = mysqli_real_escape_string($db, $_POST['username']);
 		$email = mysqli_real_escape_string($db, $_POST['email']);
-		$dob = mysqli_real_escape_string($db, $_POST['dob']);
 		$description = mysqli_real_escape_string($db, $_POST['description']);
 		$password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
 		$password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
@@ -58,9 +62,6 @@
    		}
 		if (empty($email)) {
 			array_push($errors, "- Email is required");
-		}
-		if (empty($dob)) {
-			array_push($errors, "- Date of birth is required");
 		}
 		if (empty($password_1)) {
 			array_push($errors, "- Password is required");
@@ -90,7 +91,7 @@
 		// if there are no errors, save user to database
 		if (count($errors) == 0) {
 			$password = md5($password_1); // encrypt password
-			$sql = "INSERT INTO users (firstname, lastname, username, email, dob, password, description) VALUES ('$firstname', '$lastname', '$username', '$email', '$dob', '$password', '$description')";
+			$sql = "INSERT INTO users (firstname, lastname, username, email, password, description) VALUES ('$firstname', '$lastname', '$username', '$email', '$password', '$description')";
 			mysqli_query($db, $sql);
 
 
@@ -169,8 +170,29 @@
             mysqli_query($db, "UPDATE users SET firstname='$firstname', lastname='$lastname', email='$email', description='$description' WHERE username='" . $_SESSION['username'] . "'");
             header( "refresh:6; url=login.php" );
             echo "<p style='text-align: center;' class='text-danger'>Please Re log in to apply settings.  You will be redirected to login page in any seconds.</p>";
-            // header('location: login.php');
+            header('location: login.php');
             }
+
+        // rate and feedback
+        if (isset($_POST['rateandfeedback'])) {
+        $firstname = mysqli_real_escape_string($db, $_POST['firstname']);
+        $lastname = mysqli_real_escape_string($db, $_POST['lastname']);
+        $username = mysqli_real_escape_string($db, $_POST['username']);
+        $rate = mysqli_real_escape_string($db, $_POST['rate']);
+        $feedback = mysqli_real_escape_string($db, $_POST['feedback']);
+        $personid = mysqli_real_escape_string($db, $_POST['personid']);
+
+        	if (empty($username)) {
+			array_push($errors, "Phone Number is required");
+		}
+        	if (count($errors) == 0) {
+            $sql = "INSERT INTO orders (firstname, lastname, username, rate, feedback, personid) VALUES ('$firstname', '$lastname', '$username', '$rate', '$feedback', '$personid')" ;
+            mysqli_query($db, $sql);
+
+            $_SESSION['successful'] = "Sent";
+            header('Refresh:0'); // refresh page
+        	}
+    	}
 
 		// logout
 		if (isset($_GET['logout'])) {
@@ -182,8 +204,7 @@
 		}
 
 
-	// reservation
-
+		// reservation
 		$db2 = mysqli_connect('localhost', 'root', '', 'reservation');
 			if (isset($_POST['paynow'])) {
 				$firstname = mysqli_real_escape_string($db2, $_POST['firstname']);
@@ -287,99 +308,10 @@
 			header('location: ../indexuser.php'); // redirect to home page
 		}
 	}
-	// pick customer button
-        if (isset($_GET['pick'])) {
-          	$id = $_GET['pick'];
-            $update = true;
-            $record = mysqli_query($db2, "SELECT * FROM reservationdriver WHERE id='$id'");
-
-                $_SESSION['id'] = $id;
-
-                }
-
-	//confirm pick
-		if (isset($_GET['del'])) {
-			$id = $_GET['del'];
-			mysqli_query($db2, "DELETE FROM reservationdriver WHERE id= '$_SESSION[id] '");
-			header('location: ../Driver_ListOfCustomer/Driver_ListOfCustomer.php');
-		}
-
-	//contact us
-		$personid = "";
-		$firstname = "";
-        $lastname = "";
-        $email = "";
-        $phonenumber = "";
-        $message = "";
-
-        $errors = array();
-
-        $db = mysqli_connect('localhost', 'root', '', 'registration');
-
-        if (isset($_POST['submit'])) {
-        $firstname = mysqli_real_escape_string($db, $_POST['firstname']);
-        $lastname = mysqli_real_escape_string($db, $_POST['lastname']);
-        $email = mysqli_real_escape_string($db, $_POST['email']);
-        $phonenumber = mysqli_real_escape_string($db, $_POST['phonenumber']);
-        $message = mysqli_real_escape_string($db, $_POST['message']);
-
-        if (count($errors) == 0) {
-            $sql = "INSERT INTO contact (personid, firstname, lastname, email, phonenumber, message) VALUES ('$firstname', '$lastname', '$email', '$phonenumber', '$message')";
-            mysqli_query($db, $sql);
-
-            $_SESSION['success'] = "You are now logged in";
-            header('location: aboutuslogin.php'); // redirect to home page
-        }
-    }
-
-    //add new driver
-	if (isset($_POST['register2'])) {
-		$username = mysqli_real_escape_string($db, $_POST['username']);
-		$password = mysqli_real_escape_string($db, $_POST['password']);
-    	$fname = mysqli_real_escape_string($db, $_POST['fname']);
-    	$lname = mysqli_real_escape_string($db, $_POST['lname']);
-    	$email = mysqli_real_escape_string($db, $_POST['email']);
-    	$phone_no = mysqli_real_escape_string($db, $_POST['phone_no']);
-    	$reg_no= mysqli_real_escape_string($db, $_POST['reg_no']);
-    	$availability= mysqli_real_escape_string($db, $_POST['availability']);
-
-
-		if (empty($phone_no)) {
-			array_push($errors, "Phone Number is required");
-		}
-		if (empty($email)) {
-			array_push($errors, "email is required");
-		}
-
-		if (empty($reg_no)) {
-			array_push($errors, "Boat Registered no. is required");
-		}
-
-
-		//display list of driver
-		if (count($errors) == 0) {
-			$password = md5($password);
-			$sql2 = "INSERT INTO driver (username, password, fname, lname, email, phone_no, reg_no, availability )
-			VALUES ('$username', '$password','$fname','$lname', '$email', '$phone_no','$reg_no', '$availability' )";
-			mysqli_query($db, $sql2);
-			$_SESSION['success'] = "Driver Successfully added!";
-			header('location: ../Admin_Add_Driver/Admin_List_Of_Driver.php'); // redirect to home page
-		}
-	}
-
-	// edit button
-	if (isset($_GET['edit'])) {
-    	$id = $_GET['edit'];
-    	$update = true;
-    	$record = mysqli_query($db, "SELECT * FROM driver WHERE id='$id'");
-
-    	$_SESSION['id'] = $id;
-
-    }
 
 
 
-
+// ADMIN SECTION
 	//update profile Driver
 	if (isset($_POST['update'])) {
 		$fname = $_POST['fname'];
@@ -394,6 +326,15 @@
 		header('location: Admin_List_Of_Driver.php');
 	}
 
+	// edit button
+	if (isset($_GET['edit'])) {
+    	$id = $_GET['edit'];
+    	$update = true;
+    	$record = mysqli_query($db, "SELECT * FROM driver WHERE id='$id'");
+
+    	$_SESSION['id'] = $id;
+
+    }
 	//delete Driver
 	if (isset($_GET['del'])) {
 		$id = $_GET['del'];
@@ -409,7 +350,7 @@
 
 	    $_SESSION['id'] = $id;
 
-	    }
+	}
 
 	//status button
 	if (isset($_POST['availability'])) {
@@ -421,34 +362,7 @@
 
 	
 
-	// rate and feedback
-    	$firstname = "";
-        $lastname = "";
-        $username = "";
-        $rate = "";
-        $feedback = "";
-        $personid = "";
-
-        $errors = array();
-
-        $db = mysqli_connect('localhost', 'root', '', 'registration');
-
-        if (isset($_POST['submit2'])) {
-        $firstname = mysqli_real_escape_string($db, $_POST['firstname']);
-        $lastname = mysqli_real_escape_string($db, $_POST['lastname']);
-        $username = mysqli_real_escape_string($db, $_POST['username']);
-        $rate = mysqli_real_escape_string($db, $_POST['rate']);
-        $feedback = mysqli_real_escape_string($db, $_POST['feedback']);
-        $personid = mysqli_real_escape_string($db, $_POST['personid']);
-
-        if (count($errors) == 0) {
-            $sql = "INSERT INTO orders (firstname, lastname, username, rate, feedback, personid) VALUES ('$firstname', '$lastname', '$username', '$rate', '$feedback', '$personid')" ;
-            mysqli_query($db, $sql);
-
-            $_SESSION['success'] = "You are now logged in";
-            header('Refresh:0'); // redirect to home page
-        }
-    }
+	
 
 // DRIVER SECTION
 //status button
@@ -468,6 +382,23 @@
 	    $_SESSION['id'] = $id;
 
 	    }
+
+	// pick customer button
+        if (isset($_GET['pick'])) {
+          	$id = $_GET['pick'];
+            $update = true;
+            $record = mysqli_query($db2, "SELECT * FROM reservationdriver WHERE id='$id'");
+
+                $_SESSION['id'] = $id;
+
+                }
+
+	//confirm pick
+		if (isset($_GET['del'])) {
+			$id = $_GET['del'];
+			mysqli_query($db2, "DELETE FROM reservationdriver WHERE id= '$_SESSION[id] '");
+			header('location: ../Driver_ListOfCustomer/Driver_ListOfCustomer.php');
+		}
 
 	// logout
 	if (isset($_GET['logoutdriver'])) {
