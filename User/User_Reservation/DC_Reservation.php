@@ -59,7 +59,7 @@
 		<div class="wrap-contact100">
 
 			<form method="post" action="DC_Reservation.php" id="ticketform" class="contact100-form validate-form">
-				<?php 
+				<?php
 					$sql = "SELECT firstname, lastname, username, email FROM users WHERE username = '" . $_SESSION['username'] . "'";
 
 								$result = mysqli_query($db, $sql);
@@ -268,10 +268,6 @@
 			dropdownParent: $('#dropDownSelect1')
 		});
 	</script>
-
-	<script src="js/main.js"></script>
-
-</script> -->
 
 </body>
 </html>

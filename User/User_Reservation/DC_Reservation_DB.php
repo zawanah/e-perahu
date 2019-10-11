@@ -67,23 +67,8 @@
 			VALUES ('$firstname', '$lastname', '$username', '$email', '$phone', '$selectedticket', '$pickup', '$destination', '$pickupdate', '$operationtime', '$ownername', '$debitnumber', '$debitcvv', '$expmonth', '$expyear')";
 			mysqli_query($db, $sql);
 			$_SESSION['success'] = "Payment Successful";
-			header('location: ../indexuser.php'); // redirect to home page
+			header('location: ../Reservation_Successful.php'); // redirect to home page
 		}
 	}
-
-	// $conn=mysqli_connect('localhost' , 'root' , '' , 'reservation');
-	//
-	// $query="insert into reservationtable SET `type`='debit'";
-	//
-	// $res=mysqli_query($conn, $query);
-	//
-	// $last_id=mysqli_insert_id($conn);
-	//
-	// if($last_id){
-	// 	$user_id="DC_".$last_id;
-	// 	$query1="update reservationtable SET `user_id`='".$user_id."' where
-	// 				`id`='".$last_id."'";
-	// 	$res1=mysqli_query($conn,$query1);
-	// }
 
 ?>
