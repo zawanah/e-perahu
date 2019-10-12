@@ -59,7 +59,7 @@
                                         <li><a href="profile.php">- My Profile</a></li>
                                         <li><a href="ticketprice.php">- Ticket Price</a></li>
                                         <li><a href="drivers.php">- driver</a></li>
-                                        <li><a href="promotion.php">- Promotion</a></li>
+                                        <li><a href="promo.php">- Promotion</a></li>
 
 
                                     </ul>
@@ -83,6 +83,7 @@
     <section style="padding-top: 150px;" class="our-schedule-area bg-white section-padding-100">
         <div style="padding-bottom: 30px;" class="col-md-12 col-sm-12">
                 <h1 class="wow fadeInUp" style="text-align: center;">About us</h1>
+   <?php include('successcontactus.php'); ?>
         </div>
         <div class="container">
             <div class="row">
@@ -158,12 +159,12 @@
                                         <!-- Form Group -->
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <textarea name="message" class="form-control mb-30" id="message" cols="30" rows="6" placeholder="Message" required></textarea>
+                                                <textarea name="message" class="form-control mb-30" id="message" cols="30" rows="12" placeholder="Message" required></textarea>
                                             </div>
                                         </div>
                                         <!-- Button -->
                                         <div class="col-12">
-                                            <button type="submit" name="submit" class="btn confer-btn">Send Message <i class="zmdi zmdi-long-arrow-right"></i></button>
+                                            <button type="submit" name="contactus" class="btn confer-btn">Send Message <i class="zmdi zmdi-long-arrow-right"></i></button>
                                         </div>
                                     </div>
                                 </div>

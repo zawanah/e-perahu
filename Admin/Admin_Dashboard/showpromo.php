@@ -176,37 +176,6 @@
     </footer>
     <!-- Footer Area End -->
 
-<!--table End-->
-
-
-    <!-- Footer Area Start -->
-    <!-- <footer class="footer-area bg-img bg-overlay-2 section-padding-100-0"> -->
-        <!-- Main Footer Area -->
-        <!-- <div class="main-footer-area"> -->
-            <!-- <div class="container">
-                <div class="row"> -->
-                    <!-- Single Footer Widget Area -->
-                    <!-- <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="single-footer-widget mb-60"> -->
-
-                            <!-- Widget Title -->
-                            <!-- <h5 class="widget-title">Contact</h5> -->
-
-                            <!-- Contact Area -->
-                            <!-- <div class="footer-contact-info">
-                                <p><i class="zmdi zmdi-map"></i> Bandar Seri Begawan</p>
-                                <p><i class="zmdi zmdi-phone"></i> (+673) 2123456</p>
-                                <p><i class="zmdi zmdi-email"></i> -e-perahu@gmail.com</p>
-                                <p><i class="zmdi zmdi-globe"></i> www.e-perahu.net</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer> -->
-    <!-- Footer Area End -->
-
     <!-- **** All JS Files ***** -->
     <!-- jQuery 2.2.4 -->
     <script src="js/jquery.min.js"></script>

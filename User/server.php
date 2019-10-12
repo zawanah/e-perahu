@@ -189,6 +189,16 @@
         	}
     	}
 
+    	// show promotion button
+	if (isset($_GET['showpromo'])) {
+	    $id = $_GET['showpromo'];
+	    $update = true;
+	    $record = mysqli_query($db, "SELECT * FROM promotion WHERE promoid ='$id'");
+
+	    $_SESSION['id'] = $id;
+
+	    }
+
 		// logout
 		if (isset($_GET['logout'])) {
 		session_destroy();
@@ -301,6 +311,21 @@
 			mysqli_query($db2, $sql4);
 			$_SESSION['success'] = "Payment Successful";
 			header('location: ../indexuser.php'); // redirect to home page
+		}
+	}
+
+	// Contact Us
+	if (isset($_POST['contactus'])) {
+		$firstname = mysqli_real_escape_string($db, $_POST['firstname']);
+		$lastname = mysqli_real_escape_string($db, $_POST['lastname']);
+		$email = mysqli_real_escape_string($db, $_POST['email']);
+		$message = mysqli_real_escape_string($db, $_POST['message']);
+		$phonenumber = mysqli_real_escape_string($db, $_POST['phonenumber']);
+
+		// if there are no errors, save user to database
+		if (count($errors) == 0) {
+			$sql = mysqli_query($db, "INSERT INTO contact (firstname, lastname, email, phonenumber, message) VALUES ('$firstname', '$lastname', '$email', '$phonenumber', '$message')");
+			array_push($success, "Your message has been sent successfully!");
 		}
 	}
 

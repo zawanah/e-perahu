@@ -64,7 +64,7 @@
                                         <li><a href="profile.php">- My Profile</a></li>
                                         <li><a href="ticketprice.php">- Ticket Price</a></li>
                                         <li><a href="drivers.php">- driver</a></li>
-                                        <li><a href="#">- promotion</a></li>
+                                        <li><a href="promo.php">- promotion</a></li>
 
 
                                     </ul>

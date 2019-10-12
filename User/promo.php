@@ -1,4 +1,4 @@
-<?php include('../Admin/Admin_Add_Driver/server.php');
+<?php include('server.php');
 
 ?>
 
@@ -7,7 +7,7 @@
                   if ($conn->connect_error) {
                   die("Connection failed: " . $conn->connect_error);
                   }
-                  $sql = "SELECT id, username, fname, lname, email, reg_no, availability FROM driver";
+                  $sql = "SELECT promoid, promotitle, promotext, promoimage, promolocation, promostart FROM promotion";
                   $result = $conn->query($sql);
 
 ?>
@@ -22,7 +22,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>E-Perahu Drivers</title>
+    <title>Show Promotions</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/e-perahu.png">
@@ -67,21 +67,18 @@
                                 <li><a href="#">Information</a>
                                     <ul class="dropdown">
                                         <li><a href="profile.php">- My Profile</a></li>
-                                        <li><a href="index.php">- Schedule</a></li>
                                         <li><a href="ticketprice.php">- Ticket Price</a></li>
-                                        <li><a href="speakers.php">- drivers</a></li>
-                                        <li><a href="schedule.php">- promotion</a></li>
+                                        <li><a href="drivers.php">- driver</a></li>
+                                        <li><a href="#">- promotion</a></li>
 
 
                                     </ul>
                                 </li>
-                                <li><a href="#">Ticket History</a></li>
-                                <li><a href="blog.php">About Us</a></li>
-                                <li><a href="contact.php">Feedback</a></li>
+                                <li><a href="tickethistory.php">Ticket History</a></li>
+                                <li><a href="aboutuslogin.php">About Us</a></li>
                             </ul>
 
-                            <!-- logout button -->
-                            <a href="speakers.php?logout='1'" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="indexuser.php?logout='1'" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                         <!-- Nav End -->
                     </div>
@@ -91,10 +88,7 @@
     </header>
     <!-- Header Area End -->
 
-    
-
-    
-<!-- Our Drivers Area Start -->
+    <!-- Our Drivers Area Start -->
     <section class="bg-img bg-gradient-overlay" style="background-image: url(img/bg-img/backticket.jpg);" class="our-schedule-area">
         <!-- Heading -->
             <div style="padding-top: 150px;">
@@ -126,17 +120,16 @@
                                                     <div class='single-schedule-info'>
 
                                                     
-                                                        <p> <h6>" . $row["username"] . "</h6>
-                                                        <p>" . $row["fname"] ."&nbsp;". $row["lname"] ."</p>
-                                                        <p>" . $row["email"] . "</p>
+                                                        <p> <h6>" . $row["promotitle"] . "</h6>
+                                                        <p>" . $row["promotext"] . "</p>
                                                         </p>
                                                     
                                                     </div>
                                             </div>
                                             <div class='schedule-time-place'>
-                                                <p>" . $row["availability"] . "</p>
+                                                <p>" . $row["promolocation"] . "</p>
                                             </div>
-                                            <a href='driverprofile.php?show= " . $row["id"] . " '><button type='submit' name='show' class='confer-btn'>Show Profile <i class='zmdi zmdi-long-arrow-right'></i></button></a>
+                                            <a href='showpromo.php?showpromo= " . $row['promoid'] . " '><button type='submit' name='showpromo' class='confer-btn'>More <i class='zmdi zmdi-long-arrow-right'></i></button></a>
                                         </div>" ;
                                                     } echo "</div>";
                                                     } else { echo "0 results"; }
@@ -162,7 +155,7 @@
             <div class="container">
                 <div class="row">
                     <!-- Single Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="col-12">
                         <div class="single-footer-widget mb-60">
 
                             <!-- Widget Title -->
@@ -181,37 +174,6 @@
             </div>
         </div>
     </footer>
-    <!-- Footer Area End -->
-
-<!--table End-->
-
-
-    <!-- Footer Area Start -->
-    <!-- <footer class="footer-area bg-img bg-overlay-2 section-padding-100-0"> -->
-        <!-- Main Footer Area -->
-        <!-- <div class="main-footer-area"> -->
-            <!-- <div class="container">
-                <div class="row"> -->
-                    <!-- Single Footer Widget Area -->
-                    <!-- <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="single-footer-widget mb-60"> -->
-
-                            <!-- Widget Title -->
-                            <!-- <h5 class="widget-title">Contact</h5> -->
-
-                            <!-- Contact Area -->
-                            <!-- <div class="footer-contact-info">
-                                <p><i class="zmdi zmdi-map"></i> Bandar Seri Begawan</p>
-                                <p><i class="zmdi zmdi-phone"></i> (+673) 2123456</p>
-                                <p><i class="zmdi zmdi-email"></i> -e-perahu@gmail.com</p>
-                                <p><i class="zmdi zmdi-globe"></i> www.e-perahu.net</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer> -->
     <!-- Footer Area End -->
 
     <!-- **** All JS Files ***** -->

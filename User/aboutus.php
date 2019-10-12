@@ -103,6 +103,7 @@
     <!-- Header Area End -->
 
    <!-- Our Schedule Area Start -->
+   <?php include('success.php'); ?>
     <section style="padding-top: 150px;" class="our-schedule-area bg-white section-padding-100">
         <div style="padding-bottom: 30px;" class="col-md-12 col-sm-12">
                 <h1 class="wow fadeInUp" style="text-align: center;">About us</h1>
@@ -180,7 +181,7 @@
                                         </div>
                                         <!-- Button -->
                                         <div class="col-12">
-                                            <button type="submit" name="submit" class="btn confer-btn">Send Message <i class="zmdi zmdi-long-arrow-right"></i></button>
+                                            <button type="submit" name="contactus" class="btn confer-btn">Send Message <i class="zmdi zmdi-long-arrow-right"></i></button>
                                         </div>
                                     </div>
                                 </div>

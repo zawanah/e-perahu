@@ -1,4 +1,4 @@
-<?php include('../Admin/Admin_Add_Driver/server.php');
+<?php include('server.php');
 
 ?>
 
@@ -7,7 +7,7 @@
                   if ($conn->connect_error) {
                   die("Connection failed: " . $conn->connect_error);
                   }
-                  $sql = "SELECT id, username, fname, lname, email, reg_no, availability FROM driver";
+                  $sql = "SELECT promoid, promotitle, promotext, promoimage, promolocation, promostart FROM promotion";
                   $result = $conn->query($sql);
 
 ?>
@@ -22,7 +22,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>E-Perahu Drivers</title>
+    <title>Show Promotions</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/e-perahu.png">
@@ -67,21 +67,18 @@
                                 <li><a href="#">Information</a>
                                     <ul class="dropdown">
                                         <li><a href="profile.php">- My Profile</a></li>
-                                        <li><a href="index.php">- Schedule</a></li>
                                         <li><a href="ticketprice.php">- Ticket Price</a></li>
-                                        <li><a href="speakers.php">- drivers</a></li>
-                                        <li><a href="schedule.php">- promotion</a></li>
+                                        <li><a href="drivers.php">- driver</a></li>
+                                        <li><a href="promo.php">- promotion</a></li>
 
 
                                     </ul>
                                 </li>
-                                <li><a href="#">Ticket History</a></li>
-                                <li><a href="blog.php">About Us</a></li>
-                                <li><a href="contact.php">Feedback</a></li>
+                                <li><a href="tickethistory.php">Ticket History</a></li>
+                                <li><a href="aboutuslogin.php">About Us</a></li>
                             </ul>
 
-                            <!-- logout button -->
-                            <a href="speakers.php?logout='1'" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="indexuser.php?logout='1'" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                         <!-- Nav End -->
                     </div>
@@ -91,16 +88,13 @@
     </header>
     <!-- Header Area End -->
 
-    
-
-    
-<!-- Our Drivers Area Start -->
-    <section class="bg-img bg-gradient-overlay" style="background-image: url(img/bg-img/backticket.jpg);" class="our-schedule-area">
+    <!-- Our Schedule Area Start -->
+    <section class="bg-img" style="" class="our-schedule-area">
         <!-- Heading -->
             <div style="padding-top: 150px;">
                 <div class="col-12">
                     <div class="section-heading-3 text-center wow fadeInUp" data-wow-delay="300ms">
-                        <h4><font color="white">E-Perahu Drivers</font></h4>
+                        <h4><font color="">Promotion</font></h4>
                     </div>
                 </div>
             </div>
@@ -112,36 +106,49 @@
                     <div class="tab-content" id="conferScheduleTabContent">
                         <div class="tab-pane fade show active" id="step-one" role="tabpanel" aria-labelledby="monday-tab">
                             <!-- Single Tab Content -->
-                            <?php 
-                                if ($result->num_rows > 0) {
-                                // output data of each row
-                                while($row = $result->fetch_assoc()) {
-                            echo "<div class='single-tab-content'>
-                                    <div class='row'>
-                                        <div class='col-12'>
-                                            <div style='background-color: #ffffff;' class='single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp' data-wow-delay='300ms'>
-                                                    
+                            <?php
+                        $conn = mysqli_connect("localhost", "root", "", "registration");
+                        // Check connection
+                        if ($conn->connect_error) {
+                        die("Connection failed: " . $conn->connect_error);
+                        }
+                        $sql = "SELECT promoid, promotitle, promotext, promoimage, promolocation, promostart  FROM promotion WHERE promoid = '" . $_SESSION['id'] . "'";
+                        $result = $conn->query($sql);
+                        if ($result->num_rows > 0) {
+                        // output data of each row
+                        while($row = $result->fetch_assoc()) {
 
-                                                <div class='single-schedule-tumb-info d-flex align-items-center'>
-                                                    <div class='single-schedule-info'>
 
-                                                    
-                                                        <p> <h6>" . $row["username"] . "</h6>
-                                                        <p>" . $row["fname"] ."&nbsp;". $row["lname"] ."</p>
-                                                        <p>" . $row["email"] . "</p>
-                                                        </p>
-                                                    
-                                                    </div>
-                                            </div>
-                                            <div class='schedule-time-place'>
-                                                <p>" . $row["availability"] . "</p>
-                                            </div>
-                                            <a href='driverprofile.php?show= " . $row["id"] . " '><button type='submit' name='show' class='confer-btn'>Show Profile <i class='zmdi zmdi-long-arrow-right'></i></button></a>
-                                        </div>" ;
-                                                    } echo "</div>";
-                                                    } else { echo "0 results"; }
-                                                    $conn->close();
-                                        ?>
+
+                        echo "
+
+                        <div style='text-align:center;'>
+                        <p>Title: ". $row["promotitle"]. "</p>
+                        <p>Description: " . $row["promotext"] . "</p>
+                        <p>Location: " . $row["promolocation"] . "</p>
+                        <p>Start date: ". $row["promostart"]. "</p>
+                        <p>  
+                                    <img src='data:image/jpeg;base64," . base64_encode($row['promoimage'] ) ."' />  
+                        </p>
+                        </div>
+
+
+
+
+
+                         
+                        
+
+
+                         
+                         "  ;
+
+
+                        }
+                        echo "</table>";
+                        } else { echo "0 results"; }
+                        $conn->close();
+                        ?>
                                 </div>
                             </div>
                         </div>
