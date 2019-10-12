@@ -53,7 +53,7 @@
                                 <li><a href="#">Information</a>
                                     <ul class="dropdown">
                                         <li><a href="nlticketprice.php">- Ticket Price</a></li>
-                                        <li><a href="#">- promotion</a></li>
+                                        <li><a href="nlpromo.php">- promotion</a></li>
 
 
                                     </ul>
@@ -85,7 +85,7 @@
                                 <h2 data-animation="fadeInUp" data-delay="300ms">E-Perahu <br>Promotion</h2>
                                 <h6 data-animation="fadeInUp" data-delay="500ms">Limited time!</h6>
                                 <div class="hero-btn-group" data-animation="fadeInUp" data-delay="700ms">
-                                    <a href="schedule.php" class="btn confer-btn">More Information <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                    <a href="nlpromo.php" class="btn confer-btn">More Information <i class="zmdi zmdi-long-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -103,8 +103,7 @@
                                 <h5 data-animation="fadeInUp" data-delay="100ms">E-Perahu</h5>
                                 <h2 data-animation="fadeInUp" data-delay="300ms">Easy reservation</h2>
                                 <div class="hero-btn-group" data-animation="fadeInUp" data-delay="700ms">
-                                    <a href="#" class="btn confer-btn m-2">Reserve now! </a>
-                                    <a href="#" class="btn confer-btn m-2">Ticket price </a>
+                                    <a href="nlticketprice.php" class="btn confer-btn m-2">Ticket price </a>
                                 </div>
                             </div>
                         </div>
@@ -118,7 +117,7 @@
     </section>
     <!-- Welcome Area End -->
 
-    <!-- About Us And Countdown Area Start -->
+    <!-- About Us Start -->
     <section style="text-align: center;" class="about-us-countdown-area section-padding-100-0" id="about">
         <div class="container">
             <div class="row align-items-center">
@@ -128,13 +127,13 @@
                         <h6 class="wow fadeInUp" data-wow-delay="300ms">About E-Perahu</h6>
                         <h3 class="wow fadeInUp" data-wow-delay="300ms">Welcome to E-Perahu!</h3>
                         <p class="wow fadeInUp" data-wow-delay="300ms">The E-Perahu is a website based product</p>
-                        <a href="blog.php" class="btn confer-btn mt-50 wow fadeInUp" data-wow-delay="300ms">More information <i class="zmdi zmdi-long-arrow-right"></i></a>
+                        <a href="aboutus.php" class="btn confer-btn mt-50 wow fadeInUp" data-wow-delay="300ms">More information <i class="zmdi zmdi-long-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- About Us And Countdown Area End -->
+    <!-- About Us Area End -->
 
     <!-- Footer Area Start -->
     <footer class="footer-area bg-img bg-overlay-2 section-padding-100-0">

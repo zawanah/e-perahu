@@ -1,5 +1,10 @@
 <?php include('server.php');
 
+// if user is not logged in, they cannot access this page
+    if (empty($_SESSION['username'])) {
+        header('location: login.php');
+    }
+
 ?>
 
 
@@ -60,14 +65,14 @@
                                         <li><a href="profile.php">- My Profile</a></li>
                                         <li><a href="ticketprice.php">- Ticket Price</a></li>
                                         <li><a href="drivers.php">- Driver</a></li>
-                                        <li><a href="#">- Promotion</a></li>
+                                        <li><a href="promo.php">- Promotion</a></li>
 
 
 
                                     </ul>
                                 </li>
                                 <li><a href="tickethistory.php">Ticket History</a></li>
-                                <li><a href="aboutus.php">About Us</a></li>
+                                <li><a href="aboutuslogin.php">About Us</a></li>
                             </ul>
                             <!-- logout button -->
                             <a href="ticketprice.php?logout='1'" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>

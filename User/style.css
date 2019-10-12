@@ -2646,7 +2646,7 @@ input:required {
   .form-group .form-control:active, .form-group .form-control:focus {
     border-bottom-color: #ffffff; }
 .form-group textarea.form-control {
-  height: 80px; }
+  height: 150px; }
 
 /* :: Contact us single page CSS */
 .contact--us-area .row {

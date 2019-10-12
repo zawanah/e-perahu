@@ -1,7 +1,7 @@
 <?php if (count($errors) > 0): ?>
-	<div class="text-danger">
+	<div class="">
 		<?php foreach ($errors as $error): ?>
-			<p><?php echo $error; ?></p>
+			<p style="text-align: center;" class="text-danger"><?php echo $error; ?></p>
 		<?php endforeach ?>
 	</div>
 <?php endif ?>	

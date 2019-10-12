@@ -1,7 +1,4 @@
-<?php
-include('server.php');
-
-?>
+<?php include('server.php'); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,10 +10,10 @@ include('server.php');
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>E-perahu -Admin_add_driver</title>
+    <title>E-perahu - Admin Add Driver</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="./img/core-img/favicon.png">
+    <link rel="icon" href="img/e-perahu.png">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -38,7 +35,7 @@ include('server.php');
                 <nav class="classy-navbar justify-content-between" id="conferNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="./index.html"><img src="img/e-perahu.png" alt=""></a>
+                    <a class="nav-brand" href="../Admin_Dashboard/Admin_dashboard.php"><img src="img/e-perahu.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -70,17 +67,17 @@ include('server.php');
                     <div class="contact_from_area mb-100 clearfix">
                     &ensp;
 
-                    	<form method="post" action="Admin_Add_Driver.php">
+                    	<form method="post" action="">
                         <!-- Contact Heading -->
                         <div style="text-align: center;" class="contact-heading">
                             <h4>Driver Information</h4>
                         </div>
+                        <?php include('errors.php'); ?>
                           &ensp;
 
-                        <input type="hidden" name="availability" value="Offline">
+                        <input type="hidden" name="availabilitydriver" value="Offline">
 
                         <div class="contact_form">
-                            <!-- <form action="mail.php" method="post"> -->
                                 <div class="contact_input_area">
                                     <div class="row">
 
@@ -93,15 +90,21 @@ include('server.php');
                                       <!-- Form Group -->
                                       <div class="col-12 col-lg-6">
                                           <div class="form-group">
-                                              <input type="password" class="form-control mb-30" name="password" placeholder="Password" required>
+                                              <input type="password" class="form-control mb-30" name="password_1" placeholder="Password" required>
                                           </div>
                                       </div>
-                                        <!-- Form Group -->
+                                      <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
                                                 <input type="text" class="form-control mb-30" name="fname" placeholder="First Name" required>
                                             </div>
                                         </div>
+                                        <!-- Form Group -->
+                                      <div class="col-12 col-lg-6">
+                                          <div class="form-group">
+                                              <input type="password" class="form-control mb-30" name="password_2" placeholder="Confirm Password" required>
+                                          </div>
+                                      </div>
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
@@ -128,7 +131,7 @@ include('server.php');
                                         </div>
                                         <!-- Button -->
                                         <div class="col-6">
-                                            <button type="submit" name="register2" class="btn confer-btn">Submit<i class="zmdi zmdi-long-arrow-right"></i></button>
+                                            <button type="submit" name="registerdriver" class="btn confer-btn">Submit<i class="zmdi zmdi-long-arrow-right"></i></button>
                                         </div>
                                     </div>
                                 </div>

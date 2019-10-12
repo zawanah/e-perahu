@@ -1,5 +1,10 @@
 <?php include('server.php');
 
+// if user is not logged in, they cannot access this page
+    if (empty($_SESSION['username'])) {
+        header('location: login.php');
+    }
+
 ?>
 
 
@@ -14,7 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>E-perahu Edit Profile</title>
+    <title>E-Perahu Edit Profile</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/e-perahu.png">
@@ -73,7 +78,7 @@
             <h3>Profile info</h3>
       &ensp;
 
-            
+            <?php include('successeditprofile.php'); ?>
 
             <form method="POST" class="form-horizontal">
 

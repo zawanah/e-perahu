@@ -96,7 +96,7 @@
                                 <h2 data-animation="fadeInUp" data-delay="300ms">E-Perahu <br>Promotion</h2>
                                 <h6 data-animation="fadeInUp" data-delay="500ms">Limited Time!</h6>
                                 <div class="hero-btn-group" data-animation="fadeInUp" data-delay="700ms">
-                                    <a href="schedule.php" class="btn confer-btn">More Information <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                    <a href="promo.php" class="btn confer-btn">More Information <i class="zmdi zmdi-long-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -114,8 +114,7 @@
                                 <h5 data-animation="fadeInUp" data-delay="100ms">E-Perahu</h5>
                                 <h2 data-animation="fadeInUp" data-delay="300ms">Easy reservation</h2>
                                 <div class="hero-btn-group" data-animation="fadeInUp" data-delay="700ms">
-                                    <a href="#" class="btn confer-btn m-2">Reserve now! <i class="zmdi zmdi-long-arrow-right"></i></a>
-                                    <a href="#" class="btn confer-btn m-2">Ticket price <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                    <a href="ticketprice.php" class="btn confer-btn m-2">Ticket price <i class="zmdi zmdi-long-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -139,7 +138,7 @@
                         <h6 class="wow fadeInUp" data-wow-delay="300ms">About E-Perahu</h6>
                         <h3 class="wow fadeInUp" data-wow-delay="300ms">Welcome to E-Perahu!</h3>
                         <p class="wow fadeInUp" data-wow-delay="300ms">The E-Perahu is a website based product</p>
-                        <a href="blog.php" class="btn confer-btn mt-50 wow fadeInUp" data-wow-delay="300ms">More information <i class="zmdi zmdi-long-arrow-right"></i></a>
+                        <a href="aboutuslogin.php" class="btn confer-btn mt-50 wow fadeInUp" data-wow-delay="300ms">More information <i class="zmdi zmdi-long-arrow-right"></i></a>
                     </div>
                 </div>
             </div>

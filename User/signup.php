@@ -5,11 +5,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V11</title>
+	<title>E-Perahu - User Signup</title>
+
+	<!-- Favicon -->
+    <link rel="icon" href="img/e-perahu.png">
+
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -23,14 +27,59 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
 <!--===============================================================================================-->
+	<!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
 </head>
 <body>
+<!-- Header Area Start -->
+    <header class="header-area">
+        <div class="classy-nav-container breakpoint-off">
+            <div class="container">
+                <!-- Classy Menu -->
+                <nav class="classy-navbar justify-content-between" id="conferNav">
 
+                    <!-- Logo -->
+                    <a class="nav-brand" href="index.php"><img src="img/e-perahu.png" alt=""></a>
+
+                    <!-- Navbar Toggler -->
+                    <div class="classy-navbar-toggler">
+                        <span class="navbarToggler"><span></span><span></span><span></span></span>
+                    </div>
+
+                    <!-- Menu -->
+                    <div class="classy-menu">
+                        <!-- Menu Close Button -->
+                        <div class="classycloseIcon">
+                            <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                        </div>
+                        <!-- Nav Start -->
+                        <div class="classynav">
+                            <ul id="nav">
+                                <li class="active"><a href="index.php">Home</a></li>
+                                <li><a href="#">Information</a>
+                                    <ul class="dropdown">
+                                        <li><a href="nlticketprice.php">- Ticket Price</a></li>
+                                        <li><a href="nlpromo.php">- promotion</a></li>
+									</ul>
+                                </li>
+                                <li><a href="aboutus.php">About Us</a></li>
+                            </ul>
+							<!-- Login Button -->
+                            <a href="login.php" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Login <i class="zmdi zmdi-long-arrow-right"></i></a>
+                        </div>
+                        <!-- Nav End -->
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Header Area End -->
 	<div class="limiter">
-		<div class="container-login100">
+		<div class="container-login100" style="padding-top: 130px;">
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
 				<form method="post" action="signup.php">
 
@@ -105,9 +154,47 @@
 		</div>
 	</div>
 
+<!-- Footer Area Start -->
+    <footer class="footer-area bg-img bg-overlay-2 section-padding-100-0">
+        <!-- Main Footer Area -->
+        <div class="main-footer-area">
+            <div class="container">
+                <div class="row">
+                    <!-- Single Footer Widget Area -->
+                    <div class="col-12 col-sm-6 col-lg-12">
+                        <div class="single-footer-widget mb-60">
+
+                            <!-- Widget Title -->
+                            <h5 class="widget-title">Contact</h5>
+
+                            <!-- Contact Area -->
+                            <div class="footer-contact-info">
+                                <p><i class="zmdi zmdi-map"></i> Bandar Seri Begawan</p>
+                                <p><i class="zmdi zmdi-phone"></i> (+673) 2123456</p>
+                                <p><i class="zmdi zmdi-email"></i> -e-perahu@gmail.com</p>
+                                <p><i class="zmdi zmdi-globe"></i> www.e-perahu.net</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Area End -->
 
 
 
+<!-- **** All JS Files ***** -->
+    <!-- jQuery 2.2.4 -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Popper -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- All Plugins -->
+    <script src="js/confer.bundle.js"></script>
+    <!-- Active -->
+    <script src="js/default-assets/active.js"></script>
 <!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->

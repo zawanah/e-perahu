@@ -59,7 +59,7 @@
                                         <li><a href="profile.php">- My Profile</a></li>
                                         <li><a href="ticketprice.php">- Ticket Price</a></li>
                                         <li><a href="drivers.php">- driver</a></li>
-                                        <li><a href="#">- promotion</a></li>
+                                        <li><a href="promo.php">- promotion</a></li>
 
 
                                     </ul>
@@ -254,7 +254,7 @@
                                 <div class="contact_input_area">
                                     <div class="row">
                                         <!-- Form Group -->
-                                                <input type="hidden" class="form-control mb-30" name="personid" value="<?php echo $row['id']; ?>">
+                                                <input type="hidden" class="form-control mb-30" name="PersonID" value="<?php echo $row['id']; ?>">
 
                                                 <input type="hidden" class="form-control mb-30" name="firstname" id="name" placeholder="First Name" value="<?php echo $row2['firstname']; ?>">
                                             

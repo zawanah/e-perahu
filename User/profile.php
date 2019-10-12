@@ -1,5 +1,10 @@
 <?php include('server.php');
 
+// if user is not logged in, they cannot access this page
+    if (empty($_SESSION['username'])) {
+        header('location: login.php');
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -57,9 +62,9 @@
                                 <li><a href="#">Information</a>
                                     <ul class="dropdown">
                                         <li><a href="profile.php">- My Profile</a></li>
-                                        <li><a href="index.php">- Schedule</a></li>
                                         <li><a href="ticketprice.php">- Ticket Price</a></li>
                                         <li><a href="drivers.php">- driver</a></li>
+                                        <li><a href="promo.php">- Promotions</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="tickethistory.php">Ticket History</a></li>
@@ -107,39 +112,14 @@
         <div class="col-md-6 col-sm-12">
             <div style="background-color: #fff; border-radius: 25px;" class="about wow fadeInUp">
                 <h2 class="">Your username</h2>
-                <!-- <h2></h2> -->
                 </br>
                 </br>
                 <h4 style="text-align: center;"><?php echo $row['username']; ?></h4>
             </div>
         </div>
-        <!-- <div class="col-md-6 col-sm-12">
-            <div class="skills bg-gradient-overlay wow fadeInUp" style="background-color: #ffffff; border-radius: 15px;">
-                <h2 style="color: #ffffff;">Skills</h2>
-                <strong style="color: #ffffff;">PHP MySQL</strong>
-                <span style="color: #ffffff;" class="pull-right">70%</span>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-primary" role="progressbar"
-                        aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
-                    </div>
-                <strong style="color: #ffffff;">UI/UX Design</strong>
-                <span style="color: #ffffff;" class="pull-right">85%</span>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-primary" role="progressbar"
-                        aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
-                    </div>
-                <strong style="color: #ffffff;">Bootstrap</strong>
-                <span style="color: #ffffff;" class="pull-right">95%</span>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-primary" role="progressbar"
-                        aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;"></div>
-                    </div>
-            </div>
-        </div> -->
         <div  class="col-md-6 col-sm-12">
             <div style="background-color: #fff; border-radius: 25px;" class="about wow fadeInUp">
                 <h2 class="">Fullname</h2>
-                <!-- <h2></h2> -->
                 </br>
                 </br>
                 <h4 style="text-align: center;"><?php echo $row['firstname']; ?>&nbsp;<?php echo $row['lastname']; ?></h4>

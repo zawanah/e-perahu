@@ -69,7 +69,7 @@
                             </ul>
 
                             <!-- Logout Button -->
-                            <a href="profile.php?logout='1'" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="aboutuslogin.php?logout='1'" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                         <!-- Nav End -->
                     </div>
@@ -79,10 +79,10 @@
     </header>
     <!-- Header Area End -->
 
-   <!-- Our Schedule Area Start -->
-    <section style="padding-top: 150px;" class="our-schedule-area bg-white section-padding-100">
+   <!-- About Us Area Start -->
+    <section style="padding-top: 150px;" class="our-schedule-area bg-img bg-gradient-overlay section-padding-80">
         <div style="padding-bottom: 30px;" class="col-md-12 col-sm-12">
-                <h1 class="wow fadeInUp" style="text-align: center;">About us</h1>
+                <h1 class="wow fadeInUp" style="text-align: center;color: #fff;">About us</h1>
    <?php include('successcontactus.php'); ?>
         </div>
         <div class="container">
@@ -97,8 +97,8 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <!-- Single Schedule Area -->
-                                        <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
-                                                    <p style="text-align: center;">The product is a website based solution. It acts as an information and service platform regarding the water taxi in Brunei Darussalam. The information that has been provided are driver information etc. The services we provide a relevant tool that will be used to make the process easier such as reservation system, online payment, registration etc.</p>
+                                        <div style="background-color: #fff;" class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
+                                                    <p style="text-align: center;color: #000;">The product is a website based solution. It acts as an information and service platform regarding the water taxi in Brunei Darussalam. The information that has been provided are driver information etc. The services we provide a relevant tool that will be used to make the process easier such as reservation system, online payment, registration etc.</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -108,21 +108,26 @@
                 </div>
             </div>
         </div>
-    </section>
+    <!-- About Us Area Start -->
 
     <!-- Contact Us Area Start -->
-    <section class="contact--us-area wow fadeInUp">
+        <div style="padding-bottom: 30px; padding-top: 30px;" class="col-md-12 col-sm-12">
+                <h1 class="wow fadeInUp" style="text-align: center;color: #fff">Contact Us</h1>
+        </div>
         <div class="container">
             <div class="row">
-
-                <!-- Contact Form -->
                 <div class="col-12">
-                    <div class="contact_from_area mb-100 clearfix">
-                        <!-- Contact Heading -->
-                        <div style="padding-bottom: 20px;" class="contact-heading">
-                            <h2 style="text-align: center;">Contact us</h2>
-                        </div>
-                        <div class="contact_form">
+
+                    <!-- Tab Content -->
+                    <div class="tab-content" id="conferScheduleTabContent">
+                        <div class="tab-pane fade show active" id="step-one" role="tabpanel" aria-labelledby="monday-tab">
+                            <!-- Single Tab Content -->
+                            <div class="single-tab-content">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <!-- Single Schedule Area -->
+                                        <div style="background-color: #fff;" class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
+                                                    <div class="contact_form">
                             <form method="post">
                                 <?php
                                     $sql = "SELECT firstname, lastname, email FROM users WHERE username = '" . $_SESSION['username'] . "'";
@@ -135,31 +140,31 @@
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="firstname" id="name" placeholder="First Name" value="<?php echo $row['firstname']; ?>">
+                                                <input style="color: #000;" type="text" class="form-control mb-30" name="firstname" id="name" placeholder="First Name" value="<?php echo $row['firstname']; ?>">
                                             </div>
                                         </div>
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="lastname" id="name-2" placeholder="Last Name" value="<?php echo $row['lastname']; ?>">
+                                                <input style="color: #000;" type="text" class="form-control mb-30" name="lastname" id="name-2" placeholder="Last Name" value="<?php echo $row['lastname']; ?>">
                                             </div>
                                         </div>
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="email" class="form-control mb-30" name="email" id="email" placeholder="Your E-mail" value="<?php echo $row['email']; ?>">
+                                                <input style="color: #000;" type="email" class="form-control mb-30" name="email" id="email" placeholder="Your E-mail" value="<?php echo $row['email']; ?>">
                                             </div>
                                         </div>
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="phonenumber" placeholder="Your Phone Number">
+                                                <input style="color: #000;" type="text" class="form-control mb-30" name="phonenumber" placeholder="Your Phone Number">
                                             </div>
                                         </div>
                                         <!-- Form Group -->
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <textarea name="message" class="form-control mb-30" id="message" cols="30" rows="12" placeholder="Message" required></textarea>
+                                                <textarea style="color: #000;" name="message" class="form-control mb-30" id="message" cols="30" rows="12" placeholder="Message" required></textarea>
                                             </div>
                                         </div>
                                         <!-- Button -->
@@ -170,13 +175,17 @@
                                 </div>
                             </form>
                         </div>
+                                        </div>
+                                    </div>
+                                </div>    
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Contact Us Area End -->
-    
+
     <!-- Footer Area Start -->
     <footer class="footer-area bg-img bg-overlay-2 section-padding-100-0">
         <!-- Main Footer Area -->

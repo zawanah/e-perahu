@@ -11,6 +11,7 @@
     	$promoimage = addslashes(file_get_contents($_FILES["promoimage"]["tmp_name"]));
     	$promolocation = mysqli_real_escape_string($db, $_POST['promolocation']);
     	$promostart = mysqli_real_escape_string($db, $_POST['promostart']);
+        $promoend = mysqli_real_escape_string($db, $_POST['promoend']);
 
 
 
@@ -27,11 +28,14 @@
         if (empty($promostart)) {
             array_push($errors, "Start date is required");
         }
+        if (empty($promoend)) {
+            array_push($errors, "End date is required");
+        }
 
 		//display list of driver
 		if (count($errors) == 0) {
-			$sql2 = "INSERT INTO promotion (promotitle, promotext, promoimage, promolocation, promostart)
-			VALUES ('$promotitle', '$promotext', '$promoimage', '$promolocation', '$promostart')";
+			$sql2 = "INSERT INTO promotion (promotitle, promotext, promoimage, promolocation, promostart, promoend)
+			VALUES ('$promotitle', '$promotext', '$promoimage', '$promolocation', '$promostart', '$promoend')";
 			mysqli_query($db, $sql2);
             }
 
@@ -152,13 +156,19 @@
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
+                                                <input  placeholder="Start Date" type="text" class="form-control mb-30" name="promostart" onfocus="(this.type='date')" required>
+                                            </div>
+                                        </div>
+                                        <!-- Form Group -->
+                                        <div class="col-12 col-lg-6">
+                                            <div class="form-group">
                                                 <input type="text" class="form-control mb-30" name="promolocation"  placeholder="Location" required>
                                             </div>
                                         </div>
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="date" class="form-control mb-30" name="promostart"  placeholder="Start Date" required>
+                                                <input  placeholder="End Date" type="text" class="form-control mb-30" name="promoend" onfocus="(this.type='date')" required>
                                             </div>
                                         </div>
 

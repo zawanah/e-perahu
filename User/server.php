@@ -163,10 +163,19 @@
             $description = $_POST['description'];
 
             mysqli_query($db, "UPDATE users SET firstname='$firstname', lastname='$lastname', email='$email', description='$description' WHERE username='" . $_SESSION['username'] . "'");
+            array_push($success, "Please Re log in to apply settings.  You will be redirected to login page in any seconds.");
             header( "refresh:6; url=login.php" );
-            echo "<p style='text-align: center;' class='text-danger'>Please Re log in to apply settings.  You will be redirected to login page in any seconds.</p>";
-            header('location: login.php');
             }
+
+        // show profile button
+		if (isset($_GET['show'])) {
+	    $id = $_GET['show'];
+	    $update = true;
+	    $record = mysqli_query($db, "SELECT * FROM driver WHERE id='$id'");
+
+	    $_SESSION['id'] = $id;
+
+	    }
 
         // rate and feedback
         if (isset($_POST['rateandfeedback'])) {
@@ -175,16 +184,16 @@
         $username = mysqli_real_escape_string($db, $_POST['username']);
         $rate = mysqli_real_escape_string($db, $_POST['rate']);
         $feedback = mysqli_real_escape_string($db, $_POST['feedback']);
-        $personid = mysqli_real_escape_string($db, $_POST['personid']);
+        $PersonID = mysqli_real_escape_string($db, $_POST['PersonID']);
 
         	if (empty($username)) {
 			array_push($errors, "Phone Number is required");
 		}
         	if (count($errors) == 0) {
-            $sql3 = "INSERT INTO orders (firstname, lastname, username, rate, feedback, personid) VALUES ('$firstname', '$lastname', '$username', '$rate', '$feedback', '$personid')" ;
+            $sql3 = "INSERT INTO orders (firstname, lastname, username, rate, feedback, PersonID) VALUES ('$firstname', '$lastname', '$username', '$rate', '$feedback', '$PersonID') " ;
             mysqli_query($db, $sql3);
 
-            $_SESSION['successful'] = "Sent";
+            $_SESSION['success'] = "Sent";
             header('Refresh:0'); // refresh page
         	}
     	}
@@ -259,7 +268,7 @@
 			VALUES ('$firstname', '$lastname', '$username', '$email', '$phone', '$selectedticket', '$pickup', '$destination', '$pickupdate', '$operationtime', '$ownername', '$debitnumber', '$debitcvv', '$expmonth', '$expyear', '$types')";
 			mysqli_query($db2, $sql4);
 			$_SESSION['success'] = "Payment Successful";
-			header('location: ../indexuser.php'); // redirect to home page
+			header('location: ../Reservation_Successful.php'); // redirect to home page
 		}
 	}
 
@@ -310,7 +319,7 @@
 			VALUES ('$firstname', '$lastname', '$username', '$email', '$phone', '$selectedticket', '$pickup', '$destination', '$pickupdate', '$operationtime')";
 			mysqli_query($db2, $sql4);
 			$_SESSION['success'] = "Payment Successful";
-			header('location: ../indexuser.php'); // redirect to home page
+			header('location: ../Reservation_Successful.php'); // redirect to home page
 		}
 	}
 
@@ -328,61 +337,6 @@
 			array_push($success, "Your message has been sent successfully!");
 		}
 	}
-
-
-
-// ADMIN SECTION
-	//update profile Driver
-	if (isset($_POST['update'])) {
-		$fname = $_POST['fname'];
-		$lname = $_POST['lname'];
-		$email = $_POST['email'];
-		$phone_no = $_POST['phone_no'];
-		$reg_no = $_POST['reg_no'];
-
-		mysqli_query($db, "UPDATE driver SET fname='$fname', lname='$lname', email='$email', phone_no='$phone_no', reg_no='$reg_no' WHERE id='$id'");
-		session_destroy();
-		unset($_SESSION['id']);
-		header('location: Admin_List_Of_Driver.php');
-	}
-
-	// edit button
-	if (isset($_GET['edit'])) {
-    	$id = $_GET['edit'];
-    	$update = true;
-    	$record = mysqli_query($db, "SELECT * FROM driver WHERE id='$id'");
-
-    	$_SESSION['id'] = $id;
-
-    }
-	//delete Driver
-	if (isset($_GET['del'])) {
-		$id = $_GET['del'];
-		mysqli_query($db, "DELETE FROM driver WHERE id='$id'");
-		header('location: Admin_List_Of_Driver.php');
-	}
-
-	// show profile button
-	if (isset($_GET['show'])) {
-	    $id = $_GET['show'];
-	    $update = true;
-	    $record = mysqli_query($db, "SELECT * FROM driver WHERE id='$id'");
-
-	    $_SESSION['id'] = $id;
-
-	}
-
-	//status button
-	if (isset($_POST['availability'])) {
-		$availability = $_POST['availability'];
-
-		mysqli_query($db, "UPDATE driver SET availability='$availability' WHERE username=" . $_SESSION['username'] . "'");
-		header('location: ../../Driver_Dashboard/Driver_dashboard.php');
-	}
-
-	
-
-	
 
 // DRIVER SECTION
 //status button

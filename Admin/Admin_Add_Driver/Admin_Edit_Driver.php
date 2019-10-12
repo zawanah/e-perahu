@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>e-perahu Admin Edit Driver</title>
+    <title>E-Perahu Admin Edit Driver</title>
 
     <!-- Favicon -->
     <link rel="icon" href="./img/core-img/favicon.png">

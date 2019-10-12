@@ -7,7 +7,7 @@
                   if ($conn->connect_error) {
                   die("Connection failed: " . $conn->connect_error);
                   }
-                  $sql = "SELECT promoid, promotitle, promotext, promoimage, promolocation, promostart FROM promotion";
+                  $sql = "SELECT promoid, promotitle, promotext, promoimage, promolocation, promostart, promoend FROM promotion";
                   $result = $conn->query($sql);
 
 ?>
@@ -69,7 +69,7 @@
                                         <li><a href="profile.php">- My Profile</a></li>
                                         <li><a href="ticketprice.php">- Ticket Price</a></li>
                                         <li><a href="drivers.php">- driver</a></li>
-                                        <li><a href="#">- promotion</a></li>
+                                        <li><a href="promo.php">- promotion</a></li>
 
 
                                     </ul>
@@ -78,7 +78,7 @@
                                 <li><a href="aboutuslogin.php">About Us</a></li>
                             </ul>
 
-                            <a href="indexuser.php?logout='1'" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="promo.php?logout='1'" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Logout <i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                         <!-- Nav End -->
                     </div>
@@ -94,7 +94,7 @@
             <div style="padding-top: 150px;">
                 <div class="col-12">
                     <div class="section-heading-3 text-center wow fadeInUp" data-wow-delay="300ms">
-                        <h4><font color="white">E-Perahu Drivers</font></h4>
+                        <h4><font color="white">Promotions</font></h4>
                     </div>
                 </div>
             </div>
@@ -128,8 +128,9 @@
                                             </div>
                                             <div class='schedule-time-place'>
                                                 <p>" . $row["promolocation"] . "</p>
+                                                <p>" . $row["promostart"] . " until " . $row["promoend"] . "</p>
                                             </div>
-                                            <a href='showpromo.php?showpromo= " . $row['promoid'] . " '><button type='submit' name='showpromo' class='confer-btn'>More <i class='zmdi zmdi-long-arrow-right'></i></button></a>
+                                            <a href='nlshowpromo.php?showpromo= " . $row['promoid'] . " '><button type='submit' name='showpromo' class='confer-btn'>More <i class='zmdi zmdi-long-arrow-right'></i></button></a>
                                         </div>" ;
                                                     } echo "</div>";
                                                     } else { echo "0 results"; }

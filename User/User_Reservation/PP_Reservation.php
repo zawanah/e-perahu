@@ -1,4 +1,4 @@
-<?php include('DC_Reservation_DB.php');
+<?php include('../server.php');
 
 	// if (empty($_SESSION['username'])) {
   //       header('location: login.php');

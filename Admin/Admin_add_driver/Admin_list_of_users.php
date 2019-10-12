@@ -49,7 +49,7 @@
                 <nav class="classy-navbar justify-content-between" id="conferNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="./index.html"><img src="./img/e-perahu.png" alt=""></a>
+                    <a class="nav-brand" href="Admin_dashboard.php"><img src="img/e-perahu.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -76,12 +76,12 @@
     <!-- Header Area End -->
 
     <!-- Breadcrumb Area Start -->
-    <section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url(img/bg-img/37.jpg);">
+    <section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url(img/pt1.jpg);">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                     <div class="breadcrumb-content">
-                        <h2 class="page-title">List of Drivers</h2>
+                        <h2 class="page-title">List of Users</h2>
 
                     </div>
                 </div>
@@ -103,8 +103,8 @@
 
                     <th scope="col">First Name</th>
                     <th scope="col">Last Name</th>
+                    <th scope="col">Username</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Boat Reg No</th>
                     <th scope="col">      </th>
 
 
@@ -118,7 +118,7 @@
                   if ($conn->connect_error) {
                   die("Connection failed: " . $conn->connect_error);
                   }
-                  $sql = "SELECT id, firstname, lastname, username,email FROM users";
+                  $sql = "SELECT id, firstname, lastname, username, email FROM users";
                   $result = $conn->query($sql);
                   if ($result->num_rows > 0) {
                   // output data of each row
@@ -161,7 +161,7 @@
 
 
                 <!-- Single Footer Widget Area -->
-                <div class="col-12 col-sm-6 col-lg-3">
+                <div class="col-12 col-lg-12">
                     <div class="single-footer-widget mb-60">
                         <!-- Widget Title -->
                         <h5 class="widget-title">Contact</h5>
@@ -175,7 +175,10 @@
                         </div>
                     </div>
                 </div>
-
+            </div>
+        </div>
+    </div>
+</footer>
 
 
     <!-- **** All JS Files ***** -->

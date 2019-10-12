@@ -44,7 +44,7 @@
                 <nav class="classy-navbar justify-content-between" id="conferNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="./index.html"><img src="./img/e-perahu.png" alt=""></a>
+                    <a class="nav-brand" href="Admin_dashboard.php"><img src="./img/e-perahu.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -71,7 +71,7 @@
     <!-- Header Area End -->
 
     <!-- Breadcrumb Area Start -->
-    <section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url(img/bg-img/37.jpg);">
+    <section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url(img/pt1.jpg);">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
@@ -99,7 +99,8 @@
                     <th scope="col">Description</th>
                     <th scope="col">Location</th>
                     <th scope="col">Start Date</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">End Date</th>
+                    <th scope="col"></th>
                     <th scope="col"></th>
                   </tr>
                 </thead>
@@ -122,7 +123,7 @@
                         if ($conn->connect_error) {
                         die("Connection failed: " . $conn->connect_error);
                         }
-                        $sql = "SELECT promoid, promotitle, promotext, promoimage, promolocation, promostart  FROM promotion";
+                        $sql = "SELECT promoid, promotitle, promotext, promoimage, promolocation, promostart, promoend  FROM promotion";
                         $result = $conn->query($sql);
                         if ($result->num_rows > 0) {
                         // output data of each row
@@ -136,6 +137,7 @@
                         <td>" . $row["promotext"] . "</td>
                         <td>" . $row["promolocation"] . "</td>
                         <td>". $row["promostart"]. "</td>
+                        <td>". $row["promoend"]. "</td>
 
 
 
@@ -164,28 +166,32 @@
 <!--table End-->
 
 <!-- Footer Area Start -->
-<footer class="footer-area bg-img bg-overlay-2 section-padding-100-0">
-    <!-- Main Footer Area -->
-    <div class="main-footer-area">
-        <div class="container">
-            <div class="row">
+    <footer class="footer-area bg-img bg-overlay-2 section-padding-100-0">
+        <!-- Main Footer Area -->
+        <div class="main-footer-area">
+            <div class="container">
+                <div class="row">
+                    <!-- Single Footer Widget Area -->
+                    <div class="col-12 col-sm-6 col-lg-12">
+                        <div class="single-footer-widget mb-60">
 
+                            <!-- Widget Title -->
+                            <h5 class="widget-title">Contact</h5>
 
-                <!-- Single Footer Widget Area -->
-                <div class="col-12">
-                    <div class="single-footer-widget mb-60">
-                        <!-- Widget Title -->
-                        <h5 class="widget-title">Contact</h5>
-
-                        <!-- Contact Area -->
-                        <div class="footer-contact-info">
-                            <p><i class="zmdi zmdi-map"></i> Bandar Seri Begawan</p>
-                            <p><i class="zmdi zmdi-phone"></i> (+673) 1234567</p>
-                            <p><i class="zmdi zmdi-email"></i> e-perahu@gmail.com</p>
-                            <p><i class="zmdi zmdi-globe"></i> www.e-perahu.com</p>
+                            <!-- Contact Area -->
+                            <div class="footer-contact-info">
+                                <p><i class="zmdi zmdi-map"></i> Bandar Seri Begawan</p>
+                                <p><i class="zmdi zmdi-phone"></i> (+673) 2123456</p>
+                                <p><i class="zmdi zmdi-email"></i> -e-perahu@gmail.com</p>
+                                <p><i class="zmdi zmdi-globe"></i> www.e-perahu.net</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Area End -->
 
 
 

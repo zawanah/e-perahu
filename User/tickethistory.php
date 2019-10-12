@@ -69,13 +69,13 @@
                                         <li><a href="profile.php">- My Profile</a></li>
                                         <li><a href="ticketprice.php">- Ticket Price</a></li>
                                         <li><a href="drivers.php">- drivers</a></li>
-                                        <li><a href="#">- promotion</a></li>
+                                        <li><a href="promo.php">- promotion</a></li>
 
 
                                     </ul>
                                 </li>
                                 <li><a href="tickethistory.php">Ticket History</a></li>
-                                <li><a href="#">About Us</a></li>
+                                <li><a href="aboutuslogin.php">About Us</a></li>
                             </ul>
 
                             <!-- logout button -->

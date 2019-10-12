@@ -1,18 +1,14 @@
-<?php include('../../User/server.php');
+<?php include('server.php');
 
-                
+?>
 
- ?>
-
-<?php $conn = mysqli_connect("localhost", "root", "", "reservation");
+<?php $conn = mysqli_connect("localhost", "root", "", "registration");
                   // Check connection
                   if ($conn->connect_error) {
                   die("Connection failed: " . $conn->connect_error);
                   }
-                  $sql = "SELECT id, firstname, lastname, email, phone, selectedticket, pickup, destination, pickupdate, operationtime FROM reservationdriver";
+                  $sql = "SELECT promoid, promotitle, promotext, promoimage, promolocation, promostart, promoend FROM promotion";
                   $result = $conn->query($sql);
-
-                
 
 ?>
 
@@ -26,7 +22,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>Customer List</title>
+    <title>Show Promotions</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/e-perahu.png">
@@ -51,7 +47,7 @@
                 <nav class="classy-navbar justify-content-between" id="conferNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="../Driver_Dashboard/Driver_dashboard.php"><img src="img/e-perahu.png" alt=""></a>
+                    <a class="nav-brand" href="index.php"><img src="img/e-perahu.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -66,10 +62,23 @@
                         </div>
                         <!-- Nav Start -->
                         <div class="classynav">
-                            <!-- Dashboard Button -->
-                            </br>
-                            <a href="../Driver_Dashboard/Driver_dashboard.php" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Dashboard <i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <ul id="nav">
+                                <li class="active"><a href="index.php">Home</a></li>
+                                <li><a href="#">Information</a>
+                                    <ul class="dropdown">
+                                        <li><a href="nlticketprice.php">- Ticket Price</a></li>
+                                        <li><a href="nlpromo.php">- promotion</a></li>
+
+
+                                    </ul>
+                                </li>
+                                <li><a href="aboutus.php">About Us</a></li>
+                            </ul>
+
+                            <!-- Login Button -->
+                            <a href="login.php" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Login <i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
+                        <!-- Nav End -->
                     </div>
                 </nav>
             </div>
@@ -77,13 +86,13 @@
     </header>
     <!-- Header Area End -->
 
-    <!-- Our Schedule Area Start -->
-    <section class="bg-img bg-gradient-overlay" style="" class="our-schedule-area">
+    <!-- Our Drivers Area Start -->
+    <section class="bg-img bg-gradient-overlay" style="background-image: url(img/bg-img/backticket.jpg);" class="our-schedule-area">
         <!-- Heading -->
             <div style="padding-top: 150px;">
                 <div class="col-12">
                     <div class="section-heading-3 text-center wow fadeInUp" data-wow-delay="300ms">
-                        <h4><font color="white">List of Customers</font></h4>
+                        <h4><font color="white">Promotion</font></h4>
                     </div>
                 </div>
             </div>
@@ -109,19 +118,17 @@
                                                     <div class='single-schedule-info'>
 
                                                     
-                                                        <p> <h6>" . $row["selectedticket"] . "</h6>
-                                                        <p>Full Name: " . $row["firstname"] ."&nbsp;". $row["lastname"] . "</p>
-                                                        <p>Phone No: " . $row["phone"] . "</p>
-                                                        <p>Email: " . $row["email"] . "</p>
+                                                        <p> <h6>" . $row["promotitle"] . "</h6>
+                                                        <p>" . $row["promotext"] . "</p>
                                                         </p>
+                                                    
                                                     </div>
                                             </div>
                                             <div class='schedule-time-place'>
-                                                <p>Time: " . $row["operationtime"] ."&nbsp;". $row["pickupdate"] . "</p>
-                                                <p>From Jetty: " . $row["pickup"] ."</p>
-                                                <p>To Jetty: " . $row["destination"] ."</p>
+                                                <p>" . $row["promolocation"] . "</p>
+                                                <p>" . $row["promostart"] . " until " . $row["promoend"] . "</p>
                                             </div>
-                                            <a href='../Driver_Confirmation/pickcustomer.php?pick= " . $row["id"] . " '><button type='submit' name='pick' class='confer-btn'>Pick <i class='zmdi zmdi-long-arrow-right'></i></button></a>
+                                            <a href='nlshowpromo.php?showpromo= " . $row['promoid'] . " '><button type='submit' name='showpromo' class='confer-btn'>More <i class='zmdi zmdi-long-arrow-right'></i></button></a>
                                         </div>" ;
                                                     } echo "</div>";
                                                     } else { echo "0 results"; }
@@ -147,7 +154,7 @@
             <div class="container">
                 <div class="row">
                     <!-- Single Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-12">
+                    <div class="col-12">
                         <div class="single-footer-widget mb-60">
 
                             <!-- Widget Title -->

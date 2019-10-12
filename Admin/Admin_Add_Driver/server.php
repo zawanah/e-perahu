@@ -1,14 +1,11 @@
 <?php
-	session_start();
-	$id = "";
 	$username = "";
-	$password = "";
 	$email = "";
 	$fname = "";
 	$lname = "";
 	$phone_no = "";
 	$reg_no= "";
-	$availability= "";
+	$availabilitydriver= "";
 
 
 	$errors = array();
@@ -16,37 +13,65 @@
 	$db = mysqli_connect('localhost', 'root', '', 'registration');
 
 //add new driver
-	if (isset($_POST['register2'])) {
+	if (isset($_POST['registerdriver'])) {
 		$username = mysqli_real_escape_string($db, $_POST['username']);
-		$password = mysqli_real_escape_string($db, $_POST['password']);
     	$fname = mysqli_real_escape_string($db, $_POST['fname']);
     	$lname = mysqli_real_escape_string($db, $_POST['lname']);
     	$email = mysqli_real_escape_string($db, $_POST['email']);
+    	$password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
+		$password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
     	$phone_no = mysqli_real_escape_string($db, $_POST['phone_no']);
     	$reg_no= mysqli_real_escape_string($db, $_POST['reg_no']);
-    	$availability= mysqli_real_escape_string($db, $_POST['availability']);
+    	$availabilitydriver= mysqli_real_escape_string($db, $_POST['availabilitydriver']);
 
 
-		if (empty($phone_no)) {
-			array_push($errors, "Phone Number is required");
+		if (empty($fname)) {
+			array_push($errors, "- First name is required");
 		}
+		if (empty($lname)) {
+			array_push($errors, "- Last name is required");
+		}
+		if (empty($username)) {
+			array_push($errors, "- Username is required");
+		}
+		if (strlen($username) > 8){
+   			array_push($errors, "- Username must be less than 8 characters");
+   		}
 		if (empty($email)) {
-			array_push($errors, "email is required");
+			array_push($errors, "- Email is required");
+		}
+		if (empty($password_1)) {
+			array_push($errors, "- Password is required");
+		}
+		if(preg_match("/^.*(?=.{8,})(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).*$/", $_POST["password_1"]) === 0) {
+			array_push($errors, "- Password must be at least 8 characters and must contain at least 1 lower case letter, 1 upper case letter and 1 number");
 		}
 
-		if (empty($reg_no)) {
-			array_push($errors, "Boat Registered no. is required");
+		if ($password_1 != $password_2) {
+			array_push($errors, "- The two passwords do not match");
 		}
 
+		// Check if username already exists
+		$userquery = "SELECT * FROM driver WHERE username='$username'";
+		$result = mysqli_query($db, $userquery);
 
-		//display list of driver
+		if (mysqli_num_rows($result) == 1) {
+			array_push($errors, "- The username has already been taken");
+		}
+
+		// Check if email already exists
+    	$emailsql = "SELECT * FROM driver WHERE email='$email'";
+    	$emailresult = mysqli_query($db, $emailsql);
+    	if (mysqli_num_rows($emailresult) == 1) {
+    		array_push($errors, "- The email is already exists");
+    	}
+
+		// if there are no errors, save user to database
 		if (count($errors) == 0) {
-			$password = md5($password);
-			$sql2 = "INSERT INTO driver (username, password, fname, lname, email, phone_no, reg_no, availability )
-			VALUES ('$username', '$password','$fname','$lname', '$email', '$phone_no','$reg_no', '$availability' )";
-			mysqli_query($db, $sql2);
-			$_SESSION['success'] = "Driver Successfully added!";
-			header('location: ../Admin_Add_Driver/Admin_List_Of_Driver.php'); // redirect to home page
+			$password = md5($password_1); // encrypt password
+			$sql = mysqli_query($db, "INSERT INTO driver (fname, lname, username, email, password, phone_no, reg_no, availability) VALUES ('$fname', '$lname', '$username', '$email', '$password', '$phone_no', '$reg_no', '$availabilitydriver')");
+			// array_push($success, "Your account has created successfully!");
+			header('location: Admin_List_Of_Driver.php');
 		}
 	}
 
@@ -100,38 +125,38 @@
 	}
 
 	// rate and feedback
-    	$firstname = "";
-        $lastname = "";
-        $username = "";
-        $rate = "";
-        $feedback = "";
+    // 	$firstname = "";
+    //     $lastname = "";
+    //     $username = "";
+    //     $rate = "";
+    //     $feedback = "";
 
-        $errors = array();
+    //     $errors = array();
 
-        $db = mysqli_connect('localhost', 'root', '', 'registration');
+    //     $db = mysqli_connect('localhost', 'root', '', 'registration');
 
-        if (isset($_POST['submit'])) {
-        $firstname = mysqli_real_escape_string($db, $_POST['firstname']);
-        $lastname = mysqli_real_escape_string($db, $_POST['lastname']);
-        $username = mysqli_real_escape_string($db, $_POST['username']);
-        $rate = mysqli_real_escape_string($db, $_POST['rate']);
-        $feedback = mysqli_real_escape_string($db, $_POST['feedback']);
+    //     if (isset($_POST['submit'])) {
+    //     $firstname = mysqli_real_escape_string($db, $_POST['firstname']);
+    //     $lastname = mysqli_real_escape_string($db, $_POST['lastname']);
+    //     $username = mysqli_real_escape_string($db, $_POST['username']);
+    //     $rate = mysqli_real_escape_string($db, $_POST['rate']);
+    //     $feedback = mysqli_real_escape_string($db, $_POST['feedback']);
 
-        if (count($errors) == 0) {
-            $sql = "INSERT INTO orders (firstname, lastname, username, rate, feedback) VALUES ('$firstname', '$lastname', '$username', '$rate', '$feedback') WHERE id = '" . $_SESSION['id'] . "'";
-            mysqli_query($db, $sql);
+    //     if (count($errors) == 0) {
+    //         $sql = "INSERT INTO orders (firstname, lastname, username, rate, feedback) VALUES ('$firstname', '$lastname', '$username', '$rate', '$feedback') WHERE id = '" . $_SESSION['id'] . "'";
+    //         mysqli_query($db, $sql);
 
-            $_SESSION['success'] = "You are now logged in";
-            header('Refresh:0'); // redirect to home page
-        }
-    }
+    //         $_SESSION['success'] = "You are now logged in";
+    //         header('Refresh:0'); // redirect to home page
+    //     }
+    // }
 
 
 	// logout
 	if (isset($_GET['logout'])) {
 		session_destroy();
 		unset($_SESSION['username']);
-		header('location: index.php');
+		header('location: ../Admin_Login/Admin_Login.php');
 
 
 	}

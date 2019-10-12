@@ -7,7 +7,7 @@
                   if ($conn->connect_error) {
                   die("Connection failed: " . $conn->connect_error);
                   }
-                  $sql = "SELECT promoid, promotitle, promotext, promoimage, promolocation, promostart FROM promotion";
+                  $sql = "SELECT promoid, promotitle, promotext, promoimage, promolocation, promostart, promoend FROM promotion";
                   $result = $conn->query($sql);
 
 ?>
@@ -112,7 +112,7 @@
                         if ($conn->connect_error) {
                         die("Connection failed: " . $conn->connect_error);
                         }
-                        $sql = "SELECT promoid, promotitle, promotext, promoimage, promolocation, promostart  FROM promotion WHERE promoid = '" . $_SESSION['id'] . "'";
+                        $sql = "SELECT promoid, promotitle, promotext, promoimage, promolocation, promostart, promoend  FROM promotion WHERE promoid = '" . $_SESSION['id'] . "'";
                         $result = $conn->query($sql);
                         if ($result->num_rows > 0) {
                         // output data of each row
@@ -127,6 +127,7 @@
                         <p>Description: " . $row["promotext"] . "</p>
                         <p>Location: " . $row["promolocation"] . "</p>
                         <p>Start date: ". $row["promostart"]. "</p>
+                        <p>End date: ". $row["promoend"]. "</p>
                         <p>  
                                     <img src='data:image/jpeg;base64," . base64_encode($row['promoimage'] ) ."' />  
                         </p>

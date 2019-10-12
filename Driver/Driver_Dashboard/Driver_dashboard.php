@@ -1,9 +1,9 @@
 <?php include('../../User/server.php');
 
-    // // if user is not logged in, they cannot access this page
-    // if (empty($_SESSION['username'])) {
-    //     header('location: ../Driver_Login/Driver_Login.php');
-    // }
+    // if user is not logged in, they cannot access this page
+    if (empty($_SESSION['username'])) {
+        header('location: ../Driver_Login/Driver_Login.php');
+    }
 
 ?>
 <?php
@@ -141,10 +141,10 @@
     <footer class="footer-area bg-img bg-overlay-2 section-padding-100-0">
         <!-- Main Footer Area -->
         <div class="main-footer-area">
-            <div class="container">
+            <div class="container col-12">
                 <div class="row">
                     <!-- Single Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-12">
+                    <div class="col-12">
                         <div class="single-footer-widget mb-60">
 
                             <!-- Widget Title -->

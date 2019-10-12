@@ -1,18 +1,14 @@
-<?php include('../../User/server.php');
+<?php include('server.php');
 
-                
+?>
 
- ?>
-
-<?php $conn = mysqli_connect("localhost", "root", "", "reservation");
+<?php $conn = mysqli_connect("localhost", "root", "", "registration");
                   // Check connection
                   if ($conn->connect_error) {
                   die("Connection failed: " . $conn->connect_error);
                   }
-                  $sql = "SELECT id, firstname, lastname, email, phone, selectedticket, pickup, destination, pickupdate, operationtime FROM reservationdriver";
+                  $sql = "SELECT promoid, promotitle, promotext, promoimage, promolocation, promostart, promoend FROM promotion";
                   $result = $conn->query($sql);
-
-                
 
 ?>
 
@@ -26,7 +22,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>Customer List</title>
+    <title>Show Promotions</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/e-perahu.png">
@@ -51,7 +47,7 @@
                 <nav class="classy-navbar justify-content-between" id="conferNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="../Driver_Dashboard/Driver_dashboard.php"><img src="img/e-perahu.png" alt=""></a>
+                    <a class="nav-brand" href="index.php"><img src="img/e-perahu.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -66,10 +62,23 @@
                         </div>
                         <!-- Nav Start -->
                         <div class="classynav">
-                            <!-- Dashboard Button -->
-                            </br>
-                            <a href="../Driver_Dashboard/Driver_dashboard.php" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Dashboard <i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <ul id="nav">
+                                <li class="active"><a href="index.php">Home</a></li>
+                                <li><a href="#">Information</a>
+                                    <ul class="dropdown">
+                                        <li><a href="nlticketprice.php">- Ticket Price</a></li>
+                                        <li><a href="nlpromo.php">- promotion</a></li>
+
+
+                                    </ul>
+                                </li>
+                                <li><a href="aboutus.php">About Us</a></li>
+                            </ul>
+
+                            <!-- Login Button -->
+                            <a href="login.php" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Login <i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
+                        <!-- Nav End -->
                     </div>
                 </nav>
             </div>
@@ -78,12 +87,12 @@
     <!-- Header Area End -->
 
     <!-- Our Schedule Area Start -->
-    <section class="bg-img bg-gradient-overlay" style="" class="our-schedule-area">
+    <section class="bg-img" style="" class="our-schedule-area">
         <!-- Heading -->
             <div style="padding-top: 150px;">
                 <div class="col-12">
                     <div class="section-heading-3 text-center wow fadeInUp" data-wow-delay="300ms">
-                        <h4><font color="white">List of Customers</font></h4>
+                        <h4><font color="">Promotion</font></h4>
                     </div>
                 </div>
             </div>
@@ -95,38 +104,50 @@
                     <div class="tab-content" id="conferScheduleTabContent">
                         <div class="tab-pane fade show active" id="step-one" role="tabpanel" aria-labelledby="monday-tab">
                             <!-- Single Tab Content -->
-                            <?php 
-                                if ($result->num_rows > 0) {
-                                // output data of each row
-                                while($row = $result->fetch_assoc()) {
-                            echo "<div class='single-tab-content'>
-                                    <div class='row'>
-                                        <div class='col-12'>
-                                            <div style='background-color: #ffffff;' class='single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp' data-wow-delay='300ms'>
-                                                    
+                            <?php
+                        $conn = mysqli_connect("localhost", "root", "", "registration");
+                        // Check connection
+                        if ($conn->connect_error) {
+                        die("Connection failed: " . $conn->connect_error);
+                        }
+                        $sql = "SELECT promoid, promotitle, promotext, promoimage, promolocation, promostart, promoend  FROM promotion WHERE promoid = '" . $_SESSION['id'] . "'";
+                        $result = $conn->query($sql);
+                        if ($result->num_rows > 0) {
+                        // output data of each row
+                        while($row = $result->fetch_assoc()) {
 
-                                                <div class='single-schedule-tumb-info d-flex align-items-center'>
-                                                    <div class='single-schedule-info'>
 
-                                                    
-                                                        <p> <h6>" . $row["selectedticket"] . "</h6>
-                                                        <p>Full Name: " . $row["firstname"] ."&nbsp;". $row["lastname"] . "</p>
-                                                        <p>Phone No: " . $row["phone"] . "</p>
-                                                        <p>Email: " . $row["email"] . "</p>
-                                                        </p>
-                                                    </div>
-                                            </div>
-                                            <div class='schedule-time-place'>
-                                                <p>Time: " . $row["operationtime"] ."&nbsp;". $row["pickupdate"] . "</p>
-                                                <p>From Jetty: " . $row["pickup"] ."</p>
-                                                <p>To Jetty: " . $row["destination"] ."</p>
-                                            </div>
-                                            <a href='../Driver_Confirmation/pickcustomer.php?pick= " . $row["id"] . " '><button type='submit' name='pick' class='confer-btn'>Pick <i class='zmdi zmdi-long-arrow-right'></i></button></a>
-                                        </div>" ;
-                                                    } echo "</div>";
-                                                    } else { echo "0 results"; }
-                                                    $conn->close();
-                                        ?>
+
+                        echo "
+
+                        <div style='text-align:center;' class='wow fadeInUp'>
+                        <p>Title: ". $row["promotitle"]. "</p>
+                        <p>Description: " . $row["promotext"] . "</p>
+                        <p>Location: " . $row["promolocation"] . "</p>
+                        <p>Start date: ". $row["promostart"]. "</p>
+                        <p>End date: ". $row["promoend"]. "</p>
+                        <p>  
+                                    <img src='data:image/jpeg;base64," . base64_encode($row['promoimage'] ) ."' />  
+                        </p>
+                        </div>
+
+
+
+
+
+                         
+                        
+
+
+                         
+                         "  ;
+
+
+                        }
+                        echo "</table>";
+                        } else { echo "0 results"; }
+                        $conn->close();
+                        ?>
                                 </div>
                             </div>
                         </div>
