@@ -7,11 +7,18 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Paypal Reservation (Smart Cart)</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>PP Reservation</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="icon" type="image/png" href="build/img/icon.png"/>
+
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -19,7 +26,11 @@
   <!-- SmartCart CSS -->
   <link href="build/css/smart_cart.css" rel="stylesheet" type="text/css" />
 
-  <!-- for pickup and destination -->
+	<!-- For phone number validation -->
+	<link rel="stylesheet" href="build/css/intlTelInput.css">
+	<script src="build/js/intlTelInput.js"></script>
+
+	<!-- For pickup and destination -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 	<script>
 	$(document).ready(function(){
@@ -34,25 +45,27 @@
 	});
 	</script>
 
-  <!-- For datepicker -->
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<!-- For datepicker -->
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script src="build/js/datepicker.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="build/js/datepicker.js"></script>
 
 </head>
 
 <body>
-  <br />
+
+  <div class="container-contact100">
 
   <section class="container">
     <div class="row">
       <div class="col-md-8">
         <div class="panel panel-default">
-          <div class="panel-heading">
-            Packages
-          </div>
+
+          <span class="contact100-form-title">
+  					RESERVATION
+  				</span>
 
           <div class="panel-body">
             <div class="row">
@@ -401,6 +414,8 @@
       </aside>
     </div>
   </section>
+
+</div>
 
   <!-- Include SmartCart -->
   <script src="build/js/jquery.smartCart.js" type="text/javascript"></script>
